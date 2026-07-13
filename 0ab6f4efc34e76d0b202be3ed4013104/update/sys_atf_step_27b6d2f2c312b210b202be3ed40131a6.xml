@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_atf_step">
+    <sys_atf_step action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <callable_outputs/>
+        <copied_from/>
+        <description>Run Server Side Validation Script</description>
+        <display_name>Run Server Side Script</display_name>
+        <inputs/>
+        <mugshots_cache_json/>
+        <notes/>
+        <order>1</order>
+        <step_config display_value="Run Server Side Script">41de4a935332120028bc29cac2dc349a</step_config>
+        <sys_class_name>sys_atf_step</sys_class_name>
+        <sys_created_by>Mimi.QA</sys_created_by>
+        <sys_created_on>2026-01-11 13:27:29</sys_created_on>
+        <sys_id>27b6d2f2c312b210b202be3ed40131a6</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Run Server Side Script</sys_name>
+        <sys_package display_value="ChromaTech Ticket logging System" source="x_1839224_chroma_0">0ab6f4efc34e76d0b202be3ed4013104</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_update_name>sys_atf_step_27b6d2f2c312b210b202be3ed40131a6</sys_update_name>
+        <sys_updated_by>Mimi.QA</sys_updated_by>
+        <sys_updated_on>2026-01-11 13:36:37</sys_updated_on>
+        <table/>
+        <test display_value="ATF 3 -04: Validate Added Fields Exist on ChromaTech Customer Query as. well as its specified type, ">b4a6deb2c312b210b202be3ed40131ea</test>
+        <timeout/>
+        <warning_message/>
+    </sys_atf_step>
+    <sys_variable_value action="delete_multiple" query="document_key=27b6d2f2c312b210b202be3ed40131a6"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_atf_step</document>
+        <document_key>27b6d2f2c312b210b202be3ed40131a6</document_key>
+        <order>200</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Mimi.QA</sys_created_by>
+        <sys_created_on>2026-01-11 13:27:30</sys_created_on>
+        <sys_id>0a771e36c312b210b202be3ed4013134</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_updated_by>Mimi.QA</sys_updated_by>
+        <sys_updated_on>2026-01-11 13:36:37</sys_updated_on>
+        <value>(function(outputs, steps, stepResult, assertEqual) {&#13;
+    var table = 'x_1839224_chroma_0_chromatech_customer_queries'; // actual table name&#13;
+    var details = [];&#13;
+    var allPassed = true;&#13;
+&#13;
+    var fieldSpecs = [&#13;
+        { name: 'phone', label: 'Phone', type: 'string', size: 10 },&#13;
+        { name: 'email', label: 'Email', type: 'string', size: 16 },&#13;
+        { name: 'place', label: 'Place', type: 'reference', reference: 'cmn_location' },&#13;
+        { name: 'issue_category', label: 'Issue Category', type: 'choice', choices: ['Hardware Issue', 'Firmware Issue'] },&#13;
+        { name: 'issue_state', label: 'Issue State', type: 'choice', choices: ['New', 'In Progress', 'On Hold', 'Closed'] },&#13;
+        { name: 'on_hold_reason', label: 'On Hold Reason', type: 'choice', choices: ['Awaiting Caller', 'Awaiting Vendor'] }&#13;
+    ];&#13;
+&#13;
+    fieldSpecs.forEach(function(spec) {&#13;
+        var dict = new GlideRecord('sys_dictionary');&#13;
+        dict.addQuery('name', table);&#13;
+        dict.addQuery('element', spec.name);&#13;
+        dict.query();&#13;
+&#13;
+        if (dict.next()) {&#13;
+            var fieldValid = true;&#13;
+            var logs = "Field [" + spec.label + "]: ";&#13;
+&#13;
+            // Check Type&#13;
+            if (dict.internal_type != spec.type) {&#13;
+                logs += "FAILED type (Expected: " + spec.type + ", Found: " + dict.internal_type + "); ";&#13;
+                fieldValid = false;&#13;
+            }&#13;
+&#13;
+            // Check Size (for strings)&#13;
+            if (spec.size &amp;&amp; dict.max_length != spec.size) {&#13;
+                logs += "FAILED size (Expected: " + spec.size + ", Found: " + dict.max_length + "); ";&#13;
+                fieldValid = false;&#13;
+            }&#13;
+&#13;
+            // Check Reference&#13;
+            if (spec.reference &amp;&amp; dict.reference != spec.reference) {&#13;
+                logs += "FAILED reference (Expected: " + spec.reference + ", Found: " + dict.reference + "); ";&#13;
+                fieldValid = false;&#13;
+            }&#13;
+&#13;
+            // Check Choices&#13;
+            if (spec.choices) {&#13;
+                var choiceGr = new GlideRecord('sys_choice');&#13;
+                choiceGr.addQuery('name', table);&#13;
+                choiceGr.addQuery('element', spec.name);&#13;
+                choiceGr.addQuery('inactive', false);&#13;
+                choiceGr.query();&#13;
+                &#13;
+                var foundChoices = [];&#13;
+                while(choiceGr.next()) { foundChoices.push(choiceGr.label.getDisplayValue()); }&#13;
+                &#13;
+                spec.choices.forEach(function(c) {&#13;
+                    if (foundChoices.indexOf(c) === -1) {&#13;
+                        logs += "MISSING Choice: " + c + "; ";&#13;
+                        fieldValid = false;&#13;
+                    }&#13;
+                });&#13;
+            }&#13;
+&#13;
+            if (fieldValid) {&#13;
+                logs += "PASSED all configuration checks.";&#13;
+            } else {&#13;
+                allPassed = false;&#13;
+            }&#13;
+            details.push(logs);&#13;
+        } else {&#13;
+            details.push("Field [" + spec.label + "]: FAILED - Field not found on table.");&#13;
+            allPassed = false;&#13;
+        }&#13;
+    });&#13;
+&#13;
+    var finalMessage = details.join('\n');&#13;
+    if (allPassed) {&#13;
+        stepResult.setOutputMessage("SUCCESS: All ChromaTech fields validated.\n\n" + finalMessage);&#13;
+        stepResult.setSuccess();&#13;
+    } else {&#13;
+        stepResult.setOutputMessage("FAILURE: Field configuration mismatch.\n\n" + finalMessage);&#13;
+        stepResult.setFailed();&#13;
+    }&#13;
+&#13;
+})(outputs, steps, stepResult, assertEqual);&#13;
+</value>
+        <variable display_value="Test script">989d9e235324220002c6435723dc3484</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_atf_step</document>
+        <document_key>27b6d2f2c312b210b202be3ed40131a6</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Mimi.QA</sys_created_by>
+        <sys_created_on>2026-01-11 13:27:30</sys_created_on>
+        <sys_id>c2771e36c312b210b202be3ed4013134</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Mimi.QA</sys_updated_by>
+        <sys_updated_on>2026-01-11 13:27:30</sys_updated_on>
+        <value>3.1</value>
+        <variable display_value="Jasmine version">42f2564b73031300440211d8faf6a777</variable>
+    </sys_variable_value>
+</record_update>

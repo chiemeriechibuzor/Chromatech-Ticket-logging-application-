@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_data_policy_rule">
+    <sys_data_policy_rule action="INSERT_OR_UPDATE">
+        <disabled>ignore</disabled>
+        <field>email</field>
+        <mandatory>true</mandatory>
+        <sys_class_name>sys_data_policy_rule</sys_class_name>
+        <sys_created_by>Nellie.BA</sys_created_by>
+        <sys_created_on>2026-01-09 13:54:36</sys_created_on>
+        <sys_data_policy display_value="Contact type is Email - make Email field mandatory">6a3ac0d6c352fa14b202be3ed4013154</sys_data_policy>
+        <sys_id>6c7a88d6c352fa14b202be3ed40131ec</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>email</sys_name>
+        <sys_package display_value="ChromaTech Ticket logging System" source="x_1839224_chroma_0">0ab6f4efc34e76d0b202be3ed4013104</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_update_name>sys_data_policy_rule_6c7a88d6c352fa14b202be3ed40131ec</sys_update_name>
+        <sys_updated_by>Nellie.BA</sys_updated_by>
+        <sys_updated_on>2026-01-09 13:54:36</sys_updated_on>
+        <table>x_1839224_chroma_0_chromatech_customer_queries</table>
+    </sys_data_policy_rule>
+</record_update>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_policy_action">
+    <sys_ui_policy_action action="INSERT_OR_UPDATE">
+        <cleared>false</cleared>
+        <disabled>ignore</disabled>
+        <field>place</field>
+        <field_message/>
+        <field_message_type>none</field_message_type>
+        <mandatory>true</mandatory>
+        <sys_class_name>sys_ui_policy_action</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-01-08 14:55:40</sys_created_on>
+        <sys_id>c1decbb9c3da3a14b202be3ed4013122</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>place</sys_name>
+        <sys_package display_value="ChromaTech Ticket logging System" source="x_1839224_chroma_0">0ab6f4efc34e76d0b202be3ed4013104</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_update_name>sys_ui_policy_action_c1decbb9c3da3a14b202be3ed4013122</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-01-08 14:55:40</sys_updated_on>
+        <table>x_1839224_chroma_0_chromatech_customer_queries</table>
+        <ui_policy display_value="Contact type is Walk-in - Show place field">7f7ecf79c3da3a14b202be3ed4013195</ui_policy>
+        <value/>
+        <value_action>ignore</value_action>
+        <visible>true</visible>
+    </sys_ui_policy_action>
+    <sys_translated_text action="delete_multiple" query="documentkey=c1decbb9c3da3a14b202be3ed4013122"/>
+</record_update>

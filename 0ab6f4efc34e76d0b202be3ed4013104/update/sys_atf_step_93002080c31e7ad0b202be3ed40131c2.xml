@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_atf_step">
+    <sys_atf_step action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <callable_outputs/>
+        <copied_from/>
+        <description>Run Server Side Validation Script</description>
+        <display_name>Run Server Side Script</display_name>
+        <inputs/>
+        <mugshots_cache_json/>
+        <notes/>
+        <order>1</order>
+        <step_config display_value="Run Server Side Script">41de4a935332120028bc29cac2dc349a</step_config>
+        <sys_class_name>sys_atf_step</sys_class_name>
+        <sys_created_by>Mimi.QA</sys_created_by>
+        <sys_created_on>2026-01-02 15:44:28</sys_created_on>
+        <sys_id>93002080c31e7ad0b202be3ed40131c2</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Run Server Side Script</sys_name>
+        <sys_package display_value="ChromaTech Ticket logging System" source="x_1839224_chroma_0">0ab6f4efc34e76d0b202be3ed4013104</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_update_name>sys_atf_step_93002080c31e7ad0b202be3ed40131c2</sys_update_name>
+        <sys_updated_by>Mimi.QA</sys_updated_by>
+        <sys_updated_on>2026-01-02 15:45:34</sys_updated_on>
+        <table/>
+        <test display_value="ATF-05: Verify ChromaTech Sold Products Table is not Extended for task and any other table">a98e10ccc3da7ad0b202be3ed401318e</test>
+        <timeout/>
+        <warning_message/>
+    </sys_atf_step>
+    <sys_variable_value action="delete_multiple" query="document_key=93002080c31e7ad0b202be3ed40131c2"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_atf_step</document>
+        <document_key>93002080c31e7ad0b202be3ed40131c2</document_key>
+        <order>200</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Mimi.QA</sys_created_by>
+        <sys_created_on>2026-01-02 15:44:28</sys_created_on>
+        <sys_id>3880e880c31e7ad0b202be3ed4013111</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>Mimi.QA</sys_updated_by>
+        <sys_updated_on>2026-01-02 15:45:34</sys_updated_on>
+        <value>(function(outputs, steps, params, stepResult, assertEqual) {&#13;
+    // 1. Specify your custom table name here&#13;
+    var tableName = 'x_1839224_chroma_0_chromatech_sold_products'; &#13;
+    &#13;
+    // 2. Query the sys_db_object table to check the 'super_class' (Parent)&#13;
+    var grTable = new GlideRecord('sys_db_object');&#13;
+    grTable.addQuery('name', tableName);&#13;
+    grTable.query();&#13;
+&#13;
+    if (grTable.next()) {&#13;
+        // super_class is empty if the table does not extend anything&#13;
+        if (grTable.super_class.nil()) {&#13;
+            stepResult.setOutputMessage("Success: Table '" + tableName + "' is a standalone table and does not extend any other table.");&#13;
+            stepResult.setSuccess();&#13;
+            return true;&#13;
+        } else {&#13;
+            var parentTable = grTable.super_class.getDisplayValue();&#13;
+            stepResult.setOutputMessage("Failure: Table '" + tableName + "' extends '" + parentTable + "'. Expected no parent.");&#13;
+            stepResult.setFailed();&#13;
+            return false;&#13;
+        }&#13;
+    } else {&#13;
+        stepResult.setOutputMessage("Error: Table '" + tableName + "' was not found in the system.");&#13;
+        stepResult.setFailed();&#13;
+        return false;&#13;
+    }&#13;
+&#13;
+})(outputs, steps, params, stepResult, assertEqual);&#13;
+</value>
+        <variable display_value="Test script">989d9e235324220002c6435723dc3484</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_atf_step</document>
+        <document_key>93002080c31e7ad0b202be3ed40131c2</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Mimi.QA</sys_created_by>
+        <sys_created_on>2026-01-02 15:44:28</sys_created_on>
+        <sys_id>f080e880c31e7ad0b202be3ed4013111</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Mimi.QA</sys_updated_by>
+        <sys_updated_on>2026-01-02 15:44:28</sys_updated_on>
+        <value>3.1</value>
+        <variable display_value="Jasmine version">42f2564b73031300440211d8faf6a777</variable>
+    </sys_variable_value>
+</record_update>

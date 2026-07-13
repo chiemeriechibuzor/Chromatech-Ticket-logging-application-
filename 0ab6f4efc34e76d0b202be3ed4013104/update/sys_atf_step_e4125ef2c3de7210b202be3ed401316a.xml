@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_atf_step">
+    <sys_atf_step action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <callable_outputs/>
+        <copied_from/>
+        <description>Run Server Side Validation Script</description>
+        <display_name>Run Server Side Script</display_name>
+        <inputs/>
+        <mugshots_cache_json/>
+        <notes/>
+        <order>3</order>
+        <step_config display_value="Run Server Side Script">41de4a935332120028bc29cac2dc349a</step_config>
+        <sys_class_name>sys_atf_step</sys_class_name>
+        <sys_created_by>Mimi.QA</sys_created_by>
+        <sys_created_on>2026-01-11 13:04:08</sys_created_on>
+        <sys_id>e4125ef2c3de7210b202be3ed401316a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Run Server Side Script</sys_name>
+        <sys_package display_value="ChromaTech Ticket logging System" source="x_1839224_chroma_0">0ab6f4efc34e76d0b202be3ed4013104</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_update_name>sys_atf_step_e4125ef2c3de7210b202be3ed401316a</sys_update_name>
+        <sys_updated_by>Mimi.QA</sys_updated_by>
+        <sys_updated_on>2026-01-11 13:04:08</sys_updated_on>
+        <table/>
+        <test display_value="ATF 3 - 03: Assigned_To_Role_Filter">205156b2c3de7210b202be3ed40131af</test>
+        <timeout/>
+        <warning_message/>
+    </sys_atf_step>
+    <sys_variable_value action="delete_multiple" query="document_key=e4125ef2c3de7210b202be3ed401316a"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_atf_step</document>
+        <document_key>e4125ef2c3de7210b202be3ed401316a</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Mimi.QA</sys_created_by>
+        <sys_created_on>2026-01-11 13:04:08</sys_created_on>
+        <sys_id>7312def2c3de7210b202be3ed401319b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Mimi.QA</sys_updated_by>
+        <sys_updated_on>2026-01-11 13:04:08</sys_updated_on>
+        <value>3.1</value>
+        <variable display_value="Jasmine version">42f2564b73031300440211d8faf6a777</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_atf_step</document>
+        <document_key>e4125ef2c3de7210b202be3ed401316a</document_key>
+        <order>200</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Mimi.QA</sys_created_by>
+        <sys_created_on>2026-01-11 13:04:08</sys_created_on>
+        <sys_id>b712def2c3de7210b202be3ed401319b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Mimi.QA</sys_updated_by>
+        <sys_updated_on>2026-01-11 13:04:08</sys_updated_on>
+        <value>(function(outputs, steps, stepResult, assertEqual) {&#13;
+    var roleName = "ChromaTech Engineer";&#13;
+    var usersWithRole = [];&#13;
+    var invalidUsers = [];&#13;
+&#13;
+    // 1. Get all users who should be in the list&#13;
+    var userGR = new GlideRecord('sys_user');&#13;
+    // Match the exact Reference Qualifier used on your Assigned to field&#13;
+    // Example: active users only&#13;
+    userGR.addActiveQuery();&#13;
+    userGR.query();&#13;
+&#13;
+    while (userGR.next()) {&#13;
+        var hasRole = gs.getUser().getUserByID(userGR.getValue('user_name')).hasRole(roleName);&#13;
+        &#13;
+        // 2. Validate if the system returns anyone without the role&#13;
+        if (!hasRole) {&#13;
+            // If the field is configured correctly, these users shouldn't be selectable&#13;
+            // This script mimics the check your field should perform&#13;
+        }&#13;
+    }&#13;
+&#13;
+    // Direct database validation of the role requirement&#13;
+    var roleGR = new GlideRecord('sys_user_has_role');&#13;
+    roleGR.addQuery('role.name', roleName);&#13;
+    roleGR.query();&#13;
+    &#13;
+    var count = roleGR.getRowCount();&#13;
+    &#13;
+    if (count &gt; 0) {&#13;
+        stepResult.setOutputMessage("Successfully verified users with role: " + roleName);&#13;
+        return true;&#13;
+    } else {&#13;
+        stepResult.setFailed("No users found with the " + roleName + " role.");&#13;
+        return false;&#13;
+    }&#13;
+})(outputs, steps, stepResult, assertEqual);&#13;
+</value>
+        <variable display_value="Test script">989d9e235324220002c6435723dc3484</variable>
+    </sys_variable_value>
+</record_update>

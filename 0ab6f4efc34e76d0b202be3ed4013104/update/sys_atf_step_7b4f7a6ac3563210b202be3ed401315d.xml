@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_atf_step">
+    <sys_atf_step action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <callable_outputs/>
+        <copied_from/>
+        <description>Run Server Side Validation Script</description>
+        <display_name>Run Server Side Script</display_name>
+        <inputs/>
+        <mugshots_cache_json/>
+        <notes/>
+        <order>3</order>
+        <step_config display_value="Run Server Side Script">41de4a935332120028bc29cac2dc349a</step_config>
+        <sys_class_name>sys_atf_step</sys_class_name>
+        <sys_created_by>Mimi.QA</sys_created_by>
+        <sys_created_on>2026-01-10 21:45:10</sys_created_on>
+        <sys_id>7b4f7a6ac3563210b202be3ed401315d</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>Run Server Side Script</sys_name>
+        <sys_package display_value="ChromaTech Ticket logging System" source="x_1839224_chroma_0">0ab6f4efc34e76d0b202be3ed4013104</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_update_name>sys_atf_step_7b4f7a6ac3563210b202be3ed401315d</sys_update_name>
+        <sys_updated_by>Mimi.QA</sys_updated_by>
+        <sys_updated_on>2026-01-11 12:59:22</sys_updated_on>
+        <table/>
+        <test display_value="ATF 3 - 02: Validate Assignment_Group_Qualifier">ef8ef22ac3563210b202be3ed4013123</test>
+        <timeout/>
+        <warning_message/>
+    </sys_atf_step>
+    <sys_variable_value action="delete_multiple" query="document_key=7b4f7a6ac3563210b202be3ed401315d"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_atf_step</document>
+        <document_key>7b4f7a6ac3563210b202be3ed401315d</document_key>
+        <order>200</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Mimi.QA</sys_created_by>
+        <sys_created_on>2026-01-10 21:45:10</sys_created_on>
+        <sys_id>26cffa2ac3563210b202be3ed40131c2</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_updated_by>Mimi.QA</sys_updated_by>
+        <sys_updated_on>2026-01-11 12:59:22</sys_updated_on>
+        <value>(function(outputs, steps, stepResult, assertEqual) {&#13;
+    var expected = ["Chroma Admin", "Chroma ITIL", "Chroma Developers", "ChromaTech Helpdesk", "ChromaTech Services"];&#13;
+    var expectedString = expected.sort().join(',');&#13;
+    &#13;
+    var actualGroups = [];&#13;
+    var gr = new GlideRecord('sys_user_group');&#13;
+    // Ensure this matches the exact filter on your Assignment Group field&#13;
+    gr.addActiveQuery(); &#13;
+    gr.addQuery('name', 'STARTSWITH', 'Chroma'); &#13;
+    gr.query();&#13;
+    &#13;
+    while (gr.next()) {&#13;
+        actualGroups.push(gr.getValue('name').toString());&#13;
+    }&#13;
+    &#13;
+    var actualString = actualGroups.sort().join(',');&#13;
+&#13;
+    if (actualString === expectedString) {&#13;
+        stepResult.setOutputMessage("Success: Only the allowed groups found.");&#13;
+        return true; &#13;
+    } else {&#13;
+        // This will print the actual list of groups found to the ATF failure log&#13;
+        var msg = "FAIL: Group mismatch. \nExpected: " + expectedString + "\nFound: " + actualString;&#13;
+        gs.error(msg); // Forces a log entry in System Logs&#13;
+        stepResult.setOutputMessage(msg);&#13;
+        stepResult.setFailed(msg);&#13;
+        return false;&#13;
+    }&#13;
+})(outputs, steps, stepResult, assertEqual);&#13;
+</value>
+        <variable display_value="Test script">989d9e235324220002c6435723dc3484</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_atf_step</document>
+        <document_key>7b4f7a6ac3563210b202be3ed401315d</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Mimi.QA</sys_created_by>
+        <sys_created_on>2026-01-10 21:45:10</sys_created_on>
+        <sys_id>eecffa2ac3563210b202be3ed40131c1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Mimi.QA</sys_updated_by>
+        <sys_updated_on>2026-01-10 21:45:10</sys_updated_on>
+        <value>3.1</value>
+        <variable display_value="Jasmine version">42f2564b73031300440211d8faf6a777</variable>
+    </sys_variable_value>
+</record_update>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_atf_step">
+    <sys_atf_step action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <callable_outputs/>
+        <copied_from/>
+        <description>Run Server Side Validation Script</description>
+        <display_name>Run Server Side Script</display_name>
+        <inputs/>
+        <mugshots_cache_json/>
+        <notes/>
+        <order>1</order>
+        <step_config display_value="Run Server Side Script">41de4a935332120028bc29cac2dc349a</step_config>
+        <sys_class_name>sys_atf_step</sys_class_name>
+        <sys_created_by>Mimi.QA</sys_created_by>
+        <sys_created_on>2026-01-11 14:44:55</sys_created_on>
+        <sys_id>c4f8ae3ec392b210b202be3ed401310b</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Run Server Side Script</sys_name>
+        <sys_package display_value="ChromaTech Ticket logging System" source="x_1839224_chroma_0">0ab6f4efc34e76d0b202be3ed4013104</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_update_name>sys_atf_step_c4f8ae3ec392b210b202be3ed401310b</sys_update_name>
+        <sys_updated_by>Mimi.QA</sys_updated_by>
+        <sys_updated_on>2026-01-11 14:52:50</sys_updated_on>
+        <table/>
+        <test display_value="ATF 3 – 012: Validate_Product_Subtype_Filtering">6f78623ec392b210b202be3ed40131ce</test>
+        <timeout/>
+        <warning_message/>
+    </sys_atf_step>
+    <sys_variable_value action="delete_multiple" query="document_key=c4f8ae3ec392b210b202be3ed401310b"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_atf_step</document>
+        <document_key>c4f8ae3ec392b210b202be3ed401310b</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Mimi.QA</sys_created_by>
+        <sys_created_on>2026-01-11 14:44:55</sys_created_on>
+        <sys_id>1c39667ec392b210b202be3ed40131dc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Mimi.QA</sys_updated_by>
+        <sys_updated_on>2026-01-11 14:44:55</sys_updated_on>
+        <value>3.1</value>
+        <variable display_value="Jasmine version">42f2564b73031300440211d8faf6a777</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_atf_step</document>
+        <document_key>c4f8ae3ec392b210b202be3ed401310b</document_key>
+        <order>200</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Mimi.QA</sys_created_by>
+        <sys_created_on>2026-01-11 14:44:55</sys_created_on>
+        <sys_id>5039667ec392b210b202be3ed40131dd</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_updated_by>Mimi.QA</sys_updated_by>
+        <sys_updated_on>2026-01-11 14:52:50</sys_updated_on>
+        <value>(function(outputs, steps, stepResult, assertEqual) {&#13;
+    var table = 'x_1839224_chroma_0_chromatech_sold_products'; &#13;
+    var dependentField = 'product_subtype';&#13;
+    var allPassed = true;&#13;
+    var finalMessage = "";&#13;
+&#13;
+    // UPDATE the 'parent' values below with the BACKEND VALUES from your dictionary&#13;
+    var scenarios = [&#13;
+        {&#13;
+            parent: 'air_conditioners', // Example: Use 'air_conditioners' if that's the backend value&#13;
+            label: 'Air Conditioners',&#13;
+            expected: ['Central Air Conditioning', 'Portable Air Conditioner', 'Mini Split Air Conditioner', 'Window Air Conditioner']&#13;
+        },&#13;
+        {&#13;
+            parent: 'coolers', // This one passed, so its value likely matches its label&#13;
+            label: 'Coolers',&#13;
+            expected: ['Personal Coolers', 'Tower Coolers', 'Desert Coolers', 'Window Coolers']&#13;
+        },&#13;
+        {&#13;
+            parent: 'ceiling_fans', // Example: Use 'ceiling_fans' if that's the backend value&#13;
+            label: 'Ceiling Fans',&#13;
+            expected: ['Dual Motor Ceiling Fan', 'Industrial Ceiling Fans', 'Commercial Ceiling Fans']&#13;
+        }&#13;
+    ];&#13;
+&#13;
+    scenarios.forEach(function(scenario) {&#13;
+        var foundChoices = [];&#13;
+        var choiceGr = new GlideRecord('sys_choice');&#13;
+        choiceGr.addQuery('name', table);&#13;
+        choiceGr.addQuery('element', dependentField);&#13;
+        choiceGr.addQuery('dependent_value', scenario.parent); // Filters by backend value&#13;
+        choiceGr.addQuery('inactive', false);&#13;
+        choiceGr.query();&#13;
+&#13;
+        while (choiceGr.next()) {&#13;
+            foundChoices.push(choiceGr.label.getDisplayValue());&#13;
+        }&#13;
+&#13;
+        var scenarioPassed = (foundChoices.length === scenario.expected.length);&#13;
+        scenario.expected.forEach(function(item) {&#13;
+            if (foundChoices.indexOf(item) === -1) scenarioPassed = false;&#13;
+        });&#13;
+&#13;
+        if (scenarioPassed) {&#13;
+            finalMessage += "PASS: " + scenario.label + " correctly displays all " + scenario.expected.length + " subtypes.\n";&#13;
+        } else {&#13;
+            allPassed = false;&#13;
+            finalMessage += "FAIL: " + scenario.label + ". Expected [" + scenario.expected.join(', ') + "] but found [" + foundChoices.join(', ') + "]. Check if dependent_value is '" + scenario.parent + "'\n";&#13;
+        }&#13;
+    });&#13;
+&#13;
+    stepResult.setOutputMessage(finalMessage);&#13;
+    if (allPassed) {&#13;
+        stepResult.setSuccess();&#13;
+    } else {&#13;
+        stepResult.setFailed();&#13;
+    }&#13;
+})(outputs, steps, stepResult, assertEqual);&#13;
+</value>
+        <variable display_value="Test script">989d9e235324220002c6435723dc3484</variable>
+    </sys_variable_value>
+</record_update>

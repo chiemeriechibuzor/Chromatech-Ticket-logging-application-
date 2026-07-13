@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_atf_test_suite_test">
+    <sys_atf_test_suite_test action="INSERT_OR_UPDATE">
+        <abort_on_failure>false</abort_on_failure>
+        <order>11</order>
+        <sys_class_name>sys_atf_test_suite_test</sys_class_name>
+        <sys_created_by>Mimi.QA</sys_created_by>
+        <sys_created_on>2026-01-03 23:30:50</sys_created_on>
+        <sys_id>6dc4d39cc3927ed0b202be3ed4013172</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>703c3010c39efad0b202be3ed4013129</sys_name>
+        <sys_package display_value="ChromaTech Ticket logging System" source="x_1839224_chroma_0">0ab6f4efc34e76d0b202be3ed4013104</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_update_name>sys_atf_test_suite_test_6dc4d39cc3927ed0b202be3ed4013172</sys_update_name>
+        <sys_updated_by>Mimi.QA</sys_updated_by>
+        <sys_updated_on>2026-01-04 16:00:46</sys_updated_on>
+        <test display_value="ATF-08: Verify Application Menu &amp; Modules">703c3010c39efad0b202be3ed4013129</test>
+        <test_suite display_value="ChromaTech Scoped Ticket Logging">4f6fa99cc3563ed0b202be3ed4013164</test_suite>
+    </sys_atf_test_suite_test>
+</record_update>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_choice action="INSERT_OR_UPDATE" field="warranty_period_months_choice" table="x_1839224_chroma_0_chromatech_sold_products" version="3">
+        <sys_choice_set action="INSERT_OR_UPDATE">
+            <element>warranty_period_months_choice</element>
+            <name>x_1839224_chroma_0_chromatech_sold_products</name>
+            <sys_class_name>sys_choice_set</sys_class_name>
+            <sys_created_by>Nellie.BA</sys_created_by>
+            <sys_created_on>2026-01-08 18:41:55</sys_created_on>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>warranty_period_months_choice</sys_name>
+            <sys_package display_value="ChromaTech Ticket logging System" source="x_1839224_chroma_0">0ab6f4efc34e76d0b202be3ed4013104</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+            <sys_update_name>sys_choice_x_1839224_chroma_0_chromatech_sold_products_warranty_period_months_choice</sys_update_name>
+            <sys_updated_by>Nellie.BA</sys_updated_by>
+            <sys_updated_on>2026-01-08 18:41:55</sys_updated_on>
+        </sys_choice_set>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>warranty_period_months_choice</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>06</label>
+            <language>en</language>
+            <name>x_1839224_chroma_0_chromatech_sold_products</name>
+            <sequence>100</sequence>
+            <synonyms/>
+            <sys_created_by>Nellie.BA</sys_created_by>
+            <sys_created_on>2026-01-08 18:41:55</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_updated_by>Nellie.BA</sys_updated_by>
+            <sys_updated_on>2026-01-08 18:42:52</sys_updated_on>
+            <value>06</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>warranty_period_months_choice</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>12</label>
+            <language>en</language>
+            <name>x_1839224_chroma_0_chromatech_sold_products</name>
+            <sequence>200</sequence>
+            <synonyms/>
+            <sys_created_by>Nellie.BA</sys_created_by>
+            <sys_created_on>2026-01-08 18:43:12</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_updated_by>Nellie.BA</sys_updated_by>
+            <sys_updated_on>2026-01-08 18:43:24</sys_updated_on>
+            <value>12</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>warranty_period_months_choice</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>18</label>
+            <language>en</language>
+            <name>x_1839224_chroma_0_chromatech_sold_products</name>
+            <sequence>300</sequence>
+            <synonyms/>
+            <sys_created_by>Nellie.BA</sys_created_by>
+            <sys_created_on>2026-01-08 18:43:44</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_updated_by>Nellie.BA</sys_updated_by>
+            <sys_updated_on>2026-01-08 18:44:00</sys_updated_on>
+            <value>18</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>warranty_period_months_choice</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>24</label>
+            <language>en</language>
+            <name>x_1839224_chroma_0_chromatech_sold_products</name>
+            <sequence>400</sequence>
+            <synonyms/>
+            <sys_created_by>Nellie.BA</sys_created_by>
+            <sys_created_on>2026-01-08 18:44:09</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_updated_by>Nellie.BA</sys_updated_by>
+            <sys_updated_on>2026-01-08 18:44:19</sys_updated_on>
+            <value>24</value>
+        </sys_choice>
+    </sys_choice>
+</record_update>

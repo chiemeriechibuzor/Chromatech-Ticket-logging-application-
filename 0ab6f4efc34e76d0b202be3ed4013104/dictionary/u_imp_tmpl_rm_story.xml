@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="46dc7d3bc3797a50b202be3ed40131c3" extends="sys_import_set_row" label="Imp Tmpl Rm Story" max_length="40" name="u_imp_tmpl_rm_story" type="collection">
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=Assigned To" label="Assigned To" max_length="40" name="u_assigned_to" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=Priority" label="Priority" max_length="40" name="u_priority" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=State" label="State" max_length="40" name="u_state" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=Parent" label="Parent" max_length="40" name="u_parent" type="string"/>
+    </element>
+</database>

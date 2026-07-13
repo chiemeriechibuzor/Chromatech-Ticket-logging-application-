@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description>Display a field-level error message if the “Warranty Extending Date” is before the “Warranty Expiring At” date.</description>
+        <field>warranty_extending_date</field>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>Validate Warranty Extending Date</name>
+        <order/>
+        <script><![CDATA[function onChange(control, oldValue, newValue, isLoading) {
+    if (isLoading || newValue === '') return;
+
+    var extendingDate = new Date(newValue);
+    var expiryDateStr = g_form.getValue('warranty_expiring_at');
+
+    if (!expiryDateStr) return;
+
+    var expiryDate = new Date(expiryDateStr);
+
+    if (extendingDate <= expiryDate) {
+        // Delay to allow clearing to finish before showing the message
+        setTimeout(function() {
+            g_form.showFieldMsg('warranty_extending_date',
+                'Warranty Extending date must be later than Warranty Expiring at date.',
+                'error');
+        }, 100);
+
+        g_form.clearValue('warranty_extending_date');
+    } else {
+        g_form.hideFieldMsg('warranty_extending_date');
+    }
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-01-04 01:28:35</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>cf6f6718c3967ed0b202be3ed4013191</sys_id>
+        <sys_mod_count>11</sys_mod_count>
+        <sys_name>Validate Warranty Extending Date</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="ChromaTech Ticket logging System" source="x_1839224_chroma_0">0ab6f4efc34e76d0b202be3ed4013104</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_update_name>sys_script_client_cf6f6718c3967ed0b202be3ed4013191</sys_update_name>
+        <sys_updated_by>Nellie.BA</sys_updated_by>
+        <sys_updated_on>2026-01-11 13:37:34</sys_updated_on>
+        <table>x_1839224_chroma_0_chromatech_sold_products</table>
+        <type>onChange</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>

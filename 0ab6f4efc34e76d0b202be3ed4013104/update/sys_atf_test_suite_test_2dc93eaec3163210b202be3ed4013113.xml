@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_atf_test_suite_test">
+    <sys_atf_test_suite_test action="INSERT_OR_UPDATE">
+        <abort_on_failure>false</abort_on_failure>
+        <order/>
+        <sys_class_name>sys_atf_test_suite_test</sys_class_name>
+        <sys_created_by>Mimi.QA</sys_created_by>
+        <sys_created_on>2026-01-10 21:18:53</sys_created_on>
+        <sys_id>2dc93eaec3163210b202be3ed4013113</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>9b86796347e43200e0ef563dbb9a7171</sys_name>
+        <sys_package display_value="ChromaTech Ticket logging System" source="x_1839224_chroma_0">0ab6f4efc34e76d0b202be3ed4013104</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_update_name>sys_atf_test_suite_test_2dc93eaec3163210b202be3ed4013113</sys_update_name>
+        <sys_updated_by>Mimi.QA</sys_updated_by>
+        <sys_updated_on>2026-01-10 21:18:53</sys_updated_on>
+        <test display_value="Search and Open Catalog Item">9b86796347e43200e0ef563dbb9a7171</test>
+        <test_suite display_value="Service Catalog Platform Tests">ad25e05787c92300e0ef0cf888cb0bd6</test_suite>
+    </sys_atf_test_suite_test>
+</record_update>

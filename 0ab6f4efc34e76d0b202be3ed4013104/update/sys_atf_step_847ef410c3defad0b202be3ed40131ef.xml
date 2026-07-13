@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_atf_step">
+    <sys_atf_step action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <callable_outputs/>
+        <copied_from/>
+        <description>Navigate to the 'All' module in the 'ChromaTech Queries' application. Then wait 10 Seconds</description>
+        <display_name>Navigate to Module</display_name>
+        <inputs/>
+        <mugshots_cache_json/>
+        <notes>Validate it opens a list layout of ChromaTech sold products table&#13;
+&#13;
+</notes>
+        <order>6</order>
+        <step_config display_value="Navigate to Module">c832fc4073720300c79260bdfaf6a7a0</step_config>
+        <sys_class_name>sys_atf_step</sys_class_name>
+        <sys_created_by>Mimi.QA</sys_created_by>
+        <sys_created_on>2026-01-03 12:34:19</sys_created_on>
+        <sys_id>847ef410c3defad0b202be3ed40131ef</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>Navigate to Module</sys_name>
+        <sys_package display_value="ChromaTech Ticket logging System" source="x_1839224_chroma_0">0ab6f4efc34e76d0b202be3ed4013104</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_update_name>sys_atf_step_847ef410c3defad0b202be3ed40131ef</sys_update_name>
+        <sys_updated_by>Mimi.QA</sys_updated_by>
+        <sys_updated_on>2026-01-03 14:23:21</sys_updated_on>
+        <table>x_1839224_chroma_0_chromatech_sold_products</table>
+        <test display_value="ATF-08: Verify Application Menu &amp; Modules">703c3010c39efad0b202be3ed4013129</test>
+        <timeout>1970-01-01 00:00:10</timeout>
+        <warning_message/>
+    </sys_atf_step>
+    <sys_variable_value action="delete_multiple" query="document_key=847ef410c3defad0b202be3ed40131ef"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_atf_step</document>
+        <document_key>847ef410c3defad0b202be3ed40131ef</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Mimi.QA</sys_created_by>
+        <sys_created_on>2026-01-03 12:34:19</sys_created_on>
+        <sys_id>d99ef810c3defad0b202be3ed40131a5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Mimi.QA</sys_updated_by>
+        <sys_updated_on>2026-01-03 12:34:19</sys_updated_on>
+        <value>e383aeefc34eb6d0b202be3ed4013157</value>
+        <variable display_value="Module">b6d2b40c73720300c79260bdfaf6a786</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="table=var__m_atf_input_variable_c832fc4073720300c79260bdfaf6a7a0^id=847ef410c3defad0b202be3ed40131ef"/>
+</record_update>

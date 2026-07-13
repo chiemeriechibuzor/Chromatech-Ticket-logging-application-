@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_atf_step">
+    <sys_atf_step action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <callable_outputs/>
+        <copied_from/>
+        <description>Run Server Side Validation Script</description>
+        <display_name>Run Server Side Script</display_name>
+        <inputs/>
+        <mugshots_cache_json/>
+        <notes/>
+        <order>1</order>
+        <step_config display_value="Run Server Side Script">41de4a935332120028bc29cac2dc349a</step_config>
+        <sys_class_name>sys_atf_step</sys_class_name>
+        <sys_created_by>Mimi.QA</sys_created_by>
+        <sys_created_on>2026-01-02 16:36:02</sys_created_on>
+        <sys_id>83dba888c35e7ad0b202be3ed40131e5</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Run Server Side Script</sys_name>
+        <sys_package display_value="ChromaTech Ticket logging System" source="x_1839224_chroma_0">0ab6f4efc34e76d0b202be3ed4013104</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_update_name>sys_atf_step_83dba888c35e7ad0b202be3ed40131e5</sys_update_name>
+        <sys_updated_by>Mimi.QA</sys_updated_by>
+        <sys_updated_on>2026-01-02 16:41:23</sys_updated_on>
+        <table/>
+        <test display_value="ATF-07: Verify Fields Types &amp; Choices for ChromaTech Sold Products">32bba488c35e7ad0b202be3ed40131f8</test>
+        <timeout/>
+        <warning_message/>
+    </sys_atf_step>
+    <sys_variable_value action="delete_multiple" query="document_key=83dba888c35e7ad0b202be3ed40131e5"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_atf_step</document>
+        <document_key>83dba888c35e7ad0b202be3ed40131e5</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Mimi.QA</sys_created_by>
+        <sys_created_on>2026-01-02 16:36:02</sys_created_on>
+        <sys_id>185c64c8c35e7ad0b202be3ed401316c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Mimi.QA</sys_updated_by>
+        <sys_updated_on>2026-01-02 16:36:02</sys_updated_on>
+        <value>3.1</value>
+        <variable display_value="Jasmine version">42f2564b73031300440211d8faf6a777</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_atf_step</document>
+        <document_key>83dba888c35e7ad0b202be3ed40131e5</document_key>
+        <order>200</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Mimi.QA</sys_created_by>
+        <sys_created_on>2026-01-02 16:36:02</sys_created_on>
+        <sys_id>5c5c64c8c35e7ad0b202be3ed401316c</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_updated_by>Mimi.QA</sys_updated_by>
+        <sys_updated_on>2026-01-02 16:41:23</sys_updated_on>
+        <value>(function(outputs, steps, params, stepResult, assertEqual) {&#13;
+    var tableName = 'x_1839224_chroma_0_chromatech_sold_products'; // Update with your table name&#13;
+    var errors = [];&#13;
+&#13;
+    // Define expected configuration&#13;
+    var expectedFields = {&#13;
+        'product_name': 'string',&#13;
+        'serial_number': 'string',&#13;
+        'sold_to': 'reference',&#13;
+        'date_sold_on': 'glide_date_time',&#13;
+        'product_type': 'choice',&#13;
+        'cost': 'price',&#13;
+        'manufacturing_date': 'glide_date_time',&#13;
+        'warranty_period_months': 'integer',&#13;
+        'is_extended_warranty': 'boolean',&#13;
+        'warranty_extending_date': 'glide_date_time',&#13;
+        'warranty_expiring_at': 'glide_date_time'&#13;
+    };&#13;
+&#13;
+    var expectedChoices = ['Air Conditioners', 'Coolers', 'Ceiling Fans'];&#13;
+&#13;
+    // 1. Verify Field Types&#13;
+    for (var field in expectedFields) {&#13;
+        var grDict = new GlideRecord('sys_dictionary');&#13;
+        grDict.addQuery('name', tableName);&#13;
+        grDict.addQuery('element', field);&#13;
+        grDict.query();&#13;
+&#13;
+        if (grDict.next()) {&#13;
+            if (grDict.internal_type.toString() !== expectedFields[field]) {&#13;
+                errors.push("Field '" + field + "' type mismatch: expected " + expectedFields[field] + ", found " + grDict.internal_type);&#13;
+            }&#13;
+        } else {&#13;
+            errors.push("Field '" + field + "' not found on table '" + tableName + "'.");&#13;
+        }&#13;
+    }&#13;
+&#13;
+    // 2. Verify Choice Values for 'Product Type'&#13;
+    var grChoice = new GlideRecord('sys_choice');&#13;
+    grChoice.addQuery('name', tableName);&#13;
+    grChoice.addQuery('element', 'product_type');&#13;
+    grChoice.addQuery('inactive', false);&#13;
+    grChoice.query();&#13;
+&#13;
+    var actualChoices = [];&#13;
+    while (grChoice.next()) {&#13;
+        actualChoices.push(grChoice.label.getDisplayValue());&#13;
+    }&#13;
+&#13;
+    expectedChoices.forEach(function(choice) {&#13;
+        if (actualChoices.indexOf(choice) === -1) {&#13;
+            errors.push("Missing Choice Value: '" + choice + "' in Product Type.");&#13;
+        }&#13;
+    });&#13;
+&#13;
+    // 3. Final Result Handling&#13;
+    if (errors.length === 0) {&#13;
+        stepResult.setOutputMessage("Success: All fields and types verified.");&#13;
+        stepResult.setSuccess();&#13;
+        return true;&#13;
+    } else {&#13;
+        stepResult.setOutputMessage("Failure:\n" + errors.join('\n'));&#13;
+        stepResult.setFailed();&#13;
+        return false;&#13;
+    }&#13;
+&#13;
+})(outputs, steps, params, stepResult, assertEqual);&#13;
+</value>
+        <variable display_value="Test script">989d9e235324220002c6435723dc3484</variable>
+    </sys_variable_value>
+</record_update>

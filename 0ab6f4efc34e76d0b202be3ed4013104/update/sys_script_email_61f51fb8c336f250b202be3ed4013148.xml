@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_email">
+    <sys_script_email action="INSERT_OR_UPDATE">
+        <name>chromatech_previous_queries_table</name>
+        <new_lines_to_html>false</new_lines_to_html>
+        <script><![CDATA[(function runMailScript(current, template, email, email_action, event) {
+    var requesterSysId = event.parm2;  // Requester's sys_id from event
+
+    if (!requesterSysId) {
+        template.print('<p>No requester found - skipping previous queries table.</p>');
+        return;
+    }
+
+    var gr = new GlideRecord('x_1839224_chroma_0_chromatech_customer_queries');  // Your table name; adjust if different
+    gr.addQuery('requester', requesterSysId);  // Filter by requester field
+    gr.addQuery('sys_id', '!=', event.parm1);  // Exclude the new record
+    gr.orderByDesc('sys_created_on');  // Show newest first
+    gr.query();
+
+    if (!gr.hasNext()) {
+        template.print('<p>You have no previous queries.</p>');
+        return;
+    }
+
+    template.print('<h3>Your Previous Queries</h3>');
+    template.print('<table border="1" cellpadding="5" style="border-collapse: collapse; width: 100%;">');
+    template.print('<tr><th>Number</th><th>Short Description</th><th>State</th><th>Priority</th><th>Assigned To</th></tr>');
+
+    while (gr.next()) {
+        template.print('<tr>');
+        template.print('<td>' + (gr.number || 'N/A') + '</td>');
+        template.print('<td>' + (gr.short_description || 'N/A') + '</td>');
+        template.print('<td>' + (gr.state ? gr.state.getDisplayValue() : 'N/A') + '</td>');  // Adjust 'state' if it's 'issue_state'
+        template.print('<td>' + (gr.priority ? gr.priority.getDisplayValue() : 'N/A') + '</td>');
+        template.print('<td>' + (gr.assigned_to ? gr.assigned_to.getDisplayValue() : 'N/A') + '</td>');
+        template.print('</tr>');
+    }
+
+    template.print('</table>');
+})(current, template, email, email_action, event);]]></script>
+        <sys_class_name>sys_script_email</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-01-30 09:26:35</sys_created_on>
+        <sys_id>61f51fb8c336f250b202be3ed4013148</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>chromatech_previous_queries_table</sys_name>
+        <sys_package display_value="ChromaTech Ticket logging System" source="x_1839224_chroma_0">0ab6f4efc34e76d0b202be3ed4013104</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_update_name>sys_script_email_61f51fb8c336f250b202be3ed4013148</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-01 16:06:51</sys_updated_on>
+    </sys_script_email>
+</record_update>

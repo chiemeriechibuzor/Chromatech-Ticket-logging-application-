@@ -1,0 +1,2039 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_hub_flow">
+    <sys_hub_flow action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>false</active>
+        <annotation/>
+        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=57733000,viewActivatedIn=naturalLanguage</attributes>
+        <authored_on_release_version>28100</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description>Handles 3-level approvals (Manager, Group, Hardcoded) and consecutive tasks for Procurement and Shipping</description>
+        <display_name_after_preview/>
+        <flow_priority>MEDIUM</flow_priority>
+        <generation_source/>
+        <internal_name>hardware_request__item_fulfillment</internal_name>
+        <label_cache>[{"name":"6bbb7a41-2905-4e97-8bf8-e298c33c40dd.Record.manager","label":"3 - Look Up Record➛User Record➛Manager","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","parent_table_name":"sys_user","column_name":"manager","choices":[{"order":0.0}],"usedInstances":{"80cf3a03-eb76-4c72-b32c-788ca09ead47":["condition"]}},{"name":"{{static.62826bf03710200044e0bfc8bcbe5df1}}","label":"Abel Tuter (architect)","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","choices":[{"order":0.0}],"usedInstances":{"46b01560-e600-4339-ad61-174001736d66":["approval_conditions"]}},{"name":"6f0382fc-35c5-4f0c-a958-7e014aa2bcb9.approval_state","label":"17 - Ask For Approval➛Approval State","reference_display":"Approval State","type":"choice","base_type":"choice","choices":[{"label":"-- None --","value":"","order":0.0},{"label":"Not Yet Requested","value":"not requested","order":1.0},{"label":"Requested","value":"requested","order":2.0},{"label":"Approved","value":"approved","order":3.0},{"label":"Rejected","value":"rejected","order":4.0},{"label":"Cancelled","value":"cancelled","order":5.0},{"label":"No Longer Required","value":"not_required","order":6.0},{"label":"Skipped","value":"skipped","order":7.0}],"usedInstances":{},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"Service Catalog_1.request_item.requested_for","label":"Trigger - Service Catalog➛Requested Item Record➛Requested for","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","parent_table_name":"sc_req_item","column_name":"requested_for","choices":[{"order":0.0}],"usedInstances":{}},{"name":"{{static.c531aea7c3b23250b202be3ed401318f}}","label":"Network \u0026 Cable Group","reference":"sys_user_group","reference_display":"Group","type":"reference","base_type":"reference","usedInstances":{"e99b4e30-b18c-4c74-b9d1-9aa0733d8f3e":["approval_conditions"],"9a6c49f0-1bed-4d63-a92a-03cf09be26a0":["approval_conditions"]}},{"name":"ee38009f-21f0-4f4f-b4a9-40f1e68235e5.manager","label":"1 - Get Catalog Variables➛manager","reference":"sys_user","reference_display":"manager","type":"reference","base_type":"reference","usedInstances":{},"attributes":{"catalogType":"8","catalogTypeLabel":"Reference"}},{"name":"Service Catalog_1.request_item","label":"Trigger - Service Catalog➛Requested Item Record","reference":"sc_req_item","reference_display":"Requested Item","type":"reference","base_type":"reference","usedInstances":{"d3fe3344-40c2-458e-94b2-0d74b612bee5":["record"],"ce2f500f-54a8-4157-bb22-840a3912daf8":["record"],"8698b255-5b10-4cc6-a121-d2362243f60f":["record"],"00dd8af6-4751-4be0-b2e2-a626bae514d8":["record"],"21f9d554-0c02-40fb-b561-f2fb1766a95c":["ah_requested_item"],"c8811540-463e-443a-ba09-37fd3c9a06da":["record"],"1c1cba4f-c867-41ca-96b2-a52692819926":["record"],"621a0cb3-044f-44aa-afbc-c682111736ec":["record"],"0de7d409-05f9-40a0-a8ae-fec0576efc17":["record"],"3ed63408-0992-4e31-9f24-b7f6fc8695f1":["record"],"ba7dde3b-a832-4e74-81ae-db4430d18f13":["record"],"e99b4e30-b18c-4c74-b9d1-9aa0733d8f3e":["record"],"85b4020d-b61e-4512-b933-a4a04de95e38":["record"],"efc5421c-89af-4f7e-8bdf-516ad2d6d11b":["ah_requested_item"],"46b01560-e600-4339-ad61-174001736d66":["record"],"6f0382fc-35c5-4f0c-a958-7e014aa2bcb9":["record"],"ba05e775-d8ea-46b2-9bf6-352836922853":["record"],"42a1eb1e-a7dc-49e5-9c5f-82d53363683a":["record"],"ee38009f-21f0-4f4f-b4a9-40f1e68235e5":["requested_item"],"9a6c49f0-1bed-4d63-a92a-03cf09be26a0":["record"]},"attributes":{"default_search_field":"number"}},{"name":"Service Catalog_1.request_item.request.requested_for","label":"Trigger - Service Catalog➛Requested Item Record➛Request➛Requested for","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","parent_table_name":"sc_request","column_name":"requested_for","choices":[{"order":0.0}],"usedInstances":{}},{"name":"ee38009f-21f0-4f4f-b4a9-40f1e68235e5.email","label":"1 - Get Catalog Variables➛email","reference":"","reference_display":"email","type":"string","base_type":"string","usedInstances":{},"attributes":{"catalogType":"6","catalogTypeLabel":"Single Line Text"}},{"name":"ee38009f-21f0-4f4f-b4a9-40f1e68235e5.enter_supervisor_name","label":"1 - Get Catalog Variables➛enter_supervisor_name","reference":"sys_user","reference_display":"enter_supervisor_name","type":"reference","base_type":"reference","usedInstances":{},"attributes":{"catalogType":"8","catalogTypeLabel":"Reference"}},{"name":"Service Catalog_1.request_item.requested_for.email","label":"Trigger - Service Catalog➛Requested Item Record➛Requested for➛Email","reference":"","reference_display":"Email","type":"email","base_type":"email","parent_table_name":"sys_user","column_name":"email","choices":[{"order":0.0}],"usedInstances":{"c8811540-463e-443a-ba09-37fd3c9a06da":["ah_to"]}},{"name":"e99b4e30-b18c-4c74-b9d1-9aa0733d8f3e.approval_state","label":"11 - Ask For Approval➛Approval State","reference_display":"Approval State","type":"choice","base_type":"choice","choices":[{"label":"-- None --","value":"","order":0.0},{"label":"Not Yet Requested","value":"not requested","order":1.0},{"label":"Requested","value":"requested","order":2.0},{"label":"Approved","value":"approved","order":3.0},{"label":"Rejected","value":"rejected","order":4.0},{"label":"Cancelled","value":"cancelled","order":5.0},{"label":"No Longer Required","value":"not_required","order":6.0},{"label":"Skipped","value":"skipped","order":7.0}],"usedInstances":{},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"{{static.4061e2e7c3b23250b202be3ed4013150}}","label":"Network \u0026 Hub Group","reference":"sys_user_group","reference_display":"Group","type":"reference","base_type":"reference","usedInstances":{"6f0382fc-35c5-4f0c-a958-7e014aa2bcb9":["approval_conditions"],"9a6c49f0-1bed-4d63-a92a-03cf09be26a0":["approval_conditions"]}},{"name":"{{static.681ccaf9c0a8016400b98a06818d57c7}}","label":"Joe Employee","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","choices":[{"order":0.0}],"usedInstances":{"46b01560-e600-4339-ad61-174001736d66":["approval_conditions"]}},{"name":"ee38009f-21f0-4f4f-b4a9-40f1e68235e5.category","label":"1 - Get Catalog Variables➛category","reference":"","reference_display":"category","type":"choice","base_type":"choice","choices":[{"label":"-- None --","value":"","order":100.0},{"label":"Cables","value":"cables","order":100.0},{"label":" Repeaters","value":" repeaters","order":100.0},{"label":"Hub","value":"hub","order":100.0},{"label":"Switches","value":"switches","order":100.0}],"usedInstances":{},"attributes":{"catalogType":"5","catalogTypeLabel":"Select Box"}},{"name":"ee38009f-21f0-4f4f-b4a9-40f1e68235e5.enter_supervisor_name.manager","label":"1➛enter_supervisor_name➛Manager","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","parent_table_name":"sys_user","column_name":"manager","choices":[{"order":0.0}],"usedInstances":{}},{"name":"{{static.f24162e7c3b23250b202be3ed4013176}}","label":"Network \u0026 Repeaters Group","reference":"sys_user_group","reference_display":"Group","type":"reference","base_type":"reference","usedInstances":{"9a6c49f0-1bed-4d63-a92a-03cf09be26a0":["approval_conditions"]}}]</label_cache>
+        <master_snapshot>e482f577c33e7250b202be3ed4013187</master_snapshot>
+        <master_snapshot_digest/>
+        <name>Hardware Request - Item Fulfillment</name>
+        <natlang/>
+        <outputs/>
+        <pre_compiled>false</pre_compiled>
+        <remote_trigger_id>81823977c33e7250b202be3ed4013182</remote_trigger_id>
+        <run_as>user</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <show_draft_actions>false</show_draft_actions>
+        <show_triggered_flows>false</show_triggered_flows>
+        <status>draft</status>
+        <substatus/>
+        <sys_class_name>sys_hub_flow</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-07 17:49:05</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>55465aafc3323250b202be3ed40131db</sys_id>
+        <sys_mod_count>121</sys_mod_count>
+        <sys_name>Hardware Request - Item Fulfillment</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="ChromaTech Ticket logging System" source="x_1839224_chroma_0">0ab6f4efc34e76d0b202be3ed4013104</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_update_name>sys_hub_flow_55465aafc3323250b202be3ed40131db</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-08 19:45:48</sys_updated_on>
+        <type>flow</type>
+        <updation_source/>
+        <version>2</version>
+        <version_record display_value="Created 08/02/2026 12:45:41">c38a77fbc37eb250b202be3ed401315b</version_record>
+    </sys_hub_flow>
+    <sys_translated_text action="delete_multiple" query="documentkey=55465aafc3323250b202be3ed40131db"/>
+    <sys_variable_value action="delete_multiple" query="document_key=55465aafc3323250b202be3ed40131db"/>
+    <sys_flow_catalog_trigger action="INSERT_OR_UPDATE">
+        <active>false</active>
+        <catalog_item/>
+        <name/>
+        <published_version/>
+        <run_flow_in>background</run_flow_in>
+        <sys_class_name>sys_flow_catalog_trigger</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-08 09:51:22</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>81823977c33e7250b202be3ed4013182</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-08 14:15:52</sys_updated_on>
+        <trigger_definition/>
+    </sys_flow_catalog_trigger>
+    <sys_trigger_runner_mapping action="delete_multiple" query="identifier=55465aafc3323250b202be3ed40131db"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=55465aafc3323250b202be3ed40131db"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=55465aafc3323250b202be3ed40131db^sys_idNOT IN9d465aafc3323250b202be3ed40131df"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>55465aafc3323250b202be3ed40131db</id>
+        <name>Hardware Request - Item Fulfillment</name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-07 17:49:05</sys_created_on>
+        <sys_id>9d465aafc3323250b202be3ed40131df</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-07 17:49:05</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=9d465aafc3323250b202be3ed40131df"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=55465aafc3323250b202be3ed40131db^sys_idNOT IN835d5b23c3ba3250b202be3ed4013185,9466d663c3723250b202be3ed4013188"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>default_search_field=number,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=reference,uiTypeLabel=Reference</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>request_item</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="Reference">reference</internal_type>
+        <label>Request Item</label>
+        <mandatory>true</mandatory>
+        <max_length>32</max_length>
+        <model display_value="Hardware Request - Item Fulfillment">55465aafc3323250b202be3ed40131db</model>
+        <model_id>55465aafc3323250b202be3ed40131db</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_55465aafc3323250b202be3ed40131db</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference display_value="" name="sc_req_item">sc_req_item</reference>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-07 22:59:41</sys_created_on>
+        <sys_id>835d5b23c3ba3250b202be3ed4013185</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-07 22:59:41</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=835d5b23c3ba3250b202be3ed4013185"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,test_input_hidden=true,uiType=table_name,uiTypeLabel=Table Name</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value>sc_req_item</default_value>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>table_name</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">table_name</internal_type>
+        <label>Table Name</label>
+        <mandatory>false</mandatory>
+        <max_length>40</max_length>
+        <model display_value="Hardware Request - Item Fulfillment">55465aafc3323250b202be3ed40131db</model>
+        <model_id>55465aafc3323250b202be3ed40131db</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_55465aafc3323250b202be3ed40131db</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-07 17:49:34</sys_created_on>
+        <sys_id>9466d663c3723250b202be3ed4013188</sys_id>
+        <sys_mod_count>26</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-08 17:38:18</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=9466d663c3723250b202be3ed4013188"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=55465aafc3323250b202be3ed40131db"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=55465aafc3323250b202be3ed40131db"/>
+    <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=55465aafc3323250b202be3ed40131db^sys_idNOT IN028616e3c3323250b202be3ed40131c2"/>
+    <sys_hub_trigger_instance_v2 action="INSERT_OR_UPDATE">
+        <comment/>
+        <display_text/>
+        <flow display_value="Hardware Request - Item Fulfillment">55465aafc3323250b202be3ed40131db</flow>
+        <generation_source/>
+        <name>Service Catalog</name>
+        <published_version/>
+        <remote_sys_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-07 17:50:14</sys_created_on>
+        <sys_id>028616e3c3323250b202be3ed40131c2</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-08 09:36:29</sys_updated_on>
+        <trigger_definition display_value="Service Catalog">c43a1011c36813002841b63b12d3ae15</trigger_definition>
+        <trigger_inputs>H4sIAAAAAAAA/61TTW/bMAz9K4FOG5CDk6zNktswoECAbgWarpdiMGSJcoTJkifJbr2g/32kPxK3M4YB3ckyRfI9Pj49HJnhGRi2ZbeVnV0Z9zjbWTZn2kbwlpu7pgS8FAenBWC8O1zrENn24cjUPTcVJSjnIfeushKT1PWop6KeGr8vMnYFz6mOznswICJItlXcBMDItzD++6JD0DbvA8/zEWzGxY+/w54zZu8kKF6Z+P6NBL7PWcGt5NH55pzkXXEHRWl4hFPQeQmebRdJMmc1Ud43YSc7VMsLwveVTYlrqkn2up8Lj1IHbNbcnyPioI30YFF5pFByjx0i9T++utIEcZlsErFebtbrZbJaJYm6yJRQQqw/LpLLxcUGG06vfpJYfOWD8WTwFMHKkWB/quOByxtrzoEDGqybquBPQf/C5h8SylOAY4h+4tNv2qsxCEEsQutA8+87r6dM0w+SkK2mer2wbT3l9kEK8kWP9vn/E1y8meCSCHbS3ZRROzQLW9FqeWaoJjShW7gHgSVp9DrPsRCLnKkK+3XKFz37kUurgNuCkhxBKx6ex/7gHm+HdV5p21LqL40T3Jz+eETkrIqk35FxWXOsIEdHjxjPrSvSnxVVtO9kwErbiSghCK/L+ElEXcPp0f4Gx53JPOsEAAA=</trigger_inputs>
+        <trigger_outputs/>
+        <trigger_type>service_catalog</trigger_type>
+        <updation_source/>
+    </sys_hub_trigger_instance_v2>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=55465aafc3323250b202be3ed40131db^sys_idNOT IN0e1ee6bfc3f2b250b202be3ed40131ef,0e59f267c3763250b202be3ed4013194,15310f67c3b63250b202be3ed401318a,1732976bc33a3250b202be3ed40131dc,27e68b63c3f63250b202be3ed401313b,4bca92abc3723250b202be3ed4013155,7dc0d3a7c33a3250b202be3ed401315c,87d44b6fc3b63250b202be3ed401313d,88871663c3723250b202be3ed40131e1,933cde2fc3723250b202be3ed40131e2,9ea65a6bc3323250b202be3ed401317e,b4680f27c3f63250b202be3ed4013185,bea297abc33a3250b202be3ed40131a5,ca8e9663c3b23250b202be3ed401316d,cdcf7ea3c3b63250b202be3ed4013191,db888367c3f63250b202be3ed4013125,de3d366fc3763250b202be3ed4013168,e8a15ba3c33a3250b202be3ed40131d7,ebdeba23c3b63250b202be3ed40131c7"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Ask For Approval">f8f2e9920b10030085c083eb37673abd</action_type>
+        <action_type_parent display_value="Ask For Approval">bae0a1120b10030085c083eb37673a92</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Hardware Request - Item Fulfillment">55465aafc3323250b202be3ed40131db</flow>
+        <generation_source/>
+        <order>9</order>
+        <parent_ui_id>bea3a97d-8960-4e53-be4e-f2d2849810ce</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-08 14:11:40</sys_created_on>
+        <sys_id>0e1ee6bfc3f2b250b202be3ed40131ef</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-08 14:15:17</sys_updated_on>
+        <ui_id>9a6c49f0-1bed-4d63-a92a-03cf09be26a0</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1Y227bOBD9FUPPjpe6WvZbsEEWWexugSTblzgQKGpkc0FTrkSl9Rr69w4lylbsWDVSF2mLvhjgcC5nZs5QpB82Fk+sqTUOUwcmE4fENiEuIaHPSOhC7I6DsUsZsYaWpEtAzRxYlie4fqKi1ILN5g7yJ85g8DtVVGTzyB7l8KGEQkVcwbKqUDnhxUrQ9XtjgxK24CLJQVrTh8ehtaI5uleQW9PN3pZaryASNAaBhlcZK5cg1eDmCn2cCr21vm2x7+eiY+A6Md4jroW4pfGQoQWfFMgEMFpKRQFDa0llQlWWr62pyksU5ECTd1KstxoLLlWT6JJ+Kvj/6N51tF4KmBkzRdguI1OgtjYZ1vPdSvFMNhJFY9EWLhPlUv7TZKBLCyktheqUtizQH6w0ZA2iQZjeLbKPt228ay7r5AxakTEqtiuqVM7jUkGhuwEC6pos6WrF5Txa5dkTr40RynI0F7gYpSL7iDELPpcjyjTuERaIjq5RflWL39Oc6yT+RjdoXNXJRx9KHbdJwwCO6pybhFGrYDlfqUv0+QQGYTU0rI1Zb+vZrtONux1pCxYhR2t+HrLztmEvJIObZv91XL3XMQd1o4Yn431mfIjfELVeRrJxbXhq9/PUSE4hakjehqgG0Q/G1C+RFLzA9fFnnLrEdmwSQhCGbEIoC4PA99xdkzEeIqYCqUkL9L2j6xlP0DusmJy3jDwBXGt4adANblt0R2EblhZtKMNQ52wMtYMflKIlv9+rTSP5a78734bLOty/kuPxdqO7HzhxMCFhcpGkJL7wQte/oAzIBQS2D34SMN92v5r/xO479JLwBSKlHET3itFuHI5BZ+d143CtQz07pE/AezAS1wbwsUTMQNTLvWP7fEMREvJGU/Hz3jBYLxmgc3j/l5W57OFutOBF3dKjHO5onIvLJ8Bvjf9s8O9TeT+tHia7v5j8HTPZ83upAC+cXiyTCdf4ig6fmzMPiku5/uNhsykUVZyNmO/aFOiYubHjOj6JHeLE4ELiEdu1w7RCHK2uRwIbHDii65Oubup4dnBUdxxU1ePhQH2PEF830bs7VymgaKf6hFZuX7zGrre1ZqZ39zhjZObaO9cD+O3G+ud8WbBeHqSTXd+TEstBVfcFvJlZDciZNZ1ZMpMws4YzS2tFmhC1GDUQ3Hajlm02VdVIypwaB3ZnubNO6LqoNQu2gARJVUufSRqmG/k5/yi6MwEGV4j7t3ve+SZ+uWrbf5vKxv7FQraPnDaTpnK8+0X0z/ZF9H4Nzt4zJtpe/fEDiEfQq6fp8TO5FQHyBBUAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=0e1ee6bfc3f2b250b202be3ed40131ef"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Ask For Approval">f8f2e9920b10030085c083eb37673abd</action_type>
+        <action_type_parent/>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Hardware Request - Item Fulfillment">55465aafc3323250b202be3ed40131db</flow>
+        <generation_source/>
+        <order>11</order>
+        <parent_ui_id>956235fe-3849-4190-8af6-82ac34e02379</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-07 20:22:20</sys_created_on>
+        <sys_id>0e59f267c3763250b202be3ed4013194</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-08 14:11:40</sys_updated_on>
+        <ui_id>e99b4e30-b18c-4c74-b9d1-9aa0733d8f3e</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1X30/bMBD+V6o8l85JmjTlDQ0xMW1DAsYLQpFjX6gnNymJw49V/d93TpwmtBAqWgSTeKnqc8733XffOZfLuSW4tW/B0Hc9/BnFLrEdmwTgBwEbE8oC3/eGrtW3EjoFfJLOZll6S2WYAc3TBDdwUegd/MtFPpP04aKxsImQPIPE2r+86lszmuEpCjJrf76ypR5mEEoagUTHM5WJ5BrdNwVXOx4YdL3TGt2zsHVA3MjrUGnGNS6nb8G9goQDho6pzKFvTWnCqUqzh6UFT+EniWwME5GoKuMpvc/FXzza9ol+MAbMkRk6lsvQUFWzlAoGJzMlEFppUTSSNYWpLKbJryoPTTLEtJCqRXKR43kw06A1CgMpPpukd6d1wCORlPmZTZkyKpcrqpCFqFCQ68IU4nyFm8ryY7U6IGGKEcMpsouWUFMsyigIejq4lrgYxDK9Q3S5uE4GlOkMB0gmHRyh/bA0X9BM6HR/4jHorMP9TsRNAce6+r4T+WMS8D0ek2hvGLjeHmVA9sC3PfC4zzzbtRYlteFNoZOqSDJ0hBWj+EDOMjFTBwjhFkzmi77RP7FjB8Zjh0Q2IS4hgcdI4ELkjvyRS3nwhJBiAZK35F9vrLdBa+d17XCkQ/VKBfQ3xrvWEkcG8HOJmIYol2FSBdt5UwSEvFNXqKzYpineRusv6bZK+AXxsk4xQOvy/pMWWdKh3XAi8rKkz2q49cSutLwB/Nr5e4V/VcqraXUo2f1U8gdW8ijokgIjTckzYFjRloTn8zPIbpHl3lfEKdPr0B5kgC+RXIVCwXSx2OF8cpiyQnPYOz6sVbwB9Nr7tMa+movRLTenh4I3wiXdwq00sYluXedTtTu+f72u0sfjptK8QEqogjeamtkEeCGhd4ghvpyL1hX7MsKltIvK/0nQ9cxsApXmUIn2Bevt7IId/qfj89tNxeFykkRlYjttPfYOO3UBLREs3/8sTbjQePOWiKsZE/KD5OHb5XyeK6oEGzDPtSnQEXMjx3U8EjnEicAFPiS2awfxYnG1rv5tjnpd2zTfjCjpvG6ZDahZ3ufGr5Mq0zrNd6hxMm0z3NX1/n5jycfsm21bJGKd73XW1L3irmmKnIU4gJTDx7rMT6vRBHjvuNp/nXbPdcxH0/QGeB85r+M3Si2XK9OzvcPp+VOk24v06h8LRQnqwBMAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=0e59f267c3763250b202be3ed4013194"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Send Email">c1806bf4a70323008299b39f087901cb</action_type>
+        <action_type_parent/>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Hardware Request - Item Fulfillment">55465aafc3323250b202be3ed40131db</flow>
+        <generation_source/>
+        <order>24</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-07 20:56:41</sys_created_on>
+        <sys_id>15310f67c3b63250b202be3ed401318a</sys_id>
+        <sys_mod_count>26</sys_mod_count>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-08 19:36:59</sys_updated_on>
+        <ui_id>d3fe3344-40c2-458e-94b2-0d74b612bee5</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1YW0/jOBT+K1aeS0mvUN64LBqkZWcGujMaAYoc22m8OHHGdtrpIv77HjtJm1IoXSgsrHio1Pj6nXO+79g+Fzcep96e1xvs+v0w6uIdv9Pu+P5uezAIO4PI390Z+C2KvYaX4oTBSBwHRsLnGIvcft/cMNbZ9f1BtNVuRf5WN+pGW2EXD7a6ftRi/d12p8d6TZYapgKdZ0yNuZYqsMvd3qI1pyc4xSOm1p/AEswFDAeklOtM4Om3dwOYxFxQxVJv7+Kq4WVYwc4Axtu7udNlphkLBA6ZALvOjeLpCKavG9Bq4lAuR9euDJ+6WlMqagF0Gh77ZVhKGewRYaFZwwNLKTZSTb09o3JoUAzTz6mY1kb80vxvWA+84Nv+iIEJxG7g1T6DMlBFM4klJ+xzZrhMixaDQ1HOIVLkSfpHgdmGmEU4F6YKMbTkGtZjmYWamhmS6DyWk7Nqw2OeOqvKTiEJFrMvbMD2MDdMW78zwRJYKEhwloFHgkzJMXeTAUvSHAn4aEZCTmBTzUdpExMLvAmewc1jaD9yzd+w4taKU1gGJlvggifcBdez3vNunUOCn7mFUphWGhEUfoABmiiemX3YYcxKvLeNUsh+vx+G/bC305nHfUAiuhNGfbxDOvNQTzBsm2B1HTjq1STdWhaNw/ZUZg5h8vaxhVmxcw2U1eSTlIicMvS9grvKgpK2oZSC4XTO2/Zq3pYtS8SNueWOV5AQGYkgbGKKMJrtbBtNzJADAP+wQVwjDeFqoqFEvARfm9FAU5mjJNcGhhnoMViN4I9iBMA2vZpcuq8iljK0ZevRvXF/F2p6rnRadFXKZP2FLBkSUlPMsmA2lMbXwFRNPDg8vAfhA4m89zRBfGTy18vkeGXoo/ZisCWd1vh4mft+h1A+RkRgrd0nvfR+dA4Ofrv0kLVlS0dki2RVV9UajxmnVePh/unX/f2qCzxFmNZs1m3NvCz2Yt8hySmGMsi7MMKmRZ5GUiUu27m8aNOkXSJXLgAoi2EkgjGuJ8aKTuwKtuHii5J/MWK2P1WtliBXNrWmcoIgTrCPYc3CzG2wswBxmW7M8K/rGr6vkYzAXoqnDcjmOuaOV5DW9TVYpVHIWIoISMkw2kSlnxIgnR1UnB5Cjrg2nOjSKdDMUg2OWnQNmG9ZNgbOOw9fABUNT7Hl5/Y5cO/KOjjJjJi+pGv+/BecmHAhUCkxZ4xRmFxb0wt6OOwIEg/8kLUmsW4CFykOXLZ7gL/gQJV2lLYrTJ3/8BjOW6u/lzT0x7qGHgByOMBHECjdeEFAZF1AhzHwAHxHYvSlJrkhw8ldeMtH12q470ju/yuBvmFJbUAET6Ht0+5Xn4anv1e3qzWO2Nntqjhgl07c8n4Vm0TMb1c7z7xd9Xu9Tv/jelW/XmUT2qZKZllp20auWN2V8Sd0HvDidbZQ9jq3hSHC0CEgh/wQtJqK/cxBBAEIPbm93eCb4Ai04JRwclRRdw3os+d38cA8q0y4a1JJYVpuEnA6Z7L/rIfzvtaScBC0rj2SJ9zEkIfvee922ouch9czd6y8n/sn8+7NaqAoYz1ZAgQORRXcoWL5kP5vXr7OGa6A+egbeHXZsDunT23NuSo0CUAETgDL9D8r5AFn0UnR/8Rqkt3Y3RBmj+THQS9MfsCIUgcLbaUMWs+SwdAe0vUqDzIljNp7+iPd19M910FB09I2t/mz831vdTWFLBzwOg/tpbTG7oU7ib09HpY3U7pM9pVjN1Lgf9yW2cSZJfdZ90CFqP9R6n9LxUm6MscxfyG4r1ObXANSNfFOaXJVZbL7UZl8q5XJq38AxEjJAC4eAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=15310f67c3b63250b202be3ed401318a"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Send Email">c1806bf4a70323008299b39f087901cb</action_type>
+        <action_type_parent/>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Hardware Request - Item Fulfillment">55465aafc3323250b202be3ed40131db</flow>
+        <generation_source/>
+        <order>20</order>
+        <parent_ui_id>c4c7c938-59ec-436c-9420-27228a4816b5</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-07 22:11:06</sys_created_on>
+        <sys_id>1732976bc33a3250b202be3ed40131dc</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-08 14:11:40</sys_updated_on>
+        <ui_id>ba05e775-d8ea-46b2-9bf6-352836922853</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1Y32/iOBD+V6w8AxsIP0rf9lpVV+m2K7XV3sN2FTnOBHzrxFnbKcsh/vcbJw6EQimiVW9X4gk89ni+mflmbOfrwuOxd+4Nxmf+MEr6dOQHvcD3z3rjcRSME/9sNPa7MfVaXkZTwJV0GhqJw0cqCjteLACCM98fJ+1eN/Hb/aSftKM+Hbf7ftKF4VkvGMCgA5kBFeoiB/XItVSh3W65JIeqp5SLw5enNKMTUKiASGOuc0HnX34bwGzKRawg886/fmt5OVVoGcF454snU2aeQyhoBAL9ujOKZxNUPzShteK93M6u3RmHut5TqtgCCFoe/DSQxYA2Eio0tDyEHlMj1dw7N6pAgQIaf87EvLHip+b/4n4YB9/OJ4AuMGvAawxDl6hKzKaSM/icGy6zSmJoJJwOk6JIs5sKs00xJLQQpk4xSgqN+0FuoWZmhSS5m8rZbW3wimelV25SSEbFakQN+h4VBrSNOwhIcaMwpXmOEQlzJR95qYxY0s5E4KCTCDlDo5pPsg5lFngHI0M7Vyi/LMVfqOLWi0+4DSpb4IKnvEyuZ6PnLcuAhD8KC6VyzTkRVnHABZopnpuPaOERHN5lyxWyPxxG0TAajIJ13scsiUdRMqQjFqxTPaNoNqXqe1hytVHS3e2iKbEdy8x7VP5wZWHW7DwAZa18nTFRxED+ruHu88DRNpJSAM3WvO3t562TbBF3yi13vIqExEiCaRNzQsnKshWaKZASAP6jhnBNNKarQ+4l4Q58Q6NF5rIgaaENLjM4Y6ia4B8FDMF2vEa59N+lWFxqnfRyZ95/i2p6bel0430tE4YbXTJirFEx2wXzRm38AEy14h8XFzsQPtPIB8cVxKmTv18n7+9NPYvXya5ax8ad7M7eWhiQC0Qt5CTsdhT8KECbECGmy+UbEvZSssJGlFxf1qw9APrqbKi6323twlOXHH9jZyTk8ZrE/qu6+ketJePYlnWjg8+4mWJP3tGMg94m37G185KRu3l/vZ5+W/5Xd6yj6c/wYFThEyq6Lv//tOUyGOXt+qWKoHtplfQ225+M542SeCh8P2A5sVjbhmfzlIGS0kQYrO/lZPzgPVTLAE9oRVzBkCnVJALIUPAPMANxtdWHvFq7XUnO1FFbHVeCf95/+quuvQOCtDoxqhBtxczV3NSkYl1so1eeGMPBIBiejozmkZHP4l6sZJ47397k2Ojuf/j11wlvFN66TjQLka3lKbHN7NuKxxCT62r+yPeANUxuKsOHgt5QfsYJR9wNmaNv91VnxT0eEBv3dGIcjMaN6ETuJrm5DiuaOt9K469m92D/fZhttDNdRLbNNthNHIPxt2rApE0WN0UagdpxJXph9Zt8pnnZn5XiyptdHj5zzx+ePtj8Sk/MeG+fA38jue/zwjwAUq345IG5733ZP70vf9X35bf/ADCp++L0FwAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=1732976bc33a3250b202be3ed40131dc"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Send Email">c1806bf4a70323008299b39f087901cb</action_type>
+        <action_type_parent/>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Hardware Request - Item Fulfillment">55465aafc3323250b202be3ed40131db</flow>
+        <generation_source/>
+        <order>26</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-07 21:21:41</sys_created_on>
+        <sys_id>27e68b63c3f63250b202be3ed401313b</sys_id>
+        <sys_mod_count>24</sys_mod_count>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-08 14:11:40</sys_updated_on>
+        <ui_id>8698b255-5b10-4cc6-a121-d2362243f60f</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1YzW7bOBB+FUJn25UtW47TU5sg2ADbFkiM7qEpBIqkbG4pUSWppG7gd9ln2SfboUTZcuw4hm1kW8A38Wc438x8M0Pqy6PHqXfuDUZnfhgnfTz0g17g+2e90SgORol/Nhz5XYq9lpfhlMFOPI2MhOE9FoUdPz4yFpz5/ihp97qJ3+4n/aQd9/Go3feTLgvPesGADTosM0xFusiZuudaqsgeN5+jHcVTnOEJU7sLsBRzAdsBKeU6F3j2+bcBTKZcUMUy7/zL15aXYwWaAYx3/vhkycxyFgkcMwF23RrFswmI7xrQWnAs16NrT4ahrs+UiloAQctjPwzLKAMdCRaatTywlGIj1cw7N6qACcUw/ZSJWWPHD81/wnngBd+uJwxMIFaB1xhGLlDVNJlKTtin3HCZVTMGx8LJECmKNPtYYbYhZgkuhKlDDDOFhvNYbqFmZoEkuZ3Kh5ta4RXPSqvcopAEi8UIG7A9LgzT1u9MsBQOilKc5+CRKFfynpfCgCXtTAQMOomQD6BU80nWwcQC74BncOcK5i/L6c9YcWvFBzgGhC1wwVNeBtez3vPmpUOi74WFUpnmjIgqP8AGTRTPzTvQcM8c3nnLJbIfhnEcxoNhsIz7iCR0GCchHpJgGeoHDGpTrL5FJfUaKd1dT5oS277MHIPwmysLs2bnDihr4euMiIIy9FcNd5sFjraxlILhbMnb3nbeupk14k655Y5XkRAZiSBsYoYwWmi2k2bKUAkAvrBBXCMN4eqgsUTcgW9ItNBMFigttIFtBlYMVhP4UIwA2I7XSJf+qySLC62bvdwY998imw5NnS7dVjJZuFIlY0IaGbOeMEcq4ztgqgXfX1xsQPhMIR/slxCnSv56lby/NfSELoNdlY6VO9mtvbUQhi4AtZCTqNtR7HvBtIkAYjqfH5Gwl5IU1qPo+rJm7Q7QF72hqn43tQlPTXL8pU5JxOmSxP5BVf2d1pJwKMu6UcEfuJlCTd5QjIPeKt+htPOSkZt5f71cPi7/qzvW3vQn0BhV9ISKrsr/P2W5dEZ5u34pI/BWWiW91fIn6ayREneF7wckRxZr2/BslhKmpDQxOOtbuUjvvLtqG4MOrZCe8tINtqGD+bmAXLDLvTCLdf62OvBNXkms55NT+MKB//6zds5+WfjH+MOfdfrt4KdF06i8tOY2l3ZTk4plvg0PbBrhYBCEp67R7Br5A+1RJfPc2XaUztHd/vbrLwPeyL1lqmgSQbMoG8U6rW+qNsIouq7W93wSWMXoY6V4V9Arws8Y4Yi7Mufo2z2oXYyhR6xc1ZFxMBqXohO5m+TmOqpo6mwrlR/M7sH2KzFZKWe6iP9mxDTYfbuhCq/T/JldR/kz8zL+heAC/SaLnrnah6d/NL/Sq5JurWvMXwnu6zwqd4BUCz55U257UvZPT8pf9Un59T/VYZku5xcAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=27e68b63c3f63250b202be3ed401313b"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Look Up Record">9d09f99587003300663ca1bb36cb0ba3</action_type>
+        <action_type_parent/>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Hardware Request - Item Fulfillment">55465aafc3323250b202be3ed40131db</flow>
+        <generation_source/>
+        <order>3</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-07 18:08:52</sys_created_on>
+        <sys_id>4bca92abc3723250b202be3ed4013155</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-08 14:10:09</sys_updated_on>
+        <ui_id>6bbb7a41-2905-4e97-8bf8-e298c33c40dd</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1X227bOBD9FUHPtpeyZMvO26KBgQK7G6BN89ItCEqkYmJpUqUop46Rf9+hbnZsxZYvQbvAPhnmZebMmTMz1Ne1y6l7444omibT6WgSIuT7CI3Hfky8KPLHcYSiyHN7riQLBiczpQ02q5TB0pKIvFkjWQxLlGepIKuHaoc4RjnPsB7PuaCaSffm67eemxIN1gzT7s16Z8uaxoJETMD1D3PFY+upK8j64mdA5NyXKFuAFz834LkyrzS1WPyey34YJikDdwkRGeu5CyIpMUqvmhXNCL2TYrMw59KANdce/pHxZzDtD+25hEFYMSv3mr+44qhcLjFkEPy6Qd+w1kJwBRW99Dbnn+15snuesu0L3guQS1lCcmE+nOfTO9Xn0PosA7xLDVeQYte39JNIVKzESuQL+VeZIrdB+NCirHLn9g2B5RkQy1KbPJuNKjXJ57l6+lQzP+OywFVtChUT0fwjxmge5cbysnYTihPOBMVcCi6tJ6NzKxUm2AI84AVJUy4fcarVkhdWIZbF4FHAn0Ei1JPlgj/KAYlt5AMQERnMYP22WH4gmlsW/gQzcLlnHc7hauUPZ7HmqcFPnD4ys/Fen6LKPBHxT9t+pa6mhorw3JdCgPh7biMuia64wkVa7IHS5++Ad8kqWmzGi9rzDtYeoTt1VqZ1Sx37reHspjCzeXEKyfQ6g6sv31llOtHqLbxVZyhzL0sftZqv1h0m6LTu0BTPSbWzXxRWJBfUxDtKv63Wjkm2ZOKYbqcHZ8Z0owOe4AWwx1PBsGYxJD3DRDOcqFxSXIayJWhLbcJ1ZqrD+wL/xEyupaNADI6ZM6c47TSnrzERO0RXX/yYOHV4FYbMgfCcIjynCe80Mt6Yo8HVKiU4sVJez7QZ4aKgPjMs3cod01rpN2bpkawdSH/HQdsRlHdVUJdP4ja9t07kI1ivPKffpyddOi1jRqJgSMah73kIeYiGaBKG3mQcJWMSBsmm0DDOZAzjHCwnIAwwj2sh1FlF+62lnOnn9pB76K6/zSoTXfHWl2+V/DtHaBgaxwKGPDs14OMhVf0iUkowIjfyHP20hnGt0XqpjnN+v8tNufRHW9LeaxLn/Ivk33P20YpiwtBw4tG4Pwm9sB8kdNyfUjLqk2k0Cn3K4iC5/F1JRwefblvzOVaSchtFtv3Rscowp1aQPl2vGfMnCOz1h16CAHGQ9KOATPsBSjw2ngz9ERsNABrTOMsh4iWHx1/xynt52S+yq9o+c9pvx9yVr9bLbSTW03t7rZ4+VyxI9P9rt/tk6fSopQeffSTY5Ls097pegCa9r/Yv5eqZE8W6efVJ1gHiq8v7kCt1Fn93vsTQf/5L7Nd89gAgLmwHK0nPVK4LVpY4FnlWbGgis+r5f27r//YvDAq9NHUUAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=4bca92abc3723250b202be3ed4013155"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent/>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Hardware Request - Item Fulfillment">55465aafc3323250b202be3ed40131db</flow>
+        <generation_source/>
+        <order>13</order>
+        <parent_ui_id>7f5eb3ef-9ed4-42e7-8481-ff4db89e13dc</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-07 22:04:43</sys_created_on>
+        <sys_id>7dc0d3a7c33a3250b202be3ed401315c</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-08 14:11:40</sys_updated_on>
+        <ui_id>3ed63408-0992-4e31-9f24-b7f6fc8695f1</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+2UUWvbMBDHv0rQszF2nIY2b2Mh0Ie1kI6+dEXI0iURyJIryWmzkO++ky2nabqWUDrGYH67k+7u/z/98N2WSEEmZAQiyy/yMS/yohhm2fB8lJfjosyHomAAOUmIZhXgTQvcWIHxmqkmJLbbG7BryWHwlXmmzJLmqYWHBpyn0kO12+FlIV2t2OY21mCGr6QSFjSZ3N0npGYW23uwZLI9OvKbGqhiJSgsnBreVKD94HKKPU6V3lfPe+3HXsIMjEXsTmVI4lHQk2cJgScPWgCOWzDlICEV04J5Yzdk4m2DCQtMXGu12d9YSe07pxV7cvIn9h9l4d4C0BqPW9iHNG6oX47BhV7XXhrdZTwrVb85o5pKX3UWwm5hwRrlD3bbOOwHdZAcRHQKFzcr8zjv582kbt1FtcpwpvYR897KsvHgwnOAgnYpFatrqZe0tmYt22KUUqVLhUG6UOYRZzq51CnjQXeKC2LpDPPTNn3LrAwmvmEbLN615ulDE+Z2NqJg2npuDdP2ofCq41bW/gs2XkOUuUsiu9nwXQDg+b1bZN0Bu84zDz+aLCtE8ZrSo9OPEfsdKuzpYdB1TU7W3DeYSVDC/cZEhNbHAXQdB+y5/TRw83HWfv/x/QP4lmfvocAvnl/+oOcBwpzi37b9074meN79h0EMLrvzDzIcBg+uusGnin5R/IaJHuHDXMT37NPoPf9L3EZF/xi4b+F6/wtbxUETKwgAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=7dc0d3a7c33a3250b202be3ed401315c"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Create Catalog Task">af51fd0e73141300612c273ffff6a785</action_type>
+        <action_type_parent/>
+        <attributes/>
+        <comment>Create Catalog Task for Shipment Item</comment>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Hardware Request - Item Fulfillment">55465aafc3323250b202be3ed40131db</flow>
+        <generation_source/>
+        <order>25</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-07 21:12:38</sys_created_on>
+        <sys_id>87d44b6fc3b63250b202be3ed401313d</sys_id>
+        <sys_mod_count>25</sys_mod_count>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-08 14:25:53</sys_updated_on>
+        <ui_id>21f9d554-0c02-40fb-b561-f2fb1766a95c</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1YWY/bNhD+K4aeWsBwdVnHvrVdLNqHJkA3SB/iVKCokU2ElhSKsrM19r93KFG+dNTYdRZts34TyeF8M/PNQX/YGSwxbgw/nltpYoLvWK7lmKZn2dT2nRR/HvFjMKZGRtaAJymRhOfLaEMEIzGHErc2hFdqL7CClCSmRx3HczzLjG3TjsGBxDUtx0q8GyZhHeWFZHkWZbCdhmZq+iEdEDDNjoDpppYTuqRfANKOgB26dmoFAwLzuCMQg+U4CR0QCJKOAAS+E4cm9At4YUcgCPHo3B0QSKBrg23T2CIxdXxIoWND160ktd3YCgY0hD2QPBo0cfB7BPwupHkYuy5RGuIegXTe9RIN5iFxbdRAetxKzgWQVQkrC04e3r+S65VcVycXXTGeCMiMmw8fp0ZBBFY3CcK42Z1tyYcCIk5i4MjBe16Vq8lPFf0EEi+5tHS24j83tXPy/qh2jpRVpRq3SqU0bnXmIlEwvakBXyRkCSCGlPASpsaaZAmRuXjYrwggyduMHxZWLJN4paEOfynZX3i/ZZumqY6mgEZTaLb3n5FOw2aZrnJG4W3tyWZFKrR6M+fVOnvTGKQSGFJScdkmMK5UJd4HhYKtcGhQ6f0q3/7eKrxjWW2h3uQ5JXz/RaQULK4k+gcjxcoo5bgE2cFvGF+onWLUIqgUOKxRXbQmRcGyZVSIfMNqFYh4PVty/JilPN8itJItsxmhyrwZ+pLM7nD9tl5ug/YbXoPCGP2M8iqBaI02MoHiewwgEZ4hRQXa5qPbQURb0VyxP1LmlUBPt67ssrWkghUqcNv0oOW7743HOlDR50q5qHG5dm7UxOexlf0RbdqA9uPjVLd9ko5xNwgO/CSrBl5Ufx9afklxvfzULdeHjael2julbfKm0XYp2F7hAQt0dp2s6eQyr5ZcwYtk1lEQmo3boVhcPwEbemmoXzvlCFcytTl1jdQZ9Nw0cPwxZhHvhETlKhdS4a4vVNE6ZEM3DZ7eatDP2bLl/gUI94IK3+T2BN84+rbPtBp1FtivLWb3lZj8XML6zigdzJOQC/hcQSkhiVRjOWLrbncPYoPOnujBJLJm+nB99PHxinzeO38/N/2zDQdZbcHk18aCEeM0mcWROs1na5zPqpJcRmfHPuUy1iOE0QLoo3XHgG+B5Oh4dGSUiLwotHFXqdbpaC2Mj4YW9DUGQELUTtdnCUBCK7WtoScltbr014Gc/EJEsiUCrpcOF1i1n260WW3anmXFkNXDmTG/WqXvSQ1EMZYaZzZ8G4mBXRjHGCCCrl4oK+yTqrklTB7lQQ/R9cvkibM7Cv9wp2fBS9G1wn802DpgNX3jPOdAsgN53auR132RGUV7tn9SP3oz/utp/OwhZnympSckSBnw5Pi/5s4gu6hM00nuV6y2cYIMmLCsxOKCtRC3/ySlsqH2w1LkVdGc3y1a5i+Mm4WhxNWRyTsg64UxXTT66j1iY2vwwKdObDv2/KxbxEF9vHwoI5ZceL5nvvq/mPXEwtF2tsYd04uJ0l5w19Kkhzntg79tjxutQ9cR52p1xJt3njuHF/hYD3zX/mFyzR7YzLX/sdrBsqKS5ez0P5uBevLxbzu5baTFGgAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=87d44b6fc3b63250b202be3ed401313d"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Send Email">c1806bf4a70323008299b39f087901cb</action_type>
+        <action_type_parent/>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Hardware Request - Item Fulfillment">55465aafc3323250b202be3ed40131db</flow>
+        <generation_source/>
+        <order>2</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-07 17:54:28</sys_created_on>
+        <sys_id>88871663c3723250b202be3ed40131e1</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-08 14:10:09</sys_updated_on>
+        <ui_id>c8811540-463e-443a-ba09-37fd3c9a06da</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1YbW/iOBD+K1Z0Hzk2vBe+7baqrtJtV2rRnk5tFTm2A7514qztlOUQ//3GiUNCoSwLqLsn8Q2PM55nZp6ZsXlYeJx6I683vPD7YdTFA7/T7vj+RXs4DDvDyL8YDP0WxV7DS3DM4Es8DYyE5TMWmV0vFvdMPXPC0CU2WMhJ0Goq9jVj2gTcsLhcMBpEUjVZjLlYLhGcQLlOBZ5/PvogMuWCKpZ4o4enhpdiBUgNU95o8WLLzFMWCBwyAfbujeLJBNT3DUCpOJab0bAnw1KXZ0pFLYBOw2PfDEsoAxsRFpo1vBgnFBup5t7IqAwEimH6KRHz2hffNP8Xzrvwfd/uRwxcINaAV1sGLoCFmEwlxO5TarhMConBoXA6RIosTm4LzDb0LMKZMGXoQZJpOI+lFmpiVkii+6mc3ZUGr3mSe+U2hSRYrFbYgO9hZpi2cWeCxXBQEOM0hYgEqZLPPFcGLHFzImDRjIScgVHNJ0kTEwu8CZHBzWuQX+Xiz1hx68VHOAaULXDBY54n17PR85Z5QIKvmYVSuOacCIo4wAeaKJ6a92DhmTm8y4Yjvt/vh2E/7A06Vd6HJKKDMOrjAelUqZ5hMBtj9SXIqVcrgdYmmXNshzJzDMrvri3Mkp17oCyVbxIiMsrQXyXcXR442oZSCoaTirft3bx1kg3iTrnljleQEBmJIG1ijjBaWbZCM2UoBwC/sEFcIw3paqKxRNyBr2k00FxmKM60gc8M7BisJvBDMQJgm16tXLpvUiwutU56tTXv/4tqOrZ0WnRXy2T9tS4ZElKrmM2COVEb3wNTqfjh8nILwlcaee+wgjh38rfr5N2dqSe0SnbROn7gDrNcnpCwV5JkNqLo5qpk7R7QV7Oh6H53pQsvXXL8pc5IwGlFYv+orv5ea0k4tGVd6+AzbqbQk7c04057ne/Q2nnOyO28v6m2T8v/4o51MP0JDEYVvKCi6/I/py3nwQjyvH+nIvBOWkXt9fYn6bxWEo+Z73dIiizW3w1P5jFhSkoTQrC+5Jv00XssPmO/LSwZggLLCPgZKG5i8NqAWAc54mVx4ru0UNksKGfxmBMPK8g/xh//LCtxj5Ct5kcRsI0IugqcmlhUpTc4cn70e71O/zxA6gMkndE2VTJNnW8nGSKt3c/AbpXwWhlWVaNJAHMjnxmbBL8r36/optg/8HVgDaPbwvC+oNeUX3HCEXdN5ujbOmpyjGFcrN3akXEwavejM7nr5Oba9T7nW278aHb3dt+OyVo701n4DyOmxu6/ZaaQYzF6uM3ikKknNMUahYwlCBTgQgf83qT+D2ie5M+c7/u5Ulx5uc3zV14D/fPfOr/SQ5Tu7H/MX0vu27xD94BUKr54hu56hXbPr9Bf9RX69B/MidqSShcAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=88871663c3723250b202be3ed40131e1"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Ask For Approval">f8f2e9920b10030085c083eb37673abd</action_type>
+        <action_type_parent/>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Hardware Request - Item Fulfillment">55465aafc3323250b202be3ed40131db</flow>
+        <generation_source/>
+        <order>5</order>
+        <parent_ui_id>80cf3a03-eb76-4c72-b32c-788ca09ead47</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-07 18:15:10</sys_created_on>
+        <sys_id>933cde2fc3723250b202be3ed40131e2</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-08 15:04:45</sys_updated_on>
+        <ui_id>1c1cba4f-c867-41ca-96b2-a52692819926</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1XUU/bMBD+K1WeS+c0TUh5Q0NITNuQgPGyTpFrX6gn1ylxAmNV//vOsdOEAqGCTmMSLwjf+Xzfff7OuX5feoJ7Bx6MoiDEP/tpQPyhT2KI4piNCWVxFIWjwOt7is4Bd9LFIs9uqExyoDpT6MBFaTz4Lxd6IendZWNhMyF5Dso7+P6j7y1ojqcUkHsHyw1XcbeARNIpSAw8L3KhrjB8W3B14KFD1zur0T0J2yREh65TZTk3uIZ9D34VoDhg6pRKDX1vThWnRZbfrS14Cj9VsjHMhCpsxXP6S4vfeLQfEbMxBayROTrWy8RRVbOUCQani0IgtMpS0KmsKcxkOVdfbR2GZEhpKYsWyaXG82BhQBsUDlJ6Pstuz+qEx0JV9TmnzBiV6xUtkIVpWYA2F1OKiw1urOXz5u2AhDlmTObILloSQ7GosiDo+eBK4mKQyuwW0WlxpQaUmQoHSCYdHKP9qDJf0lyYcr/gMRhs0n1T4rqEE3P70XAajUnM93hKpnujOAj3KAOyB5EfQsgjFvqBt6qoTa5LU5QlydGRWEZxg2a5WBSHCOEGXOWrvtM/8dMhjMdDMvUJCQiJQ0biAKbBfrQfUB4/IqRUgOQt+deOh23Q8rysHY5Nql6lgP7WeB+0xLED/FQhriGqZaJssp03RUzIP+qKIi9f0xR/R+vP6dYW/Ix4WacYoPV4/8zKXHVoN5kJXV3pkxpu7diVlreAXwd/svg3pbxZVoeSg3clv2El78ddUmCkufIcGN5oS8LL5TnkN8hy7yPilNlV4g9ywI+ILhJRwHy12uF8cpSx0nDYOzmqVbwF9Dr6rMa+WYvTLXenJ4I3wiXdwrWa2Ea3wfBdtTt+f8Ouq0/HzU3zEimhBbR1O/Es0ol3MPFUpmDi9See2ZUYPVRm3IEI147KtlyuVtZS5tQd4LeWTTSnd7raqdkMeCmt9Z7FKtvZd9kp5y5B7whxf7gQrWf/edbW7Vba+EeJrOf4uhLLnGg/+uHOHv3RfzrS/71JPVlPt9gt2OKvHsVHnbqAlgjWMwnLFBcGr241lp17QR+qR8aZ+86XSbv5rYmy07Wst4C//g64uM5ynLyb368uyEl7tKvPwr8bZ96mtl8r4ynrnAdYc++Wu0a4miU4uFRDy0PhntmRBnjvxPpfpt0Lk/PeFL4F3nvBD/E7pVbLjanb3+HU/S7S14v0xx/D1JgV+BMAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=933cde2fc3723250b202be3ed40131e2"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Get Catalog Variables">330ba3abc31013002841b63b12d3aee8</action_type>
+        <action_type_parent/>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Hardware Request - Item Fulfillment">55465aafc3323250b202be3ed40131db</flow>
+        <generation_source/>
+        <order>1</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-07 17:50:48</sys_created_on>
+        <sys_id>9ea65a6bc3323250b202be3ed401317e</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-08 14:10:09</sys_updated_on>
+        <ui_id>ee38009f-21f0-4f4f-b4a9-40f1e68235e5</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VyW7bMBD9FUNnwyAlx7Z864KgPbQBkiKXICBIahQTpZaQlJ00yL93qM2OtwRNAwRoj5qZx3mzvNHVQ6CSYB5MBRE84kJGlNCIkHA2pmISCRomEYd0GgyDnGeAkZI7rosbtuRGcaHBomvJdeV9MUnJNJYTGUWTaEKJCEkoIIJkjI9SQubKQcaK0qkiZzmshmSc0ige8/0ASHcAYTwOUzo7ADgROwABNIoSeQAwS3YAMJtGIiawHzCJdwA8DceCzg4A4l3AbCJnTZemewBT2AGcxGI85j6D2ANIT7YBOJFE2VLz+8v/g3lng5ELpRMDeTC/uh4GJTeoKgcmmD9sudx9CUxzARrnd6Eruxh8rORPcPjISyXbwT81mh1cbmj2iJx9anRZn1R0OQuTeJrhMIA7B3kCyCHl2sIwyHiecFeY+95igCdnuV4bFip3+GTgg++s+oXv05AQ4kNTwKIlNO7+k7Ur3JjlolASzupONhbn2bbOQldZ/r0pyC8/pLzSrlt+tFQW34PS0/Y8WlLpxaJYnXcJT1VeV9g6dSG57r+4c0aJymF/cFLKslSjCfJ133C+UDclqCGYFDRkmI5lvCxVfsNKUyxVnQIZZ6MbjR+jVBcrpGbVTT7i0pc3wl7y0SnaP9fmbmjf8BkE+14mwEyVO5UBq08vUzlumV0qXLF54Ezl06tc6gojM2yFMpilpwrOrsN8azZIgGEr02TqQ0qDGLMEZrEk6eoiW5ctKoOz6oaxve+P9UDZbeVb2YymHQJr5ogBVhpVug9Y+xLafj8O29+SOL7jdL3HmBi3xQHrFtpT2fg18ZimISUHLqCkuzfzHG4rsG7whZtkxQ38sXj7DeuU+4KqOuyPtqxBJ+GvWJYdoOB6MQ8u/DyfbUQrarNBppU0PS5pP+mXKToKn8rZOmbv7RMiluHD/SYy21DfJ/rnC35fN+Gt1I63xkBWuFZkbLPBnQiRMraSG7lYG190JV6tz/TYJgNfr6Vp1ATJtjAfHi7wtuAguxVndNQG16GPj7vS/ItSfL6A/h9ciUzhzU8G7WU4UtxhsZE3E5vE1bjtCOxT1HnHstbUPyOgAhvJElOUZVvcqzb/+jfKEaqRMg0AAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=9ea65a6bc3323250b202be3ed401317e"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent/>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Hardware Request - Item Fulfillment">55465aafc3323250b202be3ed40131db</flow>
+        <generation_source/>
+        <order>27</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-07 21:28:03</sys_created_on>
+        <sys_id>b4680f27c3f63250b202be3ed4013185</sys_id>
+        <sys_mod_count>24</sys_mod_count>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-08 14:11:40</sys_updated_on>
+        <ui_id>00dd8af6-4751-4be0-b2e2-a626bae514d8</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+2UUWvbMBDHv0rQszF2nIY2b2Mh0Ie1kI6+dEXI0iURyJIryWmzkO++ky2nabqWUDrGYH67k+7u/z/98N2WSEEmZAQiyy/yMS/yohhm2fB8lJfjosyHomAAOUmIZhXgTQvcWIHxmqkmJLbbG7BryWHwlXmmzJLmqYWHBpyn0kO12+FlIV2t2OY21mCGr6QSFjSZ3N0npGYW23uwZLI9OvKbGqhiJSgsnBreVKD94HKKPU6V3lfPe+3HXsIMjEXsTmVI4lHQk2cJgScPWgCOWzDlICEV04J5Yzdk4m2DCQtMXGu12d9YSe07pxV7cvIn9h9l4d4C0BqPW9iHNG6oX47BhV7XXhrdZTwrVb85o5pKX3UWwm5hwRrlD3bbOOwHdZAcRHQKFzcr8zjv582kbt1FtcpwpvYR897KsvHgwnOAgnYpFatrqZe0tmYt22KUUqVLhUG6UOYRZzq51CnjQXeKC2LpDPPTNn3LrAwmvmEbLN615ulDE+Z2NqJg2npuDdP2ofCq41bW/gs2XkOUuUsiu9nwXQDg+b1bZN0Bu84zDz+aLCtE8ZrSo9OPEfsdKuzpYdB1TU7W3DeYSVDC/cZEhNbHAXQdB+y5/TRw83HWfv/x/QP4lmfvocAvnl/+oOcBwpzi37b9074meN79h0EMLrvzDzIcBg+uusGnin5R/IaJHuHDXMT37NPoPf9L3EZF/xi4b+F6/wtbxUETKwgAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=b4680f27c3f63250b202be3ed4013185"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Send Email">c1806bf4a70323008299b39f087901cb</action_type>
+        <action_type_parent/>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Hardware Request - Item Fulfillment">55465aafc3323250b202be3ed40131db</flow>
+        <generation_source/>
+        <order>14</order>
+        <parent_ui_id>7f5eb3ef-9ed4-42e7-8481-ff4db89e13dc</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-07 22:12:58</sys_created_on>
+        <sys_id>bea297abc33a3250b202be3ed40131a5</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-08 14:11:40</sys_updated_on>
+        <ui_id>42a1eb1e-a7dc-49e5-9c5f-82d53363683a</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1YYVPiPBD+K51+ViwUUPzm4Z0H88KNCqjc3XTSJKXRtOm1KYiO//02bQpFPI5XfX3vZvzAtEl2s8/uPruk+XpvMmIemo3WgdV0vTrat+yabVkHtVbLtVuedbDfsqoEmTtmiAIKksh3pIDhFPFUje/vKbUPLKvl7daqnrVb9+rerltHrd265VVp86BmN2ijEqAQTWj88GBsqUBDSWMnSSMaT1kiYkfZ/xfqAWIcxAEpYUnE0Xz01wDGPuMkpqF5+PX7jhmhGDaCvc3D+0dLch5RhyOXcvDrXMYsnID6tgktFAdiPbtqZxgmxZ4iJgqAvWPSW0lDQsGGh3hCd0wIFEFSxHPzUMYpTMQUkS8hn5ckbhN2B/tBFCy17lFwASsDZmno6ETl09gXDNMvkWQizGckcrnWwYKnQdjPMasUUw+lXBYphpk0gf1opKCGcoHEO/fF7Kww+ImFmVd6kQuM+GKEJPjuppImKu6U0wA2cgIURRARJ4rFlGXKgCWoTDgMKh4XMzCasElYQVgBr0BkUOUTzB9n0yMUM+VFD7YBZQWcs4BlyTVV9MyHLCDOj1RByV3TTjh5HEAgwTGL5BFYmFKN92FHF7LVbLpu023s28u8t7BH9l2vifaxvUz1DIHZAMU3Tka9UklX14smw/ZcZg5Aee+TglmwcwuUhXInxDwl1Lgo4G7yQNPWFYJTFC55W9vMWz2zRlyfKe6YOQkNKQxIG58byFhYVpPSp0YGAN6QNFhiJJCuijEQBtPgSxo7xlykRpAmEsQkrEgUT+AlphjAVsxSudTfpFh0avXs8ZN5/yuq6aWlUyWbWiZtrnRJF+NSxawXzCu18S0wFYof2u0nEP6ikTeeVxDvnfztOnl9Y+oxWSY7bx0rZ7JzdQjB1GgDai4mTrUS0x8pTaQDEIOHh1ck7LHAqYqo0TkuWLsF9MV/Q979zgoXHruk+Uu0EYeRJYmtF3X1oyQRmEFbTkodfMakDz35iWZs11b5Dq2dZYx8mved5fLr8j8/Yz2b/hj+GGPnERV1l/9/2nIWjOyw/LuKQBtp5dVW258g81JJfEsty8aRobDuShbOA0xjIaQLwbrJFsk381suRnPhJEJhLp9woMmuF6OJik8h3R2QdnfQmbu17o/xRd9S791B/4N6jk9a1+Siyt3wlPeuO7x304Nn9+bq8sxfyil98rE76B5n+wStm/FlL5e3PvL+sMP7VkfpTa+CiF/Zp4s1mGMu2EDz4bzHhvNT9QzPGvhkWJaZXV12/bHd9fHJ5L/CYY0vfe271j8Z+SQY3S33H7U3xUrJj9mKH5x+XrHRcO0RyHdmOBjdkovRHWmD3El/Si5ub9Q8YFZ7zq4C5f8HkGtdjy/7d+OLlfhLiEeM85jdnZ4Pq6dsWD1rD234Pf080tkuGJLx40qksaEbqoFFyokRCmm41ICSwTRJaK6A9xSHypzai/LRev/VBH1MwFc0+Lz2/nnQ+6fo61sU4OI0kpffWj3qfu7LgC8b+f4LTyPNRsNuvh9HyseRaEZqJBZRpH17lSNJdfOlQn2Z8FJTX/bgBDvA4ewEss7/s5zdlBidfP2Z35rKsNHPDW8LekX5F05o4q7MafpWX3QOGcDhY+Ub0JAaRum0/U7uMrlZ4uQ01b5lxl/M7sbmby280s6S1L2mWJbYvUWPXmf9dkqvciH4e+8WigvfnvL3F1+UzferwT/pMoNs7HrUWknu29xlbAGpUHx0lbHpJqP+fpPxp95kfP8JILlngl4aAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=bea297abc33a3250b202be3ed40131a5"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent/>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Hardware Request - Item Fulfillment">55465aafc3323250b202be3ed40131db</flow>
+        <generation_source/>
+        <order>7</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-07 18:25:11</sys_created_on>
+        <sys_id>ca8e9663c3b23250b202be3ed401316d</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-08 14:10:09</sys_updated_on>
+        <ui_id>ba7dde3b-a832-4e74-81ae-db4430d18f13</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VUWvbMBD+K8bPnrHjNLTZ01go9GEppKMvXWNk65yIyZIrS0mzkP++kyWnWbaWUDrKYH670+nu+z59h++2IaPhOBwCTdKLdFRmaZYNkmRwPkyLUVakA5oRgDSMQkFqwEoFpVQU4xXhxia22xtQK1ZC8JlowuUiT2MFDwZanTMN9W6HxZS1DSebW38HM+WScapAhOO7+yhsiML2GlQ43h4d6U0DOScFcLw4kaWpQejgaoI9ToXe35712I+52BkYU989ZzaJRxZPmkQhPGoQFHBcRXgLUVgTQYmWahOOtTKYUEDoteCbfcWSCe2Y1uSxZT+w/zCxdRUgtdKrsA9zr1AvjkRBrxvNpHAZTQreKye5qcXUUbDaQkUM1wfamhb7QWMhWxAOYXWzlOtZP++SiY6dR8tlSfg+IlorVhgNrX0O4NCJUpOmYWKRN0quWHcZodTxgmMQV1yucWbLFiImpcUdo0AkvsT8pEvfEsUsiS/YBi/vOvL5g7FzHQ0POO84d4Tz7qGwtC0Va/QnbLwCD3MXee8mgxcNAE/v3Vm2PfBuq4mGbyZJMjqYIy5kRriLXQR0jjULX1MZXjHOrRrztVTfcyFRI3c2lQGaAktVUEkj6MeAGC0/uDYoW7A329EuvAuG123fV6gRuYbAYY9O1r9vcMmA0/YPD+IXUPsB+coP2O/gmy1hOkq67/8q/oVVLM5eskJ58fTyBz0P1rHM8c/R/TV+35OZ+6cADa7c+Ss9bAcHUzf4VNC/XH6GRG/hw5y379mbuff8nXzrEf1jxn3Orvc/AV9LhY/3CAAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=ca8e9663c3b23250b202be3ed401316d"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Create Catalog Task">af51fd0e73141300612c273ffff6a785</action_type>
+        <action_type_parent/>
+        <attributes/>
+        <comment>Create Catalog Task for Procurement Items</comment>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Hardware Request - Item Fulfillment">55465aafc3323250b202be3ed40131db</flow>
+        <generation_source/>
+        <order>23</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-07 20:50:23</sys_created_on>
+        <sys_id>cdcf7ea3c3b63250b202be3ed4013191</sys_id>
+        <sys_mod_count>26</sys_mod_count>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-08 14:21:37</sys_updated_on>
+        <ui_id>efc5421c-89af-4f7e-8bdf-516ad2d6d11b</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1Y247bNhD9FUNPLWC4ulkXv7VdLNqHJkV2kT7EqUBRQ1sILSmUZGdj+N87lEjfJDuG1wkaZPUmkodzZubMkNK7tZEmxsTw47HFEhN8x3ItxzQ9y6a27zB8POLHYAyNjCwAV1JSEZ7PoiURKYk5lDi1JLyWc4EVMJKYHnUcz/EsM7ZNOwYHEte0HCvxJmkFiygvqjTPogxWw9Bkph/SEwDT7ABMl1lO6JJ+ALAOwA5dm1nBCcA47gBisBwnoScAQdIBQOA7cWhCP8ALO4AgxKVj9wQgga4Ptk1ji8TU8YFBx4duWAmz3dgKTlgIeyh5NGjz4PcA/C6lcRi7LpEW4h4AG3ejRINxSFwbLZCesJJjAKoqScuCk6e3L+J6EdfNxUXnKU8EZMbk3fuhURCB3a0CYUzWR1PVUwERJzFw1OADr8v54LeafoAKN7m0dWr4723vHLzd651n2qo0jVOlNBprm7lIJE1vaMCnCrIEkAMjvIShsSBZQqpcPG1HBJDkdcZ3A/M0q3BLQy7+VKafcX/LNk1TLmWATlNop7evkSrDdpjO85TC6yaS7Ugl2arJnNeL7FXrkCxgYKTmlS5gHKlL3A8KSVvyUKTYwzxfvdEG79Os8VBN8pwSvn0jVSXSuK4wPpiptIwYxyHIdnHD/EITFKOBoFHgsEBz0YIURZrNokLky7QxgYwXoxnHlxHj+QqpleksGxEq3RthLMnoHsfvmmGdtL9wGwRj9jPK6wSiBfqYCoRvOUCF9IxK1KB83tsdRLQS7RbbJWVeC4y0DmVXrSUVaSETt2I7Kz/9bGyaREUfaxmiNuQquFGbn43G/oo+LUHFcTNUxz5h57QbBDt9knlLL2red0d+SXG8/NBt17uJ60rtUVobvGqtXUq2F3zCA1VdB2OquMybFVfwTSprLwntxN2pXNy+AFt5Kapfu+QIl5jGnaZHqgp6bhk4/jllEe9AROU8F5Xk3Wwos7Wrhm4ZXH/UYJyzmdb+BQy3QMlvcHfA7zx7fc5oi6oK7JcjZv2VlPxcwbKzcoj3+jYeJRjaCiJ9wZCHy55iSWgx2zp1q6ZWV9Fv4GMNZTX4g4hkRQRcrfBtOrTIL/Bq2+CVWwN9pfqzdesLXiuliz3LSuzjm4ndsQ+Vjt0KWWgGfaI/8uFHKACU91x2ciCCzm/Vxn3nbJM0DxqhaGUMyXFFrNcPIJaYAa2tyBqpxc3SzeaGXb5TAxf4sMMqD47E3+fcaeFb54UvE3O17pHGOd13HPgxlJ9jIKNE5EWhnLuJ+L/QPO0DfaxIWu1JvqfLqy+TK+/uCP7lXt0FL2Wnwf+03DpklYTjPOdAsp2A3Zt1bveb3FFUZPtv6nvfjP97JT+7XZ+/09IDEbAUeLL/r7lzkZ3Wpukkf4uc1qJxt+kq/5JSUm/cn4m8Ltpl66kW/NSYTI191COQxdQYTltLzXTg+pbngU+d2Hbs8fEPKadZXj6VUZpcuL7nDPn+HbqyWeirXBuI4cXi0Bvca2n0qEV/5Ov74FLZUL3DuVnv8MadT5zdV/e5S9+j/klyy6OvPbW/s36RZkVdlaPD/zQnesj7/wD4gJsLuRoAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=cdcf7ea3c3b63250b202be3ed4013191"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Send Email">c1806bf4a70323008299b39f087901cb</action_type>
+        <action_type_parent/>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Hardware Request - Item Fulfillment">55465aafc3323250b202be3ed40131db</flow>
+        <generation_source/>
+        <order>28</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-07 21:28:47</sys_created_on>
+        <sys_id>db888367c3f63250b202be3ed4013125</sys_id>
+        <sys_mod_count>26</sys_mod_count>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-08 14:11:40</sys_updated_on>
+        <ui_id>85b4020d-b61e-4512-b933-a4a04de95e38</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1YbW/bOAz+K4I/J5kT56Xpt12LYgVuG9AWOxzWwZAlOtFNtjxJbpYV+e9H2XLiNG0WtL3eBvRbTIniQ/IhKeXzbSB4cByMpkfhOEmHdBJGgygMjwbTaRJN0/BoMg37nAadIKcZ4E46j63CzxsqS/d9ewsQHYXhNO0O+mnYHabDtJsM6bQ7DNM+jI8G0QhGPcgt6NiUBegbYZSO3XGrFTlUPaNCHr49ozmdgUYFRMqFKSRdfvptALO5kFxDHhx//tIJCqrRMoIJjm/vLNllAbGkCUj069Jqkc9Q/dCENopXaje77mT8NM2ZSnMHIOoE8N1CzgFtpFQa6AQInVOr9DI4trpEgQbKP+Zy2drx3YgfeB7GIXTrKaALzBkIWp+xT1QtZnMlGHwsrFB5LbE0kV6HKVlm+Ycas0sxpLSUtkkxSkqD50HhoOZ2jSS9nKvFRWPwTOSVV35RKkbl+ota9D0pLRgXd5CQ4UFxRosCIxIXWt2IShmxZL2ZxI9eKtUCjRoxy3uUOeA9jAztnaH8tBJ/olo4L97jMajsgEuRiSq5gYtesKoCEn8rHZTaNe9EXMcBNximRWHfooUb8HhXHV/I4XicJONkNIk2eZ+ylE+SdEwnLNqkekHRbEb117jiaquk+7tFU2F7LDOvUPnNmYPZsPMAlI3yec5kyYH81cDd54GnbaKUBJpveDvYz1sv2SHuXDjuBDUJiVUE0yaXhJK1ZSe0cyAVAPxFLRGGGExXj1wpIjz4lkaHLFVJstJY3GZxxVI9wx8aGILtBa1yGb5IsfjUeunpvXn/LarpqaXT5/taJoy3umTCWKtidgvmmdr4AZgaxT9OTu5B+EAjHz2uIF47+ct18uHe1DO+SXbdOrbuZJfu1sKAnCBqqWZxv6fhWwnGxggxW62ekbCnipUuouT8tGHtAdDXs6HufheNC3dd8vzl3kgs+IbE4ZO6+ltjFBPYlk2rgy+EnWNPvqcZR4NtvmNrFxUj7+f9+Wb5eflf37EeTX+Gg1HHd6jou/z/05arYFS3659VBN1Lq3Sw3f4UX7ZK4roMw4gVxGHtWpEvMwZaKZtgsL5Wi/w6uK63wd+q1GRONV9QDcRXDgoMSQBykpYSbwEYHQbGACdIOZz0BitNAq8NvSnqk3brzAP5Dww9rnzfXb3/s6nbAwK8njZ1eHfi7et1bjO5KdTJE6fNeDSKxq/jpj1uigUfcK2Kwvv2LCOnv//RONwkvFW0mxozLEYKVxNml/cXNbmRxef1+iPfEs4w+VAbPhT0lvIDTnjibsk8fftPmjNXOFy27vjEehit29QrudvkFiauaep9q4w/md2j/XdpttXOTJn8A8y22P3ubpve9OVdtu/f/Cx/8Pzcm7Xi2pf7/HvghTB+/avnV3qc8r1dDsKt5L7M2/QASI3inafpvpfp8PVl+qu+TL/8CwVdmXUuGAAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=db888367c3f63250b202be3ed4013125"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Ask For Approval">f8f2e9920b10030085c083eb37673abd</action_type>
+        <action_type_parent/>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Hardware Request - Item Fulfillment">55465aafc3323250b202be3ed40131db</flow>
+        <generation_source/>
+        <order>17</order>
+        <parent_ui_id>43bcd4bc-3afb-4d19-b668-96c37bdef5e7</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-07 20:39:17</sys_created_on>
+        <sys_id>de3d366fc3763250b202be3ed4013168</sys_id>
+        <sys_mod_count>16</sys_mod_count>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-08 14:11:40</sys_updated_on>
+        <ui_id>6f0382fc-35c5-4f0c-a958-7e014aa2bcb9</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1X30/bMBD+V6o8l85JmjTlDQ0xMW1DAsYLQpFjX6gnNymJw49V/d93TpwmtBAqWgSTeKnqc8733XffOZfLuSW4tW/B0Hc9/BnFLrEdmwTgBwEbE8oC3/eGrtW3EjoFfJLOZll6S2WYAc3TBDdwUegd/MtFPpP04aKxsImQPIPE2r+86lszmuEpCjJrf76ypR5mEEoagUTHM5WJ5BrdNwVXOx4YdL3TGt2zsHVA3MjrUGnGNS6nb8G9goQDho6pzKFvTWnCqUqzh6UFT+EniWwME5GoKuMpvc/FXzza9ol+MAbMkRk6lsvQUFWzlAoGJzMlEFppUTSSNYWpLKbJryoPTTLEtJCqRXKR43kw06A1CgMpPpukd6d1wCORlPmZTZkyKpcrqpCFqFCQ68IU4nyFm8ryY7U6IGGKEcMpsouWUFMsyigIejq4lrgYxDK9Q3S5uE4GlOkMB0gmHRyh/bA0X9BM6HR/4jHorMP9TsRNAce6+r4T+WMS8D0ek2hvGLjeHmVA9sC3PfC4zzzbtRYlteFNoZOqSDJ0hBWj+EDOMjFTBwjhFkzmi77RP7FjB8Zjh0Q2IS4hgcdI4ELkjvyRS3nwhJBiAZK35F9vrLdBa+d17XCkQ/VKBfQ3xrvWEkcG8HOJmIYol2FSBdt5UwSEvFNXqKzYpineRusv6bZK+AXxsk4xQOvy/pMWWdKh3XAi8rKkz2q49cSutLwB/Nr5e4V/VcqraXUo2f1U8gdW8ijokgIjTckzYFjRloTn8zPIbpHl3lfEKdPr0B5kgC+RXIVCwXSx2OF8cpiyQnPYOz6sVbwB9Nr7tMa+movRLTenh4I3wiXdwq00sYluXedTtTu+f72u0sfjptK8QEqogjeamtkEeCGhd4ghvpyL1hX7MsKltIvK/0nQ9cxsApXmUIn2Bevt7IId/qfj89tNxeFykkRlYjttPfYOO3UBLREs3/8sTbjQePOWiKsZE/KD5OHb5XyeK6oEGwyJb4MDI+ZGjut4JHKIE4ELfEhs1/bIYnG1rv5tjnpd2zTfjCjpvG6ZDahZ3ufGr5Mq0zrNd6hxMm0z3NX1/n5jycfsm21bJGKd73XW1L3irmmKnIU4gJTDx7rMT6vRBHjvuNp/nXbPdcxH0/QGeB85r+M3Si2XK9OzvcPp+VOk24v06h/o3r+7wBMAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=de3d366fc3763250b202be3ed4013168"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent/>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Hardware Request - Item Fulfillment">55465aafc3323250b202be3ed40131db</flow>
+        <generation_source/>
+        <order>19</order>
+        <parent_ui_id>c4c7c938-59ec-436c-9420-27228a4816b5</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-07 22:08:27</sys_created_on>
+        <sys_id>e8a15ba3c33a3250b202be3ed40131d7</sys_id>
+        <sys_mod_count>10</sys_mod_count>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-08 14:11:40</sys_updated_on>
+        <ui_id>ce2f500f-54a8-4157-bb22-840a3912daf8</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+2UUWvbMBDHv0rQszF2nIY2b2Mh0Ie1kI6+dEXI0iURyJIryWmzkO++ky2nabqWUDrGYH67k+7u/z/98N2WSEEmZAQiyy/yMS/yohhm2fB8lJfjosyHomAAOUmIZhXgTQvcWIHxmqkmJLbbG7BryWHwlXmmzJLmqYWHBpyn0kO12+FlIV2t2OY21mCGr6QSFjSZ3N0npGYW23uwZLI9OvKbGqhiJSgsnBreVKD94HKKPU6V3lfPe+3HXsIMjEXsTmVI4lHQk2cJgScPWgCOWzDlICEV04J5Yzdk4m2DCQtMXGu12d9YSe07pxV7cvIn9h9l4d4C0BqPW9iHNG6oX47BhV7XXhrdZTwrVb85o5pKX3UWwm5hwRrlD3bbOOwHdZAcRHQKFzcr8zjv582kbt1FtcpwpvYR897KsvHgwnOAgnYpFatrqZe0tmYt22KUUqVLhUG6UOYRZzq51CnjQXeKC2LpDPPTNn3LrAwmvmEbLN615ulDE+Z2NqJg2npuDdP2ofCq41bW/gs2XkOUuUsiu9nwXQDg+b1bZN0Bu84zDz+aLCtE8ZrSo9OPEfsdKuzpYdB1TU7W3DeYSVDC/cZEhNbHAXQdB+y5/TRw83HWfv/x/QP4lmfvocAvnl/+oOcBwpzi37b9074meN79h0EMLrvzDzIcBg+uusGnin5R/IaJHuHDXMT37NPoPf9L3EZF/xi4b+F6/wtbxUETKwgAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=e8a15ba3c33a3250b202be3ed40131d7"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Ask For Approval">f8f2e9920b10030085c083eb37673abd</action_type>
+        <action_type_parent/>
+        <attributes/>
+        <comment>Level 3 Approval by Abel Tuter and Joe Employee</comment>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Hardware Request - Item Fulfillment">55465aafc3323250b202be3ed40131db</flow>
+        <generation_source/>
+        <order>22</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-07 20:46:28</sys_created_on>
+        <sys_id>ebdeba23c3b63250b202be3ed40131c7</sys_id>
+        <sys_mod_count>26</sys_mod_count>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-08 14:11:40</sys_updated_on>
+        <ui_id>46b01560-e600-4339-ad61-174001736d66</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1X227bOBD9FUPPjpe6Ws5bsEGALHa3QJL2JQ4EihzFXNCSq0varKF/71CkLrEbxUjcbRfIi2EOL3Pm8BxpdLu1BLdOLfAC18efeeIS27FJCEEYsgWhLAwC33OtqZXSNeBKutnk2QOVUQ60yFKcwEGlZvAvF8VG0sdPfYSthOQ5pNbp7d3U2tAcTykht063O1Pl4wYiSWOQuPG6zEV6j9sPBdduPDPoJlctumdhq4Q4UbSpspwrXM7Ugq8lpBwwdUJlAVNrTVNOyyx/7CJ4Cv+Qyj6wEmmpK17Tr4X4F4+2A6IWJoA1MkNHN4wMVS1LmWDwYVMKhNZEShrLlsJMVuv0b12HIhkSWslyQHJV4HmwUaAVCgMpuV5lX67ahBcibeozkzJjVHYjWiILcVVCoS6mEjc73OjIn7u3AxLWmDFaI7sYiRTFosmCoNeze4mDWSKzL4iuEPfpjDJV4QzJpLMLjJ834U80F6rcv/AY3KzSfUzF5wou1e0HThwsSMhPeELiEy90/RPKgJxAYPvg84D5tmvVDbXR50oVpUkydESaUVxQsFxsyjOE8ACm8npq9E/sxIHFwiGxTYhLSOgzEroQu/Ng7lIefkdIiQDJB/JvJ/ZtMJh5nR0uVKpJo4DpwXj3LHFhAD9XiDFEM4xSnezopggJ+UmuKPPqLab4MVp/Sbe64BfEy0bFAIOH9z9Zlacj2o1Womiu9FkND1YcS8sHwG83/6Hx70p5t6wRJbvvSv6FlTwPx6TASH/lOTC80YGEt9tryB+Q5cnviFNm95E9ywFfIkUZiRLWdX3E/uQ8Y5XicHJ53qr4AOjt7qsW+24tRrfcnB4J3guXjAtXa+IQ3brOu2qP/Pz1x64+WfQ3zSukhJYw1O3S0kiX1unSSrMUltZ0aalVkdJDE8YViLCbaGLbbV3rSJVTc4A9GPa7OX0smpUFWwGvpI4+iWhlm/gxnXJtEkzOEfdvN2Lw2H+Ztc5uld7/XSLbPr6tRDMnhg99/2gPfe9/2tL/uE496rpbdAta/M2tuDeqCxiIoOtJWJZyofAWA2PpvheKMyk/3m63RYmuYLPACZ0gTog7t4mDb3DPAxInLIxZjB8TiV0jjm5taDOGSmSEhsQOPELiRUgJhkPuz9m8ru/2nfJfpX2dHfvvY7RK0VrxAMq7d5fZN3oFxpL9N7fZZOzoHetV9vNasF/Tj2+1XsxGexjW37vmrjdbwSJstppGa98SV7oNAz651POv0+6Nyvnky+EAvE827+M3Sm2GO18K9hG/FN5F+naR3n0D524fIqwUAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=ebdeba23c3b63250b202be3ed40131c7"/>
+    <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=55465aafc3323250b202be3ed40131db"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=55465aafc3323250b202be3ed40131db^sys_idNOT IN09e8b663c3763250b202be3ed4013149,468a262bc3f23250b202be3ed4013147,539bde63c3723250b202be3ed401312b,812bba2bc3763250b202be3ed401317a,92f0dba7c33a3250b202be3ed4013195,a8305367c33a3250b202be3ed401315b,caf253ebc33a3250b202be3ed40131d7,efe213ebc33a3250b202be3ed4013147,ff6e9263c3b23250b202be3ed40131a4"/>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">81e8b663c3763250b202be3ed4013149</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Hardware Request - Item Fulfillment">55465aafc3323250b202be3ed40131db</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>10</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-07 20:20:21</sys_created_on>
+        <sys_id>09e8b663c3763250b202be3ed4013149</sys_id>
+        <sys_mod_count>30</sys_mod_count>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-08 19:44:12</sys_updated_on>
+        <ui_id>956235fe-3849-4190-8af6-82ac34e02379</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VXW/aMBT9K8jPgJwvBrxVVJWQulYbVV/WLnKca7Bm7Mx2Shniv+86CVBNrdZufdjD3uLje6/POc5JdsTUvqq9uzFnzsmlJtMv930idcDweUeEMptLs5R8rp1nmsNi6+YlmRI6gXExGiU8+TBK4owWMY0LSKBMaZRE6YT0iWZrwEpudCm9NBqhB6bqgO12AMmY0okYxJGgg1SkYlCkbDJIqYhgNI6TDLIhZx6Wxm73+7ua0qTkrFDgvl59+sN+t5Ger8Ahk1K6SrHt7T9DiK+kKi10V1Axi+55sGS6+2VLBvsnLBNZRDOexGg/pfE4jYpRUkRxmTBIRzhQsQIUls6e+P/MlfhtFSDnrdTLbn3ZtS4OoLFloBLTPoFHD7oEJCGYctAna6ZL5lEUmXpbI2CBlddabY8VK6k9TiOh9tHJHxAmURoqBaAuDu3ucZl3t9PC4px5hlRq7mvblfKVkRxc60gJgtXKz55ibcF11ahsWny4q67bqHqtr1ozyHHA4WVApHZIAqqgNHDvhIjFymw+H1heSN240m0qw5k6rphH74raBz47AgrWOChfs6pCR/PKmgfZNCOX9XCpcDEMWcNDQw6HjAfiQzSWDS8QP2/gW2ZlUPERx2Azvgsud9zK6qCtOZzs+8Rt3Uwx504a0dz8ex0Ytoo7bXlrT2hpBp3hwQ/Qydj33/cLkDfA6TMwF71Zl4iedPgc0tQztrd4MaivaXlblARlIprw6PkoseS5KPXahLys8C2pin6Tqg55Vayy7H+q/jpVgWbBnOR58yfEceHD9o6xug8RaA89ms2lQ243AZsf/r9hY4tvVAjfCdoY+y2oOmH7n0yVjCTJBwAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">ce8a262bc3f23250b202be3ed4013146</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Hardware Request - Item Fulfillment">55465aafc3323250b202be3ed40131db</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>8</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-07 19:17:36</sys_created_on>
+        <sys_id>468a262bc3f23250b202be3ed4013147</sys_id>
+        <sys_mod_count>21</sys_mod_count>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-08 19:43:26</sys_updated_on>
+        <ui_id>bea3a97d-8960-4e53-be4e-f2d2849810ce</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1WTW8aMRD9K8hnQN4vCtzSRJGQ0kRNolzadDXrHYNV492uvRCK+O8d7y4QRamapDlVveHnmfF7M35etqyoXVk7e1ucWKvmhk2/3PeZMh6j31smdbG+KOZKzIx1YATebOwsZ1MWj8YQjsJMRDKMwoRnIQ8zjDCPeRAF8QfWZwaWSJGiMLlyqjAErUDXHttuEaMx5xM5CAPJB7GM5SCLYTKIuQxwNA6jBJOhAIfzotrsdl9rzqNcQKbRfrv8/Mb8RZ29PdmulRMLtCQjV7bUsLn7N9SIhdJ5hd3wS6hobg4rNt0+2VJ+8BNIZBLwREThKAo5D8dxkI2iLAjzCDAeUUENGWoKPX00+Wcug9uUHrKuUmberS+61Js9WFS5pxLyPsMHhyZHIiFBW+yzJZgcHIliU1fVBFQI+ZXRm0PEQhlH1ZiPfbDqJ/pKnPtIiaRLYLt7WKbdaFtYnoEDolILV1ddqFgUSqBtO5KjhFq708dYG3BVNiqbFOcH3WUXul6ay7YZ7FBgf5MIqS2RwNIr9dw7IfJmUayv9yzPlWm60m3qQoA+rMBR77LaeT5bhhqXVChdQllSR9OyKlaqSSYuy+Fc02LoXU6H+hdgCMITH1JjYXhO+FkD30GlvIpPVIaS6S7Y1IpKlXttzeFs12d2Y081WHvUSM1Nf9SeYau405a27fEpTaETOniFnYxd/33fnrQBjg9QaPLeBa5Q905K3xLQ097M4XLwESzmvWt6F9v798TqL857nakkBxlMRPC8qSB6zlS91iu/1/oafwV/8FeHvMhgSfLfX3/tL08zA6tE2nyNqZx/4t7RYPfeDO2hh2YLZYnbrcdm+/8AfmNDN8rb8Aiti+q7V3XEdr8AEpufl00IAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">1f9bde63c3723250b202be3ed4013129</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Hardware Request - Item Fulfillment">55465aafc3323250b202be3ed40131db</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>4</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-07 18:12:26</sys_created_on>
+        <sys_id>539bde63c3723250b202be3ed401312b</sys_id>
+        <sys_mod_count>18</sys_mod_count>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-08 19:36:59</sys_updated_on>
+        <ui_id>80cf3a03-eb76-4c72-b32c-788ca09ead47</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VXWvbMBT9K0XPifFHnCZ5K+0KgX6MJhTGKObqw4mYInmS3NYL+e+7sp2krB1bWR/3Zh3de3XOsY69Jab2Ve3d0pw5J1eazL4+DIjUAcPnLSmVeboyK8nm2nnQTCwaN+dkRvJsSrkYZyw7TbM0j2kap1Rkgo/iJEtSSgZEw0ZgJTOaSy+NRugRVB2w7XZMKT2FUTJMp3E+HInp6XBCy8lQpNMJyzI2ijmP7gQzlkcb0LASdrebL25ul5+uPy+/4CwuXaWguf/AkWwtFbeit6ECiwq8sGS2/WVLBgumkJd5EucsS8dZGsfpZJTQcUaTlGcgRmMcqIAKhaXnLzx4wxbfVAFy3kq96tdXfetiDyLtQCWNB0Q8e6G5QBIlKCcGBOVw8MY2ZOZtjYAVwG+1ag4Va6k9TiOh9tnJHyJMiuNQWQrUxUS3e1gWvb8dXF6AB6RSM1/bvpStjWTCdY5wUUKt/PlLrCu4rVqVbYsHqvbdRtUbfdOZQQ4D9q8TkdohCVEFpYF7L6RcrM3T3Z7lpdStK/2mMgzUYQUevaO1D3y2RCixwUHFBqoKHS0qax5l24xcNtFK4SIK9x0PDVmIgAXiERoL0SXiFy18D1YGFdc4BpvxLrjCMSurvbb2cLIbENe4cwXOHTWiucX3OjDsFPfais6e0NIOOsODH0UvYzf42BQWLXCM4nWXhJNLU2t+8jpXr/bfF5IyhjKZsuTtkED2VkhOurv/e+7vyUvyh7z0yF8FJs//5+Wf8xJoUnCSFe1/BseFT9YHBuYhXO7u0IPZTDrktgzYfP93CxsN3qgQqyP0ZOy3oOqI7X4C0wmfiScHAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">0d2bba2bc3763250b202be3ed4013179</block>
+        <comment/>
+        <connected_to>956235fe-3849-4190-8af6-82ac34e02379</connected_to>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Hardware Request - Item Fulfillment">55465aafc3323250b202be3ed40131db</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Else If">666e5545c3e232002841b63b12d3ae99</logic_definition>
+        <order>16</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-07 20:30:10</sys_created_on>
+        <sys_id>812bba2bc3763250b202be3ed401317a</sys_id>
+        <sys_mod_count>40</sys_mod_count>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-08 19:36:59</sys_updated_on>
+        <ui_id>43bcd4bc-3afb-4d19-b668-96c37bdef5e7</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1V0W7aMBT9FeRnQE4CLeWtoqqG1K3SWu1lq6Ib5xqsGTuznbYZ4t93nQSoJqZtGo97i4/vvT7nxCfZMluHqg7+0V57r1aGzT8/DZkyEaPnLZPavtzZlRJL4wMYgQ+NX5ZszmZJWhSQFiK7vMjSKS9SnhaYYTnhSZZcAhsyAxukSmFNqYKyhqBn0HXEtlvEbMb5lRylieSjiZzIUTGBq9GEywQvZmk2xelYQMCVdc1u96XmPCvXdUFDSuUrDc2nc8wSa6VLh73wChxxDujYfPvTloqiJQeZXIlEZCmJ5jydTZLiIiuStMwAIaGBGgrUVLp4o/qEEaGpIuSDU2bVr+/61oc9aF0ZqaR8yPA1oCmRSEjQHodsA6aEQHrYPLiaAIdQ3hvdHCrWygSaxmLtq1ffMU7iPFZKJF0Cu93DMu+N7WB5AwGISi1C7fpSsbZKoO8cKVFCrcPiLdYV3FetyrYlQKH33VbXG/OhM4MdBuzfIyG1JxJYRaWRey9EPqzty8c9y1tlWlf6TW0F6MMKAnlX1CHy2TLUuKFB+QaqihzNK2efVdtMXDbjlabFON5wOjTe/jGISHxMxsL4lvCbFv4ETkUV72kMNdNd8LkXTlV7be3hbDdkvvELDd4fNZK5+bc6MuwU99ryzp7Y0g66poOfsZexG543d3kLHMO3lINFH4aB8oN3p0J1suasYUlPhWXQZeDXGv4mN8lvctMjfxSc6fR/bv45N5FmAV6JvP3D0Lj46TpjcJ7iJe8OPZgtlCdujxFb7v9rcaOhGxXjdYRerPsaVR2x3Q9d6gyaIQcAAA==</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">9af0dba7c33a3250b202be3ed4013194</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Hardware Request - Item Fulfillment">55465aafc3323250b202be3ed40131db</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>18</order>
+        <outputs_assigned/>
+        <parent_ui_id>43bcd4bc-3afb-4d19-b668-96c37bdef5e7</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-07 22:05:34</sys_created_on>
+        <sys_id>92f0dba7c33a3250b202be3ed4013195</sys_id>
+        <sys_mod_count>34</sys_mod_count>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-08 19:36:59</sys_updated_on>
+        <ui_id>c4c7c938-59ec-436c-9420-27228a4816b5</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1V0W7aMBT9lcrPgJyY0MJb1aoSUrdKperLVkU3jg3ejJ3ZTtsM8e+7TgK0U6utGo97w8f3Xp9zuAc2xNahqoO/s+feq6Uhsy8PA6JMxPDzhkhtn67tUvG58QEMF4vGz0syI9NU0rKAU84YsDSjRUrTQjBRjmnCkmlGBsTAWmAlt6ZUQVmD0CPoOmKbzURSdpZKPmQZz4ZjSfkQptnZ8FTQZAyQFryYjqCqnMWeHN8OYrv9WlPKSie+CR5EifNK5SsNzf2Rx/KV0nju7ajAoZIgHJltfrtSrRWQySyhGWfphKWUpmfjpJiwIklLBmI8wYEaCqGx9OKFF2/YE5oqQj44ZZb9+bpvXexA68pIJaUDIp6DMCVSnknQXgzIGkwJwbqGzIKrEXACyhujm33FSpmA00isffbqp4iTKI2VUqAuLrrb/THvPe5geQkBkErNQ+36Ur6yigvfOVIKCbUOFy+xruCmalW2LQEKveu2ul6bz50ZZD9g95UiUnskIaqoNHLvhcjFyj7d7lheKdO60l9qy0HvTxDQu6IOkc+GCC3WOChf4xqgo3ncBdU2I5f1aKnxMIp7j4/GTIyAR+IjNBZGV4hftvA9OBVVfMIx2Iy74HPPnap22trHyXZAfOMvNHh/0Ijm5j/qyLBT3GvLO3tiSzvoHB9+FL2M7eC4acxb4BDJuTy5fTdYry8/Fg9JQSZTnrwdD2BvxeOk2/r3WX8kKckfktIjfxWVLPuflH9OSqRZgFc8b/9pcFz8sTpiVB7iWneP7s3myiO3u4jNd/9v8aLBjYqBOkBP1n2Pqg7Y9hfC59YpKQcAAA==</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">a0305367c33a3250b202be3ed401315b</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Hardware Request - Item Fulfillment">55465aafc3323250b202be3ed40131db</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>12</order>
+        <outputs_assigned/>
+        <parent_ui_id>956235fe-3849-4190-8af6-82ac34e02379</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-07 22:02:10</sys_created_on>
+        <sys_id>a8305367c33a3250b202be3ed401315b</sys_id>
+        <sys_mod_count>25</sys_mod_count>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-08 19:36:59</sys_updated_on>
+        <ui_id>7f5eb3ef-9ed4-42e7-8481-ff4db89e13dc</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VwW4aMRD9lcpnQN41S4BblCgSUtpISZRLG61m7Vlwa+zt2puEIv69490F0ipRGzXH3vDzzPi9xzzYMteEqgn+1p16r5eWzT/fD5i2EaPPW1Ya93jpllourA9gJd5s/EKxOYOp4JmYnEghQKQZL1KeFihQjXkikqxgA2ZhjVQpnVU6aGcJegDTRGy7xdmsGKPgwyKZyuFYnoyHxUwlwxkAPxFCTUuBI6iq2lFPTm8H3O2+NJwLVeNXlAEVzVPaVwY2d+88Vq60oXNvRwU1KQlYs/n2tysdrZhBVmYJz6RIJyLlPJ2Ok2IiiiRVAnA8oYEGCjRUevbMixfsCZsqQj7U2i7782XferMHXa0ilZQPGD4FtIooz0swHgdsDVZBcPWGzUPdEFAjqCtrNoeKlbaBprFY++T1D4yTOI+VJZIuid3t4Zj3HndweQ4BiEojQ1P3pXLltETfOaKwhMaEs+dYV3BVtSrblgCF2Xc706ztp84Mdhiw/0oJaTyRwCoqjdx7IeXNyj1e71leaNu60l8aJ8EcThDIu6IJkc+WocE1DcrXtAbkaB53QbfNxGU9Who6jOLe06MxEyOQkfiIjIXRBeHnLXwHtY4qPtIYaqZd8LmXta722trH2W7A/MafGfD+qJHMzb83kWGnuNeWd/bElnbQKT38gL2M3eB905i3wDGSi/LD9avB+vXybfEoOZTJTCYvxwPES/H40G3966zfkpTkD0npkb+KSpb9T8o/JyXSLMBrmbf/NDQu/li9Y1Tu41p3jx7MltoTt9uILfb/b/FiQxsVA3WEHl39Lao6YruftSO4CSkHAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">c2f253ebc33a3250b202be3ed40131d7</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Hardware Request - Item Fulfillment">55465aafc3323250b202be3ed40131db</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="End">d176605ea76103004f27b0d2187901c7</logic_definition>
+        <order>21</order>
+        <outputs_assigned/>
+        <parent_ui_id>c4c7c938-59ec-436c-9420-27228a4816b5</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-07 22:14:17</sys_created_on>
+        <sys_id>caf253ebc33a3250b202be3ed40131d7</sys_id>
+        <sys_mod_count>17</sys_mod_count>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-08 19:36:59</sys_updated_on>
+        <ui_id>ef51dd4b-ac9c-4154-b99e-c33a72c7e6ca</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">e7e213ebc33a3250b202be3ed4013147</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Hardware Request - Item Fulfillment">55465aafc3323250b202be3ed40131db</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="End">d176605ea76103004f27b0d2187901c7</logic_definition>
+        <order>15</order>
+        <outputs_assigned/>
+        <parent_ui_id>7f5eb3ef-9ed4-42e7-8481-ff4db89e13dc</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-07 22:14:07</sys_created_on>
+        <sys_id>efe213ebc33a3250b202be3ed4013147</sys_id>
+        <sys_mod_count>17</sys_mod_count>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-08 19:36:59</sys_updated_on>
+        <ui_id>1fea950c-9c2c-4216-a526-70cdb6f824fd</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">f76e9263c3b23250b202be3ed40131a4</block>
+        <comment/>
+        <connected_to>80cf3a03-eb76-4c72-b32c-788ca09ead47</connected_to>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Hardware Request - Item Fulfillment">55465aafc3323250b202be3ed40131db</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Else">1f781bf3c32232002841b63b12d3aee6</logic_definition>
+        <order>6</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-07 18:24:45</sys_created_on>
+        <sys_id>ff6e9263c3b23250b202be3ed40131a4</sys_id>
+        <sys_mod_count>16</sys_mod_count>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-08 19:36:59</sys_updated_on>
+        <ui_id>c2477d58-e33f-4281-81b6-67ed45cb6d0a</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=55465aafc3323250b202be3ed40131db"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=55465aafc3323250b202be3ed40131db"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>table_name</element>
+        <help/>
+        <hint/>
+        <label>Table Name</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_55465aafc3323250b202be3ed40131db</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-07 17:49:34</sys_created_on>
+        <sys_id>1066d663c3723250b202be3ed401318f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="ChromaTech Ticket logging System" source="x_1839224_chroma_0">0ab6f4efc34e76d0b202be3ed4013104</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-07 17:49:34</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>request_item</element>
+        <help/>
+        <hint/>
+        <label>Request Item</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_55465aafc3323250b202be3ed40131db</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-07 22:59:41</sys_created_on>
+        <sys_id>4b5d5b23c3ba3250b202be3ed401318a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="ChromaTech Ticket logging System" source="x_1839224_chroma_0">0ab6f4efc34e76d0b202be3ed4013104</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-07 22:59:41</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_55465aafc3323250b202be3ed40131db"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_55465aafc3323250b202be3ed40131db"/>
+    <sys_hub_flow_snapshot action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <annotation/>
+        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,viewActivatedIn=naturalLanguage</attributes>
+        <authored_on_release_version>28100</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description>Handles 3-level approvals (Manager, Group, Hardcoded) and consecutive tasks for Procurement and Shipping</description>
+        <flow_priority>MEDIUM</flow_priority>
+        <internal_name>hardware_request__item_fulfillment</internal_name>
+        <label_cache>[{"name":"ee38009f-21f0-4f4f-b4a9-40f1e68235e5.enter_supervisor_name.manager","label":"1➛enter_supervisor_name➛Manager","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","parent_table_name":"sys_user","column_name":"manager","choices":[{"order":0.0}],"usedInstances":{}},{"name":"ee38009f-21f0-4f4f-b4a9-40f1e68235e5.category","label":"1 - Get Catalog Variables➛category","reference":"","reference_display":"category","type":"choice","base_type":"choice","choices":[{"label":"-- None --","value":"","order":100.0},{"label":"Cables","value":"cables","order":100.0},{"label":" Repeaters","value":" repeaters","order":100.0},{"label":"Hub","value":"hub","order":100.0},{"label":"Switches","value":"switches","order":100.0}],"usedInstances":{},"attributes":{"catalogType":"5","catalogTypeLabel":"Select Box"}},{"name":"{{static.681ccaf9c0a8016400b98a06818d57c7}}","label":"Joe Employee","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","choices":[{"order":0.0}],"usedInstances":{"46b01560-e600-4339-ad61-174001736d66":["approval_conditions"]}},{"name":"{{static.4061e2e7c3b23250b202be3ed4013150}}","label":"Network \u0026 Hub Group","reference":"sys_user_group","reference_display":"Group","type":"reference","base_type":"reference","choices":[{"order":0.0}],"usedInstances":{"6f0382fc-35c5-4f0c-a958-7e014aa2bcb9":["approval_conditions"]}},{"name":"e99b4e30-b18c-4c74-b9d1-9aa0733d8f3e.approval_state","label":"10 - Ask For Approval➛Approval State","reference_display":"Approval State","type":"choice","base_type":"choice","choices":[{"label":"-- None --","value":"","order":0.0},{"label":"Not Yet Requested","value":"not requested","order":1.0},{"label":"Requested","value":"requested","order":2.0},{"label":"Approved","value":"approved","order":3.0},{"label":"Rejected","value":"rejected","order":4.0},{"label":"Cancelled","value":"cancelled","order":5.0},{"label":"No Longer Required","value":"not_required","order":6.0},{"label":"Skipped","value":"skipped","order":7.0}],"usedInstances":{},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"Service Catalog_1.request_item.requested_for.email","label":"Trigger - Service Catalog➛Requested Item Record➛Requested for➛Email","reference":"","reference_display":"Email","type":"email","base_type":"email","parent_table_name":"sys_user","column_name":"email","choices":[{"order":0.0}],"usedInstances":{"c8811540-463e-443a-ba09-37fd3c9a06da":["ah_to"]}},{"name":"ee38009f-21f0-4f4f-b4a9-40f1e68235e5.enter_supervisor_name","label":"1 - Get Catalog Variables➛enter_supervisor_name","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","usedInstances":{},"attributes":{"catalogType":"8","catalogTypeLabel":"Reference"}},{"name":"ee38009f-21f0-4f4f-b4a9-40f1e68235e5.email","label":"1 - Get Catalog Variables➛email","reference":"","reference_display":"email","type":"string","base_type":"string","usedInstances":{},"attributes":{"catalogType":"6","catalogTypeLabel":"Single Line Text"}},{"name":"Service Catalog_1.request_item.request.requested_for","label":"Trigger - Service Catalog➛Requested Item Record➛Request➛Requested for","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","parent_table_name":"sc_request","column_name":"requested_for","choices":[{"order":0.0}],"usedInstances":{}},{"name":"Service Catalog_1.request_item","label":"Trigger - Service Catalog➛Requested Item Record","reference":"sc_req_item","reference_display":"Requested Item","type":"reference","base_type":"reference","choices":[{"order":0.0}],"usedInstances":{"d3fe3344-40c2-458e-94b2-0d74b612bee5":["record"],"ce2f500f-54a8-4157-bb22-840a3912daf8":["record"],"8698b255-5b10-4cc6-a121-d2362243f60f":["record"],"00dd8af6-4751-4be0-b2e2-a626bae514d8":["record"],"21f9d554-0c02-40fb-b561-f2fb1766a95c":["ah_requested_item"],"c8811540-463e-443a-ba09-37fd3c9a06da":["record"],"1c1cba4f-c867-41ca-96b2-a52692819926":["record"],"621a0cb3-044f-44aa-afbc-c682111736ec":["record"],"0de7d409-05f9-40a0-a8ae-fec0576efc17":["record"],"3ed63408-0992-4e31-9f24-b7f6fc8695f1":["record"],"ba7dde3b-a832-4e74-81ae-db4430d18f13":["record"],"e99b4e30-b18c-4c74-b9d1-9aa0733d8f3e":["record"],"85b4020d-b61e-4512-b933-a4a04de95e38":["record"],"efc5421c-89af-4f7e-8bdf-516ad2d6d11b":["ah_requested_item"],"46b01560-e600-4339-ad61-174001736d66":["record"],"6f0382fc-35c5-4f0c-a958-7e014aa2bcb9":["record"],"ba05e775-d8ea-46b2-9bf6-352836922853":["record"],"42a1eb1e-a7dc-49e5-9c5f-82d53363683a":["record"],"ee38009f-21f0-4f4f-b4a9-40f1e68235e5":["requested_item"]},"attributes":{"default_search_field":"number"}},{"name":"ee38009f-21f0-4f4f-b4a9-40f1e68235e5.manager","label":"1 - Get Catalog Variables➛manager","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","usedInstances":{},"attributes":{"catalogType":"8","catalogTypeLabel":"Reference"}},{"name":"{{static.c531aea7c3b23250b202be3ed401318f}}","label":"Network \u0026 Cable Group","reference":"sys_user_group","reference_display":"Group","type":"reference","base_type":"reference","choices":[{"order":0.0}],"usedInstances":{"e99b4e30-b18c-4c74-b9d1-9aa0733d8f3e":["approval_conditions"]}},{"name":"Service Catalog_1.request_item.requested_for","label":"Trigger - Service Catalog➛Requested Item Record➛Requested for","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","parent_table_name":"sc_req_item","column_name":"requested_for","choices":[{"order":0.0}],"usedInstances":{}},{"name":"6f0382fc-35c5-4f0c-a958-7e014aa2bcb9.approval_state","label":"16 - Ask For Approval➛Approval State","reference_display":"Approval State","type":"choice","base_type":"choice","choices":[{"label":"-- None --","value":"","order":0.0},{"label":"Not Yet Requested","value":"not requested","order":1.0},{"label":"Requested","value":"requested","order":2.0},{"label":"Approved","value":"approved","order":3.0},{"label":"Rejected","value":"rejected","order":4.0},{"label":"Cancelled","value":"cancelled","order":5.0},{"label":"No Longer Required","value":"not_required","order":6.0},{"label":"Skipped","value":"skipped","order":7.0}],"usedInstances":{},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"{{static.62826bf03710200044e0bfc8bcbe5df1}}","label":"Abel Tuter (architect)","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","choices":[{"order":0.0}],"usedInstances":{"46b01560-e600-4339-ad61-174001736d66":["approval_conditions"]}},{"name":"6bbb7a41-2905-4e97-8bf8-e298c33c40dd.Record.manager","label":"3 - Look Up Record➛User Record➛Manager","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","parent_table_name":"sys_user","column_name":"manager","choices":[{"order":0.0}],"usedInstances":{"80cf3a03-eb76-4c72-b32c-788ca09ead47":["condition"]}}]</label_cache>
+        <master>true</master>
+        <name>Hardware Request - Item Fulfillment</name>
+        <natlang/>
+        <outputs/>
+        <parent_flow display_value="Hardware Request - Item Fulfillment">55465aafc3323250b202be3ed40131db</parent_flow>
+        <remote_trigger_id/>
+        <run_as>user</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <status>published</status>
+        <sys_class_name>sys_hub_flow_snapshot</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-08 09:51:19</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>e482f577c33e7250b202be3ed4013187</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-08 09:51:19</sys_updated_on>
+        <type>flow</type>
+        <version>2</version>
+    </sys_hub_flow_snapshot>
+    <sys_translated_text action="delete_multiple" query="documentkey=e482f577c33e7250b202be3ed4013187"/>
+    <sys_variable_value action="delete_multiple" query="document_key=e482f577c33e7250b202be3ed4013187"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=e482f577c33e7250b202be3ed4013187"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=e482f577c33e7250b202be3ed4013187^sys_idNOT IN2482f577c33e7250b202be3ed4013189"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>e482f577c33e7250b202be3ed4013187</id>
+        <name>Hardware Request - Item Fulfillment</name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-08 09:51:19</sys_created_on>
+        <sys_id>2482f577c33e7250b202be3ed4013189</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-08 09:51:19</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=2482f577c33e7250b202be3ed4013189"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=e482f577c33e7250b202be3ed4013187^sys_idNOT IN2482f577c33e7250b202be3ed401318b,f082f577c33e7250b202be3ed40131b8"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,test_input_hidden=true,uiType=table_name,uiTypeLabel=Table Name</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value>sc_req_item</default_value>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>table_name</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">table_name</internal_type>
+        <label>Table Name</label>
+        <mandatory>false</mandatory>
+        <max_length>40</max_length>
+        <model display_value="Hardware Request - Item Fulfillment">e482f577c33e7250b202be3ed4013187</model>
+        <model_id>e482f577c33e7250b202be3ed4013187</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_e482f577c33e7250b202be3ed4013187</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-08 09:51:19</sys_created_on>
+        <sys_id>2482f577c33e7250b202be3ed401318b</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-08 09:51:20</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=2482f577c33e7250b202be3ed401318b"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>default_search_field=number,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=reference,uiTypeLabel=Reference</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>request_item</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="Reference">reference</internal_type>
+        <label>Request Item</label>
+        <mandatory>true</mandatory>
+        <max_length>32</max_length>
+        <model display_value="Hardware Request - Item Fulfillment">e482f577c33e7250b202be3ed4013187</model>
+        <model_id>e482f577c33e7250b202be3ed4013187</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_e482f577c33e7250b202be3ed4013187</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference display_value="" name="sc_req_item">sc_req_item</reference>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-08 09:51:20</sys_created_on>
+        <sys_id>f082f577c33e7250b202be3ed40131b8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-08 09:51:20</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=f082f577c33e7250b202be3ed40131b8"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=e482f577c33e7250b202be3ed4013187"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=e482f577c33e7250b202be3ed4013187"/>
+    <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=e482f577c33e7250b202be3ed4013187^sys_idNOT INb4823977c33e7250b202be3ed4013101"/>
+    <sys_hub_trigger_instance_v2 action="INSERT_OR_UPDATE">
+        <comment/>
+        <display_text/>
+        <flow display_value="Hardware Request - Item Fulfillment">e482f577c33e7250b202be3ed4013187</flow>
+        <generation_source/>
+        <name>Service Catalog</name>
+        <published_version/>
+        <remote_sys_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-08 09:51:21</sys_created_on>
+        <sys_id>b4823977c33e7250b202be3ed4013101</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-08 09:51:21</sys_updated_on>
+        <trigger_definition display_value="Service Catalog">c43a1011c36813002841b63b12d3ae15</trigger_definition>
+        <trigger_inputs>H4sIAAAAAAAA/61TTW/bMAz9K4FOG5CDk6zNktswoECAbgWarpdiMGSJcoTJkifJbr2g/32kPxK3M4YB3ckyRfI9Pj49HJnhGRi2ZbeVnV0Z9zjbWTZn2kbwlpu7pgS8FAenBWC8O1zrENn24cjUPTcVJSjnIfeushKT1PWop6KeGr8vMnYFz6mOznswICJItlXcBMDItzD++6JD0DbvA8/zEWzGxY+/w54zZu8kKF6Z+P6NBL7PWcGt5NH55pzkXXEHRWl4hFPQeQmebRdJMmc1Ud43YSc7VMsLwveVTYlrqkn2up8Lj1IHbNbcnyPioI30YFF5pFByjx0i9T++utIEcZlsErFebtbrZbJaJYm6yJRQQqw/LpLLxcUGG06vfpJYfOWD8WTwFMHKkWB/quOByxtrzoEDGqybquBPQf/C5h8SylOAY4h+4tNv2qsxCEEsQutA8+87r6dM0w+SkK2mer2wbT3l9kEK8kWP9vn/E1y8meCSCHbS3ZRROzQLW9FqeWaoJjShW7gHgSVp9DrPsRCLnKkK+3XKFz37kUurgNuCkhxBKx6ex/7gHm+HdV5p21LqL40T3Jz+eETkrIqk35FxWXOsIEdHjxjPrSvSnxVVtO9kwErbiSghCK/L+ElEXcPp0f4Gx53JPOsEAAA=</trigger_inputs>
+        <trigger_outputs/>
+        <trigger_type>service_catalog</trigger_type>
+        <updation_source/>
+    </sys_hub_trigger_instance_v2>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=e482f577c33e7250b202be3ed4013187^sys_idNOT IN3482f577c33e7250b202be3ed40131ed,3882f577c33e7250b202be3ed40131f2,7082f577c33e7250b202be3ed40131ef,7482f577c33e7250b202be3ed40131fd,7882f577c33e7250b202be3ed40131f3,7882f577c33e7250b202be3ed40131fa,7882f577c33e7250b202be3ed40131ff,7c82f577c33e7250b202be3ed40131f5,b082f577c33e7250b202be3ed40131f0,b082f577c33e7250b202be3ed40131fc,b482f577c33e7250b202be3ed40131f9,b482f577c33e7250b202be3ed40131fe,b882f577c33e7250b202be3ed40131f4,bc82f577c33e7250b202be3ed40131f6,f082f577c33e7250b202be3ed40131e9,f082f577c33e7250b202be3ed40131eb,f082f577c33e7250b202be3ed40131f1,f882f577c33e7250b202be3ed40131e5"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Ask For Approval">f8f2e9920b10030085c083eb37673abd</action_type>
+        <action_type_parent display_value="Ask For Approval">bae0a1120b10030085c083eb37673a92</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f8f2e9920b10030085c083eb37673abd</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Hardware Request - Item Fulfillment">e482f577c33e7250b202be3ed4013187</flow>
+        <generation_source/>
+        <order>5</order>
+        <parent_ui_id>80cf3a03-eb76-4c72-b32c-788ca09ead47</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-08 09:51:20</sys_created_on>
+        <sys_id>3482f577c33e7250b202be3ed40131ed</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-08 09:51:20</sys_updated_on>
+        <ui_id>1c1cba4f-c867-41ca-96b2-a52692819926</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1YXW/iOBT9KyjPwDrko6FvVVGlrnZnpLYzL1UVOfYNeGQSJnY6wyL++97EDslCy8CWSu2oL1V9rz+Oj8+JfblfOYI75w74oRfgn7PUI+7IJRGEUcTGhLIoDAPfc/pORueAPeliUeSPVMYFUJVnmMBGWWXwXy7UQtLl1zbCZkLyAjLn/P6h7yxogbNoKJzz1VbqUBiSJiCx64XF0btpcDwLUC8XVULpQmRT2/7LTnPbBPOCV7BGfQd+asg4IJ6USgV9Z04zTnVeLDcRnJp/zmQbmIlMmw3P6U8l/sH13JBUHVPALTLLxqYZW6ZMOJ1QTRFJyXRZbIjLBQNlyOGQ0lLqy27MdPi80AI3WQ/RNJHN6FyW8+yTYcTZTNA5mFIhCFhUO62g232kt7P8x02D8kpkNSk2KXNG5aZFNVKXlLrCs3JKcbfFsons8AwS5rhiPMdzwkhcHZaoV0HQ8+FUYmOYyvwHolNimg0pq3Y4xBOgwyuMT+rwV1qIart/4zQ4uFruSya+l3Bd6SgcJeGYRHzAU5IM/MgLBpQBGUDoBhDwkAWu56z7jlqqS0mVaonCE4q/l9U2DW2WoNhwXA1hhVjoCwT1CJaLdd+6iLjpCMbjEUlcQjxCooCRyIPEOwvPPMqjJ0SaCpC8Y6ImsWumTuY4Ux2AasdUVxbWc3CtpepmXHf6r63q8b1PJnFya0WEvCdv4eIvsdbrOOZ49RsKfmEBtlds0LlIvuVlke1xQDwTqlbGs07o9DjOEQeAbBzxp0G5bYht8P/HD96HH35/P5xF+6TGSCupAhgKo2OE1eoWikfkvXeJyGU+jd1hAXjFKR0LDfP1+gQvrgPwNVa4aQBuA7bi5zkr64MRfEv9E5vpXU9a+ZP98jciOUT93uhD+29S+yzYp6103EqJl0gS1XDaauKA9RttT0roTQyAXUhN/cBmwEtpwrEWOx/5W9uhnumPO9H92Acn+9j77+lT/9Ky4vWqhXjznkY1oylfoRzw9+oPOmLbvGhYnnFR7UB1rGBe5aAusuWX+9UKwMMLf5wORm5KBn7qp4PEp+OBT1IX6+URVtDBELVFp1Cs1w+7RnrxfMfZ8AAaNlcMukf9ihZrx7bOt4O6Vmx/HbBJa0P/VJfOO3tyvU0fnt5yCdv7nGGttgybrckUi/FxVT+sdh1zY55dwHvXJn+cAw5A1TjgzsLaQmk1Xzefqi/qYVv1hXvklWPE/6TWP5T+ZpT+8C/HOjtHsxUAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=3482f577c33e7250b202be3ed40131ed"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Send Email">c1806bf4a70323008299b39f087901cb</action_type>
+        <action_type_parent display_value="Send Email">98c181d20b100300d97d8bf637673ab5</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>c1806bf4a70323008299b39f087901cb</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Hardware Request - Item Fulfillment">e482f577c33e7250b202be3ed4013187</flow>
+        <generation_source/>
+        <order>13</order>
+        <parent_ui_id>7f5eb3ef-9ed4-42e7-8481-ff4db89e13dc</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-08 09:51:20</sys_created_on>
+        <sys_id>3882f577c33e7250b202be3ed40131f2</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-08 09:51:20</sys_updated_on>
+        <ui_id>42a1eb1e-a7dc-49e5-9c5f-82d53363683a</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1YXXPaOhD9Kx4/E2owkJC3ljQpTKGTBEhC2/HIkoyVyJZryyEkk/9+V7YA8zEUbpJpO5MHxkhaSWfX52jX+v5kMmIem/XmkdVwvRo6tOyqbVlH1WbTtZuedXTYtCoEmSUzRAEFS+Q7UkDzHvFUtZ+eKLWPLKvpHVQrnnVQ82regVtDzYOa5VVo46hq12m9HKAQjWn8/GzsOIGGksZOkkY0vmeJiB21/x7TA8Q4mANSwpKIo+nwnwGMfcZJTEPz+PvPkhmhGBaCtc3jp5WhXV8dRy7lYNoX6+9RTiPVTGTMwrFuf9X2l7NOERO1v10y6YOkIaGwsYd4QksmxIkgKeKpeSzjFDpiisi3kE8LFg8Je4RNIAiWGvcoeIDVrmah6ej3lHd7J0gi2D/FMo21KfYFwzTJfSfUQymXrWJfbvAtkkyE+RSJXD6bLXgahL3ce3O+wIwW0JMmAIJGyr9QzuF7l76YXMxQnrIwC4Ue5AIjPm8hCQFzU6nwPJmU0wAWcgIURRBGJ4rFPcsmA5agPObQKHtcTGDThI3DMsIKeBnCicqn0H+SdQ9RzJQXXVgGJivgnAUsI4SpQm4+l8xkmrQ4SpKFexBX51eqwOXOarecPDJqCo5ZJD/CnvdUe/Bc0seB1Wi4bsOtH9oLTjWxRw5dr4EOsb2g0QQBkADFd05G4MLBUFmXXoZ2X37vgGXG73aIeUqocTUDtQ2nJr4rBKcoXGF+H5B+OFUxWbC/up39umeN/j5TZDJzVhpSGPAe+dRAxhyS6pQ+NTJk8A9JgyVGAm+rbPSFwbRXhRklYypSI0gTCWYSRiSKx/AnphjAls2C6Gp/r+Q0HXTvyUau/BOafH0BVsi2Q502ls5xF+OC7tZlt7fkdth9JrlPrdYGLPsklfr/k9V7VvnnskptK60wWRApP8eWqsxLVVZharTADy7GTqUc018pTaQDoIPn51eg/Q745pVUft5ezHCu4tYCIAKn2dtiZEUFJ3rEaJ8spGC9KMN8TBKBGaSIpJBNJkz6kB82JAa7uqwaSDMso+hm9bQXw3+BivJScw8ReZcUxdg/ZZSrV52kLoZIjVVcVxWGoR6InRVu63T0t+SPLHbZF8bvRIe2ktqrLp/egkwLqvuRWpaNI0OhP5AsnAaYxkJIF2J7lw2SH+aP3IzmxkmEwtw+4RDgAy9GYxWxmXWnT1qdfnvqVju/Rlc9S/3v9Huf1HN01rwlVxXuhue8e9vm3bsuPDt3N9cX/sJOzSefO/3OSbZO0LwbXXdze+sz7w3avGe11bz7myDiN/b5fAz6mAt7oOlg2mWD6bl6hhd1fDYo2kxurjv+yO74+Gz8Vjis0bWvfdfzz4Y+CYaPi/WHrW2xUvYjtuQHp1+W9qi79hDs2xMcDB/I1fCRtMDurHdPrh7uVD9gVmtObgLl/yewa96OrnuPo6ul+EuIR4zzmD2eXw4q52xQuWgNbPhtfn7Ub3vGkIwfNyKNDX1mG1iknBihkIZLDRARHBMJzSfgD4pDRU59iPLW+hGvCbpKwFfccL8MsoPY5oVTLrU17enM4cuAr6SML/3u10WuOHxh2dSo1+3Ge9304ropmpAqiUUUad/eqHaqbL/lqS2oVEgNi5M8wQ4oISuV1lV0kWuEEqOdj+/5tfB7aIuySQVpM1RN/LW+r8W5Ri8f0CKo7CmCvGzQ9VIfiqSl72ZDaniFb4t3hbxYISxxcmZr37LN30Ai9e1frXjptIUC8JZiWZDIDuliXTq7TdrzQvf3fsz0dDn3YpNn+3yFN96vdv+4VF5fEmTr0UytJeK89i3SDpvPeLxyibT3HVLt/Q7pz9P3Te+Qfv4H3LprGqocAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=3882f577c33e7250b202be3ed40131f2"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Hardware Request - Item Fulfillment">e482f577c33e7250b202be3ed4013187</flow>
+        <generation_source/>
+        <order>7</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-08 09:51:20</sys_created_on>
+        <sys_id>7082f577c33e7250b202be3ed40131ef</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-08 09:51:20</sys_updated_on>
+        <ui_id>ba7dde3b-a832-4e74-81ae-db4430d18f13</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VXU/bMBT9K5GfuyppAUH3NFEhITGQAPHCILqNb4o1xw7+KHRV//tuYid0HUMgIW1I69v9ss85uae+XjHB2YTtIE+zg2yvGGfj8ShNR/s72WxvPMtGfAyIGRswBRVSp8FCG07xAqRvEqvVBZqFKDA5BAdSz/NsaPDeo3W5cFit19TMha0lLK/iDGWKOyG5QcUm1zcDVoOh4x0aNlltlV6LT8IMJbWedwC3Abtl3cRcF75CReC65EmcnMZKcjylCg01cLJ0wPDRoeJIQEqQFgesAsXBabNkE2c8JQwCP1Ny2XfcCeUC0QoerfhBN++kTV+JxKyIIvRhHgUK6XJKSl7QyYXzptdLk8Y2aMKxBC/d4WYuNJzVTmgVRhzMZDetpa/UaVCE9QdsfA9vCQTWDc8GeaBVXtzph/MO5JFQrSSRotQFyD4C54yYedfAWTGU2GpcQV0LNc9roxeiHSYo1XAuKRiWUj/QnVbM1RCKBveQVIXhEeWnbfoKjGhIfKVjaHg9YHZpDyVY+0SFNMzvfYMkEIsU8laFVoK83YRmuDCidl/oqgVG4OtBdEA6enHD8Gmh2sW3Gw6wDhx+82k65qNbQkpcQYY4RMhvqWcee0ovSyFlo8/tgzbfc6VJtVA71QntFrWapNRe8c8JeKc/hWNIyKTf5i1H/RUMb/PwKxTuPHwkUHL7jOTRw/S3QuQd5uET/Grjy1hMrmKxd/K7WTnbS9vff0P/u4ae7b60bsXB03ZtnLlh6iKnV6x9wX5323l435Anx6H+Nie8AlrnhMv2kz8PtTPDdu5kczY5DYVogt1388D+R9r+SOPDr/+flv7mJyMpKoXJCQAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=7082f577c33e7250b202be3ed40131ef"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Send Email">c1806bf4a70323008299b39f087901cb</action_type>
+        <action_type_parent display_value="Send Email">98c181d20b100300d97d8bf637673ab5</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>c1806bf4a70323008299b39f087901cb</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Hardware Request - Item Fulfillment">e482f577c33e7250b202be3ed4013187</flow>
+        <generation_source/>
+        <order>25</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-08 09:51:20</sys_created_on>
+        <sys_id>7482f577c33e7250b202be3ed40131fd</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-08 09:51:21</sys_updated_on>
+        <ui_id>8698b255-5b10-4cc6-a121-d2362243f60f</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1Y3W7iOBh9lSjXwAQCoXSvZkHVVurMSAXNXkxHkWM74B0nzthOOwziXfZZ9sn2c2JI+FkK21bTStzhv3zn+3yOj82XhcuIe+n2BhdeEMVd1Pf8ju95F53BIPIHsXfRH3htgtyGm6KEwkw0C7WA5j3iuWkvFpT6F543iJudduw1u3E3bkZdNGh2vbhNg4uO36O9Fk01laHKMyrvmRIyNJ9bLp0jlycoRVMqj19AE8Q4TAekhKmMo/nnNwMYzxgnkqbu5ZevDTdDEiIDGPdysTV07NZxFFEOUydidx/1PDNNpSVLp7Z9Y+ePV51CEhPfb7j0h6YpoRA4RlzRhguJEqSFnLuXWubQISkin1I+r834odhPCAJF8Mx4TCEDbKK6tWZo96nsjkdII4ifY51LOxXPBMNUlbkTGqOc62G9r5zwKdNMpOUSjSK+Wi14nqQfy+zd9QdWtICeXAEImpn8Ur2GH49n4uF2hfKKpUUp7CAXGPF1C2koWJRrg2fhUk4T+FCYoCyDMoaZFPesWAxYktaUQ6MVc/EAQRWbpi2EDfAWlBO1rqB/VHR/RpKZLD7AZ2CxAc5ZwgpCuKbk7rLhqrkacqRUlR7UNfyeG3BlsjatsKyMWYIly/R7iHlPbQbLhj0OvCCIoiDq9f2KUwMck34UB6iP/YpGDwiAJEh+CwsC1w6G9q70CrSn8vsILCt+X6eY54Q6f65AHcJpiR8JwSlKt5g/AaTvrkxNKvZ3DrPf9uzQf8YMmdySlY4WDuwjnzvIWUMynXpGnQIZ/ELaYcpRsFstZyIcZrOqrWg4c5E7Sa40TNMwopGcwg9JMYBtuTXRdV+v5CwdbO9oL1fehCafX4BtcuhQp8HGOR5hXNPdruxOltwR0VeS+3043IPlFFPp/T9ZnV3lzblK9yCtMKmIVJ5jG7fMsbmHYeoMIQ8upmG7Jen3nCodAuhkuXwG2h+Bb32TKs/b2xXObdxWAETgvNgtRrZUMLIjzvWokoL3JId5r5TADCxC1dzkgekZ+MMeY/A7m6oBm2EFRfer57oafgUqKq+aJ4goHlMk8eyKUW62WuURhkpNTV23FYbhPiDDLW5bO3ot/lHUrniSPCY6dJDUcWfz9BZkXlPdXe55Ps4cg76pWTpPMJVC6Ahq+60YJHfuXTmNwo1EOmrGisKYCwwUJOMgNzPcCdJIZb+VH3yXlSt2JWsDPvLBf/7e+c5pQj+iJmt/KyuyUyIr8JlO+Jay/5h8uKkk3X+iuwW9nh+c7e3J9pY9kA6RIstsbi9kce3Dj/FuRaWagivBKRyCqxWOtiuO29LvKHGuy/ETL3WPQ6vczRRpP1RL/J2+m/pa52M5YEXQPlEE5elubW0CXrbxvHG0hVe7Ap4V8mSFMBWWzLa5FcFfQCK9w48LvHHagk//RbGuSWS8xxB2tfIfs078Z+1xpCvFjNc492E/5TkUnP9j++VieH7Sk4OHL/U2iPPcz/kjgq94vPWaP/kx3z0/5n89fV/0Mf/1Xw//49gzGgAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=7482f577c33e7250b202be3ed40131fd"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Ask For Approval">f8f2e9920b10030085c083eb37673abd</action_type>
+        <action_type_parent display_value="Ask For Approval">bae0a1120b10030085c083eb37673a92</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f8f2e9920b10030085c083eb37673abd</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Hardware Request - Item Fulfillment">e482f577c33e7250b202be3ed4013187</flow>
+        <generation_source/>
+        <order>16</order>
+        <parent_ui_id>43bcd4bc-3afb-4d19-b668-96c37bdef5e7</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-08 09:51:20</sys_created_on>
+        <sys_id>7882f577c33e7250b202be3ed40131f3</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-08 09:51:20</sys_updated_on>
+        <ui_id>6f0382fc-35c5-4f0c-a958-7e014aa2bcb9</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1YXU/jOBT9K1WeS8dJmjTlDVExYjUfErDzglDk2DfUKzfpxA4znar/fW9ip8m20GmXIsGIF4Tv9ce5x+fEdm+XjuDOqQPD0A/wzyj1ieu5JIIwitiYUBaFYTD0nb6T0RlgTzqfF/kDlXEBVOUZJrBRVhn8lws1l3TxrY2wqZC8gMw5vb3rO3Na4CwaCud0uZHaF4akCUjsemZx9K4aHE8C1It5lVC6ENm9bX+y01w3wbzgFSyv78BPDRkHxJNSqaDvzGjGqc6LxTqCU/OvmWwDU5FpU/CM/lTiF67nhqTqmAKWyCwb62ZsmTLhdEI1RSQl02WxJi4XDJQhh0NKS6nPuzHT4etcCyyyHqJpIpvRuSxn2RfDiLOeoLMxpUIQMK8qraDbOtLraf7jqkF5IbKaFJuUOaNy3aIaqUtKXeFZOqW42WDZRLZ4BgkzXDGe4T5hJK42S9SrIOjZ4F5iY5DK/AeiU+I+G1BWVTjAHaCDC4xP6vA3Woiq3M84DQ6ulvs7E99LuKx0FHpJOCYRP+EpSU6GkR+cUAbkBEI3gICHLHB9Z9V31EKdS6pUSxTuUPy9rMo0tFmCYsNxNYQVYq7PENQDWC5Wfesi4qYejMceSVxCfEKigJHIh8QfhSOf8ugRkaYCJO+YqElsm6mTOcxUe6DaMtWFhfUUXGupuhnXnf5rq3p874tJHN1aESFvyVu4+HOs9TKOOVz9hoLfWIDtFBt0DpJ/8rLIdjggngpVK+NJJ3R6HOaIPUA2jvjLoNw0xCb4/+MH/90Pf74fRtEuqTHSSqoAhsLoGGG5vIbiAXnvnSNymd/H7qAAPOKUjoWG2Wp1hBvXHvgaK1w1ADcBW/HznJX1xgi+of6JzfQuJ638yW75G5Hso37fe9f+q9Q+C3ZpKx23UuIlkkQ1HPc1scf6jbYnJfQmBsA2pOb9wKbAS2nCsRZbH/lr26Ge6cON6H7sg6N97Idv6VP/3GfFy70W4vV9GtWMpnyB58Bwp/6gI7b1jYblGRdVBapjBXMrB3WWLT7eLpdKUy3YYEhCFzwYMT/xfC8giUe8BHzgQ+L6bkBWq7ttDz1nqsPMt0fx64MFPaN+R4Y1Yfu6t4O6Bmx/E7BJa77hsY6aN3bRep3uO77RErbzEsNabRk2W2spFuOVqr5ObZvlyly2gPcuTf4wB+yBqnHAjYW1gdJqvm4+9qqoh228KtwDDxoj/ke1/q70V6P0u38BmOwUeKkVAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=7882f577c33e7250b202be3ed40131f3"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Send Email">c1806bf4a70323008299b39f087901cb</action_type>
+        <action_type_parent display_value="Send Email">98c181d20b100300d97d8bf637673ab5</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>c1806bf4a70323008299b39f087901cb</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Hardware Request - Item Fulfillment">e482f577c33e7250b202be3ed4013187</flow>
+        <generation_source/>
+        <order>23</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-08 09:51:20</sys_created_on>
+        <sys_id>7882f577c33e7250b202be3ed40131fa</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-08 09:51:20</sys_updated_on>
+        <ui_id>d3fe3344-40c2-458e-94b2-0d74b612bee5</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1Y227bOBD9FULPjitbvsR56zoIGiBtF4nRfWgKgSIpixtKVEkqrjfwv+9Qoi35AsduEjQB8mYOSc2Z4TkzpL8/eJx6Z15/dOoPoriHh37QDXz/tDsaRcEo9k+HI79DsdfyMpwyWImT0EgY3mNR2PHDA2PBqe+P4pNuJ/ZPenEvPol6eHTS8+MOG5x2gz7rt1lmmAp1kTN1z7VUof3cYoEO3J7iDE+ZOnwDSzEXsByQUq5zgeff3gxgknBBFcu8s+8/Wl6OFXgGMN7Zw8bUoUcncMQELJ3I7XM089wOtVE8m7rxlVt/szRKRa3/oOWxX4ZllIHjGAvNWh4ESrGRau6dGVWAQTFMv2Zi3ljxS/P/wAkkwbfzMYMIiPXqNYahO6fKHJ9jg8F/QUyh3FKSSE6YrmKnLMaFMOOmrVrwNTdcZtUWgyOx3C1FkWZfqui91QeWtABLoQEEy218mVnBj28SObteorzgWZkKNykkwWI1wgYSFhXG4nnwmGApfChMcZ5DGsNcyXtebgYsaXsqYNCOhZyBU82nWRsTC7wN6cTtC7Cfl+ZvWHEbxWf4DGy2wAVPeUkIz6bcW7Q8PddjgbWuw4O8hj8LC64K1oUVVpmxW4jiufkIPu+Zi2DRcuXAHwyiaBD1h0HNqRGJ6TCKB3hIgppGMwxAUqzuwpLAjcLQ2ZZeifZYfh+AZcnvy4yIgjL0zxLUPpyO+JGUguFsg/kTQPrhwuakZn93P/udZYv+Cbdk8ipWIiMRnKOYI4xWkKzRJAyVyOAXNohrpOG02mgiEXdRNXa00FwWKC20gWUGZgxWU/ihGAGwba8hut7rlZyjg7Oe7+TKm9Dk8wuwQ/cVdTZYq+MRIQ3dbcvuaMkd4H0pub/G4x1Yjmkq/d+T1XtXeXNdpbeXVoTWRKrq2Not88bewwhDY4hDyGnYaSv2s2DahAA6XSyegfYH4FvdpKp6e73EuYnbCYBKUpSnxemGCs7dDLo8r6XgP6nDfNRaEg4tQje6yYybBPrDjsYQdNdVA22GlxTdrZ7LevoVqKi6ah4hoviGYUWSC86EPWpdRAQyNbV53VQYgfuACje47drRa+kfZe7KJ8ljosN7SR1316u3pPOG6m4L3w9Ijiz6E8OzeUqYktJEkNu7cpLeerfVMgapIECHktR5gjVDsVQlExOs6AwrZm81Mc+4ThitPv0hr/Zui9e5fpZPH1cFDkjYqvlV6drKn1N/YlKxIftPk89Xtd6HT2x9g34/GLz3vif3vnxGu1TJPHexvVD/6+x/qfdqKjXkXatRkxBaXtnutvVyXTVDRtFlNX/kje9xaHXrs0naDdURf8t21dyLvlQTTgSdI0VQlX7X8yZQA9bePsg4eI374btCnqwQrsOK2S620vkLSKS//+VB1qotNPF/GTENifzdaBQTrO/QWKa5AN7TbcXsXXvkX3CPo16q52aFeVccx7ybBu9/xv1xYTy/AOjeQsz8NeI897v/AOdLHm88+49+9ffeX/1/nr4v+ur/8T8YweGmXBoAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=7882f577c33e7250b202be3ed40131fa"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Send Email">c1806bf4a70323008299b39f087901cb</action_type>
+        <action_type_parent display_value="Send Email">98c181d20b100300d97d8bf637673ab5</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>c1806bf4a70323008299b39f087901cb</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Hardware Request - Item Fulfillment">e482f577c33e7250b202be3ed4013187</flow>
+        <generation_source/>
+        <order>27</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-08 09:51:21</sys_created_on>
+        <sys_id>7882f577c33e7250b202be3ed40131ff</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-08 09:51:21</sys_updated_on>
+        <ui_id>85b4020d-b61e-4512-b933-a4a04de95e38</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1Y227bOBD9FULPjitbvsR569oIGiBtgTjoYtEUAkVSNltKVEkqrhv433co0ZZ8gWM3CZoAfhNvmjPDc2ZIfn3wOPUuvO7g3O9FcQf3/aAd+P55ezCIgkHsn/cHfotir+GlOGEwE09DI6F5j0Vu2w8PjAXnvj+Iz9qt2D/rxJ34LOrgwVnHj1usd94OuqzbZKlhKtR5xtQ911KF9neLBTp0eYK5OHx6glM8YQoWAFLKdSbw/MubAUymXFDFUu/i67eGl2EFlgGMd/GwMXTo1gkcMQFTb+X2Ppp5ZpvaKJ5OXPvazR8vO6Wi1n7Q8Ngvw1LKwHCMhWYND5BTbKSaexdG5dChGKafUzGvzfil+W8wAmHw7XjMwANirXq1Zuj2qeyOR9hgsJ8Tkys3lUwlJ0yXvlMW41yYYb2vnPA5M1ym5RKDI7FcLUWepJ9K773VD5a0gJ5cAwiWWf9Ss4Ifj6dydrNEecnTIhRuUEiCxaqFDQQsyo3F8+AxwRL4UZjgLIMwhpmS97xYDFiS5kRAoxkLOQOjmk/SJiYWeBPCiZuX0D8qur9gxa0XH+E3sNgCFzzhBSE8G3Jv0fD0XA8F1rpyD+Ia/swtuNJZ51ZYRsYuIYpn5j3YvGfOg0XDpQO/14uiXtTtBxWnBiSm/Sju4T4JKhrNMABJsPoRFoyvJYbWtvQKtMfy+wAsS35fpUTklKF/l6D24XTEj6QUDKcbzL8FpO8ubUwq9rf3s9/1bNF/yi2ZvJKVyEgE+yjmCKMVJNtppgwVyOALG8Q10rBbTXQrEXde1VY00FzmKMm1gWkGRgxWE/hQjADYplcTXef1Ss7RwfWOdnLlTWjy+QXYovuSOuut5fGIkJrutmV3tOQOsL6U3D/D4Q4sxxSV7p/J6lRV3lxV6eylFaEVkco8tnbKHNtzGGFoCH4IOQlbTcV+5kybEEAni8Uz0P4AfKuTVJlvb5Y4N3E7AVBJ8mK3ON1QwciNoKtRJQX/SRXmvdaScCgRulZNZtxMoT7sKAxBe101UGZ4QdHd6rmqhl+Bisqj5hEiiscMKzK95EzYrdZ5RCBSExvXTYUROA+ocIPbrhy9lvpRxK64kjwmOryX1HF7PXtLOq+p7i73/YBkyKI/MzydJ4QpKU0Esf1RDNI7766cxv6TuUJTrOgMK4acOKFDo4ixFMW5gFMPxAsYoRlFQGs42WgQs2C0NPQuK/+0LWUH5AUMHZchDgjmqjCWodyKrcsMU5OIjZTw4fbjdZUL+k8si71uN+id6uKT62I2o22qZJY5316oNrb23+I7FZVq0q+UqkkIQihK4bZ6bkqJgBauyvEjT4OPQ6vKog3SbqiO+Ft91/W16FM54ETQOlIEZVlw9fAWiuDavQgZB692djwp5MkK4Tosme18K4y/gES6+28lZC3bQoH/zoipSeTDZsWoSsS2ZPZPPvKB7nHcS/2MV6h3eXLMrap3eqr769J4fgnQvamY+WvEee5XgQOML3m88Shw9JtA5/Qm8Pfp+6JvAt/+B6Ktwi56GgAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=7882f577c33e7250b202be3ed40131ff"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Send Email">c1806bf4a70323008299b39f087901cb</action_type>
+        <action_type_parent display_value="Send Email">98c181d20b100300d97d8bf637673ab5</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>c1806bf4a70323008299b39f087901cb</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Hardware Request - Item Fulfillment">e482f577c33e7250b202be3ed4013187</flow>
+        <generation_source/>
+        <order>19</order>
+        <parent_ui_id>c4c7c938-59ec-436c-9420-27228a4816b5</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-08 09:51:20</sys_created_on>
+        <sys_id>7c82f577c33e7250b202be3ed40131f5</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-08 09:51:20</sys_updated_on>
+        <ui_id>ba05e775-d8ea-46b2-9bf6-352836922853</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1Y227bOBD9FULPtitbvsR56yYINkCaAk3QfWgKgSIpm1tKVEkqqdfwv+9QpC35AsduEjQB8mRzeJkzw3M4pL7NA06D02AwPgmHSdrHozDqRWF40huPk2ichiejcdilOGgFOc4YjMTT2Eho3mNR2vZ8zlh0EobjtN3rpmG7n/bTdtLH43Y/TLtseNKLBmzQYblhKtZlwdQ911LFdrnFAh06PcNcHD48wzmeMAUTACnluhB49vXNACZTLqhieXD67XsrKLACzwAmOJ1vdB26dQInTMDQW7m9j2ZW2KY2iucT377y42+WRqmo9R+1AvbLsJwycJxioVkrAOQUG6lmwalRJRgUw/RzLmaNEb80/w+cQBpC258yiIBYr0GjGft9cub0HBsM/ktiSuWHkqnkhGkXO2UpLoU5a9rcgM+F4TJ3UwxOxHK2FGWWX7vog9UCS1qApdQAghU2vtys4Kc3U/nwZYnygudVKnynkASLVQsbSFhSGotnHjDBMlgoznBRQBrjQsl7Xk0GLFlnIqDRSYV8AKeaT/IOJhZ4B9KJOxdgP6/MX7HiNopPsAxMtsAFz3hFiMCmPFi0Aj3TZwJrXYcHeY1/lhacC9aHFbvM2ClE8cJ8BJ/3zEewaPnjIBwOk2SYDEZRzakxSekoSYd4RKKaRg8YgGRY/YgrxjcOhu629Cq0x/L7ACxLfl/mRJSUoX+WoPbh9MRPpBQM5xvMvwWkHy5sTmr29/az31u26D/llkyBYyUyEsE+ihnCaAXJGs2UoQoZ/MMGcY007FYH3UrEfVSNGS00kyXKSm1gmIEeg9UE/ihGAGwnaIiu/3ol5+ngrec7ufImNPn8AuzSfYc6G66d4wkhDd1ty+5oyR3gfSm5v87OdmA5pqgMfk9W71XlzVWV/l5aEVoTyZ1ja7fMG3sPIwydQRxCTuJuR7GfJdMmBtDZYvEMtD8A3+om5c7bL0ucm7i9AKgkZbVbnG6o4Nz3oMvzWgrhkyrMR60l4VAidKOaPHAzhfqwozBEvXXVQJnhFUV3q+ey7n4FKnJXzSNElN4wrMj0gjNht1qXCYFMTWxeNxVG4D6g4g1u+3L0WupHlbvqSfKY6PBeUqe99dNb0llDdXdlGEakQBZ92/B8lhGmpDQJ5PZH1Unvgjs3jMGNRCGvSTTFGiWM5WD4lxHDqFvqQ+HGbovVu/qtpY5T+QEJWRU3l46t/Hh1T00mNmT99+2nq1rPoyeWtuFgEA3fa9uTa1vxQHtUyaLwsb1Qfevuf4n3ayo15FurTZMYOF+Vs219fHFqYBRduv4jb3SPQ6tLm03Sbqie+Fu2q+ZcdO06vAi6R4rAHe2+pt1CIVt72yDj4TXuf+8KebJCuI4ds31slfMXkMhg/8uCrJ22UKTtid+QCPIygF9XC1Abza/LLGFqxwXwkdFHfmZ7HPlSQTcr3LtiOeZtNHz/4PbHxfH8IqB7D2MWrhHnud/2Bzhf8njjaX/0y77//rL/8/R90Zf99/8BP3fz4EAaAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=7c82f577c33e7250b202be3ed40131f5"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Ask For Approval">f8f2e9920b10030085c083eb37673abd</action_type>
+        <action_type_parent display_value="Ask For Approval">bae0a1120b10030085c083eb37673a92</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f8f2e9920b10030085c083eb37673abd</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Hardware Request - Item Fulfillment">e482f577c33e7250b202be3ed4013187</flow>
+        <generation_source/>
+        <order>10</order>
+        <parent_ui_id>956235fe-3849-4190-8af6-82ac34e02379</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-08 09:51:20</sys_created_on>
+        <sys_id>b082f577c33e7250b202be3ed40131f0</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-08 09:51:20</sys_updated_on>
+        <ui_id>e99b4e30-b18c-4c74-b9d1-9aa0733d8f3e</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1YXU/jOBT9K1WeS8dJmjTlDVExYjUfErDzglDk2DfUKzfpxA4znar/fW9ip8m20GmXIsGIF4Tv9ce5x+fEdm+XjuDOqQPD0A/wzyj1ieu5JIIwitiYUBaFYTD0nb6T0RlgTzqfF/kDlXEBVOUZJrBRVhn8lws1l3TxrY2wqZC8gMw5vb3rO3Na4CwaCud0uZHaF4akCUjsemZx9K4aHE8C1It5lVC6ENm9bX+y01w3wbzgFSyv78BPDRkHxJNSqaDvzGjGqc6LxTqCU/OvmWwDU5FpU/CM/lTiF67nhqTqmAKWyCwb62ZsmTLhdEI1RSQl02WxJi4XDJQhh0NKS6nPuzHT4etcCyyyHqJpIpvRuSxn2RfDiLOeoLMxpUIQMK8qraDbOtLraf7jqkF5IbKaFJuUOaNy3aIaqUtKXeFZOqW42WDZRLZ4BgkzXDGe4T5hJK42S9SrIOjZ4F5iY5DK/AeiU+I+G1BWVTjAHaCDC4xP6vA3Woiq3M84DQ6ulvs7E99LuKx0FHpJOCYRP+EpSU6GkR+cUAbkBEI3gICHLHB9Z9V31EKdS6pUSxTuUPy9rMo0tFmCYsNxNYQVYq7PENQDWC5Wfesi4qYejMceSVxCfEKigJHIh8QfhSOf8ugRkaYCJO+YqElsm6mTOcxUe6DaMtWFhfUUXGupuhnXnf5rq3p874tJHN1aESFvyVu4+HOs9TKOOVz9hoLfWIDtFBt0DpJ/8rLIdjggngpVK+NJJ3R6HOaIPUA2jvjLoNw0xCb4/+MH/90Pf74fRtEuqTHSSqoAhsLoGGG5vIbiAXnvnSNymd/H7qAAPOKUjoWG2Wp1hBvXHvgaK1w1ADcBW/HznJX1xgi+of6JzfQuJ638yW75G5Hso37fe9f+q9Q+C3ZpKx23UuIlkkQ1HPc1scf6jbYnJfQmBsA2pOb9wKbAS2nCsRZbH/lr26Ge6cON6H7sg6N97Idv6VP/3GfFy70W4vV9GtWMpnyB58Bwp/6gI7b1jYblGRdVBapjBXMrB3WWLT7eLpdKUy3YgAW+S4GOmJ94vheQxCNeAj7wIXF9N0pXq7ttDz1nqsPMt0fx64MFPaN+R4Y1Yfu6t4O6Bmx/E7BJa77hsY6aN3bRep3uO77RErbzEsNabRk2W2spFuOVqr5ObZvlyly2gPcuTf4wB+yBqnHAjYW1gdJqvm4+9qqoh228KtwDDxoj/ke1/q70V6P0u38Bbvlu5qkVAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=b082f577c33e7250b202be3ed40131f0"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Create Catalog Task">af51fd0e73141300612c273ffff6a785</action_type>
+        <action_type_parent display_value="Create Catalog Task">f597c41073081300612c273ffff6a767</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>af51fd0e73141300612c273ffff6a785</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Hardware Request - Item Fulfillment">e482f577c33e7250b202be3ed4013187</flow>
+        <generation_source/>
+        <order>24</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-08 09:51:20</sys_created_on>
+        <sys_id>b082f577c33e7250b202be3ed40131fc</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-08 09:51:20</sys_updated_on>
+        <ui_id>21f9d554-0c02-40fb-b561-f2fb1766a95c</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1ZW2/bNhT+K4aeVsDwdLMueesSBBvQtUAcZA91J1DUoS2UllRKipsF+e87FCnfJHv24HRpl7yJ5xzyO5fvHNL5+GikiXFh+PHYYokJvmO5lmOanmVT23cY/nnEj8EYGhlZAGpSUhGez6J7IlIScyhRdE94LWWBFTCSmB51HM/xLDO2TTsGBxLXtBwr8S7SChZRXlRpnkUZLIehyUw/pHsMTLNjYLrMckKX9BsA6xjYoWszK9hjMI47BjFYjpPQPQZB0jGAwHfi0IR+Ay/sGAQhqo7dPQYJdH2wbRpbJKaODww6PnTDSpjtxlaw54SwB5JHA5UHv8fA70Iah7HrEnlC3GPAxt0o0WAcEtfGE0hPWMmuAVZVkpYFJw93r8X1WlxnLy46T3kiIDMuPn4aGgUR2N0qEMbF447o2PbISQwcVS9VfxzcbfTHA62zeiikqOR1OY9r+hkqvfhO7zeRksEvrSgXiUTpDQ34WkGWAMJjhJcwNBYkS0iVi4fVigCSfMj4emGeZhXuaUjlr2X6Fx5t2aZpSlUG6DMFJV59RpqFapldoQuTStS0qoVWpfM8pehLE60EGKl5dbm5phQ+NNFXJpX0XlvnvF5k71WAjNUGLelxpS4RBBTSVwlee8Im83x506K8TrMmLFrIc0r46otUlUjjupJ4cNyVEeO4BNk6D1gT0ETSaEzwUOCwwOOiBSmKNJtFhcjv0+YIRLwYzTh+jBjPlwitTGfZiFDp3ggTQEbXuH7VLLdF8Dtug8ZYTRnldQLRAn1MBZqvMECF8AwMLWifN3YHES2F2mKlUua1wPS0oexWeElFWshsL9n6lJ/eGE8oeigvOSnLddgx39GXWgZNJUGHO1IZe2p3e4te3oOO7NNQXx4IO8SOIFgzgMwV4Kj5Xl8cSorr5edu018LTiPsEZBawt5KQIP3CtAenJqlnbV3fXtoiponUlTmtZehwcul50belOBqX/rOz2JVkRrqc/OWcGnTuNM0bk3D83PJ8Q8VLvG2arSc56KSnjQbyvytKdXl0skkOgJLS6KJRDK42kJyGGc7+DCr2Wx35rWLmkr267T7lzx5Hj6cv+x952CpmVvlJOBLDWUFSSSn3kbNPz5OQNxj+Af6FhZZI63cqD49nYEVR0BtWXHTAh38poAe8EHzYV2Z25S42VjXrLAOs0LNk2NI4djbjMA2h/BaYH3k6Dj2XVKFTYAIOr9OgcvEZvUiVs3+G1AIs4hZiRKRF4V2+pkmCjvYxeON2xmmEvNbQdQ+VHboRUKL2da+Fzi1uuTSdTL4lYhkSQScTLYjwK/ucRp9y/0dzu1z7nTejc82jXqIh+gOEW/Htx+CdurW/G1IhzcRvMY15/9njLO3BsGSpNUGx3pIpB98ZyWOvUGcPxSCDiTNjDjPOZBshxe3COrna33r1sRwz0YM9+Xe0XQ2+t87G8/3/+Ml7vB7gW4VGZP03/znQeeRMK1N00km87TxeoCFNEizEvsftnEU/4nA0asmMjOR14XSf5y2/JkaF1NDmkuVwS2QxdQYTtV5jYzYOLw88KkT24493plncdCoY4yiNDlSv+d++aO4deIl+Z9LoW0/120h9NRG+7tLO7tVrex0onbu32mh7kbO2bqRN+48Gtc/bBya0rdK5QVMafUY+O47UJoVdVWOtn+e29OVPv0N8LrX59wcAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=b082f577c33e7250b202be3ed40131fc"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Create Catalog Task">af51fd0e73141300612c273ffff6a785</action_type>
+        <action_type_parent display_value="Create Catalog Task">f597c41073081300612c273ffff6a767</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>af51fd0e73141300612c273ffff6a785</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Hardware Request - Item Fulfillment">e482f577c33e7250b202be3ed4013187</flow>
+        <generation_source/>
+        <order>22</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-08 09:51:20</sys_created_on>
+        <sys_id>b482f577c33e7250b202be3ed40131f9</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-08 09:51:20</sys_updated_on>
+        <ui_id>efc5421c-89af-4f7e-8bdf-516ad2d6d11b</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1ZbW/bNhD+K4E+bYDh6c2SnG9bgmADunaIg+xD3QkUdbSF0pJKSXHTIP99R5GyZUt27MIpki35ZvKOfO7luTsqHx+MJDbODT8aWSw2wXcs13JM07NsavsOwz+P+BEYAyMlC0BJSkrCs1l4R0RCIg4Fbt0RXsm9wAoYiU2POo7neJYZ2aYdgQOxa1qOFXvnSQmLMMvLJEvDFJaDsclMf0x3KJhmR8F0meWMXdKvAKyjYI9dm1nBDoVR1FGIwHKcmO5QCOKOAgS+E41N6Ffwxh2FYIyiI3eHQgxdG2ybRhaJqOMDg44NXbcSZruRFey4YdwDyaOBioPfo+B3IY3GkesSeUPUo8BGXS/RYDQmro03kB63km0FzKo4KXJO7m/fkustuU6eXHSe8FhAapx//DQwciKwupUgjPOHra1DyyMnEXAUvVD18ey2VR/3lM7yPpdbBa+KeVTRz1DqxXf6vIncOfut2cpELFF6AwO+lpDGgPAY4QUMjAVJY1Jm4n61IoDEH1K+XpgnaYlnGlL4a5F8w6st2zRNKcoAbaagtlc/Q81Ctcwu0YRJKSpaVkKL0nmWULSl9lYMjFS8vGivKYEPtfeVSimt19oZrxbpe+UgY3VAQ3pcqQoEAbm0VYLXlrDJPFteNyivkrR2i97kGSV89YuUpUiiqpR4sN0VIeO4BOk6DpgTUHvSqFXwUuCwwOvCBcnzJJ2FucjukvoKRLwYzjj+GDKeLRFakczSIaHSvCEGgAyvcP2yXm6S4E88BpUxm1LKqxjCBdqYCFRfYYAS4RnoWtA2t04HES6FOmIlUmSVwPA0ruxmeEFFkstoL9n6lp9+Nh5x67644KQo1m7HeIdfKuk0FQTt7lBF7LE57Ve08g60Zx8HenggbB87gmDNADJXgMP693pwKCiuF5+7RX+9cRxhD4DUEPZGAjp7rwDtwKlZ2ll713eGpqh5JEVlXHsZGrxcerbipjYud4Xv9CxWGamhPjdvCZc6tTl14dY0PD2XHH9f4hJvI0eLeSZKaUl9oIzfmlJdLh1NogOwNCSaSCRnlxtI9uNsGh9GNZ1t97xmUVPJfut238mT5+HD6dOe7U21qNVCsM9hhEoIm2lKdr5W3pOxxWxr1zOBWl1eXMOXCory7Hci4iURcDRPDgC/ajYa/VkzJv6h0D9hnCbLOm03+XLdWteUGZ2MMo69yRcsgoiuQdZHnS3bXiWN2ASIoPOrBLgMse75P4JcSJS57DX1/c/XaHxnb3E3Nwq4UBSBeJttDw8TEHcYqSahQ2uohWvRx8cT9KEDoPIVEzTQLWL12XA8qaz9pFIT3HdyCuHt41THsP8Eq6pFpMarH8KrDKMSxiLLc230M1HriX5gb6TlkiRli1A9/Uk/+E7ak+wWZ/5WCDqQND+iLONA0i123CCoX6701K3p4Z6s57gvd0bT0eh/77Se7//DIc7f/16gG0nGZA1o//Og80iYVqbpxH+JjGJkpQPq0vcP4kVjaofMRFblSuxh2tBmapxPjbbWDZDF1BhM1U31duD6lueBT53IduzR9hdGpxZH74RJfKB8T597/QYd2aafDn9Tcq6a4PfkQ/OtpRmFVX5sVZ9mjL7Vm7oCOSerQN6o81Bcf8zYN/TeKJEX0J7VOPLqq06S5lVZDDc/ye2oRJ/+BXQHBT3QHAAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=b482f577c33e7250b202be3ed40131f9"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Hardware Request - Item Fulfillment">e482f577c33e7250b202be3ed4013187</flow>
+        <generation_source/>
+        <order>26</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-08 09:51:21</sys_created_on>
+        <sys_id>b482f577c33e7250b202be3ed40131fe</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-08 09:51:21</sys_updated_on>
+        <ui_id>00dd8af6-4751-4be0-b2e2-a626bae514d8</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VTWvjMBT8K0FnY+w4DW1uS0Kg0G0hKbl0i5Gl50Qgy64kp82G/Pd9tmXHTbslhR62sL69L2neeMZ+2BPByYSMgAfhVThmURhFwyAYXo7CZBwl4ZBHFCAkHlE0A+zUwHLNMd5SWVaJ/X4JeisYDKbUUpmv49DX8FSCsbGwkB0O2MyFKSTdrdwMZthGSK5BkcnDo0cKqvF4C5pM9ielc/FJmoDE1kUL8BSw3RVVzHNWZqAQXJu8cZMzVxlcz7CCQxWcMPAIvFhQHBBISqUBj2RUcWpzvSMTq0tMaKD8Tsld17ERyjaLZvTFiN948yio+lLAzZgjoQtjR1CTTmfI5BJPZrbUHV85cmwaTjiktJR22s81DXeFFblqRixNZDudyzJTtw0jpDug9z5KgyCgqPaskDdrpctN/rxoQc6FqilxK8qcUdlF1FotktJWcPYEJNQcZ7QohFrHhc63oh5GKJm/lhj4qcyf8U4j1sqnrMLtI6vUn2N+VqdXVItqiZ94DA4fPGJ2ZiqpMcdVkMP4qayQNIu5FeKahZqCuFZCNcy0KOwPvGoLDvjBcw4Ihh8qDI6CqoVveg4wllr4VQZBxKO3Wj+pfk73Z6BqdT8XILl5B6bTPVoRYVmIG9ivpX/vioOVK3bq/zL5h+Ogfv6b4N81QXLxkdzY1VFdvTN7RmAxfvnrr/5bHyyafwLwwXVT/5wTzoDWOuG+fuXvQ23NcJq76c8ObpuCM8HFl3ng8jup363x7eX/N9E//gHMdLZ4/QgAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=b482f577c33e7250b202be3ed40131fe"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Hardware Request - Item Fulfillment">e482f577c33e7250b202be3ed4013187</flow>
+        <generation_source/>
+        <order>18</order>
+        <parent_ui_id>c4c7c938-59ec-436c-9420-27228a4816b5</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-08 09:51:20</sys_created_on>
+        <sys_id>b882f577c33e7250b202be3ed40131f4</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-08 09:51:20</sys_updated_on>
+        <ui_id>ce2f500f-54a8-4157-bb22-840a3912daf8</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VTWvjMBT8K0FnY+w4DW1uS0Kg0G0hKbl0i5Gl50Qgy64kp82G/Pd9tmXHTbslhR62sL69L2neeMZ+2BPByYSMgAfhVThmURhFwyAYXo7CZBwl4ZBHFCAkHlE0A+zUwHLNMd5SWVaJ/X4JeisYDKbUUpmv49DX8FSCsbGwkB0O2MyFKSTdrdwMZthGSK5BkcnDo0cKqvF4C5pM9ielc/FJmoDE1kUL8BSw3RVVzHNWZqAQXJu8cZMzVxlcz7CCQxWcMPAIvFhQHBBISqUBj2RUcWpzvSMTq0tMaKD8Tsld17ERyjaLZvTFiN948yio+lLAzZgjoQtjR1CTTmfI5BJPZrbUHV85cmwaTjiktJR22s81DXeFFblqRixNZDudyzJTtw0jpDug9z5KgyCgqPaskDdrpctN/rxoQc6FqilxK8qcUdlF1FotktJWcPYEJNQcZ7QohFrHhc63oh5GKJm/lhj4qcyf8U4j1sqnrMLtI6vUn2N+VqdXVItqiZ94DA4fPGJ2ZiqpMcdVkMP4qayQNIu5FeKahZqCuFZCNcy0KOwPvGoLDvjBcw4Ihh8qDI6CqoVveg4wllr4VQZBxKO3Wj+pfk73Z6BqdT8XILl5B6bTPVoRYVmIG9ivpX/vioOVK3bq/zL5h+Ogfv6b4N81QXLxkdzY1VFdvTN7RmAxfvnrr/5bHyyafwLwwXVT/5wTzoDWOuG+fuXvQ23NcJq76c8ObpuCM8HFl3ng8jup363x7eX/N9E//gHMdLZ4/QgAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=b882f577c33e7250b202be3ed40131f4"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Ask For Approval">f8f2e9920b10030085c083eb37673abd</action_type>
+        <action_type_parent display_value="Ask For Approval">bae0a1120b10030085c083eb37673a92</action_type_parent>
+        <attributes/>
+        <comment>Level 3 Approval by Abel Tuter and Joe Employee</comment>
+        <compiled_snapshot>f8f2e9920b10030085c083eb37673abd</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Hardware Request - Item Fulfillment">e482f577c33e7250b202be3ed4013187</flow>
+        <generation_source/>
+        <order>21</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-08 09:51:20</sys_created_on>
+        <sys_id>bc82f577c33e7250b202be3ed40131f6</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-08 09:51:20</sys_updated_on>
+        <ui_id>46b01560-e600-4339-ad61-174001736d66</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1YXW/iOBT9K8jPlHUICaFvVVGlrnZnpLYzL6WKHPumeGUSJk4600X8972JnY+BloEdOmpHfUH43mv7+PgcbHO7IlKQUwIj3/XwYxy71Bk6NAA/CPiEMh74vjdySZ8kbAFYyZbLLH1gKsyA6TTBBDaKMoNfhdRLxR4/txE+l0pkkJDT27s+WbIMR8khI6erjdS+MBSLQGHpmcXRu6pxPAswf1yWCZ1nMrm37b/sMNd1MM1ECWvYJ/Ath0QA4omZ0tAnC5YIlqfZYxPBocXHRLWBuUxys+AF+6blvzif49OyMAZcIrdsNM3QMmXC8ZTlDJEUPC+yhrhUctCGHAExK1R+3o2Zgo/LXOIiqy45i1TdO1XFIvlgGCHNAJ2NKTSCgGW50hK6XUd8PU+/XtUoL2RSkWKTKuVMNS2WI3VRkZd4VqSQNxssm8gWz6BggTOGC9wnjITlZslqFgS9GNwrbAxilX5FdFreJwPGyxUOcAfY4ALj0yr8mWWyXO7fOAx2Lqf7lMgvBVyWOvKHkT+hgTgRMY1ORoHrnTAO9AR8xwNP+NxzXLLuE/2ozxXTuiUKdyj8UpTLNLRZgkLDcdmFZ3KZnyGoB7BcrPvWRdSJhzCZDGnkUOpSGnicBi5E7tgfu0wET4g0lqBEx0R1YttMncxhptoD1ZapLiys5+BaS1XNsCr63lZV/94Hkzi6tQJK35K3cPKfsdbLOOZw9RsKfmABvlNs0DlI/kmLLNnhgHAudaWMZ53QqTjMEXuArB3xp0G5aYhN8P/HD+67H35/P4yDXVLjtJVUBhyF0THCanUN2QPy3jtH5Cq9D51BBnjE6TyUOSzW6yPcuPbAV1vhqga4CdiKX6S8qDZGig31T22mdzlt5U93y9+IZB/1u8N37b9K7XNvl7biSSslUSBJLIeu+mfEYJ+R0xlJ0gRmpD8jZVVYaqsKYwUibBJVbLVar02kyJgdwOk0296CPeqqUvM5iEKZ6HeRsBK/jR/Db3twUvttWkBvakjZpql+09Q4DS9y6+C5tgXVSH/cyO4B5B3tABq9pePnZ586L/eCCZs7PjoMfyhe4Iky2qk/6IituWXxNBGyXIHu2NO8FECfKfXpdrXSOXqLD/xhMPSjmLpjhw7xUjIaAY1iHkQ8wmdX7KwRR1MbOJyj4jllAXX8EaXRJGAUw4Hwxny8Xt9t++1XTXuYqfcgtTlE0Yv6RyRbc7f/ZNhOXWO3/3/YpDX16FjH6hu7VL5OVx/fwBHfeWHjrbYMm61lNQ/x+lhdHbeNdWUuliB6lyZ/mAP2QFU74MbC2kBpNV81n3pBVd02XlDOgQeYEf+TWn9X+qtR+t1/Zc5cuJUWAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=bc82f577c33e7250b202be3ed40131f6"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Send Email">c1806bf4a70323008299b39f087901cb</action_type>
+        <action_type_parent display_value="Send Email">98c181d20b100300d97d8bf637673ab5</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>c1806bf4a70323008299b39f087901cb</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Hardware Request - Item Fulfillment">e482f577c33e7250b202be3ed4013187</flow>
+        <generation_source/>
+        <order>2</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-08 09:51:20</sys_created_on>
+        <sys_id>f082f577c33e7250b202be3ed40131e9</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-08 09:51:20</sys_updated_on>
+        <ui_id>c8811540-463e-443a-ba09-37fd3c9a06da</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1Y227bOBD9FULYR68r27Ed+611EGyANAWSoItFEggUSdncUqJKUkm9hv99hxJlyRc4Vp2gKZA3cXiZM6NzOCTvFh6n3tjrj079QRid4KHf6/Z8/7Q7GoW9UeSfDkd+h2Kv5SU4ZjASzwIjofmIRWbbi8UNU4+cMDTBBgs5DTptxb5nTJuAGxaXDUaDSKo2izEXyyWCFSjXqcDzr0cvRGZcUMUSb3z30PJSrACpYcobLza6Dg1V4JAJGHort+M289Q2tVE8mbr2pRt/UxqlotZ/r+WxH4YllIHjCAvNWl6ME4qNVHNvbFQGBsUw/ZKIeW3ED83/Ayenvu/b/ohBBMR69WrNwOWvMEdnkDTwnxGTKTeUzCSkUxexUxbhTJhJ3VYM+JIaLpNiisGhKGdLkcXJVRG9t1qg/F1gyTSAYKmNLzEr+NHNTD5dlyjPeZKnwnUKSbBYtbCBhIWZsXgWHhMshoWCGKcppDFIlXzk+WTAErenAhrtSMgncKr5NGljYoG3IZ24fQ72s9z8FStuo/gMy8BkC1zwmOeE8GzKvWXL03M9EVjrKjzIa/A9s+CKYF1YQZEZO4UonpqP4PORuQiWLScffzAIw0HYH/YqTo1IRIdhNMBD0qto9IQBSIzVtyAncE1InW1J5Gib8vsALCW/LxIiMsrQ3yWofTgd8UMpBcPJBvNvAemHc5uTiv3d/ex3li36z7glk1ewEhmJ4D+KOcJoBckazYyhHBl8YYO4Rhr+VhvdSsRdVLUZLTSXGYozbWCYgR6D1RQ+FCMAtu3VRHfydiXn6OCsZzu58lto8uUF2KH7NnU2WNvHQ0JqutuWXWPJHeC9lNynyWQHliZFpf9zsnqvKr9dVTnZSytCKyIV+1iDU9ly+QK0PwDf6iRV7LfXJc5N3E4AVJIs/1ucbqjgzPWgi7NKCv5RFeaj1pJwKBG6Vk2euJlBfdhRGHrdddVAmeE5RXer56LqfgMqKo6aDUQU3TCsyOycM2F/tc5CApma2rxuKozAeUAFG9x25eit1I88d0HOumdEh/eSOuqu796Szmuqu898v0dSZNH/aXgyjwlTUpoQcvst76T33n0xjP2xsIQLCixjUEeguIkhDwbMOsgRL4sVP6TFlG3NOo/HrNhM8wekZ1XqiuRsZctpfWZisSHyv24/X1bqHh5Z6Ab9fm/wXumOrnTpE+1SJdPUxfZK1a6z/15+UlGpJuZKe5oEUODy4rYtk+vy6QBdFP0Nz3fPQ6sKnU3SbqiO+Fu2y/pcdFV0OBF0Goqg2OhdhbuFsrZ200HGwaudBt8VcrRCuHabrostd/4KEunvv2eQtd0WSva/jJiaRP6RmUJOCujuKotDph7QDGsUMpYgmAAHWhDJtn4azGz4GPd8RKWyblbx7IqxyQ1q8P4s98tF8/LioHs3aeavEeelXwAOcF7yeOMBoPH9/+T9/v/r6fuq9/+H/wGsLZuXlhkAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=f082f577c33e7250b202be3ed40131e9"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Look Up Record">9d09f99587003300663ca1bb36cb0ba3</action_type>
+        <action_type_parent display_value="Look Up Record">b93f42810b30030085c083eb37673a63</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>9d09f99587003300663ca1bb36cb0ba3</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Hardware Request - Item Fulfillment">e482f577c33e7250b202be3ed4013187</flow>
+        <generation_source/>
+        <order>3</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-08 09:51:20</sys_created_on>
+        <sys_id>f082f577c33e7250b202be3ed40131eb</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-08 09:51:20</sys_updated_on>
+        <ui_id>6bbb7a41-2905-4e97-8bf8-e298c33c40dd</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VX32/iOBD+V6I8A+eQQKBvp1ZIK+1tpW23L3sry4ntYp1JsrZDl6L+7zfOD2AhBbINq57uKcp4Ys98830zzte1K6h75Y4omvLpdDQJEfJ9hMZjPyZeFPnjOEJR5Lk9NyELBp46VQabVcbAtCQy39iIjsFEhc4kWT1UK8QxqfMM9nguJFUsca++fuu5GVGwm2HKvVrvLZ0bjiQRk+B6B2c792U8DSEWjys4IxVx/f6x+vS6NqaK2lD8nst+GJZQBjFwIjXruQuSUGJStdpYFCP0NpFbw1wkBnZzrfMPLZ7hPH9o/TiDrGJWrm1ecQVRaeY3xJA7o/LY5KpyLYPVgMd6k+YGyAbMq/DRS2/r/2z9yb4/ZbsfeC+AN2Wc5NJc/9qZXtszh/bMMsHbzIgUqu76ti4kknX6qcwXyaeylu4mwocGspUrN69wLtcANstsQW2FqnLxu3n69LmuxkwkRVzVokxjIjdvxBglotxYXNYup5gLJikWiRSJPQnKZunDJFvACXhBskwkjzhT6VIUu0Iui8GjhJcBl+mTxUI8JgMS28wHQCwymIH9pjA/ECUsCn/BNvBxzx44h0+r87COlcgMfhL0kZnt6bUXTc0Tkf80rVeMw3WhivTcl56rV/paEq23YANN8ffcYlBCX6GHi0IVnxRR/AkZLFkFlOVAIVvvqGwJ3ZNoWegdvhz2j9ad44wQahRuLSOdaPVaVFXrKGteePzcPmZ2wflULtT07qyFTFA3LaRJ4ocSbKXAQ2lZqr1BWRcUUJNi2xO/xOYU+6dHh9Z0yzPB8QLwFJlkWLEYuKMxUQzzNE8oLpPbkYUFmwulTeV8KJPPDEqfOClwyjFz5hTezsa7pYRO51FL6AN36kSq07QDiThFIs4mkXZptxnZQWd6CzrS23YczoiQRTW0YdlOOZlSqXplbJ8o5BFGnDnTzwzK6zSotw/9Jgk0Dv8TsXZ8JbhM4+p+MMeMRMGQjEPf8xDyEA3RJAy9yTjiYxIGfKtRjHUSw10CduZAFdge19So64wO+095oWjbaM6IqqbgTZr8nSM0DI1jw4L6OnVYpwOvGkqUppKRZK+j3MNE+GNWxV/xdfTuuspvmeJvVUMu7veRLk2NWF9q6OfiSyK+5+yDpdiEoeHEo3F/EnphP+B03J9SMuqTaTQKfcrigF/iIkxHR2+hO1eBOE2osHnp3f+mlcaCWsL7dL1mzJ8g2K8/9DiCHALejwIy7QeIe2w8GfojNhpAaExhnQMGSwH32OLC+vJyKNVO926n9zNQqfV+vQtLE1T1JWHf9rFpg3qodShr9F8S9ru8nl/oFk6P3l5JsOVTud3PqgPg1KFmvpTWlmw/HUjN9vsqkr3AKo4Xr00/oMVnez+g6P/5A/o+L3IQkJC2d5Yl1GmuCiiXOJa5LhYUSXT159PdGPr2Lz3q5FXXFQAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=f082f577c33e7250b202be3ed40131eb"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Hardware Request - Item Fulfillment">e482f577c33e7250b202be3ed4013187</flow>
+        <generation_source/>
+        <order>12</order>
+        <parent_ui_id>7f5eb3ef-9ed4-42e7-8481-ff4db89e13dc</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-08 09:51:20</sys_created_on>
+        <sys_id>f082f577c33e7250b202be3ed40131f1</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-08 09:51:20</sys_updated_on>
+        <ui_id>3ed63408-0992-4e31-9f24-b7f6fc8695f1</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VTWvjMBT8K0FnY+w4DW1uS0Kg0G0hKbl0i5Gl50Qgy64kp82G/Pd9tmXHTbslhR62sL69L2neeMZ+2BPByYSMgAfhVThmURhFwyAYXo7CZBwl4ZBHFCAkHlE0A+zUwHLNMd5SWVaJ/X4JeisYDKbUUpmv49DX8FSCsbGwkB0O2MyFKSTdrdwMZthGSK5BkcnDo0cKqvF4C5pM9ielc/FJmoDE1kUL8BSw3RVVzHNWZqAQXJu8cZMzVxlcz7CCQxWcMPAIvFhQHBBISqUBj2RUcWpzvSMTq0tMaKD8Tsld17ERyjaLZvTFiN948yio+lLAzZgjoQtjR1CTTmfI5BJPZrbUHV85cmwaTjiktJR22s81DXeFFblqRixNZDudyzJTtw0jpDug9z5KgyCgqPaskDdrpctN/rxoQc6FqilxK8qcUdlF1FotktJWcPYEJNQcZ7QohFrHhc63oh5GKJm/lhj4qcyf8U4j1sqnrMLtI6vUn2N+VqdXVItqiZ94DA4fPGJ2ZiqpMcdVkMP4qayQNIu5FeKahZqCuFZCNcy0KOwPvGoLDvjBcw4Ihh8qDI6CqoVveg4wllr4VQZBxKO3Wj+pfk73Z6BqdT8XILl5B6bTPVoRYVmIG9ivpX/vioOVK3bq/zL5h+Ogfv6b4N81QXLxkdzY1VFdvTN7RmAxfvnrr/5bHyyafwLwwXVT/5wTzoDWOuG+fuXvQ23NcJq76c8ObpuCM8HFl3ng8jup363x7eX/N9E//gHMdLZ4/QgAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=f082f577c33e7250b202be3ed40131f1"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Get Catalog Variables">330ba3abc31013002841b63b12d3aee8</action_type>
+        <action_type_parent display_value="Get Catalog Variables">22f0b88cc3c632002841b63b12d3aeff</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>330ba3abc31013002841b63b12d3aee8</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Hardware Request - Item Fulfillment">e482f577c33e7250b202be3ed4013187</flow>
+        <generation_source/>
+        <order>1</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-08 09:51:20</sys_created_on>
+        <sys_id>f882f577c33e7250b202be3ed40131e5</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-08 09:51:20</sys_updated_on>
+        <ui_id>ee38009f-21f0-4f4f-b4a9-40f1e68235e5</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1Vy27bOhD9FUNrwxAlx7a8a1MELdDeAnHRTVEQfIxiotQjJGU3N8i/dyhRtmM7TgI0RVt0qeEMeWbOnKMvt5GS0Tya8pizlHGRkpikcZzMxoRPUk4SmTLIp9EwKlkBmCmYY7q6oitmFOMaLB6tmG78WRbn8TQTE5Gmk3RCYp7ECYcU5BgvJXE8Vw4KWtVOVSUtYT2MxzlJszE7XgD5QUGSjZOczB4oOOMHBRxImkrxQMFMHhTAbJryLIbjBZPsoIDlyZiT2QMF2WHBbCJm3ZSmRwqmcFBwlvHxmPkX+JGC/Gy/ABmRytaa3Xz+R8xvRoxYKi0NlNH8y9dhVDODqnJgovnt3tFTZakZB42p550uB593dHlCsu6m9kdWN3bJG/ENXAi+D/ct/MngdX9UGelRJsMIvjsoJSC8nGkLw6hgpWSuMjebiAEmP5Z6G1iq0uGdkU/+btX/+DRJ4jj2qTlgzwK6480nDRvchfM32MLCmUa4xoRUsayUwF7aaUnIWaPd+W6sS/jYTr8rcb77UF3ppij/6wYUbS7oBYORxiIIqH2vHnzoJF8sq/Vlj/JCle1YwqGuBNObL+acUbxxHg/arKW5xhCUWx5wJ6CdZNSW4KOgocDnaMHqWpVXtDbVSrVPIOJidKXxY5Trao3QrLoqR0z49kZIABtdYPxNG+6X4ANeg8WeAAnUNKVTBdDWrqkqcTPtSuFaziMcrX9elUI3mFngKJTBVzZQwdltmh/NDggwdG26lzYptcEaswJqsSXh2ibDka0agwT3ZOxr5A4zbuy5ZtZu6cG9oNeNH25HVqCFdsz6EmFU7V7hNFYQGLgbhp8bP60islUKQsGlc0B7yXhwOz84lpE8IfEDPirIofNewnUD1g3eMiPXzMCzLeAJ4HsL+BTQD3oveIfo7QDluXGFwcIT+Wi/wR224rzvDZc78WAM5LQxeOqf5gtpct8UrKO4DvcAWooXb1aT2q6lY9bx+CD+SGfJF8CMWF4o0H5FWjL3/ealnAR9zEBRuSBgustVL3BsBFnxELfBJznQC2g/PyUfYFstmE6pIPdFf3u7QCdDwntdUTIKyW3q3d2h7J8v88dx9jJfNLxQ+CORg2AuJ3p4vpDjFxOywF257oEdU+tlj77V698izqbgrXB+jTwrZIVKU9V1aPon6+rrD0Co6twyDgAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=f882f577c33e7250b202be3ed40131e5"/>
+    <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=e482f577c33e7250b202be3ed4013187"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=e482f577c33e7250b202be3ed4013187^sys_idNOT IN3082f577c33e7250b202be3ed40131ce,3082f577c33e7250b202be3ed40131e2,3882f577c33e7250b202be3ed40131d3,3c82f577c33e7250b202be3ed40131d0,b082f577c33e7250b202be3ed40131d2,b482f577c33e7250b202be3ed40131ca,b482f577c33e7250b202be3ed40131cf,b482f577c33e7250b202be3ed40131e3,b882f577c33e7250b202be3ed40131cc"/>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">ce8a262bc3f23250b202be3ed4013146</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Hardware Request - Item Fulfillment">e482f577c33e7250b202be3ed4013187</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>8</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-08 09:51:20</sys_created_on>
+        <sys_id>3082f577c33e7250b202be3ed40131ce</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-08 09:51:20</sys_updated_on>
+        <ui_id>bea3a97d-8960-4e53-be4e-f2d2849810ce</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1WTW8aMRD9K8hnQN4vCtzSRJGQ0kRNolzadDXrHYNV492uvRCK+O8d7y4QRamapDlVveHnmfF7M35etqyoXVk7e1ucWKvmhk2/3PeZMh6j31smdbG+KOZKzIx1YATebOwsZ1MWj8YQjsJMRDKMwoRnIQ8zjDCPeRAF8QfWZwaWSJGiMLlyqjAErUDXHttuEaMx5xM5CAPJB7GM5SCLYTKIuQxwNA6jBJOhAIfzotrsdl9rzqNcQKbRfrv8/Mb8RZ29PdmulRMLtCQjV7bUsLn7N9SIhdJ5hd3wS6hobg4rNt0+2VJ+8BNIZBLwREThKAo5D8dxkI2iLAjzCDAeUUENGWoKPX00+Wcug9uUHrKuUmberS+61Js9WFS5pxLyPsMHhyZHIiFBW+yzJZgcHIliU1fVBFQI+ZXRm0PEQhlH1ZiPfbDqJ/pKnPtIiaRLYLt7WKbdaFtYnoEDolILV1ddqFgUSqBtO5KjhFq708dYG3BVNiqbFOcH3WUXul6ay7YZ7FBgf5MIqS2RwNIr9dw7IfJmUayv9yzPlWm60m3qQoA+rMBR77LaeT5bhhqXVChdQllSR9OyKlaqSSYuy+Fc02LoXU6H+hdgCMITH1JjYXhO+FkD30GlvIpPVIaS6S7Y1IpKlXttzeFs12d2Y081WHvUSM1Nf9SeYau405a27fEpTaETOniFnYxd/33fnrQBjg9QaPLeBa5Q905K3xLQ097M4XLwESzmvWt6F9v798TqL857nakkBxlMRPC8qSB6zlS91iu/1/oafwV/8FeHvMhgSfLfX3/tL08zA6tE2nyNqZx/4t7RYPfeDO2hh2YLZYnbrcdm+/8AfmNDN8rb8Aiti+q7V3XEdr8AEpufl00IAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">9af0dba7c33a3250b202be3ed4013194</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Hardware Request - Item Fulfillment">e482f577c33e7250b202be3ed4013187</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>17</order>
+        <outputs_assigned/>
+        <parent_ui_id>43bcd4bc-3afb-4d19-b668-96c37bdef5e7</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-08 09:51:20</sys_created_on>
+        <sys_id>3082f577c33e7250b202be3ed40131e2</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-08 09:51:20</sys_updated_on>
+        <ui_id>c4c7c938-59ec-436c-9420-27228a4816b5</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1V0W7aMBT9lcrPgJyY0MJb1aoSUrdKperLVkU3jg3ejJ3ZTtsM8e+7TgK0U6utGo97w8f3Xp9zuAc2xNahqoO/s+feq6Uhsy8PA6JMxPDzhkhtn67tUvG58QEMF4vGz0syI9NU0rKAU84YsDSjRUrTQjBRjmnCkmlGBsTAWmAlt6ZUQVmD0CPoOmKbzURSdpZKPmQZz4ZjSfkQptnZ8FTQZAyQFryYjqCqnMWeHN8OYrv9WlPKSie+CR5EifNK5SsNzf2Rx/KV0nju7ajAoZIgHJltfrtSrRWQySyhGWfphKWUpmfjpJiwIklLBmI8wYEaCqGx9OKFF2/YE5oqQj44ZZb9+bpvXexA68pIJaUDIp6DMCVSnknQXgzIGkwJwbqGzIKrEXACyhujm33FSpmA00isffbqp4iTKI2VUqAuLrrb/THvPe5geQkBkErNQ+36Ur6yigvfOVIKCbUOFy+xruCmalW2LQEKveu2ul6bz50ZZD9g95UiUnskIaqoNHLvhcjFyj7d7lheKdO60l9qy0HvTxDQu6IOkc+GCC3WOChf4xqgo3ncBdU2I5f1aKnxMIp7j4/GTIyAR+IjNBZGV4hftvA9OBVVfMIx2Iy74HPPnap22trHyXZAfOMvNHh/0Ijm5j/qyLBT3GvLO3tiSzvoHB9+FL2M7eC4acxb4BDJuTy5fTdYry8/Fg9JQSZTnrwdD2BvxeOk2/r3WX8kKckfktIjfxWVLPuflH9OSqRZgFc8b/9pcFz8sTpiVB7iWneP7s3myiO3u4jNd/9v8aLBjYqBOkBP1n2Pqg7Y9hfC59YpKQcAAA==</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">0d2bba2bc3763250b202be3ed4013179</block>
+        <comment/>
+        <connected_to>956235fe-3849-4190-8af6-82ac34e02379</connected_to>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Hardware Request - Item Fulfillment">e482f577c33e7250b202be3ed4013187</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Else If">666e5545c3e232002841b63b12d3ae99</logic_definition>
+        <order>15</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-08 09:51:20</sys_created_on>
+        <sys_id>3882f577c33e7250b202be3ed40131d3</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-08 09:51:20</sys_updated_on>
+        <ui_id>43bcd4bc-3afb-4d19-b668-96c37bdef5e7</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1V0W7aMBT9FeRnQE4CLeWtoqqG1K3SWu1lq6Ib5xqsGTuznbYZ4t93nQSoJqZtGo97i4/vvT7nxCfZMluHqg7+0V57r1aGzT8/DZkyEaPnLZPavtzZlRJL4wMYgQ+NX5ZszmZJWhSQFiK7vMjSKS9SnhaYYTnhSZZcAhsyAxukSmFNqYKyhqBn0HXEtlvEbMb5lRylieSjiZzIUTGBq9GEywQvZmk2xelYQMCVdc1u96XmPCvXdUFDSuUrDc2nc8wSa6VLh73wChxxDujYfPvTloqiJQeZXIlEZCmJ5jydTZLiIiuStMwAIaGBGgrUVLp4o/qEEaGpIuSDU2bVr+/61oc9aF0ZqaR8yPA1oCmRSEjQHodsA6aEQHrYPLiaAIdQ3hvdHCrWygSaxmLtq1ffMU7iPFZKJF0Cu93DMu+N7WB5AwGISi1C7fpSsbZKoO8cKVFCrcPiLdYV3FetyrYlQKH33VbXG/OhM4MdBuzfIyG1JxJYRaWRey9EPqzty8c9y1tlWlf6TW0F6MMKAnlX1CHy2TLUuKFB+QaqihzNK2efVdtMXDbjlabFON5wOjTe/jGISHxMxsL4lvCbFv4ETkUV72kMNdNd8LkXTlV7be3hbDdkvvELDd4fNZK5+bc6MuwU99ryzp7Y0g66poOfsZexG543d3kLHMO3lINFH4aB8oN3p0J1suasYUlPhWXQZeDXGv4mN8lvctMjfxSc6fR/bv45N5FmAV6JvP3D0Lj46TpjcJ7iJe8OPZgtlCdujxFb7v9rcaOhGxXjdYRerPsaVR2x3Q9d6gyaIQcAAA==</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">a0305367c33a3250b202be3ed401315b</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Hardware Request - Item Fulfillment">e482f577c33e7250b202be3ed4013187</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>11</order>
+        <outputs_assigned/>
+        <parent_ui_id>956235fe-3849-4190-8af6-82ac34e02379</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-08 09:51:20</sys_created_on>
+        <sys_id>3c82f577c33e7250b202be3ed40131d0</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-08 09:51:20</sys_updated_on>
+        <ui_id>7f5eb3ef-9ed4-42e7-8481-ff4db89e13dc</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VwW4aMRD9lcpnQN41S4BblCgSUtpISZRLG61m7Vlwa+zt2puEIv69490F0ipRGzXH3vDzzPi9xzzYMteEqgn+1p16r5eWzT/fD5i2EaPPW1Ya93jpllourA9gJd5s/EKxOYOp4JmYnEghQKQZL1KeFihQjXkikqxgA2ZhjVQpnVU6aGcJegDTRGy7xdmsGKPgwyKZyuFYnoyHxUwlwxkAPxFCTUuBI6iq2lFPTm8H3O2+NJwLVeNXlAEVzVPaVwY2d+88Vq60oXNvRwU1KQlYs/n2tysdrZhBVmYJz6RIJyLlPJ2Ok2IiiiRVAnA8oYEGCjRUevbMixfsCZsqQj7U2i7782XferMHXa0ilZQPGD4FtIooz0swHgdsDVZBcPWGzUPdEFAjqCtrNoeKlbaBprFY++T1D4yTOI+VJZIuid3t4Zj3HndweQ4BiEojQ1P3pXLltETfOaKwhMaEs+dYV3BVtSrblgCF2Xc706ztp84Mdhiw/0oJaTyRwCoqjdx7IeXNyj1e71leaNu60l8aJ8EcThDIu6IJkc+WocE1DcrXtAbkaB53QbfNxGU9Who6jOLe06MxEyOQkfiIjIXRBeHnLXwHtY4qPtIYaqZd8LmXta722trH2W7A/MafGfD+qJHMzb83kWGnuNeWd/bElnbQKT38gL2M3eB905i3wDGSi/LD9avB+vXybfEoOZTJTCYvxwPES/H40G3966zfkpTkD0npkb+KSpb9T8o/JyXSLMBrmbf/NDQu/li9Y1Tu41p3jx7MltoTt9uILfb/b/FiQxsVA3WEHl39Lao6YruftSO4CSkHAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">e7e213ebc33a3250b202be3ed4013147</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Hardware Request - Item Fulfillment">e482f577c33e7250b202be3ed4013187</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="End">d176605ea76103004f27b0d2187901c7</logic_definition>
+        <order>14</order>
+        <outputs_assigned/>
+        <parent_ui_id>7f5eb3ef-9ed4-42e7-8481-ff4db89e13dc</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-08 09:51:20</sys_created_on>
+        <sys_id>b082f577c33e7250b202be3ed40131d2</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-08 09:51:20</sys_updated_on>
+        <ui_id>1fea950c-9c2c-4216-a526-70cdb6f824fd</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">1f9bde63c3723250b202be3ed4013129</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Hardware Request - Item Fulfillment">e482f577c33e7250b202be3ed4013187</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>4</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-08 09:51:20</sys_created_on>
+        <sys_id>b482f577c33e7250b202be3ed40131ca</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-08 09:51:20</sys_updated_on>
+        <ui_id>80cf3a03-eb76-4c72-b32c-788ca09ead47</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VXWvbMBT9K0XPifFHnCZ5K+0KgX6MJhTGKObqw4mYInmS3NYL+e+7sp2krB1bWR/3Zh3de3XOsY69Jab2Ve3d0pw5J1eazL4+DIjUAcPnLSmVeboyK8nm2nnQTCwaN+dkRvJsSrkYZyw7TbM0j2kap1Rkgo/iJEtSSgZEw0ZgJTOaSy+NRugRVB2w7XZMKT2FUTJMp3E+HInp6XBCy8lQpNMJyzI2ijmP7gQzlkcb0LASdrebL25ul5+uPy+/4CwuXaWguf/AkWwtFbeit6ECiwq8sGS2/WVLBgumkJd5EucsS8dZGsfpZJTQcUaTlGcgRmMcqIAKhaXnLzx4wxbfVAFy3kq96tdXfetiDyLtQCWNB0Q8e6G5QBIlKCcGBOVw8MY2ZOZtjYAVwG+1ag4Va6k9TiOh9tnJHyJMiuNQWQrUxUS3e1gWvb8dXF6AB6RSM1/bvpStjWTCdY5wUUKt/PlLrCu4rVqVbYsHqvbdRtUbfdOZQQ4D9q8TkdohCVEFpYF7L6RcrM3T3Z7lpdStK/2mMgzUYQUevaO1D3y2RCixwUHFBqoKHS0qax5l24xcNtFK4SIK9x0PDVmIgAXiERoL0SXiFy18D1YGFdc4BpvxLrjCMSurvbb2cLIbENe4cwXOHTWiucX3OjDsFPfais6e0NIOOsODH0UvYzf42BQWLXCM4nWXhJNLU2t+8jpXr/bfF5IyhjKZsuTtkED2VkhOurv/e+7vyUvyh7z0yF8FJs//5+Wf8xJoUnCSFe1/BseFT9YHBuYhXO7u0IPZTDrktgzYfP93CxsN3qgQqyP0ZOy3oOqI7X4C0wmfiScHAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">81e8b663c3763250b202be3ed4013149</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Hardware Request - Item Fulfillment">e482f577c33e7250b202be3ed4013187</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>9</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-08 09:51:20</sys_created_on>
+        <sys_id>b482f577c33e7250b202be3ed40131cf</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-08 09:51:20</sys_updated_on>
+        <ui_id>956235fe-3849-4190-8af6-82ac34e02379</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VTW8aMRD9K8hnQN4vCtwiokhIaaKWKJcmXc16bbBq7K3tDaGI/97x7gJRlahJm0MPva2fZ8bvzfh5d8TUvqq9uzFnzsmlJtMv930idcDwe0eEMptLs5Rsrp0Hzfhi6+YlmRI64eNiNEpY8mGUxBktYhoXPOFlSqMkSiekTzSsOUYyo0vppdEIPYCqA7bbcZ6MKZ2IQRwJOkhFKgZFCpNBSkXER+M4yXg2ZOD50tjtfn9XU5qUllccIeu+Xn36wxJuIz1bcYdkSukqBdvbf4kTW0mFJbtBVGCxh1icTHe/bMkwhAlkIotoxpIYh0BpPE6jYpQUUVwmwNMRFlRQcIWhsydTeGYwflsFyHkr9bJbX3apiwNobBmoxLRP+KPnuuRIQoByvE/WoEvwKIpMva0RsBzKa622x4iV1B6rkRD76OQPHipRGiIFR12Mt7vHZd4NqIXFOXhAKjXzte1C2cpIxl3bkZILqJWfPcXagOuqUdmkeCjUIduoeq2v2maQY4HDfUCkdkgC54tKA/dOiFiszObzgeWF1E1Xuk1lGKjjCjz2rqh94LMjXPE1FsrXUFXY0byy5kE2ychlPVwqXAyD4/DQ4MYhsEB8iI2F4QXi5w18C1YGFR+xDCbjXXC5Y1ZWB23N4WTfJ27rZgqcO2nE5ubf68CwVdxpy9v2hJSm0Bke/MA7Gfv++74DeQOcHoO56M06R/Skw29U4XrG9hYvevU1KW+zkqAgogmLnrcSJM9Zqdc65GWFb3FV9BtXdcirbJVl/131164KNAtwkuXN/xDLhYftHW11HyzQHnpsNpMOud0EbH74C4eNLd6oYL4TtDH2W1B1wvY/Af+aEyzPBwAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">c2f253ebc33a3250b202be3ed40131d7</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Hardware Request - Item Fulfillment">e482f577c33e7250b202be3ed4013187</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="End">d176605ea76103004f27b0d2187901c7</logic_definition>
+        <order>20</order>
+        <outputs_assigned/>
+        <parent_ui_id>c4c7c938-59ec-436c-9420-27228a4816b5</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-08 09:51:20</sys_created_on>
+        <sys_id>b482f577c33e7250b202be3ed40131e3</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-08 09:51:20</sys_updated_on>
+        <ui_id>ef51dd4b-ac9c-4154-b99e-c33a72c7e6ca</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">f76e9263c3b23250b202be3ed40131a4</block>
+        <comment/>
+        <connected_to>80cf3a03-eb76-4c72-b32c-788ca09ead47</connected_to>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Hardware Request - Item Fulfillment">e482f577c33e7250b202be3ed4013187</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Else">1f781bf3c32232002841b63b12d3aee6</logic_definition>
+        <order>6</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-08 09:51:20</sys_created_on>
+        <sys_id>b882f577c33e7250b202be3ed40131cc</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-08 09:51:20</sys_updated_on>
+        <ui_id>c2477d58-e33f-4281-81b6-67ed45cb6d0a</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=e482f577c33e7250b202be3ed4013187"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=e482f577c33e7250b202be3ed4013187"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>request_item</element>
+        <help/>
+        <hint/>
+        <label>Request Item</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_e482f577c33e7250b202be3ed4013187</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-08 09:51:20</sys_created_on>
+        <sys_id>3082f577c33e7250b202be3ed40131bf</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="ChromaTech Ticket logging System" source="x_1839224_chroma_0">0ab6f4efc34e76d0b202be3ed4013104</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-08 09:51:20</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>table_name</element>
+        <help/>
+        <hint/>
+        <label>Table Name</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_e482f577c33e7250b202be3ed4013187</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-08 09:51:20</sys_created_on>
+        <sys_id>7c82f577c33e7250b202be3ed40131b3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="ChromaTech Ticket logging System" source="x_1839224_chroma_0">0ab6f4efc34e76d0b202be3ed4013104</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-08 09:51:20</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_e482f577c33e7250b202be3ed4013187"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_e482f577c33e7250b202be3ed4013187"/>
+    <sys_hub_flow action="UPDATE">
+        <sys_id>55465aafc3323250b202be3ed40131db</sys_id>
+        <latest_snapshot>e482f577c33e7250b202be3ed4013187</latest_snapshot>
+        <compiler_build>glide-zurich-07-01-2025__patch3-10-16-2025_10-24-2025_0919.zip</compiler_build>
+        <version_record/>
+    </sys_hub_flow>
+    <sys_flow_trigger_plan action="delete_multiple" query="plan_id=55465aafc3323250b202be3ed40131db^sys_idNOT IN81823977c33e7250b202be3ed401319c"/>
+    <sys_flow_trigger_plan action="INSERT_OR_UPDATE">
+        <binding_strategy>com.snc.process_flow.engine.binding.RunAlways</binding_strategy>
+        <plan>{"type":"PlanProxy","persistor":{"@class":".ChunkingPlanPersistor","table":"sys_flow_trigger_plan","id":"81823977c33e7250b202be3ed401319c","name":"plan","plan_signature":null}}</plan>
+        <plan_id>55465aafc3323250b202be3ed40131db</plan_id>
+        <snapshot>5e0d56bbc372b250b202be3ed4013121</snapshot>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-08 09:51:22</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>81823977c33e7250b202be3ed401319c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-08 09:51:22</sys_updated_on>
+        <trigger display_value="">81823977c33e7250b202be3ed4013182</trigger>
+    </sys_flow_trigger_plan>
+    <sys_flow_subflow_plan action="delete_multiple" query="plan_id=55465aafc3323250b202be3ed40131db"/>
+</record_update>

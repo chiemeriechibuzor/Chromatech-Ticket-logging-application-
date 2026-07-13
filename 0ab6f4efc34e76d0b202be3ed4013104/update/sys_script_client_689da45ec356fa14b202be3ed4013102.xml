@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>false</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field>warranty_period_months_choice</field>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>Auto Set Waranty Expiry- Month</name>
+        <order/>
+        <script><![CDATA[function onChange(control, oldValue, newValue, isLoading) {
+    if (isLoading) return;
+
+    var soldDate = g_form.getValue('date_sold_on');
+    var months = g_form.getValue('warranty_period_months_choice');
+    var expiryField = 'warranty_expiring_at';
+
+    // Ensure both fields are populated and expiry date is empty
+    if (!soldDate || !months || g_form.getValue(expiryField)) return;
+
+    months = parseInt(months);
+    if (isNaN(months)) return;
+
+    var startDate = new Date(soldDate);
+    startDate.setMonth(startDate.getMonth() + months);
+
+    // Format date to yyyy-MM-dd HH:mm:ss
+    var formattedDate = startDate.getFullYear() + '-' +
+        String(startDate.getMonth() + 1).padStart(2, '0') + '-' +
+        String(startDate.getDate()).padStart(2, '0') + ' ' +
+        String(startDate.getHours()).padStart(2, '0') + ':' +
+        String(startDate.getMinutes()).padStart(2, '0') + ':' +
+        String(startDate.getSeconds()).padStart(2, '0');
+
+    g_form.setValue(expiryField, formattedDate);
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>Nellie.BA</sys_created_by>
+        <sys_created_on>2026-01-09 16:29:28</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>689da45ec356fa14b202be3ed4013102</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Auto Set Waranty Expiry- Month</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="ChromaTech Ticket logging System" source="x_1839224_chroma_0">0ab6f4efc34e76d0b202be3ed4013104</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_update_name>sys_script_client_689da45ec356fa14b202be3ed4013102</sys_update_name>
+        <sys_updated_by>Nellie.BA</sys_updated_by>
+        <sys_updated_on>2026-01-09 16:32:37</sys_updated_on>
+        <table>x_1839224_chroma_0_chromatech_sold_products</table>
+        <type>onChange</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>

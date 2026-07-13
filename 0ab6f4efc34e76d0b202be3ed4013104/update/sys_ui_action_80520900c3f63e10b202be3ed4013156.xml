@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_action">
+    <sys_ui_action action="INSERT_OR_UPDATE">
+        <action_name>copy_query</action_name>
+        <active>true</active>
+        <client>false</client>
+        <client_script_v2><![CDATA[function onClick(g_form) {
+
+}]]></client_script_v2>
+        <comments/>
+        <condition>current.canRead()&amp;&amp; gs.getUser().canCreateOnTable('x_1839224_chroma_0_chromatech_customer_queries')</condition>
+        <form_action>true</form_action>
+        <form_button>true</form_button>
+        <form_button_v2>false</form_button_v2>
+        <form_context_menu>false</form_context_menu>
+        <form_link>false</form_link>
+        <form_menu_button_v2>false</form_menu_button_v2>
+        <form_style>primary</form_style>
+        <format_for_configurable_workspace>false</format_for_configurable_workspace>
+        <hint/>
+        <isolate_script>false</isolate_script>
+        <list_action>false</list_action>
+        <list_banner_button>false</list_banner_button>
+        <list_button>false</list_button>
+        <list_choice>false</list_choice>
+        <list_context_menu>false</list_context_menu>
+        <list_link>false</list_link>
+        <list_save_with_form_button>false</list_save_with_form_button>
+        <list_style/>
+        <messages/>
+        <name>Copy Query </name>
+        <onclick/>
+        <order>300</order>
+        <script><![CDATA[(function executeAction(current, previous /*null when async*/) {
+    var newRecord = new GlideRecord('x_1839224_chroma_0_chromatech_customer_queries');
+    newRecord.initialize();  // Prepares a new empty record
+
+    // Copy the fields you actually want to duplicate
+    newRecord.x_requester          = current.requester;
+    newRecord.product              = current.product;
+    newRecord.description          = current.description;
+    newRecord.issue_category       = current.issue_category;
+    newRecord.issue_state          = current.issue_state;
+    newRecord.short_description    = current.short_description;
+    newRecord.approval             = current.approval;          // or current.approval_query ?
+    newRecord.x_vip_query          = current.vip_query;
+    newRecord.x_contact_type       = current.contact_type;    // or current.contact_type ?
+    newRecord.contact_type         = current.contact_type;
+    newRecord.assigned_to          = current.assigned_to;
+    newRecord.assignment_group     = current.assignment_group;
+    newRecord.priority             = current.priority;
+    newRecord.email                = current.email;
+    newRecord.phone                = current.phone;
+    newRecord.place                = current.place;
+
+    // Add any other fields you want to copy here, e.g.:
+    // newRecord.some_other_field  = current.some_other_field;
+
+    // Important: Do NOT copy number if it's auto-numbered — let the system generate a new one
+    // Do NOT copy sys_id, sys_created_on, sys_updated_on, sys_created_by, etc.
+
+    var newSysId = newRecord.insert();
+
+    if (newSysId) {
+        // Redirect to the newly created record
+        action.setRedirectURL('x_1839224_chroma_0_chromatech_customer_queries.do?sys_id=' + newSysId);
+        // Optional: gs.addInfoMessage('Query copied successfully.');
+    } else {
+        gs.addErrorMessage('Failed to copy the query. Please check mandatory fields or permissions.');
+    }
+
+})(current, previous);]]></script>
+        <show_insert>false</show_insert>
+        <show_multiple_update>false</show_multiple_update>
+        <show_query>false</show_query>
+        <show_update>true</show_update>
+        <sys_class_name>sys_ui_action</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-01-27 14:48:37</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>80520900c3f63e10b202be3ed4013156</sys_id>
+        <sys_mod_count>26</sys_mod_count>
+        <sys_name>Copy Query </sys_name>
+        <sys_overrides/>
+        <sys_package display_value="ChromaTech Ticket logging System" source="x_1839224_chroma_0">0ab6f4efc34e76d0b202be3ed4013104</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_update_name>sys_ui_action_80520900c3f63e10b202be3ed4013156</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-01-30 08:04:09</sys_updated_on>
+        <table>x_1839224_chroma_0_chromatech_customer_queries</table>
+        <ui11_compatible>true</ui11_compatible>
+        <ui16_compatible>false</ui16_compatible>
+    </sys_ui_action>
+</record_update>

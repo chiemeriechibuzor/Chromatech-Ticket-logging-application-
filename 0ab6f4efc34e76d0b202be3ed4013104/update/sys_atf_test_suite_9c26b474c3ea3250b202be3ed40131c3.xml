@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_atf_test_suite">
+    <sys_atf_test_suite action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <description>-- for End-to-end tests for approval,&#13;
+-- Groups, initialization, &amp;&#13;
+-- Routing on ChromaTech queries</description>
+        <input_filter/>
+        <name>ChromaTech Customer Queries Workflow Tests</name>
+        <parent/>
+        <sn_atf_tg_generated>false</sn_atf_tg_generated>
+        <sys_class_name>sys_atf_test_suite</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-01-17 11:31:50</sys_created_on>
+        <sys_id>9c26b474c3ea3250b202be3ed40131c3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>ChromaTech Customer Queries Workflow Tests</sys_name>
+        <sys_package display_value="ChromaTech Ticket logging System" source="x_1839224_chroma_0">0ab6f4efc34e76d0b202be3ed4013104</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_update_name>sys_atf_test_suite_9c26b474c3ea3250b202be3ed40131c3</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-01-17 11:31:50</sys_updated_on>
+    </sys_atf_test_suite>
+</record_update>

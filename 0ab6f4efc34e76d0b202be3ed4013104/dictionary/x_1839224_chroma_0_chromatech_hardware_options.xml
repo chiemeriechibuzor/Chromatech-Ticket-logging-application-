@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="4c1b6b36c3feba10b202be3ed4013181" label="chromatech hardware options" max_length="40" name="x_1839224_chroma_0_chromatech_hardware_options" type="collection">
+        <element attributes="edge_encryption_enabled=true" label="Level" max_length="100" name="level" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Dependent Value" max_length="100" name="dependent_value" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Label" max_length="100" name="label" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Value" max_length="100" name="value" type="string"/>
+    </element>
+</database>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="u_state" label="State" language="en" table="u_imp_tmpl_rm_story">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>u_state</element>
+            <help/>
+            <hint/>
+            <label>State</label>
+            <language>en</language>
+            <name>u_imp_tmpl_rm_story</name>
+            <plural>States</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>Nellie.BA</sys_created_by>
+            <sys_created_on>2026-01-04 10:07:54</sys_created_on>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>State</sys_name>
+            <sys_package display_value="ChromaTech Ticket logging System" source="x_1839224_chroma_0">0ab6f4efc34e76d0b202be3ed4013104</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+            <sys_update_name>sys_documentation_u_imp_tmpl_rm_story_u_state_en</sys_update_name>
+            <sys_updated_by>Nellie.BA</sys_updated_by>
+            <sys_updated_on>2026-01-04 10:07:54</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

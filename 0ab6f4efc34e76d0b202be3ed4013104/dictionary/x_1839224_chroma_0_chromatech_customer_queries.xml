@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="8a57b823c38e76d0b202be3ed401312d" extends="task" label="Chromatech Customer Queries" max_length="40" name="x_1839224_chroma_0_chromatech_customer_queries" type="collection">
+        <element label="Place" mandatory="true" max_length="32" name="place" reference="cmn_location" type="reference"/>
+        <element label="Phone" max_length="10" name="phone" type="string"/>
+        <element label="VIP Query" max_length="255" name="vip_query" type="boolean"/>
+        <element label="Requester" max_length="32" name="requester" reference="sys_user" type="reference"/>
+        <element label="First Reported On " max_length="255" name="first_reported_on" type="glide_date_time"/>
+        <element choice="1" label="Issue State" max_length="40" name="issue_state" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="On Hold" sequence="300" value="On Hold"/>
+                <element inactive_on_update="false" label="In Progress" sequence="200" value="In Progress"/>
+                <element inactive_on_update="false" label="Closed" sequence="400" value="Closed"/>
+                <element inactive_on_update="false" label="New" sequence="100" value="New"/>
+            </choice>
+        </element>
+        <element label="Email" max_length="16" name="email" type="string"/>
+        <element choice="1" label="Issue Category" max_length="40" name="issue_category" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Hardware Issue" sequence="100" value="Hardware Issue"/>
+                <element inactive_on_update="false" label="Firmware Issue" sequence="200" value="Firmware Issue"/>
+            </choice>
+        </element>
+        <element label="Product Name" max_length="32" name="product_name" reference="x_1839224_chroma_0_chromatech_sold_products" type="reference"/>
+        <element choice="1" label="On Hold Reason" max_length="40" name="on_hold_reason" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Awaiting Caller" sequence="100" value="Awaiting Caller"/>
+                <element inactive_on_update="false" label="Awaiting Vendor" sequence="200" value="Awaiting Vendor"/>
+            </choice>
+        </element>
+        <element display="true" label="Product" mandatory="true" max_length="32" name="product" reference="x_1839224_chroma_0_chromatech_sold_products" type="reference"/>
+    </element>
+</database>

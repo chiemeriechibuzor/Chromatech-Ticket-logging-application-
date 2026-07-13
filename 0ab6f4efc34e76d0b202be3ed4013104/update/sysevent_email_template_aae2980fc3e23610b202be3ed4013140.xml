@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sysevent_email_template">
+    <sysevent_email_template action="INSERT_OR_UPDATE">
+        <collection>x_1839224_chroma_0_chromatech_customer_queries</collection>
+        <email_layout display_value="ChromaTech Notification Layout">752298c7c3a23610b202be3ed401316f</email_layout>
+        <message/>
+        <message_html><![CDATA[<div data-complete="true" data-processed="true" data-hveid="CAQQAA" data-sfc-cp=""><span style="font-size: 10pt;">Hello ${assignment_group.manager}</span></div>
+<div data-complete="true" data-processed="true" data-hveid="CAQQAA" data-sfc-cp="">&nbsp;</div>
+<div data-complete="true" data-processed="true" data-hveid="CAQQAA" data-sfc-cp=""><span style="font-size: 10pt;">A new Customer Query ticket has been assigned to your group for immediate review</span></div>
+<div data-complete="true" data-processed="true" data-sfc-cp="">&nbsp;</div>
+<div data-complete="true" data-processed="true" data-sfc-cp=""><span style="font-size: 10pt;"><strong>Ticket Details</strong></span></div>
+<ul style="list-style-position: inside;" data-complete="true" data-processed="true">
+<li style="list-style-type: disc; font-size: 10pt;" data-sae="" data-complete="true" data-hveid="CAcQAA"><span style="font-size: 10pt;" data-complete="true" data-sfc-cp="">Ticket Number: ${number}</span></li>
+<li style="list-style-type: disc; font-size: 10pt;" data-sae="" data-complete="true" data-hveid="CAcQAQ"><span style="font-size: 10pt;" data-complete="true" data-sfc-cp="">Assignment Group: ${assignment_group}</span></li>
+<li style="list-style-type: disc; font-size: 10pt;" data-sae="" data-complete="true" data-hveid="CAcQAg">Product: ${product}</li>
+<li style="list-style-type: disc; font-size: 10pt;" data-sae="" data-complete="true" data-hveid="CAcQAg">Short description: ${short_description}</li>
+</ul>
+<div data-complete="true" data-processed="true" data-hveid="CAgQAA" data-sfc-cp=""><span style="font-size: 10pt;" data-processed="true" data-complete="true" data-sfc-cp="">View Ticket Details</span><br data-processed="true" data-complete="true" data-serialized-params="[]"><span style="font-size: 10pt;"><em data-processed="true" data-complete="true">Click the link to open the ticket&nbsp;</em><span data-processed="true" data-complete="true" data-wiz-uids="OVgIGb_1e"><span data-sae="" data-wiz-attrbind="class=OVgIGb_1d/TKHnVd" data-animation-atomic="">&nbsp;</span></span>${URI_REF}</span></div>
+<p><span style="font-size: 10pt;">ChromaTech Support Team</span></p>]]></message_html>
+        <message_list/>
+        <message_text/>
+        <name>ChromaTech Assignment Group Notification</name>
+        <sms_alternate/>
+        <subject>ChromaTech Query ${number} Assigned to ${assignment_group.name}</subject>
+        <sys_class_name>sysevent_email_template</sys_class_name>
+        <sys_created_by>Mimi.QA</sys_created_by>
+        <sys_created_on>2026-01-24 08:44:21</sys_created_on>
+        <sys_id>aae2980fc3e23610b202be3ed4013140</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>ChromaTech Assignment Group Notification</sys_name>
+        <sys_package display_value="ChromaTech Ticket logging System" source="x_1839224_chroma_0">0ab6f4efc34e76d0b202be3ed4013104</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_update_name>sysevent_email_template_aae2980fc3e23610b202be3ed4013140</sys_update_name>
+        <sys_updated_by>Mimi.QA</sys_updated_by>
+        <sys_updated_on>2026-01-24 10:22:15</sys_updated_on>
+        <sys_version>2</sys_version>
+    </sysevent_email_template>
+</record_update>

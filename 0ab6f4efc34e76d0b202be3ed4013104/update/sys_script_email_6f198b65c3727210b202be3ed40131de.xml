@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_email">
+    <sys_script_email action="INSERT_OR_UPDATE">
+        <name>list_previous_requests</name>
+        <new_lines_to_html>false</new_lines_to_html>
+        <script><![CDATA[(function runMailScript(current, template, email, email_action, event) {
+    var gr = new GlideRecord(current.getTableName());
+    
+    // Ensure 'requester' is the actual database column name
+    var reqID = current.getValue('requester');
+    gr.addQuery('requester', reqID);
+    gr.addQuery('sys_id', '!=', current.getUniqueValue());
+    gr.orderByDesc('sys_created_on');
+    gr.setLimit(5);
+    gr.query();
+
+    if (gr.hasNext()) {
+        template.print('<table style="width:100%; border:1px solid #ddd; border-collapse:collapse; font-family:sans-serif;">');
+        template.print('<tr style="background-color:#f8f9fa;"><th style="padding:8px; border:1px solid #ddd; text-align:left;">Number</th><th style="padding:8px; border:1px solid #ddd; text-align:left;">Short Description</th></tr>');
+
+        while (gr.next()) {
+            template.print('<tr>');
+            template.print('<td style="padding:8px; border:1px solid #ddd;">' + gr.getValue('number') + '</td>');
+            template.print('<td style="padding:8px; border:1px solid #ddd;">' + gr.getValue('short_description') + '</td>');
+            template.print('</tr>');
+        }
+        template.print('</table>');
+    } else {
+        // This helps you verify the script is actually running but found nothing
+        template.print('<p>No previous requests found for this user.</p>');
+    }
+})(current, template, email, email_action, event);
+]]></script>
+        <sys_class_name>sys_script_email</sys_class_name>
+        <sys_created_by>Mimi.QA</sys_created_by>
+        <sys_created_on>2026-02-01 16:25:22</sys_created_on>
+        <sys_id>6f198b65c3727210b202be3ed40131de</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>list_previous_requests</sys_name>
+        <sys_package display_value="ChromaTech Ticket logging System" source="x_1839224_chroma_0">0ab6f4efc34e76d0b202be3ed4013104</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_update_name>sys_script_email_6f198b65c3727210b202be3ed40131de</sys_update_name>
+        <sys_updated_by>Mimi.QA</sys_updated_by>
+        <sys_updated_on>2026-02-01 16:57:15</sys_updated_on>
+    </sys_script_email>
+</record_update>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sysevent_email_template">
+    <sysevent_email_template action="INSERT_OR_UPDATE">
+        <collection>x_1839224_chroma_0_chromatech_customer_queries</collection>
+        <email_layout display_value="ChromaTech Notification Layout">752298c7c3a23610b202be3ed401316f</email_layout>
+        <message/>
+        <message_html><![CDATA[<div data-processed="true">Dear ${requester.first_name},</div>
+<div data-processed="true">&nbsp;</div>
+<div data-processed="true">Thank you for submitting your query. We have received your request and our team will review it shortly.</div>
+<div data-processed="true">&nbsp;</div>
+<div data-processed="true">Your Current request details:</div>
+<ul style="list-style-position: inside;">
+<li><strong>Product:</strong> ${product}</li>
+<li><strong>Number:</strong> ${number}</li>
+<li><strong>Cost:</strong> ${product.cost}</li>
+<li><strong>Short Description:</strong> ${short_description}</li>
+<li><strong>Created On:</strong> ${sys_created_on}</li>
+</ul>
+<div data-processed="true">&nbsp;</div>
+<div style="font-family: sans-serif;"><strong>Your Previous Requests:</strong><br>${mail_script:list_previous_requests}</div>
+<div data-processed="true">&nbsp;</div>
+<div data-processed="true">If you have any questions, please don't hesitate to contact us.</div>
+<div data-processed="true">&nbsp;</div>
+<div data-processed="true"><strong>Best regards,</strong><br>ChromaTech Support Team</div>]]></message_html>
+        <message_list/>
+        <message_text/>
+        <name>Chroma Requester Email Notification </name>
+        <sms_alternate/>
+        <subject>New Query Submitted: ${number} - ${short_description}</subject>
+        <sys_class_name>sysevent_email_template</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-01-30 10:33:34</sys_created_on>
+        <sys_id>b415ab38c3b6f250b202be3ed40131b6</sys_id>
+        <sys_mod_count>14</sys_mod_count>
+        <sys_name>Chroma Requester Email Notification </sys_name>
+        <sys_package display_value="ChromaTech Ticket logging System" source="x_1839224_chroma_0">0ab6f4efc34e76d0b202be3ed4013104</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_update_name>sysevent_email_template_b415ab38c3b6f250b202be3ed40131b6</sys_update_name>
+        <sys_updated_by>Mimi.QA</sys_updated_by>
+        <sys_updated_on>2026-02-01 16:55:30</sys_updated_on>
+        <sys_version>2</sys_version>
+    </sysevent_email_template>
+</record_update>

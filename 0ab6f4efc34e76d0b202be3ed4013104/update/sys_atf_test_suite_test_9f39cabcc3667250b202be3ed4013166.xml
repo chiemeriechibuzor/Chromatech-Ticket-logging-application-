@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_atf_test_suite_test">
+    <sys_atf_test_suite_test action="INSERT_OR_UPDATE">
+        <abort_on_failure>false</abort_on_failure>
+        <order>2</order>
+        <sys_class_name>sys_atf_test_suite_test</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-01-17 17:33:24</sys_created_on>
+        <sys_id>9f39cabcc3667250b202be3ed4013166</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>9d352d70c3627250b202be3ed401312b</sys_name>
+        <sys_package display_value="ChromaTech Ticket logging System" source="x_1839224_chroma_0">0ab6f4efc34e76d0b202be3ed4013104</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_update_name>sys_atf_test_suite_test_9f39cabcc3667250b202be3ed4013166</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-01-17 17:33:24</sys_updated_on>
+        <test display_value="Test Case 2- Ensure Technician Groups are created ">9d352d70c3627250b202be3ed401312b</test>
+        <test_suite display_value="ChromaTech Customer Queries Workflow Tests">9c26b474c3ea3250b202be3ed40131c3</test_suite>
+    </sys_atf_test_suite_test>
+</record_update>

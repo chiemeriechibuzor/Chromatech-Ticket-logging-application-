@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_atf_step">
+    <sys_atf_step action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <callable_outputs/>
+        <copied_from/>
+        <description>Run Server Side Validation Script</description>
+        <display_name>Run Server Side Script</display_name>
+        <inputs/>
+        <mugshots_cache_json/>
+        <notes/>
+        <order>1</order>
+        <step_config display_value="Run Server Side Script">41de4a935332120028bc29cac2dc349a</step_config>
+        <sys_class_name>sys_atf_step</sys_class_name>
+        <sys_created_by>Mimi.QA</sys_created_by>
+        <sys_created_on>2026-01-03 13:18:36</sys_created_on>
+        <sys_id>de68cdd4c3123ed0b202be3ed40131e4</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Run Server Side Script</sys_name>
+        <sys_package display_value="ChromaTech Ticket logging System" source="x_1839224_chroma_0">0ab6f4efc34e76d0b202be3ed4013104</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_update_name>sys_atf_step_de68cdd4c3123ed0b202be3ed40131e4</sys_update_name>
+        <sys_updated_by>Mimi.QA</sys_updated_by>
+        <sys_updated_on>2026-01-03 13:31:05</sys_updated_on>
+        <table/>
+        <test display_value="ATF -10: Validate 'Dates' Section Layout and Field">7a284994c3123ed0b202be3ed4013173</test>
+        <timeout/>
+        <warning_message/>
+    </sys_atf_step>
+    <sys_variable_value action="delete_multiple" query="document_key=de68cdd4c3123ed0b202be3ed40131e4"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_atf_step</document>
+        <document_key>de68cdd4c3123ed0b202be3ed40131e4</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Mimi.QA</sys_created_by>
+        <sys_created_on>2026-01-03 13:18:36</sys_created_on>
+        <sys_id>46b88158c3123ed0b202be3ed4013190</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Mimi.QA</sys_updated_by>
+        <sys_updated_on>2026-01-03 13:18:36</sys_updated_on>
+        <value>3.1</value>
+        <variable display_value="Jasmine version">42f2564b73031300440211d8faf6a777</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_atf_step</document>
+        <document_key>de68cdd4c3123ed0b202be3ed40131e4</document_key>
+        <order>200</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Mimi.QA</sys_created_by>
+        <sys_created_on>2026-01-03 13:18:36</sys_created_on>
+        <sys_id>8ab88158c3123ed0b202be3ed4013190</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>Mimi.QA</sys_updated_by>
+        <sys_updated_on>2026-01-03 13:31:05</sys_updated_on>
+        <value>(function(outputs, steps, params, stepResult, assertEqual) {&#13;
+    var tableName = 'x_1839224_chroma_0_chromatech_sold_products'; // Replace with actual table name&#13;
+    var sectionName = 'Dates';&#13;
+    var errors = [];&#13;
+&#13;
+    // 1. Verify Form Section exists&#13;
+    var grSection = new GlideRecord('sys_ui_section');&#13;
+    grSection.addQuery('name', tableName);&#13;
+    grSection.addQuery('caption', sectionName);&#13;
+    grSection.query();&#13;
+&#13;
+    if (!grSection.next()) {&#13;
+        stepResult.setFailed();&#13;
+        stepResult.setOutputMessage("Failure: Form section '" + sectionName + "' not found on table " + tableName);&#13;
+        return false;&#13;
+    }&#13;
+&#13;
+    var sectionID = grSection.getUniqueValue();&#13;
+&#13;
+    // 2. Verify 2-Column Format (Checking for a Split/Spacer element)&#13;
+    var grElements = new GlideRecord('sys_ui_element');&#13;
+    grElements.addQuery('sys_ui_section', sectionID);&#13;
+    grElements.addQuery('type', '.split'); // A 'split' type indicates a 2-column layout&#13;
+    grElements.query();&#13;
+&#13;
+    if (grElements.getRowCount() === 0) {&#13;
+        errors.push("Layout Error: Section '" + sectionName + "' is not in 2-column format (missing split/spacer).");&#13;
+    }&#13;
+&#13;
+    // 3. Verify Fields in this Section&#13;
+    var expectedFields = [&#13;
+        'date_sold_on',&#13;
+        'manufacturing_date',&#13;
+        'warranty_extending_date',&#13;
+        'warranty_expiring_at'&#13;
+    ];&#13;
+&#13;
+    expectedFields.forEach(function(field) {&#13;
+        var grField = new GlideRecord('sys_ui_element');&#13;
+        grField.addQuery('sys_ui_section', sectionID);&#13;
+        grField.addQuery('element', field);&#13;
+        grField.query();&#13;
+        &#13;
+        if (!grField.hasNext()) {&#13;
+            errors.push("Field Error: '" + field + "' is missing from the '" + sectionName + "' section.");&#13;
+        }&#13;
+    });&#13;
+&#13;
+    // Final Result&#13;
+    if (errors.length === 0) {&#13;
+        stepResult.setSuccess();&#13;
+        stepResult.setOutputMessage("Success: Section '" + sectionName + "' verified with 2-column layout and all fields.");&#13;
+        return true;&#13;
+    } else {&#13;
+        stepResult.setFailed();&#13;
+        stepResult.setOutputMessage("Failure:\n" + errors.join('\n'));&#13;
+        return false;&#13;
+    }&#13;
+&#13;
+})(outputs, steps, params, stepResult, assertEqual);&#13;
+</value>
+        <variable display_value="Test script">989d9e235324220002c6435723dc3484</variable>
+    </sys_variable_value>
+</record_update>

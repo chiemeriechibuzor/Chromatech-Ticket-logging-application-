@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field>requester</field>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>Auto-Populate Description</name>
+        <order/>
+        <script><![CDATA[function onChange(control, oldValue, newValue, isLoading, isTemplate) {
+    if (isLoading || newValue === '') {
+        // If the requester is cleared, you may want to remove the old info too
+        if (newValue === '') {
+            var descToClear = g_form.getValue('description') || '';
+            var clearedDesc = descToClear.split('\n\nRequester Company:')[0];
+            g_form.setValue('description', clearedDesc.trim());
+        }
+        return;
+    }
+
+    var ga = new GlideAjax('UserDetailFetcher');
+    ga.addParam('sysparm_name', 'getDisplayValues');
+    ga.addParam('sysparm_user_id', newValue);
+    ga.getXMLAnswer(function(response) {
+        if (response) {
+            var user = JSON.parse(response);
+            
+            // 1. Get current description
+            var currentDesc = g_form.getValue('description') || '';
+
+            // 2. Remove the OLD requester block if it exists
+            // This splits the text at the start of our custom block and keeps only what's before it
+            var cleanDesc = currentDesc.split('\n\nRequester Company:')[0].trim();
+
+            // 3. Create the new block
+            var additionalInfo = '\n\nRequester Company: ' + user.company +
+                                 '\nRequester Email: ' + user.email +
+                                 '\nRequester Mobile Phone: ' + user.mobile +
+                                 '\nRequester Department: ' + user.department +
+                                 '\nRequester Title: ' + user.title;
+            
+            // 4. Set the value with only the original text + the SINGLE new block
+            g_form.setValue('description', cleanDesc + additionalInfo);
+        }
+    });
+}
+]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-01-21 16:24:33</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>302f9a42c3e2fa50b202be3ed401315f</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>Auto-Populate Description</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="ChromaTech Ticket logging System" source="x_1839224_chroma_0">0ab6f4efc34e76d0b202be3ed4013104</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_update_name>sys_script_client_302f9a42c3e2fa50b202be3ed401315f</sys_update_name>
+        <sys_updated_by>Mimi.QA</sys_updated_by>
+        <sys_updated_on>2026-01-24 17:56:08</sys_updated_on>
+        <table>x_1839224_chroma_0_chromatech_customer_queries</table>
+        <type>onChange</type>
+        <ui_type>0</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>

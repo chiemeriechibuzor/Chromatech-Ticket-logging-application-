@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_section caption="Chromatech Requester View " section_id="1aaa0e94c35a3ed0b202be3ed401313c" sys_domain="global" table="x_1839224_chroma_0_chromatech_customer_queries" version="3" view="ChromaTech_Requester">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>number</element>
+            <position>0</position>
+            <sys_created_by>Mimi.QA</sys_created_by>
+            <sys_created_on>2026-01-03 23:11:29</sys_created_on>
+            <sys_id>7e609b54c3927ed0b202be3ed4013185</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Chromatech Requester View " display_value="Chromatech Requester View " name="x_1839224_chroma_0_chromatech_customer_queries" sys_domain="global" view="deaa0e94c35a3ed0b202be3ed4013135">1aaa0e94c35a3ed0b202be3ed401313c</sys_ui_section>
+            <sys_updated_by>Mimi.QA</sys_updated_by>
+            <sys_updated_on>2026-01-03 23:11:29</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>requester</element>
+            <position>1</position>
+            <sys_created_by>Mimi.QA</sys_created_by>
+            <sys_created_on>2026-01-03 23:11:29</sys_created_on>
+            <sys_id>fa609b54c3927ed0b202be3ed4013186</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Chromatech Requester View " display_value="Chromatech Requester View " name="x_1839224_chroma_0_chromatech_customer_queries" sys_domain="global" view="deaa0e94c35a3ed0b202be3ed4013135">1aaa0e94c35a3ed0b202be3ed401313c</sys_ui_section>
+            <sys_updated_by>Mimi.QA</sys_updated_by>
+            <sys_updated_on>2026-01-03 23:11:29</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.split</element>
+            <position>2</position>
+            <sys_created_by>Mimi.QA</sys_created_by>
+            <sys_created_on>2026-01-03 23:11:29</sys_created_on>
+            <sys_id>7a609b54c3927ed0b202be3ed4013187</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Chromatech Requester View " display_value="Chromatech Requester View " name="x_1839224_chroma_0_chromatech_customer_queries" sys_domain="global" view="deaa0e94c35a3ed0b202be3ed4013135">1aaa0e94c35a3ed0b202be3ed401313c</sys_ui_section>
+            <sys_updated_by>Mimi.QA</sys_updated_by>
+            <sys_updated_on>2026-01-03 23:11:29</sys_updated_on>
+            <sys_user/>
+            <type>.split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>priority</element>
+            <position>3</position>
+            <sys_created_by>Mimi.QA</sys_created_by>
+            <sys_created_on>2026-01-03 23:11:29</sys_created_on>
+            <sys_id>f6609b54c3927ed0b202be3ed4013188</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Chromatech Requester View " display_value="Chromatech Requester View " name="x_1839224_chroma_0_chromatech_customer_queries" sys_domain="global" view="deaa0e94c35a3ed0b202be3ed4013135">1aaa0e94c35a3ed0b202be3ed401313c</sys_ui_section>
+            <sys_updated_by>Mimi.QA</sys_updated_by>
+            <sys_updated_on>2026-01-03 23:11:29</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.end_split</element>
+            <position>4</position>
+            <sys_created_by>Mimi.QA</sys_created_by>
+            <sys_created_on>2026-01-03 23:11:29</sys_created_on>
+            <sys_id>76609b54c3927ed0b202be3ed4013189</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Chromatech Requester View " display_value="Chromatech Requester View " name="x_1839224_chroma_0_chromatech_customer_queries" sys_domain="global" view="deaa0e94c35a3ed0b202be3ed4013135">1aaa0e94c35a3ed0b202be3ed401313c</sys_ui_section>
+            <sys_updated_by>Mimi.QA</sys_updated_by>
+            <sys_updated_on>2026-01-03 23:11:29</sys_updated_on>
+            <sys_user/>
+            <type>.end_split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>short_description</element>
+            <position>5</position>
+            <sys_created_by>Mimi.QA</sys_created_by>
+            <sys_created_on>2026-01-03 23:11:29</sys_created_on>
+            <sys_id>f2609b54c3927ed0b202be3ed401318a</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Chromatech Requester View " display_value="Chromatech Requester View " name="x_1839224_chroma_0_chromatech_customer_queries" sys_domain="global" view="deaa0e94c35a3ed0b202be3ed4013135">1aaa0e94c35a3ed0b202be3ed401313c</sys_ui_section>
+            <sys_updated_by>Mimi.QA</sys_updated_by>
+            <sys_updated_on>2026-01-03 23:11:29</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>description</element>
+            <position>6</position>
+            <sys_created_by>Mimi.QA</sys_created_by>
+            <sys_created_on>2026-01-03 23:11:29</sys_created_on>
+            <sys_id>72609b54c3927ed0b202be3ed401318b</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Chromatech Requester View " display_value="Chromatech Requester View " name="x_1839224_chroma_0_chromatech_customer_queries" sys_domain="global" view="deaa0e94c35a3ed0b202be3ed4013135">1aaa0e94c35a3ed0b202be3ed401313c</sys_ui_section>
+            <sys_updated_by>Mimi.QA</sys_updated_by>
+            <sys_updated_on>2026-01-03 23:11:29</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_section action="INSERT_OR_UPDATE">
+            <caption>Chromatech Requester View </caption>
+            <header>false</header>
+            <name>x_1839224_chroma_0_chromatech_customer_queries</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-01-03 18:06:42</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>1aaa0e94c35a3ed0b202be3ed401313c</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_name>x_1839224_chroma_0_chromatech_customer_queries</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="ChromaTech Ticket logging System" source="x_1839224_chroma_0">0ab6f4efc34e76d0b202be3ed4013104</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+            <sys_update_name>sys_ui_section_1aaa0e94c35a3ed0b202be3ed401313c</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-01-03 18:09:19</sys_updated_on>
+            <sys_user/>
+            <title>false</title>
+            <view display_value="ChromaTech Requester" name="ChromaTech_Requester">deaa0e94c35a3ed0b202be3ed4013135</view>
+            <view_name/>
+        </sys_ui_section>
+    </sys_ui_section>
+</record_update>

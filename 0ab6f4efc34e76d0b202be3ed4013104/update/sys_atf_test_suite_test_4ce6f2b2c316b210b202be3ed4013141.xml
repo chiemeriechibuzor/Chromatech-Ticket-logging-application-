@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_atf_test_suite_test">
+    <sys_atf_test_suite_test action="INSERT_OR_UPDATE">
+        <abort_on_failure>false</abort_on_failure>
+        <order>15</order>
+        <sys_class_name>sys_atf_test_suite_test</sys_class_name>
+        <sys_created_by>Mimi.QA</sys_created_by>
+        <sys_created_on>2026-01-11 15:45:06</sys_created_on>
+        <sys_id>4ce6f2b2c316b210b202be3ed4013141</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>205156b2c3de7210b202be3ed40131af</sys_name>
+        <sys_package display_value="ChromaTech Ticket logging System" source="x_1839224_chroma_0">0ab6f4efc34e76d0b202be3ed4013104</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_update_name>sys_atf_test_suite_test_4ce6f2b2c316b210b202be3ed4013141</sys_update_name>
+        <sys_updated_by>Mimi.QA</sys_updated_by>
+        <sys_updated_on>2026-01-11 15:45:06</sys_updated_on>
+        <test display_value="ATF 3 - 03: Assigned_To_Role_Filter">205156b2c3de7210b202be3ed40131af</test>
+        <test_suite display_value="ChromaTech Scoped Ticket Logging">4f6fa99cc3563ed0b202be3ed4013164</test_suite>
+    </sys_atf_test_suite_test>
+</record_update>

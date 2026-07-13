@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_atf_step">
+    <sys_atf_step action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <callable_outputs/>
+        <copied_from/>
+        <description>Run Server Side Validation Script</description>
+        <display_name>Run Server Side Script</display_name>
+        <inputs/>
+        <mugshots_cache_json/>
+        <notes/>
+        <order>1</order>
+        <step_config display_value="Run Server Side Script">41de4a935332120028bc29cac2dc349a</step_config>
+        <sys_class_name>sys_atf_step</sys_class_name>
+        <sys_created_by>Mimi.QA</sys_created_by>
+        <sys_created_on>2026-01-11 14:26:57</sys_created_on>
+        <sys_id>cc9426b2c392b210b202be3ed4013154</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>Run Server Side Script</sys_name>
+        <sys_package display_value="ChromaTech Ticket logging System" source="x_1839224_chroma_0">0ab6f4efc34e76d0b202be3ed4013104</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_update_name>sys_atf_step_cc9426b2c392b210b202be3ed4013154</sys_update_name>
+        <sys_updated_by>Mimi.QA</sys_updated_by>
+        <sys_updated_on>2026-01-11 14:33:11</sys_updated_on>
+        <table/>
+        <test display_value="ATF 3 – 009: Validate_Warranty_Period_Choices">02d36e32c392b210b202be3ed401319e</test>
+        <timeout/>
+        <warning_message/>
+    </sys_atf_step>
+    <sys_variable_value action="delete_multiple" query="document_key=cc9426b2c392b210b202be3ed4013154"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_atf_step</document>
+        <document_key>cc9426b2c392b210b202be3ed4013154</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Mimi.QA</sys_created_by>
+        <sys_created_on>2026-01-11 14:26:57</sys_created_on>
+        <sys_id>8d1526f2c392b210b202be3ed401317b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Mimi.QA</sys_updated_by>
+        <sys_updated_on>2026-01-11 14:26:57</sys_updated_on>
+        <value>3.1</value>
+        <variable display_value="Jasmine version">42f2564b73031300440211d8faf6a777</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_atf_step</document>
+        <document_key>cc9426b2c392b210b202be3ed4013154</document_key>
+        <order>200</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Mimi.QA</sys_created_by>
+        <sys_created_on>2026-01-11 14:26:57</sys_created_on>
+        <sys_id>c11526f2c392b210b202be3ed401317c</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_updated_by>Mimi.QA</sys_updated_by>
+        <sys_updated_on>2026-01-11 14:33:12</sys_updated_on>
+        <value>(function(outputs, steps, stepResult, assertEqual) {&#13;
+    var table = 'x_1839224_chroma_0_chromatech_sold_products'; // Confirm your table backend name&#13;
+    var field = 'warranty_period_months_choice';&#13;
+    var allowedValues = ['06', '12', '18', '24']; // The explicit choices&#13;
+    var foundValues = [];&#13;
+    var unauthorized = [];&#13;
+&#13;
+    var choiceGr = new GlideRecord('sys_choice');&#13;
+    choiceGr.addQuery('name', table);&#13;
+    choiceGr.addQuery('element', field);&#13;
+    choiceGr.addQuery('inactive', false);&#13;
+    choiceGr.query();&#13;
+&#13;
+    while (choiceGr.next()) {&#13;
+        var val = choiceGr.value.toString();&#13;
+        foundValues.push(val);&#13;
+        // Check if the choice record is one of our allowed integers&#13;
+        if (allowedValues.indexOf(val) === -1) {&#13;
+            unauthorized.push(val);&#13;
+        }&#13;
+    }&#13;
+&#13;
+    // 1. Check for unauthorized records in sys_choice (excluding our integers)&#13;
+    if (unauthorized.length &gt; 0) {&#13;
+        stepResult.setOutputMessage("FAILURE: Unauthorized choices found in database: " + unauthorized.join(', '));&#13;
+        stepResult.setFailed();&#13;
+        return;&#13;
+    }&#13;
+&#13;
+    // 2. Validate "None" option via Dictionary configuration&#13;
+    var dictGr = new GlideRecord('sys_dictionary');&#13;
+    dictGr.addQuery('name', table);&#13;
+    dictGr.addQuery('element', field);&#13;
+    dictGr.query();&#13;
+    &#13;
+    if (dictGr.next()) {&#13;
+        // "choice" value 1 = Dropdown with -- None --&#13;
+        // "choice" value 3 = Dropdown without -- None --&#13;
+        if (dictGr.choice != '1') { &#13;
+            stepResult.setOutputMessage("FAILURE: Field is not configured to 'Dropdown with -- None --'. Current choice setting: " + dictGr.choice);&#13;
+            stepResult.setFailed();&#13;
+            return;&#13;
+        }&#13;
+    }&#13;
+&#13;
+    stepResult.setOutputMessage("SUCCESS: Validated choices (6, 12, 18, 24) and verified '-- None --' is enabled.");&#13;
+    stepResult.setSuccess();&#13;
+})(outputs, steps, stepResult, assertEqual);&#13;
+</value>
+        <variable display_value="Test script">989d9e235324220002c6435723dc3484</variable>
+    </sys_variable_value>
+</record_update>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sysevent_email_action">
+    <sysevent_email_action action="INSERT_OR_UPDATE">
+        <action_insert>false</action_insert>
+        <action_update>true</action_update>
+        <active>true</active>
+        <advanced_condition/>
+        <affected_field_on_event/>
+        <category display_value="Uncategorized" name="Uncategorized">c97d83137f4432005f58108c3ffa917a</category>
+        <collection>sc_req_item</collection>
+        <condition/>
+        <content_type>text/html</content_type>
+        <default_digest>false</default_digest>
+        <default_interval/>
+        <description/>
+        <digest_from/>
+        <digest_html/>
+        <digest_reply_to/>
+        <digest_separator_html><![CDATA[<p>&nbsp;</p>
+<hr>
+<p>&nbsp;</p>]]></digest_separator_html>
+        <digest_separator_text><![CDATA[\n--------------------------------------------------------------------------------\n]]></digest_separator_text>
+        <digest_subject/>
+        <digest_template/>
+        <digest_text/>
+        <digest_type>single</digest_type>
+        <digestable>false</digestable>
+        <enable_dynamic_translation>false</enable_dynamic_translation>
+        <event_name>activate.life.cycle.migration</event_name>
+        <event_parm_1>false</event_parm_1>
+        <event_parm_2>false</event_parm_2>
+        <exclude_delegates>false</exclude_delegates>
+        <force_delivery>false</force_delivery>
+        <from/>
+        <generation_type>engine</generation_type>
+        <importance/>
+        <include_attachments>false</include_attachments>
+        <item>event.parm1</item>
+        <item_table/>
+        <mandatory>false</mandatory>
+        <message/>
+        <message_html><![CDATA[<div data-processed="true" data-sn-op="2">&nbsp;</div>
+<div data-processed="true" data-sn-op="2">
+<div data-complete="true" data-sfc-cp="">&nbsp;</div>
+</div>
+<div data-processed="true" data-sn-op="2">
+<div data-complete="true" data-hveid="CAEIBxAA" data-sfc-cp="">Hi ${requested_for},<button tabindex="0" data-ved="2ahUKEwidntvy9cmSAxXDVkEAHe-iAk8Qye0OegYIAQgHEAE" data-wiz-attrbind="disabled=gVFAvf_14/C5gNJc;aria-label=gVFAvf_14/bOjMyf;class=gVFAvf_14/UpSNec" aria-label="View related links" data-icl-uuid="5433dba6-fecb-4219-ba1a-75eb9c49c5b4" data-amic="true"></button></div>
+</div>
+<div data-processed="true" data-sn-op="2">
+<div data-complete="true" data-hveid="CAEICBAA" data-sfc-cp="">${number}&nbsp;was approved, and we'll proceed with completing your request. You can view your request to track updates and make changes.<button tabindex="0" data-ved="2ahUKEwidntvy9cmSAxXDVkEAHe-iAk8Qye0OegYIAQgIEAE" data-wiz-attrbind="disabled=gVFAvf_19/C5gNJc;aria-label=gVFAvf_19/bOjMyf;class=gVFAvf_19/UpSNec" aria-label="View related links" data-icl-uuid="8f7d3993-9231-4eaf-b9f1-aac00e5f72eb" data-amic="true"></button></div>
+</div>
+<div data-processed="true" data-sn-op="2">
+<div data-complete="true" data-hveid="CAEICRAA" data-sfc-cp=""><span data-complete="true" data-sfc-cp="">View Request</span><button tabindex="0" data-ved="2ahUKEwidntvy9cmSAxXDVkEAHe-iAk8Qye0OegYIAQgJEAE" data-wiz-attrbind="disabled=gVFAvf_1e/C5gNJc;aria-label=gVFAvf_1e/bOjMyf;class=gVFAvf_1e/UpSNec" aria-label="View related links" data-icl-uuid="19872ef9-9614-4cf8-ae52-ecb9c30bcf76" data-amic="true"></button></div>
+</div>
+<div data-processed="true" data-sn-op="2">
+<div data-complete="true" data-hveid="CAEIChAA" data-sfc-cp="">About this request<br data-complete="true" data-serialized-params="[]">Short description:&nbsp;${short_description}<button tabindex="0" data-ved="2ahUKEwidntvy9cmSAxXDVkEAHe-iAk8Qye0OegYIAQgKEAE" data-wiz-attrbind="disabled=gVFAvf_1l/C5gNJc;aria-label=gVFAvf_1l/bOjMyf;class=gVFAvf_1l/UpSNec" aria-label="View related links" data-icl-uuid="6db0b810-5cab-46af-acbd-c1565f7dd1ea" data-amic="true"></button></div>
+</div>
+<div data-processed="true" data-sn-op="2">
+<div data-complete="true" data-hveid="CAEICxAA" data-sfc-cp="">Thank you,<br data-complete="true" data-serialized-params="[]">ChromaTech Fulfillment Team<button tabindex="0" data-ved="2ahUKEwidntvy9cmSAxXDVkEAHe-iAk8Qye0OegYIAQgLEAE" data-wiz-attrbind="disabled=gVFAvf_1r/C5gNJc;aria-label=gVFAvf_1r/bOjMyf;class=gVFAvf_1r/UpSNec" aria-label="View related links" data-icl-uuid="6f98a9c5-b9ef-474c-b975-dc1cf9e8010a" data-amic="true"></button></div>
+</div>
+<div data-processed="true" data-sn-op="2">
+<div data-complete="true" data-sfc-cp="">&nbsp;</div>
+</div>
+<p>&nbsp;</p>]]></message_html>
+        <message_list/>
+        <message_text/>
+        <name>Chromatech Hardware request Approval </name>
+        <omit_watermark>false</omit_watermark>
+        <order>100</order>
+        <push_message_only>false</push_message_only>
+        <recipient_fields/>
+        <recipient_groups/>
+        <recipient_users/>
+        <reply_to/>
+        <send_self>true</send_self>
+        <sms_alternate/>
+        <style/>
+        <subject/>
+        <subscribable>false</subscribable>
+        <sys_class_name>sysevent_email_action</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-08 12:46:28</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>19d85673c372b250b202be3ed40131da</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Chromatech Hardware request Approval </sys_name>
+        <sys_overrides/>
+        <sys_package display_value="ChromaTech Ticket logging System" source="x_1839224_chroma_0">0ab6f4efc34e76d0b202be3ed4013104</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_update_name>sysevent_email_action_19d85673c372b250b202be3ed40131da</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-08 12:50:32</sys_updated_on>
+        <sys_version>2</sys_version>
+        <template display_value="Chromatech Approval Request ">a4d1e3abc3ba3250b202be3ed40131af</template>
+        <type>email</type>
+        <weight>0</weight>
+    </sysevent_email_action>
+</record_update>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_policy_action">
+    <sys_ui_policy_action action="INSERT_OR_UPDATE">
+        <cleared>false</cleared>
+        <disabled>ignore</disabled>
+        <field>on_hold_reason</field>
+        <field_message/>
+        <field_message_type>none</field_message_type>
+        <mandatory>true</mandatory>
+        <sys_class_name>sys_ui_policy_action</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-01-08 14:57:15</sys_created_on>
+        <sys_id>803fc7f9c3da3a14b202be3ed401318b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>on_hold_reason</sys_name>
+        <sys_package display_value="ChromaTech Ticket logging System" source="x_1839224_chroma_0">0ab6f4efc34e76d0b202be3ed4013104</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_update_name>sys_ui_policy_action_803fc7f9c3da3a14b202be3ed401318b</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-01-08 14:57:15</sys_updated_on>
+        <table>x_1839224_chroma_0_chromatech_customer_queries</table>
+        <ui_policy display_value="Issue State is On Hold - Show Onhold Reason">08fe8fb9c3da3a14b202be3ed40131ae</ui_policy>
+        <value/>
+        <value_action>ignore</value_action>
+        <visible>true</visible>
+    </sys_ui_policy_action>
+    <sys_translated_text action="delete_multiple" query="documentkey=803fc7f9c3da3a14b202be3ed401318b"/>
+</record_update>

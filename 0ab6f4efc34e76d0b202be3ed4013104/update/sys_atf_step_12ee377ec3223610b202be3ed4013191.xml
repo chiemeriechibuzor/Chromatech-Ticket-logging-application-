@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_atf_step">
+    <sys_atf_step action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <callable_outputs/>
+        <copied_from/>
+        <description>Set the following values on the form:
+Product = ChromaTech Industrial Fan Pro
+and Short description = Power and Efficiency
+and Description = Fans with high-efficiency motors, variable speed drives (VFDs) for adjustable airflow, and motor specifications (voltage, 3-phase vs. 1-phase) that match your facility's electrical system.
+and Requester = {{Step 1: Create a User.User}}
+and Contact type = Email
+and Assignment group = ChromaTech Helpdesk
+and Email = {{Step 1: Create a User.User.Email}}</description>
+        <display_name>Set Field Values</display_name>
+        <inputs/>
+        <inputs/>
+        <mugshots_cache_json/>
+        <notes/>
+        <order>3</order>
+        <step_config display_value="Set Field Values">fcae4a935332120028bc29cac2dc340e</step_config>
+        <sys_class_name>sys_atf_step</sys_class_name>
+        <sys_created_by>Mimi.QA</sys_created_by>
+        <sys_created_on>2026-01-24 07:18:34</sys_created_on>
+        <sys_id>12ee377ec3223610b202be3ed4013191</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_name>Set Field Values</sys_name>
+        <sys_package display_value="ChromaTech Ticket logging System" source="x_1839224_chroma_0">0ab6f4efc34e76d0b202be3ed4013104</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_update_name>sys_atf_step_12ee377ec3223610b202be3ed4013191</sys_update_name>
+        <sys_updated_by>Mimi.QA</sys_updated_by>
+        <sys_updated_on>2026-01-24 12:31:42</sys_updated_on>
+        <table>x_1839224_chroma_0_chromatech_customer_queries</table>
+        <test display_value="ATF 5 -01: Validate_Assignment_Group_Manager_Email_Notification">5b235d76c32eb210b202be3ed401311d</test>
+        <timeout/>
+        <warning_message/>
+    </sys_atf_step>
+    <sys_variable_value action="delete_multiple" query="document_key=12ee377ec3223610b202be3ed4013191"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_atf_step</document>
+        <document_key>12ee377ec3223610b202be3ed4013191</document_key>
+        <order>50</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Mimi.QA</sys_created_by>
+        <sys_created_on>2026-01-24 07:18:34</sys_created_on>
+        <sys_id>64bf3f7ec3223610b202be3ed40131d5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Mimi.QA</sys_updated_by>
+        <sys_updated_on>2026-01-24 07:18:34</sys_updated_on>
+        <value>standard_ui</value>
+        <variable display_value="Form UI">946f3c1a0f23330072e6452bc4767eda</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_atf_step</document>
+        <document_key>12ee377ec3223610b202be3ed4013191</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Mimi.QA</sys_created_by>
+        <sys_created_on>2026-01-24 07:18:34</sys_created_on>
+        <sys_id>a8bf3f7ec3223610b202be3ed40131d5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Mimi.QA</sys_updated_by>
+        <sys_updated_on>2026-01-24 07:18:34</sys_updated_on>
+        <value>x_1839224_chroma_0_chromatech_customer_queries</value>
+        <variable display_value="Table">424ca6465320220002c6435723dc34b5</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_atf_step</document>
+        <document_key>12ee377ec3223610b202be3ed4013191</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Mimi.QA</sys_created_by>
+        <sys_created_on>2026-01-24 07:18:34</sys_created_on>
+        <sys_id>ecbf3f7ec3223610b202be3ed40131d5</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_updated_by>Mimi.QA</sys_updated_by>
+        <sys_updated_on>2026-01-24 12:31:42</sys_updated_on>
+        <value>product=ca4ad21cc3da3ed0b202be3ed4013163^short_description=Power and Efficiency^description=Fans with high-efficiency motors, variable speed drives (VFDs) for adjustable airflow, and motor specifications (voltage, 3-phase vs. 1-phase) that match your facility's electrical system.^requester={{step['a3fdfbfac3223610b202be3ed4013131'].user}}^contact_type=email^assignment_group=4a393aabc302f6d0b202be3ed40131e5^email={{step['a3fdfbfac3223610b202be3ed4013131'].user.email}}^EQ</value>
+        <variable display_value="Field values">b3dba2465320220002c6435723dc34f0</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=12ee377ec3223610b202be3ed4013191"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>field_values</field>
+        <id>12ee377ec3223610b202be3ed4013191</id>
+        <sys_created_by>Mimi.QA</sys_created_by>
+        <sys_created_on>2026-01-24 07:18:34</sys_created_on>
+        <sys_id>a0bf3f7ec3223610b202be3ed40131d5</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_updated_by>Mimi.QA</sys_updated_by>
+        <sys_updated_on>2026-01-24 12:31:42</sys_updated_on>
+        <table>var__m_atf_input_variable_fcae4a935332120028bc29cac2dc340e</table>
+        <value>product=ca4ad21cc3da3ed0b202be3ed4013163^short_description=Power and Efficiency^description=Fans with high-efficiency motors, variable speed drives (VFDs) for adjustable airflow, and motor specifications (voltage, 3-phase vs. 1-phase) that match your facility's electrical system.^requester={{step['a3fdfbfac3223610b202be3ed4013131'].user}}^contact_type=email^assignment_group=4a393aabc302f6d0b202be3ed40131e5^email={{step['a3fdfbfac3223610b202be3ed4013131'].user.email}}^EQ</value>
+    </sys_element_mapping>
+</record_update>

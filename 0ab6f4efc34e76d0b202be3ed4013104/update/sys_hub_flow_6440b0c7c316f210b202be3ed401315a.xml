@@ -1,0 +1,1347 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_hub_flow">
+    <sys_hub_flow action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <annotation/>
+        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=572053000,viewActivatedIn=naturalLanguage</attributes>
+        <authored_on_release_version>28100</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description>Automates approval and assignment for ChromaTech Customer Queries based on product type and approval outcome.</description>
+        <display_name_after_preview/>
+        <flow_priority>MEDIUM</flow_priority>
+        <generation_source/>
+        <internal_name>chromatech_customer_queries__approval_flow</internal_name>
+        <label_cache>[{"name":"Created_1.current.assignment_group.manager","label":"Trigger - Record Created➛Chromatech Customer Queries Record➛Assignment group➛Manager","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","parent_table_name":"sys_user_group","column_name":"manager","usedInstances":{"3737df2f-a618-49db-a07c-9d35aa70f9a5":["approval_conditions"]}},{"name":"Created_1.current","label":"Trigger - Record Created➛Chromatech Customer Queries Record","reference":"x_1839224_chroma_0_chromatech_customer_queries","reference_display":"Chromatech Customer Queries","type":"reference","base_type":"reference","usedInstances":{"871b9ac4-e99d-4c0a-a9ea-867e7b709195":["record"],"af53df7a-12fd-4729-9669-e2345c44e73e":["record"],"fd5caf9e-13a5-4aea-9749-5d6cf6b9856d":["record"],"5015f783-a3a4-43f2-abb4-8e8d9bd0b22e":["record"],"2822da46-7388-49c7-be01-7438e10f8fed":["record"],"29b33194-16f5-4a75-9a57-5821fa3815a1":["record"],"3737df2f-a618-49db-a07c-9d35aa70f9a5":["record"],"2edb71d3-d94e-470e-8a02-9ffc5f740753":["record"],"52f8775a-0e99-455f-94ac-71af5d0559e3":["record"]},"attributes":{}},{"name":"871b9ac4-e99d-4c0a-a9ea-867e7b709195.record.assignment_group.manager","label":"1 - Update Record➛Chromatech Customer Queries Record➛Assignment group➛Manager","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","parent_table_name":"sys_user_group","column_name":"manager","usedInstances":{"af53df7a-12fd-4729-9669-e2345c44e73e":["approval_conditions"]}},{"name":"{{static.2d0f980bc3fdb250b202be3ed4013104}}","label":"Chroma ITIL","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","choices":[{"order":0.0}],"usedInstances":{"af53df7a-12fd-4729-9669-e2345c44e73e":["approval_conditions"]}},{"name":"af53df7a-12fd-4729-9669-e2345c44e73e.approval_state","label":"2 - Ask For Approval➛Approval State","reference_display":"Approval State","type":"choice","base_type":"choice","choices":[{"label":"-- None --","value":"","order":0.0},{"label":"Not Yet Requested","value":"not requested","order":1.0},{"label":"Requested","value":"requested","order":2.0},{"label":"Approved","value":"approved","order":3.0},{"label":"Rejected","value":"rejected","order":4.0},{"label":"Cancelled","value":"cancelled","order":5.0},{"label":"No Longer Required","value":"not_required","order":6.0},{"label":"Skipped","value":"skipped","order":7.0}],"usedInstances":{"e213d8a8-11e5-4896-9d13-beb3ff44cb48":["condition"],"1c3a98aa-6a5f-4c05-b48d-2dca5fcc63e6":["condition"],"4822140d-0136-46d3-a84f-0317ecce8bcf":["condition"],"23105a8e-35d9-4d42-a08e-157429824546":["condition"],"606dea73-f0e1-4405-9790-26aa72d33d5b":["condition"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"871b9ac4-e99d-4c0a-a9ea-867e7b709195.record","label":"1 - Update Record➛Chromatech Customer Queries Record","reference":"x_1839224_chroma_0_chromatech_customer_queries","reference_display":"Chromatech Customer Queries","type":"reference","base_type":"reference","usedInstances":{"048a7a45-c59d-42dc-ba4c-624bb22ad710":["record"],"d94f578c-d535-4a61-a627-426f9059a472":["record"],"c95d27d2-39e7-4a6d-9e6f-0e9f962a020b":["record"],"d7024bda-6f9c-4cd7-8fb5-88be2c8dd4a8":["record"],"e95dba3b-48f6-487d-ae7d-8e578130438e":["record"],"dc7ab17a-637d-4e0a-9296-5d27ae9efb2d":["record"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"871b9ac4-e99d-4c0a-a9ea-867e7b709195.record.product.product_type","label":"1 - Update Record➛Chromatech Customer Queries Record➛Product➛Product Type","reference":"","reference_display":"Product Type","type":"choice","base_type":"choice","parent_table_name":"x_1839224_chroma_0_chromatech_sold_products","column_name":"product_type","choices":[{"label":"-- None --","image":"","used":false,"reference":false,"rawLabel":"-- None --","selected":false,"missing":false,"value":""},{"image":"","used":false,"label":"Air Conditioners","reference":false,"rawLabel":"Air Conditioners","selected":false,"missing":false,"value":"air_conditioners","parameters":{"name":"x_1839224_chroma_0_chromatech_sold_products","dependent_values":[""]}},{"image":"","used":false,"label":"Coolers","reference":false,"rawLabel":"Coolers","selected":false,"missing":false,"value":"coolers","parameters":{"name":"x_1839224_chroma_0_chromatech_sold_products","dependent_values":[""]}},{"image":"","used":false,"label":"Ceiling Fans","reference":false,"rawLabel":"Ceiling Fans","selected":false,"missing":false,"value":"ceiling_fans","parameters":{"name":"x_1839224_chroma_0_chromatech_sold_products","dependent_values":[""]}}],"usedInstances":{"92085046-67d0-497e-94d4-0fdf636237f5":["condition"],"b3891969-b8f4-4cdb-8d84-d2638d172b7f":["condition"],"a93a98ee-7e48-400f-a59e-6cb1a794697b":["condition"],"e31db39d-ec6d-475d-92b2-499c88e86d7c":["condition"]}},{"name":"871b9ac4-e99d-4c0a-a9ea-867e7b709195.record.assignment_group","label":"1 - Update Record➛Chromatech Customer Queries Record➛Assignment group","reference":"sys_user_group","reference_display":"Group","type":"reference","base_type":"reference","parent_table_name":"x_1839224_chroma_0_chromatech_customer_queries","column_name":"assignment_group","usedInstances":{}},{"name":"c95d27d2-39e7-4a6d-9e6f-0e9f962a020b.record","label":"9 - Update Record➛Chromatech Customer Queries Record","reference":"x_1839224_chroma_0_chromatech_customer_queries","reference_display":"Chromatech Customer Queries","type":"reference","base_type":"reference","usedInstances":{},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"048a7a45-c59d-42dc-ba4c-624bb22ad710.record.product.product_type","label":"4 - Update Record➛Chromatech Customer Queries Record➛Product➛Product Type","reference":"","reference_display":"Product Type","type":"choice","base_type":"choice","parent_table_name":"x_1839224_chroma_0_chromatech_sold_products","column_name":"product_type","choices":[{"label":"-- None --","image":"","used":false,"reference":false,"rawLabel":"-- None --","selected":false,"missing":false,"value":""},{"image":"","used":false,"label":"Air Conditioners","reference":false,"rawLabel":"Air Conditioners","selected":false,"missing":false,"value":"air_conditioners","parameters":{"name":"x_1839224_chroma_0_chromatech_sold_products","dependent_values":[""]}},{"image":"","used":false,"label":"Coolers","reference":false,"rawLabel":"Coolers","selected":false,"missing":false,"value":"coolers","parameters":{"name":"x_1839224_chroma_0_chromatech_sold_products","dependent_values":[""]}},{"image":"","used":false,"label":"Ceiling Fans","reference":false,"rawLabel":"Ceiling Fans","selected":false,"missing":false,"value":"ceiling_fans","parameters":{"name":"x_1839224_chroma_0_chromatech_sold_products","dependent_values":[""]}}],"usedInstances":{}},{"name":"Created_1.current.product.product_type","label":"Trigger - Record Created➛Chromatech Customer Queries Record➛Product➛Product Type","reference":"","reference_display":"Product Type","type":"choice","base_type":"choice","parent_table_name":"x_1839224_chroma_0_chromatech_sold_products","column_name":"product_type","choices":[{"label":"-- None --","image":"","used":false,"reference":false,"rawLabel":"-- None --","selected":false,"missing":false,"value":""},{"image":"","used":false,"label":"Air Conditioners","reference":false,"rawLabel":"Air Conditioners","selected":false,"missing":false,"value":"air_conditioners","parameters":{"name":"x_1839224_chroma_0_chromatech_sold_products","dependent_values":[""]}},{"image":"","used":false,"label":"Coolers","reference":false,"rawLabel":"Coolers","selected":false,"missing":false,"value":"coolers","parameters":{"name":"x_1839224_chroma_0_chromatech_sold_products","dependent_values":[""]}},{"image":"","used":false,"label":"Ceiling Fans","reference":false,"rawLabel":"Ceiling Fans","selected":false,"missing":false,"value":"ceiling_fans","parameters":{"name":"x_1839224_chroma_0_chromatech_sold_products","dependent_values":[""]}}],"usedInstances":{"eca0388a-5d1a-4fbe-bce6-e7ff25161834":["condition"],"52032b57-38f9-403f-a019-f4ccd15f2d41":["condition"]}}]</label_cache>
+        <master_snapshot>f355a844c36eba10b202be3ed40131a6</master_snapshot>
+        <master_snapshot_digest/>
+        <name>ChromaTech Customer Queries – Approval Flow</name>
+        <natlang/>
+        <outputs/>
+        <pre_compiled>false</pre_compiled>
+        <remote_trigger_id>ba767a0dc3aaf250b202be3ed40131a2</remote_trigger_id>
+        <run_as>user</run_as>
+        <run_with_roles>5ab6f4efc34e76d0b202be3ed4013124,d2b6f4efc34e76d0b202be3ed4013110,037d9988c3d2bad0b202be3ed4013198</run_with_roles>
+        <sc_callable>false</sc_callable>
+        <show_draft_actions>false</show_draft_actions>
+        <show_triggered_flows>false</show_triggered_flows>
+        <status>published</status>
+        <substatus/>
+        <sys_class_name>sys_hub_flow</sys_class_name>
+        <sys_created_by>Mimi.QA</sys_created_by>
+        <sys_created_on>2026-01-12 00:35:02</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>6440b0c7c316f210b202be3ed401315a</sys_id>
+        <sys_mod_count>159</sys_mod_count>
+        <sys_name>ChromaTech Customer Queries – Approval Flow</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="ChromaTech Ticket logging System" source="x_1839224_chroma_0">0ab6f4efc34e76d0b202be3ed4013104</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_update_name>sys_hub_flow_6440b0c7c316f210b202be3ed401315a</sys_update_name>
+        <sys_updated_by>Mimi.QA</sys_updated_by>
+        <sys_updated_on>2026-01-18 15:29:18</sys_updated_on>
+        <type>flow</type>
+        <updation_source/>
+        <version>2</version>
+        <version_record display_value="Created 18/01/2026 08:29:20">c376ba0dc3aaf250b202be3ed401312a</version_record>
+    </sys_hub_flow>
+    <sys_translated_text action="delete_multiple" query="documentkey=6440b0c7c316f210b202be3ed401315a"/>
+    <sys_variable_value action="delete_multiple" query="document_key=6440b0c7c316f210b202be3ed401315a"/>
+    <sys_flow_record_trigger action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <condition table="x_1839224_chroma_0_chromatech_customer_queries">^EQ<item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </condition>
+        <name/>
+        <on_delete>false</on_delete>
+        <on_insert>true</on_insert>
+        <on_update>false</on_update>
+        <published_version/>
+        <run_flow_in>background</run_flow_in>
+        <run_on_extended>false</run_on_extended>
+        <run_when_setting>both</run_when_setting>
+        <run_when_user_list/>
+        <run_when_user_setting>any</run_when_user_setting>
+        <sys_class_name>sys_flow_record_trigger</sys_class_name>
+        <sys_created_by>Mimi.QA</sys_created_by>
+        <sys_created_on>2026-01-18 15:29:18</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>ba767a0dc3aaf250b202be3ed40131a2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_updated_by>Mimi.QA</sys_updated_by>
+        <sys_updated_on>2026-01-18 15:29:18</sys_updated_on>
+        <table>x_1839224_chroma_0_chromatech_customer_queries</table>
+        <trigger_definition/>
+    </sys_flow_record_trigger>
+    <sys_trigger_runner_mapping action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <data>{"run_flow_in":"background","run_when_user_list":[],"run_when_setting":"both","run_when_user_setting":"any","run_on_extended":"false"}</data>
+        <identifier>6440b0c7c316f210b202be3ed401315a</identifier>
+        <runner>FDTriggerRunner</runner>
+        <sys_created_by>Mimi.QA</sys_created_by>
+        <sys_created_on>2026-01-18 15:29:18</sys_created_on>
+        <sys_id>fe767a0dc3aaf250b202be3ed40131a3</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>Mimi.QA</sys_updated_by>
+        <sys_updated_on>2026-01-18 15:29:18</sys_updated_on>
+        <trigger display_value="">ba767a0dc3aaf250b202be3ed40131a2</trigger>
+    </sys_trigger_runner_mapping>
+    <sys_trigger_runner_mapping action="delete_multiple" query="identifier=6440b0c7c316f210b202be3ed401315a^sys_idNOT INfe767a0dc3aaf250b202be3ed40131a3"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=6440b0c7c316f210b202be3ed401315a"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=6440b0c7c316f210b202be3ed401315a^sys_idNOT IN2040b0c7c316f210b202be3ed401315f"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>6440b0c7c316f210b202be3ed401315a</id>
+        <name>ChromaTech Customer Queries – Approval Flow</name>
+        <sys_created_by>Mimi.QA</sys_created_by>
+        <sys_created_on>2026-01-12 00:35:02</sys_created_on>
+        <sys_id>2040b0c7c316f210b202be3ed401315f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>Mimi.QA</sys_updated_by>
+        <sys_updated_on>2026-01-12 00:35:02</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=2040b0c7c316f210b202be3ed401315f"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=6440b0c7c316f210b202be3ed401315a^sys_idNOT IN6790300bc316f210b202be3ed4013182,6790700bc316f210b202be3ed4013120"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=document_id,uiTypeLabel=Document ID</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent>table_name</dependent>
+        <dependent_on_field>table_name</dependent_on_field>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>current</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">document_id</internal_type>
+        <label>Record</label>
+        <mandatory>true</mandatory>
+        <max_length>200</max_length>
+        <model display_value="ChromaTech Customer Queries – Approval Flow">6440b0c7c316f210b202be3ed401315a</model>
+        <model_id>6440b0c7c316f210b202be3ed401315a</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_6440b0c7c316f210b202be3ed401315a</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>Mimi.QA</sys_created_by>
+        <sys_created_on>2026-01-12 00:36:36</sys_created_on>
+        <sys_id>6790300bc316f210b202be3ed4013182</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>Mimi.QA</sys_updated_by>
+        <sys_updated_on>2026-01-15 02:21:22</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>true</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=6790300bc316f210b202be3ed4013182"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,test_input_hidden=true,uiType=table_name,uiTypeLabel=Table Name</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>table_name</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">table_name</internal_type>
+        <label>Table Name</label>
+        <mandatory>false</mandatory>
+        <max_length>200</max_length>
+        <model display_value="ChromaTech Customer Queries – Approval Flow">6440b0c7c316f210b202be3ed401315a</model>
+        <model_id>6440b0c7c316f210b202be3ed401315a</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_6440b0c7c316f210b202be3ed401315a</name>
+        <next_element/>
+        <order>101</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>Mimi.QA</sys_created_by>
+        <sys_created_on>2026-01-12 00:36:37</sys_created_on>
+        <sys_id>6790700bc316f210b202be3ed4013120</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>Mimi.QA</sys_updated_by>
+        <sys_updated_on>2026-01-15 02:21:22</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=6790700bc316f210b202be3ed4013120"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=6440b0c7c316f210b202be3ed401315a"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=6440b0c7c316f210b202be3ed401315a"/>
+    <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=6440b0c7c316f210b202be3ed401315a^sys_idNOT IN9390300bc316f210b202be3ed4013178"/>
+    <sys_hub_trigger_instance_v2 action="INSERT_OR_UPDATE">
+        <comment/>
+        <display_text/>
+        <flow display_value="ChromaTech Customer Queries – Approval Flow">6440b0c7c316f210b202be3ed401315a</flow>
+        <generation_source/>
+        <name>Created</name>
+        <published_version/>
+        <remote_sys_id/>
+        <sys_created_by>Mimi.QA</sys_created_by>
+        <sys_created_on>2026-01-12 00:36:35</sys_created_on>
+        <sys_id>9390300bc316f210b202be3ed4013178</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>Mimi.QA</sys_updated_by>
+        <sys_updated_on>2026-01-16 17:11:34</sys_updated_on>
+        <trigger_definition display_value="Created">798916a0c31322002841b63b12d3ae7c</trigger_definition>
+        <trigger_inputs>H4sIAAAAAAAA/9VYW2/bNhT+K4KeNiADdLFjO2+dk2IBugZ13O0hyASKIm1iNOlJlFKvyH/foW6WdXHsWOmcp9Ykdc53Pn7nwjx8NznyCTevzDnyOTEvTCYUCQXi882awLLSy55AK723QiJASoYb80qFMbkwaShXc7Jac6TgMEU8gkUZBiQ0r+wLM0E8Jveb6DYAS/B9aia3aebb8PubZ4/dieMMPLwEg8iz8v8ogpcejiMlVyT0/olJyEgEHwYsApebP/Lvp+VhY5ofNr6Uh/GS8SAkwrx6eLww1ygEEEoD/F7bYholphhNHGJh13Ydx7Kc8cD2L13fdgIXEcsCg3XGalGpFuK2lJBvioiABCVbDU5DgoI7wTfliSVcScbfCn2L2L9gfWzpc5QAdkyyvfKnl7OTLeOlZJjcrRWTIlvJcGabkscr8TnDr3klFMVcFbzCShyBPbLWkDWIHBG9X8qnWeHwIxNpdPkmlxjx8hdSKmR+rOAqgHDKOFDvZdxEMg5T9LOb6d3s2vvzw3z6283Mm93cz2e30/nNtfmcxgU3ry1mCHMsXhbOcymGj4xwfYHrUAYxVnA2wiFbqw9YsaQQ5/PFVvBTKQKW0tIQPS62ol3RF+HvU71ldeoeVzwW2v/r5ktT0NniccK9vEQoIKhDuD6tCLcaeQs01UJCNbp9Es5XDtHwwLL+JxXnteu1In5CQkWekh4KAq/CEuQ8GNYhyoDw660/WGeLBeieiXWsohdVncXWlPbLmg5jASa88oaayk6JLBn9xCLA9wCJWbCVh0A/5RZnsTCkMHAcAk3KgJs2CutGilOrg96u0CLnmt4TTrCqyIN+jaq/fmdRxMSigr50nq40vfNNFUJRZ09x+thnWjdJT2rx1NL76Ny2bUp9Qh1rpDPbtlyf2tbIGiIauJaFnUpuN8F0olQ1SbxJjh+X4VEqRn7A7dcpzsFb1Ww4SLvJrvALErRE8kIy7Qea3RM0R0OrFUT3qIpYyjJbvt5V577Qeh4HUJAg+CIoYjyk3R9QASmXT1BrX1H9qAzJIpSxCOpVSNs0GPy7c6Knuucj/Pd+t9sTxk/5tf18bjVwS3shXCQ2PVQ/l9r+hAyIBUXPhXrnDycTHyOH0tHliDh2rfptYbRiexdV74VrT9p001UBW5WbtAn+iNp3AsBGHTwa4OkVMBdma/3L9t5HpXtaEuEB1NDjupY1Ct6Cs4AUe/1me8N1ss3vUzOejid4aI9GeATvGMh4OiA+sgfOEE1Gl+54WMv4BpR9MFULMz/kdRNtohRIRzX4mm2d13v9LWUbEaV0Ozq+S6fnUeag0i/1lRhpQZGhoek0brcHjXsC3S993/bWtaVaNvo1uP4V1ndc6+nusxS/tMDp8/UkYLw/hJoOKOc2TtREkuyyfvKTigzGwwl120sMnbSVmC2YbphnP14cKIWkU1Rtc8ahqZe0ZnDnYPCKZKrJpDox7Blp+iLF7p0U5+1IcU8eo4pc7HxHvgbsO2ph6Vzx+j4mBfEkba3TjBr5Hw1JYPgbQy0JkMlhUgZXhvbbZ+fIRt5GI4NlI59Y+utRmuZ62NfSgA0j/CGBv02jqkmh3xcwCUZoOHQ75uFJ/QXcBugFvGffto6WSNKmuL296zi7dZut3auSQbuKOLAv9Rp1e3M6LerW9vRS1Kc3nn3v9xYUZ9pSHv8DgyuKmX8fAAA=</trigger_inputs>
+        <trigger_outputs/>
+        <trigger_type>record_create</trigger_type>
+        <updation_source/>
+    </sys_hub_trigger_instance_v2>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=6440b0c7c316f210b202be3ed401315a^sys_idNOT IN003c2a05c36af250b202be3ed40131fb,85b1f08bc316f210b202be3ed401319e,8f5d9844c32eba10b202be3ed4013165,aa16f2c9c3aaf250b202be3ed401317e,b1bc2ac1c36af250b202be3ed40131e9,b943b44fc316f210b202be3ed4013125,bd22e274c36a7250b202be3ed4013166"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="ChromaTech Customer Queries – Approval Flow">6440b0c7c316f210b202be3ed401315a</flow>
+        <generation_source/>
+        <order>8</order>
+        <parent_ui_id>eca0388a-5d1a-4fbe-bce6-e7ff25161834</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>Mimi.QA</sys_created_by>
+        <sys_created_on>2026-01-18 14:44:20</sys_created_on>
+        <sys_id>003c2a05c36af250b202be3ed40131fb</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_updated_by>Mimi.QA</sys_updated_by>
+        <sys_updated_on>2026-01-18 15:29:33</sys_updated_on>
+        <ui_id>29b33194-16f5-4a75-9a57-5821fa3815a1</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VVXU/bMBT9K5Wfo8r5gEHfplZIkxhogHhZUeTYN60lx85sB+iq/vfdJE6oALEi8TC0PtX3K+dc33P9c0ukIDOSgaDxaXzM0zhNE0qTkywujtMiTkTKAGISEc0qwEgL3FiB53ummtaw3c4tMA8ij6e8sRa03+3QL6SrFdvchjC08LVUAv1k9vMuIjWzWNGDJbPtM9ehkBQrQGHo1YDpOUa/qduzMLypEFcuB+N5yFwEz+TbAj2Y1MKJaUTg0YMWgEBKphxEpGJaMG/shsy8bdCApMWlVpsxYi2174lW7NHJ3/jljLZxJSAzHpowHvPQoN5cLphn11iZ+8aO/TKSg+t7IqBkjfLzfVsfcFl7aXSf4lmhhmyjmkpf9B0hY4G9+2gcgoC65dki72mV12vzcDWAPJO6a0mgqAxnajwx760sGt/C2RJQ0PW4YnUt9SqvrbmXXTJCqaYrhYdpqcwDftPJlZ4y3uKeYlfZ9Azti858y6xsSXzHMpi8i4jbuLlizj1RwR7mv5oWSU8sUMi7LnQtyLtJaJO5lbX/ip+6hwB8F4WhL47emjB++jRQezWfBv8xj0/S0yTJcr62pmI5DX888HXOG+dNBRaBgpXYoheKmI/Bk3kInvwYg98nlgOoDGK56UbkdWpBLy9s5/u5k4veEdRy9GFqOflMagk0Pr1c/iYSmry5hvcmqdOF2xMIgkCEHcuVNU29bChNxXY5CGFJZksyN0aBdZMb1IGWXDLtliRa9kW6iC+UZSzjJUexlUlMi4QmBaQgMhqnMYMuHFnjdj8w/pXn6Z/G+r5dcMCNDbvgTIIS7pUrHBYBVEjeQ95f6bNlEJyT2+Acn88P2wjxMe1+n2gv/Dev6N0fJk9zaDwKAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=003c2a05c36af250b202be3ed40131fb"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent/>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="ChromaTech Customer Queries – Approval Flow">6440b0c7c316f210b202be3ed401315a</flow>
+        <generation_source/>
+        <order>1</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>Mimi.QA</sys_created_by>
+        <sys_created_on>2026-01-12 00:41:21</sys_created_on>
+        <sys_id>85b1f08bc316f210b202be3ed401319e</sys_id>
+        <sys_mod_count>29</sys_mod_count>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_updated_by>Mimi.QA</sys_updated_by>
+        <sys_updated_on>2026-01-18 15:29:33</sys_updated_on>
+        <ui_id>871b9ac4-e99d-4c0a-a9ea-867e7b709195</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1UXW/aMBT9K8jPEXISigpvE6japK7V2qovpYsc+wasOR+znbYM8d934ziBIVZRqQ+rNJ7w/XDOOb7nPmyIFGRKRiBoOAnHPA7jOKI0Oh+F6ThOw0jEDCAkASlYDlipgZda4PmJqboJbDYzDcyCSMIhr7WGwm63mBfSVIqt730ZRvhKKoF5Mn14DEjFNN5oQZPp5iB1KiTFUlBYetNhOsRo11VzFiWvc8SVyC546TvnPjP4MscMNjVwQhoQeLFQCEAgGVMGApKzQjBb6jWZWl1jAEmL60Kt+4qVLGxLNGcvRv7CL49oU5cBMuNehP6YeIHacDZnlt3izdzWuterlBxMq4mAjNXKzvZjbcF1ZWVZtC2WparrLlWdF1etIqS/YO89aoMgoGp4NshbWtntqny+6UBeyMJJ4imqkjPVn5i1Wqa1beBsCChwGuesqmSxTCpdPknXjFDy4VLhYZip8hm/aeSyGDLe4B6iqmx4gfG5C98zLRsSX/EabN4GxKzNTDFjdlRQw+Rn3SBpiXkKiVPBSZC4SWiauZaV/YSfegIPfBv4oafRqxMGu4Fys272hl4aU0NiLM79oqY0Flfw/B0xIgEnwlKXddVmNovOCgsyXZDZSpc5uwO+GnwGVaEWPxYkWLQ3u4oRiycxYymPaZSNBU0jGqUQgxjRMA7hzJWjKDjNJ9YfsePHI/C27XHC23bb40KCEubIY/vtYSFH8haS9vH/XCB3Pjm498l+h7zbEgnH1P3+r5J/d5WkZ6+NG5/spmvvzt06eUnC83gSRaOEO3cl1P+xaLOE18aWOWgEClq60Txw86wvHsx88eBbX/w255xApXPOnRuR49Q68xzGLvd7B1dtwpvm7N08c/6R3OJpfHi7/M0kj78BseUUzWYKAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=85b1f08bc316f210b202be3ed401319e"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="ChromaTech Customer Queries – Approval Flow">6440b0c7c316f210b202be3ed401315a</flow>
+        <generation_source/>
+        <order>4</order>
+        <parent_ui_id>e213d8a8-11e5-4896-9d13-beb3ff44cb48</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>Mimi.QA</sys_created_by>
+        <sys_created_on>2026-01-15 01:46:23</sys_created_on>
+        <sys_id>8f5d9844c32eba10b202be3ed4013165</sys_id>
+        <sys_mod_count>26</sys_mod_count>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_updated_by>Mimi.QA</sys_updated_by>
+        <sys_updated_on>2026-01-18 15:29:33</sys_updated_on>
+        <ui_id>048a7a45-c59d-42dc-ba4c-624bb22ad710</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VVXU/bMBT9K5Wf2yppStv0bWqFhMRgg4kXYNGNfdtacuLMdoCu6n/fTeKEChCDiRe0PPV++pwTn+Z6x6RgczZGEYRxOOFRGEWjIBjNxmE6idJwJCJADFmf5ZAhdRrk2giK70CVVWK3m03DNAY+HmAci8GYBzCAGGEwm0xxmk6DOIyPhs3cfk+TQtpCwfbKL6AM30glDOZsfn3bZwUYOsuhYfPdk9JbwSpIUVHrRYv2KXq3LapYaF5mmLtEtslTP7n0ld7Jkio0VMEJgz7DB4e5QAKyAmWxzzLIBThttmzuTEkJgyDOc7XtOjYydw3RDB6s/E0nj4Oqb4XEjHsRujDxAjXp1RIcXNJm7krT6aUlR9toInAFpXKLw1zTcF44qfNmxEGq2mmtyiw/axRh3YKD91FaAoFFxbNC3tBaXW70/UUL8ljmtSSeotIcVBeBc0ampavg7BgqrDXOoChkvk4Ko+9kPUxQsuFaUTBcKX1PZ1q5zofAK9xDUhWGx5Rf1ukrMLIi8ZXW0PC+z+zWLhRY+0iFNEx+lRWShpinkNQq1BIk9U2ohrmRhftCR92hB77vezukR6/dMB4/XqiDnY+WeEjCWRSPRuOEb4zOIAn8D4d8k/DSOp2hIaBoJEn0zBGLrrm38M29713z+8zyBiqtWX7UV+Rlat4vz3Knh7O9s6bg3XL0YW6ZfSa3eBqf3i5/M0kwevVv+OAm1b6wBwaR1paYWEd3/KYMgkic5L1vRq8NWvuT8BJjUE2liVA8d8m/LXmfe97AsXXPsUQl7AukW+tgRugdJo0IT+zji70rX+w+OB/moXAS1M8nctJ/8925/QMl4hySiAkAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=8f5d9844c32eba10b202be3ed4013165"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="ChromaTech Customer Queries – Approval Flow">6440b0c7c316f210b202be3ed401315a</flow>
+        <generation_source/>
+        <order>12</order>
+        <parent_ui_id>606dea73-f0e1-4405-9790-26aa72d33d5b</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>Mimi.QA</sys_created_by>
+        <sys_created_on>2026-01-18 15:27:40</sys_created_on>
+        <sys_id>aa16f2c9c3aaf250b202be3ed401317e</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_updated_by>Mimi.QA</sys_updated_by>
+        <sys_updated_on>2026-01-18 15:29:33</sys_updated_on>
+        <ui_id>52f8775a-0e99-455f-94ac-71af5d0559e3</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VVXW/aMBT9K8jPCCWEIuBtAiFN6lqtnfrStZaxL+DJiTN/UBjiv+8mcQKCqgOpL2g84fvlcw734OctkYKMSA9EFA/jPk/iJOlGUXfQi2f9ZBZ3RcIAYtImGUsBKw1wbQSeV0z5IrDdjg0wB4LGHe6NgcztdpgX0uaKbZ5CGUb4UiqBeTJ6fmmTnBmc6MCQ0fYodS4kxWagsPShxnSM0W3y4iw09yniorIO3obOSci0vk4wg00FnDhqE1g7yAQgkDlTFtokZZlgTpsNGTnjMYCkxX2mNk3FUmauIpqytZV/8OZeVNTNAZnxIEJzpEGgKjyfMMcecTJ33jR6acnBVpoImDOv3PgwVhXc507qrGpxbKbqbq18mt1VipBmwMHv4S2CgLzgWSCvaM0fl/rtoQY5lVkpSaCoNGeqOTHnjJx5V8DZElBQapyyPJfZguZGr2TZjFDSzkLhoTNX+g3vtHKRdRgvcHdQVdaZYnxShp+YkQWJbzgGm3dtYjd2rJi1eyqoIf3tCyQVsUCBliqUEtByE4pmbmTuvuBVKwjAd+2w9LObjzaMD/cLdTBzv/hrGg+SYbfbo3xpdMpoFL444EvKvXU6BYNAwUiU6MQR46a4NQ7Fre9N8WVmOYNKbZYf5Yq8Ty345SR2e9jbuqsSwS03n+aWwTW5JdC4erv8yyRR98O/4YNNKn1hDwyCkJAUUz99FCW4sL+A4zPxKq31QK3D1a8yY6UtiFODXNx/mWfOYFZ7ZipBCfsO1dowkCJwB7SifmSakGw9hWTzzHyac+J+VH6uyD//zWvz8hdRm6MpZAkAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=aa16f2c9c3aaf250b202be3ed401317e"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="ChromaTech Customer Queries – Approval Flow">6440b0c7c316f210b202be3ed401315a</flow>
+        <generation_source/>
+        <order>10</order>
+        <parent_ui_id>52032b57-38f9-403f-a019-f4ccd15f2d41</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>Mimi.QA</sys_created_by>
+        <sys_created_on>2026-01-18 14:46:39</sys_created_on>
+        <sys_id>b1bc2ac1c36af250b202be3ed40131e9</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_updated_by>Mimi.QA</sys_updated_by>
+        <sys_updated_on>2026-01-18 15:29:33</sys_updated_on>
+        <ui_id>e95dba3b-48f6-487d-ae7d-8e578130438e</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VVTW/iMBD9K8hnQM5HgXBbgZBW6rbatuqlVJFjT8CS42Qdpy2L+O87SZwUtVWXSj1stZzweGb83rPf5G5PpCBzEoKgXuRNeOAFgU+pPwu9ZBIkni8CBuCRIdEsA8w0wHMjcP3AVFUH9vvZ1EsixsMRRJEYhZyyEYuAjWaTKUyTKY286Gzc1h0OWClkWSi2u3UNMMK3UgkDmszv7oekYAbPsmDIfP9i61SwiiWgMPWqQ/sSvd0V9VrkvMpA21h2wXNXuXQ7g+9L3MGiGo5HhwSeLGgBCCRlqoQhyZgWzOZmR+bWVBgwwMSlVrs+Yyu1bYlm7KmUv/HkkNZ5KSAz7kTol7ETqA2nS2bZNXbmtjK9XrnkULaaCEhZpeziONYmXBZW5rotsSxRXXWuqkxftIqQvsHRfVQlgoCi5lkjb2ml19v88aoDuZK6kcRRVDlnql8xa41MKlvD2RNQ0GicsaKQehMXJn+QTTFCycYbhYtxqvJHPLOUGz1mvMY9RlXZeIXxZRO+ZUbWJH5gGyw+DEm5KxeKleUzFdQw/lXVSFpijkLcqNBIEDcvoS7mRhb2Gx71AA74YejskJy998J49Pygjno+W+Ip9mZB5PthzLcmz1hM3R8LfBvzqrR5BgaBgpEo0StHLPrkwcIlD372yR8zywlUOrPcNE/kbWrOL69i58e1g4t2w7nl7NPcMvtKbnE0vrxd/mYS6r87ho9eUuOL8sggCAIRNiw3Jq+KdUVpIPbrzghrMl+TBUiF/Acrpgc36AUtuWS6XJPhum3UZLFAhD7nKUfDpb5HE5/6CQQgQuoFnkibdGSOE/7E/Dc+Uf883o/NhBNurpsJKwlKlG9cZTcQIEMBLMTt1b4YCm5zcOs2+8/op00Gb0Kb3xeaD//N1/T+D7aEuoxeCgAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=b1bc2ac1c36af250b202be3ed40131e9"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Ask For Approval">f8f2e9920b10030085c083eb37673abd</action_type>
+        <action_type_parent/>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f8f2e9920b10030085c083eb37673abd</compiled_snapshot>
+        <display_text/>
+        <flow display_value="ChromaTech Customer Queries – Approval Flow">6440b0c7c316f210b202be3ed401315a</flow>
+        <generation_source/>
+        <order>2</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>Mimi.QA</sys_created_by>
+        <sys_created_on>2026-01-12 00:48:13</sys_created_on>
+        <sys_id>b943b44fc316f210b202be3ed4013125</sys_id>
+        <sys_mod_count>29</sys_mod_count>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_updated_by>Mimi.QA</sys_updated_by>
+        <sys_updated_on>2026-01-18 15:29:33</sys_updated_on>
+        <ui_id>af53df7a-12fd-4729-9669-e2345c44e73e</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1YXW/iOBT9KyjPkHUICUnfKlClWe3MaNvOvJQqMvYNeDYk1EmmZRH/fa9jBzJAGZihUrvqS1XfD/ve43Nw7LulJbh1YUHPdz38049d4nQdEoAfBCwklAW+7/Vcq22ldAYYSedzmX2nSSSB5lmKDhyUyvORpnQCslVHtCQ8lEICb8WZbLEyL7IZuh9KkAsb87jI5wldfP3FdDYVCZeQWhd3921rTiXWV4C0LpZbrmMbTOgYEgy9rAu4rjt8tvViMVeOvJAinZjxX2aam9qYSa7K6rYteCog5YD1xDTJoW3NaMppkcnF2oJT889psjFMRVrgbJYKfsrFv7ie4xMVGAO2yEA718PIwKrN8ZAWFCspWVFKE8qmmWCQa3A4xLRMikHTpgM+zwuBTVYpBR0ndXaWlLP0k0bEWk9Q7yJayhyLgLnqVJVu+ohvptnjdV3llUgrUIwzyRhN1iNaIHTjslD1LK1S3G6hrC07OEMCM1wxmuE+oSVSmyWqVbDomT1JcGDHSfaI1eViktqUqQ5t3AFqX6F9WJm/UilUux9xGkxWy31JBdLug+KR3x37IQl4h8dk3OkFrtehDEgHfMcDj/vMc1xr1bbyRT5IaJ5vgMIdih5K1aaGzQAUaYxVCpNiXlxiUd/BYLFqG30SJ+5CGHbJ2CHEJSTwGAlcGLt9v+9SHuwhaSwg4Q151o5d5TU8p4nqiKp2RHVlynquXCOpahhVQT/KqspvfdKOs0srIOQtaQsX/x1pvYxiTme/huAnEmAHyQaNI+pbVsp0jwKwJ9VuHiE1osdM/hOlmUJiRxDPB56mjyNKrvXxp655Wx7brfyKOtx3dfz/1dEPDlGNkQ2lJDAkRkMWy+UAN78AHjk2KyXCVKxWu6I4mf1HlFSz/7quabtGw3eesbLaC8G3CD80ntaH4Ybx5DDjNS+OIbzbfaf7q6Q78w5xKw43VOIlgoTsbhJ+ZOnaR9bFyEqzFEZWe2SpqEhxqzJjBFa4dlS25XK10pZSUjOB0xhusjld5FVkzqbAy0Rbf7BEFfmN/Rx6OwKTWm/DElpDDcouTPWlpq5T4yJ2zpobE1DN9MetaJ453tnOnN5bOnF+967zcleYaP2RjwrDH4oXuKP0DvIPGmRbf/SzLOVCdZA35KmvCpBfwzdgRX6ZLr7cLZdB3xmHlPU6uATv9BihHRoC7QR+H/rjPgmd0LP1uWFjT4hCheREZuXcnum3hdXqfldnL73caSI+AsT1oYnay38GqhHz5unCJDWFvHnwME4j4t65jtE39t34OlV8fsGO2cEPNLbhlkZzI9GnyAncsNvtRWwqsxmNiPmnADaN6re6SL3ViX0XrME6uDWoH/b+XgefppgjuqgVc2va2OrKaKQa7rtUVWlblyrnxANOi2WvNt6V8WqUcf8fJqIHkBAXAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=b943b44fc316f210b202be3ed4013125"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="ChromaTech Customer Queries – Approval Flow">6440b0c7c316f210b202be3ed401315a</flow>
+        <generation_source/>
+        <order>6</order>
+        <parent_ui_id>e31db39d-ec6d-475d-92b2-499c88e86d7c</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>Mimi.QA</sys_created_by>
+        <sys_created_on>2026-01-17 19:22:01</sys_created_on>
+        <sys_id>bd22e274c36a7250b202be3ed4013166</sys_id>
+        <sys_mod_count>16</sys_mod_count>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_updated_by>Mimi.QA</sys_updated_by>
+        <sys_updated_on>2026-01-18 15:29:33</sys_updated_on>
+        <ui_id>5015f783-a3a4-43f2-abb4-8e8d9bd0b22e</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VVTU/jMBD9K5XPVeUkpSq9oVZIK7GgBcSFQuTYk9aSY2dtB+hW/e87SZxQAWKLxKXanur58nvjeZP7LZGCzMgYBI1OowlPoiSJKY2n4yibJFkUi4QBRGRINCsAIy1wYwWen5iqasN2O7fAPIg0GvHKWtB+t0O/kK5UbHMXwtDC11IJ9JPZ/cOQlMxiRQ+WzLZvXIdCUiwDhaHXHaa3GP2mrM/C8KpAXKnsjBchcxE8gx8L9GBSDSeiQwIvHrQABJIz5WBICqYF88ZuyMzbCg1IWlxptekj1lL7lmjBXpz8gzePaR2XAzLjoQn9MQ0Nas35gnl2g5W5r2zfLyM5uLYnAnJWKT/ft7UBV6WXRrcpnmWqyzaqKvRl2xHSF9h7j8ohCChrnjXyllZ+szbP1x3Ic6mblgSKynCm+hPz3sqs8jWcLQEFTY8LVpZSr9LSmifZJCOUYrRSeBjlyjzjnU6u9IjxGvcIu8pG52hfNOY7ZmVN4ieWweTdkLiNmyvm3CsV7GH6u6qRtMQChbTpQtOCtJmEOplbWfozvOoJAvDdMAx9dvLZhPHT14Haq/k6+C9pNE1O43ic8rU1BUtp+OOBr1NeOW8KsAgUrMQWvVPEvA8ezEPw4Fcf/DWxHEClE8ttMyIfUwt6eWe72M8dXLaOoJaTb1PL9JjUEmgcvVz+JRIaf7qG9yap0YXbEwiCQIQNy5U1VbmsKE3EdtkJYUlmS3Im7WButJA1O1TALepBSy6ZdksyXLbFmkg+nYxjynOOosvjiGYxjTNIQIxphOB4E47sccsfGL97bCG91+YxQf/apjjgPbtNcS5BCffBA3drAgrshYe0ffA3qyI4B3fB2X9cv21fRBPa/I5oa/w339iHvyRASJFaCgAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=bd22e274c36a7250b202be3ed4013166"/>
+    <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=6440b0c7c316f210b202be3ed401315a"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=6440b0c7c316f210b202be3ed401315a^sys_idNOT IN165cae05c36af250b202be3ed40131b2,4cfb2205c36af250b202be3ed4013142,6bcc1404c32eba10b202be3ed40131c7,b566b20dc3aaf250b202be3ed40131b6,c6b0e2b0c36a7250b202be3ed401313a,f9f5fa89c3aaf250b202be3ed40131ff"/>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">a35d2ac5c36af250b202be3ed40131af</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="ChromaTech Customer Queries – Approval Flow">6440b0c7c316f210b202be3ed401315a</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>9</order>
+        <outputs_assigned/>
+        <parent_ui_id>e213d8a8-11e5-4896-9d13-beb3ff44cb48</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>Mimi.QA</sys_created_by>
+        <sys_created_on>2026-01-18 14:45:02</sys_created_on>
+        <sys_id>165cae05c36af250b202be3ed40131b2</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_updated_by>Mimi.QA</sys_updated_by>
+        <sys_updated_on>2026-01-18 15:29:15</sys_updated_on>
+        <ui_id>52032b57-38f9-403f-a019-f4ccd15f2d41</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1UXW/TMBT9K1Weoygfa8X6NhVVQgKGWLUXmKwb22ktHDvYTrtS9b9zbz66inUaAh55an3u1znXxzlEtg1NG/zK3niv1iaaf3mII2UIw/+HyEAto3nErREqKGtYB8TRFnRLgYXUWpn1ZAlm8slZ0fIwWe0bShHKNxr2969n8o3SwslhegMOZwTpovnhl1DAfKahlBob3gWH/bBcCTxVKVTZNc94kc+KPE3zN1dZOSvKLBcFSCgwbyxcjGIm7zskflElzUPcj5OsE0QrS+NIPgZphMTRFWgv46gGIyBYtz8hToK4NfoJ2CgTsF1EyY9e/cDe+XRKiZVEjVz2wdORDSvsYb6xisvbhgj2SIBSDzXc6rY2H3sdtHxZQavDuHxEWo/9ZEOkicVAqbrb2N3nceBSmU7gENSWgz6dIOAayjZITxcjtayxEauhaXA5rHF2q7pi5FIna42HpNJ2h0PJWQlwIp7gjiBZIv62g+/BKVLxAdtgcU+zBK8461yI7YJDCcduLex7S4R6gYMU1m8DEzx3qgk3OGcrB9bH+LmFz9x7OCzwkoIULEt463AHIWl6b46/jDxwPH5t07QQXCryMKvA+OcO/8tu/+IVXMO0mmbp9PIruJpdegUX/P+y9fNXrE+X9ZvOT9P0v/XPra886y08aOuG/7HzH8jm/QTf+0ZIrjwSWRH2bvzGU2CPBlD8HNpZ940kPGHHnwzHBVctBgAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">2b5d2ac5c36af250b202be3ed40131ab</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="ChromaTech Customer Queries – Approval Flow">6440b0c7c316f210b202be3ed401315a</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>7</order>
+        <outputs_assigned/>
+        <parent_ui_id>e213d8a8-11e5-4896-9d13-beb3ff44cb48</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>Mimi.QA</sys_created_by>
+        <sys_created_on>2026-01-18 14:43:15</sys_created_on>
+        <sys_id>4cfb2205c36af250b202be3ed4013142</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_updated_by>Mimi.QA</sys_updated_by>
+        <sys_updated_on>2026-01-18 15:29:15</sys_updated_on>
+        <ui_id>eca0388a-5d1a-4fbe-bce6-e7ff25161834</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+2UTWsbMRCG/4rReVn2IzaNb8ElUGib0phc2iC0ktYW1UqqPuy4xv+9o9WuYxqnDSHHnrx6ZzQz7+jBe6SDN8G7pb5yTqwUmn+7z5BQUYPvPVKk42iOqFZMeKEV7oUMbYgMMbDQWnI7+WI1C9RPljsTo0w4I8nu7q9JdC0ks3zoaYiFyp5bNN//EfKQjyVpuIRat94KtYLrgsGpLUhbXtKS1tWsroqiendRNrO6KStWE05qyBsvLkYLk4+9kj3rLfYD3Y2dtGVxrLLIEH/wXDEOrVsiHc9QRxQjXtvdUbGcsBslH4W1UB7KoZj84MQvqF1NpzGx5eCR8hQ8HvGwvSTTtRaU35g4YFI8aeRwh2oZOvU5+Yh75y0J0o97ByU4qMdNHDpOMYzU3q719uvY8Fqo3uAQlJoSeTwRD2togucuPgyXvINCuCPGwHKwsXoj+sswS5evJBzyVuotNI085YTGwXPYEcmvQX/fy3fEiujiE5SBy2nMhjhBcc8elPMWLBz6teCfIQ6UDA5WcNoGJDhqhfFX0GfDh6kP2VNwT5jd7xfwSJ4zXOY0WNiBz01ic/zFkYHD4XsoiprRHl/3lOvXF3oL9i/JtJ2WxfQ8+xezc+yfof554Kt/AB+f6IW8F0XxH/hT4IXDCdzBW9/81bzfR7hTB5e4YZwKB4Mso/Zh/D+PgR0AIOiptNX2R7TwqB1+A5Ul0RoZBgAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">af55a844c36eba10b202be3ed4013137</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="ChromaTech Customer Queries – Approval Flow">6440b0c7c316f210b202be3ed401315a</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>3</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>Mimi.QA</sys_created_by>
+        <sys_created_on>2026-01-15 01:43:58</sys_created_on>
+        <sys_id>6bcc1404c32eba10b202be3ed40131c7</sys_id>
+        <sys_mod_count>26</sys_mod_count>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_updated_by>Mimi.QA</sys_updated_by>
+        <sys_updated_on>2026-01-18 15:29:15</sys_updated_on>
+        <ui_id>e213d8a8-11e5-4896-9d13-beb3ff44cb48</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1UTW/bMAz9K4XPTuDPdMkt2FBgwLYCbdHLVhi0RCfCZMmV5KRZkP8+yh9psCXYMPS4m/VIke9RfN4HunVN6+yDXlorVipYfH0KA6E8Rt/7QEGNwSJgWnHhhFZFB4TBBmTrA3f43KJ1V8umMXqDnEJc2EbC7vFyBlsLyQ0O3RowVNOhCRb7X0Ju12AhoURJhe6dEWpF1wWnUxVBFc9ZzNJkliZRlLzL4nKWlnHCU0BIKW+8+H4kf/WpQ8KLqnw/wu3YSRvuacVRGOCLQ8WJ/qICaTEMalAcnDa7I2IQ+K2Sr8BaKEflAp/8YsUPqp3kuU+skDQy7IPHYzGMrofZWguGt40n2CMOSjncYVq2tfrS6/BDxwpa6cahE9JaqoeNJ+1ZDJSq+7Xe3o0Nb4TqBA5BqRnI4wkcjaFsHVr/MCixpkJFDU1Dwyn8Y4ruMnGppytJh2kl9Zaa+k2aAvPEpzQjmN4Q/qGDH8EIr+IzlaHLPc0SrGBFt3VUzhmScOjGUjy3nlAvcJBS9NOgBMuMaNyS+mxwYH0If1/Zk23d76HKU15dwyROKj7JrpP5ZD6bzSeYpFnOsgyvU5xCt6ogC+vA4eHwrY2ilMPFFX+rsm/hiznkVR5H+XlfZLNzvjjjiMtmSP5gBv98f+mFKIr+m+HUDMIW/VIP2rrm/+yFJ7/4fQfb7w1HJiwRefDYx/Ev7wM7WgDBTqGtNt+9hFfs8BNwE++cLwYAAA==</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">c2763a0dc3aaf250b202be3ed401310c</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="ChromaTech Customer Queries – Approval Flow">6440b0c7c316f210b202be3ed401315a</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="End">d176605ea76103004f27b0d2187901c7</logic_definition>
+        <order>13</order>
+        <outputs_assigned/>
+        <parent_ui_id>606dea73-f0e1-4405-9790-26aa72d33d5b</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>Mimi.QA</sys_created_by>
+        <sys_created_on>2026-01-18 15:28:58</sys_created_on>
+        <sys_id>b566b20dc3aaf250b202be3ed40131b6</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_updated_by>Mimi.QA</sys_updated_by>
+        <sys_updated_on>2026-01-18 15:29:15</sys_updated_on>
+        <ui_id>9f2083a5-07f4-4318-9b55-7bd32659c3c6</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">9541a6f0c36a7250b202be3ed401312a</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="ChromaTech Customer Queries – Approval Flow">6440b0c7c316f210b202be3ed401315a</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>5</order>
+        <outputs_assigned/>
+        <parent_ui_id>e213d8a8-11e5-4896-9d13-beb3ff44cb48</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>Mimi.QA</sys_created_by>
+        <sys_created_on>2026-01-17 19:15:45</sys_created_on>
+        <sys_id>c6b0e2b0c36a7250b202be3ed401313a</sys_id>
+        <sys_mod_count>17</sys_mod_count>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_updated_by>Mimi.QA</sys_updated_by>
+        <sys_updated_on>2026-01-18 15:29:15</sys_updated_on>
+        <ui_id>e31db39d-ec6d-475d-92b2-499c88e86d7c</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1Vy47aMBT9FZQ1RHkQIOxQq5EqtZ2qg2bTjqIb+wasOnFqOzAU8e+9zoNBHUYdVe2uK/C5r3MfRzl6qrF1Y81arYwRm8pbfnkYe6JyGP0/ehWU6C09piourFBV1gJjbweycYaV0KM3gxG1GX3SijfMjtaH2vlxYWoJh/tXurOtkFxjz6MGTdUsam95/MVkyT+TkKOkrHdWi2pD4YLTqwigCFMWsjiaxVEQRItpmM/iPIx4DAgx+Q2BZyqj9y0yfrFfV49wM1RSmjtaYTD28NFixZFKFyANjr0SKg5W6cMZ0Qj8tpJPwFZUltJ5zvnRiB+UO0oS51gg9ciwM56fWT/HDmZbJRje1o5gh1jIZR/DlGzK6mPXh9sAFtBIO2yAkMZQPqwdaceip1TcbdX+81DwRlRtg71RKgby/AJLY8gbi8YtBiWWlCgroa5pOFmt1U60wcSl9DeSHn4h1Z6KuhvzgTniPs0I/BvC37bwPWjhuvhAaSi4o5mDESxr75HSWU0tnNqxZN8bR6hrsG8l66ZBDoZpUdsV1dlhz/o0fn7MF3d8PC7mYZ4Cm04wTflkygKYQIowWczmOM/nQRqmia+R0eb9urva4Tdz13E6fW2CIOYgdMYuTvy5CP5prb+hoBSSIgmD5LqCprNrCrqinZdlE/1GNm7Rr1RNEAT/ZXMpG2Gy7vz73trif6yaByeRroLp7oYjE4aIrB32bvhSOMOBDkCwS2iv9DfXwhN2+glDwA3EcwYAAA==</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">c6763a0dc3aaf250b202be3ed4013108</block>
+        <comment/>
+        <connected_to>e213d8a8-11e5-4896-9d13-beb3ff44cb48</connected_to>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="ChromaTech Customer Queries – Approval Flow">6440b0c7c316f210b202be3ed401315a</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Else If">666e5545c3e232002841b63b12d3ae99</logic_definition>
+        <order>11</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>Mimi.QA</sys_created_by>
+        <sys_created_on>2026-01-18 15:27:03</sys_created_on>
+        <sys_id>f9f5fa89c3aaf250b202be3ed40131ff</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_updated_by>Mimi.QA</sys_updated_by>
+        <sys_updated_on>2026-01-18 15:29:15</sys_updated_on>
+        <ui_id>606dea73-f0e1-4405-9790-26aa72d33d5b</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1Vy27bMBD8lYBnWdDDj9o3o0WAAm0DJEEubSCsyJXNlhJVkorjGv73LvVwjMBujaLoqTdxdrk7s5yFdkw3rm6cvddLa+WqYovPjwGTlcfoe8ekYAtWRFDEcx7zNJmmSRQlb8ZxPk3zOBEpICQsYBWUSJlcV0I6qausBQL2BKrxgWVdG02Hq1v8ityhoJiQtlawffhFCl9LJQz2vGowVNWhYYvdq5Db1pgpyFFRpTtnZLWi65eyHy6+HehffWiR87p8P8Lt0Ekb4WnFUcDw2WEliP6iAGUxYCVUApw22wNiEMRNpV6AtawclWM++dnKH1Q7mUx8YoGkkWMXPByzfnYdzNdacrypPcEOcZCr/g7XqimrT50OP3UsoFFumDohjaV6WHvSnkVPqbhb683t0PBaVq3APqg0B3U4gaMx5I1D6x8GFZZUKCuhrmk4mX9V2V4mLmW4UnQIC6U31NR7LgTuiYc0IwivCX/Xwg9gpFfxkcrQ5Y5mDlbyrPUnlXOGJOzbsWTfG0+oE9hLybppUILlRtZuSX2esGe9Dy4zd3zCBEe+3u2gmKSimMEoTgoxGs+S+Wg+nc5HmKTjCR+PcZZiCL23M+vA4X7/pYmilNx7bhf+Vtl/sD/xqf05PbQzS5P8Zmn8M1+4M1EU/V+a46WRNuvM32trm//xzjx643cdbOcbgVxaInLvsffDf8MHtmQAyY+hjTbfvIQXbP8TG8X124EGAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=6440b0c7c316f210b202be3ed401315a"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=6440b0c7c316f210b202be3ed401315a"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>table_name</element>
+        <help/>
+        <hint/>
+        <label>Table Name</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_6440b0c7c316f210b202be3ed401315a</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>Mimi.QA</sys_created_by>
+        <sys_created_on>2026-01-12 00:36:37</sys_created_on>
+        <sys_id>b790700bc316f210b202be3ed401314c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="ChromaTech Ticket logging System" source="x_1839224_chroma_0">0ab6f4efc34e76d0b202be3ed4013104</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>Mimi.QA</sys_updated_by>
+        <sys_updated_on>2026-01-12 00:36:37</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>current</element>
+        <help/>
+        <hint/>
+        <label>Record</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_6440b0c7c316f210b202be3ed401315a</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>Mimi.QA</sys_created_by>
+        <sys_created_on>2026-01-12 00:36:37</sys_created_on>
+        <sys_id>eb90700bc316f210b202be3ed401311b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="ChromaTech Ticket logging System" source="x_1839224_chroma_0">0ab6f4efc34e76d0b202be3ed4013104</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>Mimi.QA</sys_updated_by>
+        <sys_updated_on>2026-01-12 00:36:37</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_6440b0c7c316f210b202be3ed401315a"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_6440b0c7c316f210b202be3ed401315a"/>
+    <sys_hub_flow_snapshot action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <annotation/>
+        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,viewActivatedIn=naturalLanguage</attributes>
+        <authored_on_release_version>28100</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description>Automates approval and assignment for ChromaTech Customer Queries based on product type and approval outcome.</description>
+        <flow_priority>MEDIUM</flow_priority>
+        <internal_name>chromatech_customer_queries__approval_flow</internal_name>
+        <label_cache>[{"name":"Created_1.current.assignment_group.manager","label":"Trigger - Record Created➛Chromatech Customer Queries Record➛Assignment group➛Manager","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","parent_table_name":"sys_user_group","column_name":"manager","usedInstances":{"3737df2f-a618-49db-a07c-9d35aa70f9a5":["approval_conditions"]}},{"name":"Created_1.current","label":"Trigger - Record Created➛Chromatech Customer Queries Record","reference":"x_1839224_chroma_0_chromatech_customer_queries","reference_display":"Chromatech Customer Queries","type":"reference","base_type":"reference","usedInstances":{"871b9ac4-e99d-4c0a-a9ea-867e7b709195":["record"],"af53df7a-12fd-4729-9669-e2345c44e73e":["record"],"fd5caf9e-13a5-4aea-9749-5d6cf6b9856d":["record"],"5015f783-a3a4-43f2-abb4-8e8d9bd0b22e":["record"],"2822da46-7388-49c7-be01-7438e10f8fed":["record"],"29b33194-16f5-4a75-9a57-5821fa3815a1":["record"],"3737df2f-a618-49db-a07c-9d35aa70f9a5":["record"],"2edb71d3-d94e-470e-8a02-9ffc5f740753":["record"],"52f8775a-0e99-455f-94ac-71af5d0559e3":["record"]},"attributes":{}},{"name":"871b9ac4-e99d-4c0a-a9ea-867e7b709195.record.assignment_group.manager","label":"1 - Update Record➛Chromatech Customer Queries Record➛Assignment group➛Manager","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","parent_table_name":"sys_user_group","column_name":"manager","usedInstances":{"af53df7a-12fd-4729-9669-e2345c44e73e":["approval_conditions"]}},{"name":"{{static.2d0f980bc3fdb250b202be3ed4013104}}","label":"Chroma ITIL","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","choices":[{"order":0.0}],"usedInstances":{"af53df7a-12fd-4729-9669-e2345c44e73e":["approval_conditions"]}},{"name":"af53df7a-12fd-4729-9669-e2345c44e73e.approval_state","label":"2 - Ask For Approval➛Approval State","reference_display":"Approval State","type":"choice","base_type":"choice","choices":[{"label":"-- None --","value":"","order":0.0},{"label":"Not Yet Requested","value":"not requested","order":1.0},{"label":"Requested","value":"requested","order":2.0},{"label":"Approved","value":"approved","order":3.0},{"label":"Rejected","value":"rejected","order":4.0},{"label":"Cancelled","value":"cancelled","order":5.0},{"label":"No Longer Required","value":"not_required","order":6.0},{"label":"Skipped","value":"skipped","order":7.0}],"usedInstances":{"e213d8a8-11e5-4896-9d13-beb3ff44cb48":["condition"],"1c3a98aa-6a5f-4c05-b48d-2dca5fcc63e6":["condition"],"4822140d-0136-46d3-a84f-0317ecce8bcf":["condition"],"23105a8e-35d9-4d42-a08e-157429824546":["condition"],"606dea73-f0e1-4405-9790-26aa72d33d5b":["condition"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"871b9ac4-e99d-4c0a-a9ea-867e7b709195.record","label":"1 - Update Record➛Chromatech Customer Queries Record","reference":"x_1839224_chroma_0_chromatech_customer_queries","reference_display":"Chromatech Customer Queries","type":"reference","base_type":"reference","usedInstances":{"048a7a45-c59d-42dc-ba4c-624bb22ad710":["record"],"d94f578c-d535-4a61-a627-426f9059a472":["record"],"c95d27d2-39e7-4a6d-9e6f-0e9f962a020b":["record"],"d7024bda-6f9c-4cd7-8fb5-88be2c8dd4a8":["record"],"e95dba3b-48f6-487d-ae7d-8e578130438e":["record"],"dc7ab17a-637d-4e0a-9296-5d27ae9efb2d":["record"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"871b9ac4-e99d-4c0a-a9ea-867e7b709195.record.product.product_type","label":"1 - Update Record➛Chromatech Customer Queries Record➛Product➛Product Type","reference":"","reference_display":"Product Type","type":"choice","base_type":"choice","parent_table_name":"x_1839224_chroma_0_chromatech_sold_products","column_name":"product_type","choices":[{"label":"-- None --","image":"","used":false,"reference":false,"rawLabel":"-- None --","selected":false,"missing":false,"value":""},{"image":"","used":false,"label":"Air Conditioners","reference":false,"rawLabel":"Air Conditioners","selected":false,"missing":false,"value":"air_conditioners","parameters":{"name":"x_1839224_chroma_0_chromatech_sold_products","dependent_values":[""]}},{"image":"","used":false,"label":"Coolers","reference":false,"rawLabel":"Coolers","selected":false,"missing":false,"value":"coolers","parameters":{"name":"x_1839224_chroma_0_chromatech_sold_products","dependent_values":[""]}},{"image":"","used":false,"label":"Ceiling Fans","reference":false,"rawLabel":"Ceiling Fans","selected":false,"missing":false,"value":"ceiling_fans","parameters":{"name":"x_1839224_chroma_0_chromatech_sold_products","dependent_values":[""]}}],"usedInstances":{"92085046-67d0-497e-94d4-0fdf636237f5":["condition"],"b3891969-b8f4-4cdb-8d84-d2638d172b7f":["condition"],"a93a98ee-7e48-400f-a59e-6cb1a794697b":["condition"],"e31db39d-ec6d-475d-92b2-499c88e86d7c":["condition"]}},{"name":"871b9ac4-e99d-4c0a-a9ea-867e7b709195.record.assignment_group","label":"1 - Update Record➛Chromatech Customer Queries Record➛Assignment group","reference":"sys_user_group","reference_display":"Group","type":"reference","base_type":"reference","parent_table_name":"x_1839224_chroma_0_chromatech_customer_queries","column_name":"assignment_group","usedInstances":{}},{"name":"c95d27d2-39e7-4a6d-9e6f-0e9f962a020b.record","label":"9 - Update Record➛Chromatech Customer Queries Record","reference":"x_1839224_chroma_0_chromatech_customer_queries","reference_display":"Chromatech Customer Queries","type":"reference","base_type":"reference","usedInstances":{},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"048a7a45-c59d-42dc-ba4c-624bb22ad710.record.product.product_type","label":"4 - Update Record➛Chromatech Customer Queries Record➛Product➛Product Type","reference":"","reference_display":"Product Type","type":"choice","base_type":"choice","parent_table_name":"x_1839224_chroma_0_chromatech_sold_products","column_name":"product_type","choices":[{"label":"-- None --","image":"","used":false,"reference":false,"rawLabel":"-- None --","selected":false,"missing":false,"value":""},{"image":"","used":false,"label":"Air Conditioners","reference":false,"rawLabel":"Air Conditioners","selected":false,"missing":false,"value":"air_conditioners","parameters":{"name":"x_1839224_chroma_0_chromatech_sold_products","dependent_values":[""]}},{"image":"","used":false,"label":"Coolers","reference":false,"rawLabel":"Coolers","selected":false,"missing":false,"value":"coolers","parameters":{"name":"x_1839224_chroma_0_chromatech_sold_products","dependent_values":[""]}},{"image":"","used":false,"label":"Ceiling Fans","reference":false,"rawLabel":"Ceiling Fans","selected":false,"missing":false,"value":"ceiling_fans","parameters":{"name":"x_1839224_chroma_0_chromatech_sold_products","dependent_values":[""]}}],"usedInstances":{}},{"name":"Created_1.current.product.product_type","label":"Trigger - Record Created➛Chromatech Customer Queries Record➛Product➛Product Type","reference":"","reference_display":"Product Type","type":"choice","base_type":"choice","parent_table_name":"x_1839224_chroma_0_chromatech_sold_products","column_name":"product_type","choices":[{"label":"-- None --","image":"","used":false,"reference":false,"rawLabel":"-- None --","selected":false,"missing":false,"value":""},{"image":"","used":false,"label":"Air Conditioners","reference":false,"rawLabel":"Air Conditioners","selected":false,"missing":false,"value":"air_conditioners","parameters":{"name":"x_1839224_chroma_0_chromatech_sold_products","dependent_values":[""]}},{"image":"","used":false,"label":"Coolers","reference":false,"rawLabel":"Coolers","selected":false,"missing":false,"value":"coolers","parameters":{"name":"x_1839224_chroma_0_chromatech_sold_products","dependent_values":[""]}},{"image":"","used":false,"label":"Ceiling Fans","reference":false,"rawLabel":"Ceiling Fans","selected":false,"missing":false,"value":"ceiling_fans","parameters":{"name":"x_1839224_chroma_0_chromatech_sold_products","dependent_values":[""]}}],"usedInstances":{"eca0388a-5d1a-4fbe-bce6-e7ff25161834":["condition"],"52032b57-38f9-403f-a019-f4ccd15f2d41":["condition"]}}]</label_cache>
+        <master>true</master>
+        <name>ChromaTech Customer Queries – Approval Flow</name>
+        <natlang/>
+        <outputs/>
+        <parent_flow display_value="ChromaTech Customer Queries – Approval Flow">6440b0c7c316f210b202be3ed401315a</parent_flow>
+        <remote_trigger_id/>
+        <run_as>user</run_as>
+        <run_with_roles>5ab6f4efc34e76d0b202be3ed4013124,d2b6f4efc34e76d0b202be3ed4013110,037d9988c3d2bad0b202be3ed4013198</run_with_roles>
+        <sc_callable>false</sc_callable>
+        <status>published</status>
+        <sys_class_name>sys_hub_flow_snapshot</sys_class_name>
+        <sys_created_by>Mimi.QA</sys_created_by>
+        <sys_created_on>2026-01-15 02:21:23</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>f355a844c36eba10b202be3ed40131a6</sys_id>
+        <sys_mod_count>12</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>Mimi.QA</sys_updated_by>
+        <sys_updated_on>2026-01-18 15:29:18</sys_updated_on>
+        <type>flow</type>
+        <version>2</version>
+    </sys_hub_flow_snapshot>
+    <sys_translated_text action="delete_multiple" query="documentkey=f355a844c36eba10b202be3ed40131a6"/>
+    <sys_variable_value action="delete_multiple" query="document_key=f355a844c36eba10b202be3ed40131a6"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=f355a844c36eba10b202be3ed40131a6"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=f355a844c36eba10b202be3ed40131a6^sys_idNOT IN3355a844c36eba10b202be3ed40131a7"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>f355a844c36eba10b202be3ed40131a6</id>
+        <name>ChromaTech Customer Queries – Approval Flow</name>
+        <sys_created_by>Mimi.QA</sys_created_by>
+        <sys_created_on>2026-01-15 02:21:23</sys_created_on>
+        <sys_id>3355a844c36eba10b202be3ed40131a7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>Mimi.QA</sys_updated_by>
+        <sys_updated_on>2026-01-15 02:21:23</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=3355a844c36eba10b202be3ed40131a7"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=f355a844c36eba10b202be3ed40131a6^sys_idNOT IN3755a844c36eba10b202be3ed40131a9,3f55a844c36eba10b202be3ed40131bb"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=document_id</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent>table_name</dependent>
+        <dependent_on_field>table_name</dependent_on_field>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>current</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">document_id</internal_type>
+        <label>Record</label>
+        <mandatory>true</mandatory>
+        <max_length>200</max_length>
+        <model display_value="ChromaTech Customer Queries – Approval Flow">f355a844c36eba10b202be3ed40131a6</model>
+        <model_id>f355a844c36eba10b202be3ed40131a6</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_f355a844c36eba10b202be3ed40131a6</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>Mimi.QA</sys_created_by>
+        <sys_created_on>2026-01-15 02:21:23</sys_created_on>
+        <sys_id>3755a844c36eba10b202be3ed40131a9</sys_id>
+        <sys_mod_count>23</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>Mimi.QA</sys_updated_by>
+        <sys_updated_on>2026-01-18 15:29:17</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>true</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=3755a844c36eba10b202be3ed40131a9"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,test_input_hidden=true,uiType=table_name</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>table_name</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">table_name</internal_type>
+        <label>Table Name</label>
+        <mandatory>false</mandatory>
+        <max_length>200</max_length>
+        <model display_value="ChromaTech Customer Queries – Approval Flow">f355a844c36eba10b202be3ed40131a6</model>
+        <model_id>f355a844c36eba10b202be3ed40131a6</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_f355a844c36eba10b202be3ed40131a6</name>
+        <next_element/>
+        <order>101</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>Mimi.QA</sys_created_by>
+        <sys_created_on>2026-01-15 02:21:24</sys_created_on>
+        <sys_id>3f55a844c36eba10b202be3ed40131bb</sys_id>
+        <sys_mod_count>23</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>Mimi.QA</sys_updated_by>
+        <sys_updated_on>2026-01-18 15:29:17</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=3f55a844c36eba10b202be3ed40131bb"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=f355a844c36eba10b202be3ed40131a6"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=f355a844c36eba10b202be3ed40131a6"/>
+    <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=f355a844c36eba10b202be3ed40131a6^sys_idNOT IN4c65a844c36eba10b202be3ed40131e0"/>
+    <sys_hub_trigger_instance_v2 action="INSERT_OR_UPDATE">
+        <comment/>
+        <display_text/>
+        <flow display_value="ChromaTech Customer Queries – Approval Flow">f355a844c36eba10b202be3ed40131a6</flow>
+        <generation_source/>
+        <name>Created</name>
+        <published_version/>
+        <remote_sys_id/>
+        <sys_created_by>Mimi.QA</sys_created_by>
+        <sys_created_on>2026-01-15 02:21:24</sys_created_on>
+        <sys_id>4c65a844c36eba10b202be3ed40131e0</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>Mimi.QA</sys_updated_by>
+        <sys_updated_on>2026-01-16 17:11:36</sys_updated_on>
+        <trigger_definition display_value="Created">798916a0c31322002841b63b12d3ae7c</trigger_definition>
+        <trigger_inputs>H4sIAAAAAAAA/9VYW2/bNhT+K4KeNiADdLFjO2+dk2IBugZ13O0hyASKIm1iNOlJlFKvyH/foW6WdXHsWOmcp9Ykdc53Pn7nwjx8NznyCTevzDnyOTEvTCYUCQXi882awLLSy55AK723QiJASoYb80qFMbkwaShXc7Jac6TgMEU8gkUZBiQ0r+wLM0E8Jveb6DYAS/B9aia3aebb8PubZ4/dieMMPLwEg8iz8v8ogpcejiMlVyT0/olJyEgEHwYsApebP/Lvp+VhY5ofNr6Uh/GS8SAkwrx6eLww1ygEEEoD/F7bYholphhNHGJh13Ydx7Kc8cD2L13fdgIXEcsCg3XGalGpFuK2lJBvioiABCVbDU5DgoI7wTfliSVcScbfCn2L2L9gfWzpc5QAdkyyvfKnl7OTLeOlZJjcrRWTIlvJcGabkscr8TnDr3klFMVcFbzCShyBPbLWkDWIHBG9X8qnWeHwIxNpdPkmlxjx8hdSKmR+rOAqgHDKOFDvZdxEMg5T9LOb6d3s2vvzw3z6283Mm93cz2e30/nNtfmcxgU3ry1mCHMsXhbOcymGj4xwfYHrUAYxVnA2wiFbqw9YsaQQ5/PFVvBTKQKW0tIQPS62ol3RF+HvU71ldeoeVzwW2v/r5ktT0NniccK9vEQoIKhDuD6tCLcaeQs01UJCNbp9Es5XDtHwwLL+JxXnteu1In5CQkWekh4KAq/CEuQ8GNYhyoDw660/WGeLBeieiXWsohdVncXWlPbLmg5jASa88oaayk6JLBn9xCLA9wCJWbCVh0A/5RZnsTCkMHAcAk3KgJs2CutGilOrg96u0CLnmt4TTrCqyIN+jaq/fmdRxMSigr50nq40vfNNFUJRZ09x+thnWjdJT2rx1NL76Ny2bUp9Qh1rpDPbtlyf2tbIGiIauJaFnUpuN8F0olQ1SbxJjh+X4VEqRn7A7dcpzsFb1Ww4SLvJrvALErRE8kIy7Qea3RM0R0OrFUT3qIpYyjJbvt5V577Qeh4HUJAg+CIoYjyk3R9QASmXT1BrX1H9qAzJIpSxCOpVSNs0GPy7c6Knuucj/Pd+t9sTxk/5tf18bjVwS3shXCQ2PVQ/l9r+hAyIBUXPhXrnDycTHyOH0tHliDh2rfptYbRiexdV74VrT9p001UBW5WbtAn+iNp3AsBGHTwa4OkVMBdma/3L9t5HpXtaEuEB1NDjupY1Ct6Cs4AUe/1me8N1ss3vUzOejid4aI9GeATvGMh4OiA+sgfOEE1Gl+54WMv4BpR9MFULMz/kdRNtohRIRzX4mm2d13v9LWUbEaV0Ozq+S6fnUeag0i/1lRhpQZGhoek0brcHjXsC3S993/bWtaVaNvo1uP4V1ndc6+nusxS/tMDp8/UkYLw/hJoOKOc2TtREkuyyfvKTigzGwwl120sMnbSVmC2YbphnP14cKIWkU1Rtc8ahqZe0ZnDnYPCKZKrJpDox7Blp+iLF7p0U5+1IcU8eo4pc7HxHvgbsO2ph6Vzx+j4mBfEkba3TjBr5Hw1JYPgbQy0JkMlhUgZXhvbbZ+fIRt5GI4NlI59Y+utRmuZ62NfSgA0j/CGBv02jqkmh3xcwCUZoOHQ75uFJ/QXcBugFvGffto6WSNKmuL296zi7dZut3auSQbuKOLAv9Rp1e3M6LerW9vRS1Kc3nn3v9xYUZ9pSHv8DgyuKmX8fAAA=</trigger_inputs>
+        <trigger_outputs/>
+        <trigger_type>record_create</trigger_type>
+        <updation_source/>
+    </sys_hub_trigger_instance_v2>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=f355a844c36eba10b202be3ed40131a6^sys_idNOT IN2192a2b4c36a7250b202be3ed4013178,4c65a844c36eba10b202be3ed40131d6,806d6ac5c36af250b202be3ed4013187,8c65a844c36eba10b202be3ed40131d8,92763a0dc3aaf250b202be3ed40131e2,c06d6ac5c36af250b202be3ed4013188,cc65a844c36eba10b202be3ed40131d9"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="ChromaTech Customer Queries – Approval Flow">f355a844c36eba10b202be3ed40131a6</flow>
+        <generation_source/>
+        <order>6</order>
+        <parent_ui_id>e31db39d-ec6d-475d-92b2-499c88e86d7c</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>Mimi.QA</sys_created_by>
+        <sys_created_on>2026-01-17 19:23:54</sys_created_on>
+        <sys_id>2192a2b4c36a7250b202be3ed4013178</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_updated_by>Mimi.QA</sys_updated_by>
+        <sys_updated_on>2026-01-17 19:23:54</sys_updated_on>
+        <ui_id>5015f783-a3a4-43f2-abb4-8e8d9bd0b22e</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VVTU/jMBD9K5XPVeUkpSq9oVZIK7GgBcSFQuTYk9aSY2dtB+hW/e87SZxQAWKLxKXanur58nvjeZP7LZGCzMgYBI1OowlPoiSJKY2n4yibJFkUi4QBRGRINCsAIy1wYwWen5iqasN2O7fAPIg0GvHKWtB+t0O/kK5UbHMXwtDC11IJ9JPZ/cOQlMxiRQ+WzLZvXIdCUiwDhaHXHaa3GP2mrM/C8KpAXKnsjBchcxE8gx8L9GBSDSeiQwIvHrQABJIz5WBICqYF88ZuyMzbCg1IWlxptekj1lL7lmjBXpz8gzePaR2XAzLjoQn9MQ0Nas35gnl2g5W5r2zfLyM5uLYnAnJWKT/ft7UBV6WXRrcpnmWqyzaqKvRl2xHSF9h7j8ohCChrnjXyllZ+szbP1x3Ic6mblgSKynCm+hPz3sqs8jWcLQEFTY8LVpZSr9LSmifZJCOUYrRSeBjlyjzjnU6u9IjxGvcIu8pG52hfNOY7ZmVN4ieWweTdkLiNmyvm3CsV7GH6u6qRtMQChbTpQtOCtJmEOplbWfozvOoJAvDdMAx9dvLZhPHT14Haq/k6+C9pNE1O43ic8rU1BUtp+OOBr1NeOW8KsAgUrMQWvVPEvA8ezEPw4Fcf/DWxHEClE8ttMyIfUwt6eWe72M8dXLaOoJaTb1PL9JjUEmgcvVz+JRIaf7qG9yap0YXbEwiCQIQNy5U1VbmsKE3EdtkJYUlmS3Im7WButJA1O1TALepBSy6ZdksyXLbFmkg+nYxjynOOosvjiGYxjTNIQIxphOB4E47sccsfGL97bCG91+YxQf/apjjgPbtNcS5BCffBA3drAgrshYe0ffA3qyI4B3fB2X9cv21fRBPa/I5oa/w339iHvyRASJFaCgAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=2192a2b4c36a7250b202be3ed4013178"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="ChromaTech Customer Queries – Approval Flow">f355a844c36eba10b202be3ed40131a6</flow>
+        <generation_source/>
+        <order>1</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>Mimi.QA</sys_created_by>
+        <sys_created_on>2026-01-15 02:21:24</sys_created_on>
+        <sys_id>4c65a844c36eba10b202be3ed40131d6</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_updated_by>Mimi.QA</sys_updated_by>
+        <sys_updated_on>2026-01-17 19:32:26</sys_updated_on>
+        <ui_id>871b9ac4-e99d-4c0a-a9ea-867e7b709195</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1UXW/aMBT9K8jPEXISigpvE6japK7V2qovpYsc+wasOR+znbYM8d934ziBIVZRqQ+rNJ7w/XDOOb7nPmyIFGRKRiBoOAnHPA7jOKI0Oh+F6ThOw0jEDCAkASlYDlipgZda4PmJqboJbDYzDcyCSMIhr7WGwm63mBfSVIqt730ZRvhKKoF5Mn14DEjFNN5oQZPp5iB1KiTFUlBYetNhOsRo11VzFiWvc8SVyC546TvnPjP4MscMNjVwQhoQeLFQCEAgGVMGApKzQjBb6jWZWl1jAEmL60Kt+4qVLGxLNGcvRv7CL49oU5cBMuNehP6YeIHacDZnlt3izdzWuterlBxMq4mAjNXKzvZjbcF1ZWVZtC2WparrLlWdF1etIqS/YO89aoMgoGp4NshbWtntqny+6UBeyMJJ4imqkjPVn5i1Wqa1beBsCChwGuesqmSxTCpdPknXjFDy4VLhYZip8hm/aeSyGDLe4B6iqmx4gfG5C98zLRsSX/EabN4GxKzNTDFjdlRQw+Rn3SBpiXkKiVPBSZC4SWiauZaV/YSfegIPfBv4oafRqxMGu4Fys272hl4aU0NiLM79oqY0Flfw/B0xIgEnwlKXddVmNovOCgsyXZDZSpc5uwO+GnwGVaEWPxYkWLQ3u4oRiycxYymPaZSNBU0jGqUQgxjRMA7hzJWjKDjNJ9YfsePHI/C27XHC23bb40KCEubIY/vtYSFH8haS9vH/XCB3Pjm498l+h7zbEgnH1P3+r5J/d5WkZ6+NG5/spmvvzt06eUnC83gSRaOEO3cl1P+xaLOE18aWOWgEClq60Txw86wvHsx88eBbX/w255xApXPOnRuR49Q68xzGLvd7B1dtwpvm7N08c/6R3OJpfHi7/M0kj78BseUUzWYKAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=4c65a844c36eba10b202be3ed40131d6"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="ChromaTech Customer Queries – Approval Flow">f355a844c36eba10b202be3ed40131a6</flow>
+        <generation_source/>
+        <order>8</order>
+        <parent_ui_id>eca0388a-5d1a-4fbe-bce6-e7ff25161834</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>Mimi.QA</sys_created_by>
+        <sys_created_on>2026-01-18 14:49:31</sys_created_on>
+        <sys_id>806d6ac5c36af250b202be3ed4013187</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_updated_by>Mimi.QA</sys_updated_by>
+        <sys_updated_on>2026-01-18 14:49:31</sys_updated_on>
+        <ui_id>29b33194-16f5-4a75-9a57-5821fa3815a1</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VVXU/bMBT9K5Wfo8r5gEHfplZIkxhogHhZUeTYN60lx85sB+iq/vfdJE6oALEi8TC0PtX3K+dc33P9c0ukIDOSgaDxaXzM0zhNE0qTkywujtMiTkTKAGISEc0qwEgL3FiB53ummtaw3c4tMA8ij6e8sRa03+3QL6SrFdvchjC08LVUAv1k9vMuIjWzWNGDJbPtM9ehkBQrQGHo1YDpOUa/qduzMLypEFcuB+N5yFwEz+TbAj2Y1MKJaUTg0YMWgEBKphxEpGJaMG/shsy8bdCApMWlVpsxYi2174lW7NHJ3/jljLZxJSAzHpowHvPQoN5cLphn11iZ+8aO/TKSg+t7IqBkjfLzfVsfcFl7aXSf4lmhhmyjmkpf9B0hY4G9+2gcgoC65dki72mV12vzcDWAPJO6a0mgqAxnajwx760sGt/C2RJQ0PW4YnUt9SqvrbmXXTJCqaYrhYdpqcwDftPJlZ4y3uKeYlfZ9Azti858y6xsSXzHMpi8i4jbuLlizj1RwR7mv5oWSU8sUMi7LnQtyLtJaJO5lbX/ip+6hwB8F4WhL47emjB++jRQezWfBv8xj0/S0yTJcr62pmI5DX888HXOG+dNBRaBgpXYoheKmI/Bk3kInvwYg98nlgOoDGK56UbkdWpBLy9s5/u5k4veEdRy9GFqOflMagk0Pr1c/iYSmry5hvcmqdOF2xMIgkCEHcuVNU29bChNxXY5CGFJZksyN0aBdZMb1IGWXDLtliRa9kW6iC+UZSzjJUexlUlMi4QmBaQgMhqnMYMuHFnjdj8w/pXn6Z/G+r5dcMCNDbvgTIIS7pUrHBYBVEjeQ95f6bNlEJyT2+Acn88P2wjxMe1+n2gv/Dev6N0fJk9zaDwKAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=806d6ac5c36af250b202be3ed4013187"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Ask For Approval">f8f2e9920b10030085c083eb37673abd</action_type>
+        <action_type_parent display_value="Ask For Approval">bae0a1120b10030085c083eb37673a92</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f8f2e9920b10030085c083eb37673abd</compiled_snapshot>
+        <display_text/>
+        <flow display_value="ChromaTech Customer Queries – Approval Flow">f355a844c36eba10b202be3ed40131a6</flow>
+        <generation_source/>
+        <order>2</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>Mimi.QA</sys_created_by>
+        <sys_created_on>2026-01-15 02:21:24</sys_created_on>
+        <sys_id>8c65a844c36eba10b202be3ed40131d8</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_updated_by>Mimi.QA</sys_updated_by>
+        <sys_updated_on>2026-01-18 15:29:17</sys_updated_on>
+        <ui_id>af53df7a-12fd-4729-9669-e2345c44e73e</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1YXW/iOBT9KyjPkHUICUnfKlClWe3MaNvOvJQqMvYNeDYk1EmmZRH/fa9jBzJAGZihUrvqS1XfD/ve43Nw7LulJbh1YUHPdz38049d4nQdEoAfBCwklAW+7/Vcq22ldAYYSedzmX2nSSSB5lmKDhyUyvORpnQCslVHtCQ8lEICb8WZbLEyL7IZuh9KkAsb87jI5wldfP3FdDYVCZeQWhd3921rTiXWV4C0LpZbrmMbTOgYEgy9rAu4rjt8tvViMVeOvJAinZjxX2aam9qYSa7K6rYteCog5YD1xDTJoW3NaMppkcnF2oJT889psjFMRVrgbJYKfsrFv7ie4xMVGAO2yEA718PIwKrN8ZAWFCspWVFKE8qmmWCQa3A4xLRMikHTpgM+zwuBTVYpBR0ndXaWlLP0k0bEWk9Q7yJayhyLgLnqVJVu+ohvptnjdV3llUgrUIwzyRhN1iNaIHTjslD1LK1S3G6hrC07OEMCM1wxmuE+oSVSmyWqVbDomT1JcGDHSfaI1eViktqUqQ5t3AFqX6F9WJm/UilUux9xGkxWy31JBdLug+KR3x37IQl4h8dk3OkFrtehDEgHfMcDj/vMc1xr1bbyRT5IaJ5vgMIdih5K1aaGzQAUaYxVCpNiXlxiUd/BYLFqG30SJ+5CGHbJ2CHEJSTwGAlcGLt9v+9SHuwhaSwg4Q151o5d5TU8p4nqiKp2RHVlynquXCOpahhVQT/KqspvfdKOs0srIOQtaQsX/x1pvYxiTme/huAnEmAHyQaNI+pbVsp0jwKwJ9VuHiE1osdM/hOlmUJiRxDPB56mjyNKrvXxp655Wx7brfyKOtx3dfz/1dEPDlGNkQ2lJDAkRkMWy+UAN78AHjk2KyXCVKxWu6I4mf1HlFSz/7quabtGw3eesbLaC8G3CD80ntaH4Ybx5DDjNS+OIbzbfaf7q6Q78w5xKw43VOIlgoTsbhJ+ZOnaR9bFyEqzFEZWe2SpqEhxqzJjBFa4dlS25XK10pZSUjOB0xhusjld5FVkzqbAy0Rbf7BEFfmN/Rx6OwKTWm/DElpDDcouTPWlpq5T4yJ2zpobE1DN9MetaJ453tnOnN5bOnF+967zcleYaP2RjwrDH4oXuKP0DvIPGmRbf/SzLOVCdZA35KmvCpBfwzdgRX6ZLr7cLZdB3xmHlPU6uATv9BihHRoC7QR+H/rjPgmd0LP1uWFjT4hCheREZuXcnum3hdXqfldnL73caSI+AsT1oYnay38GqhHz5unCJDWFvHnwME4j4t65jtE39t34OlV8fsGO2cEPNLbhlkZzI9GnyAncsNvtRWwqsxmNiPmnADaN6re6SL3ViX0XrME6uDWoH/b+XgefppgjuqgVc2va2OrKaKQa7rtUVWlblyrnxANOi2WvNt6V8WqUcf8fJqIHkBAXAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=8c65a844c36eba10b202be3ed40131d8"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="ChromaTech Customer Queries – Approval Flow">f355a844c36eba10b202be3ed40131a6</flow>
+        <generation_source/>
+        <order>12</order>
+        <parent_ui_id>606dea73-f0e1-4405-9790-26aa72d33d5b</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>Mimi.QA</sys_created_by>
+        <sys_created_on>2026-01-18 15:29:17</sys_created_on>
+        <sys_id>92763a0dc3aaf250b202be3ed40131e2</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_updated_by>Mimi.QA</sys_updated_by>
+        <sys_updated_on>2026-01-18 15:29:17</sys_updated_on>
+        <ui_id>52f8775a-0e99-455f-94ac-71af5d0559e3</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VVXW/aMBT9K8jPCCWEIuBtAiFN6lqtnfrStZaxL+DJiTN/UBjiv+8mcQKCqgOpL2g84fvlcw734OctkYKMSA9EFA/jPk/iJOlGUXfQi2f9ZBZ3RcIAYtImGUsBKw1wbQSeV0z5IrDdjg0wB4LGHe6NgcztdpgX0uaKbZ5CGUb4UiqBeTJ6fmmTnBmc6MCQ0fYodS4kxWagsPShxnSM0W3y4iw09yniorIO3obOSci0vk4wg00FnDhqE1g7yAQgkDlTFtokZZlgTpsNGTnjMYCkxX2mNk3FUmauIpqytZV/8OZeVNTNAZnxIEJzpEGgKjyfMMcecTJ33jR6acnBVpoImDOv3PgwVhXc507qrGpxbKbqbq18mt1VipBmwMHv4S2CgLzgWSCvaM0fl/rtoQY5lVkpSaCoNGeqOTHnjJx5V8DZElBQapyyPJfZguZGr2TZjFDSzkLhoTNX+g3vtHKRdRgvcHdQVdaZYnxShp+YkQWJbzgGm3dtYjd2rJi1eyqoIf3tCyQVsUCBliqUEtByE4pmbmTuvuBVKwjAd+2w9LObjzaMD/cLdTBzv/hrGg+SYbfbo3xpdMpoFL444EvKvXU6BYNAwUiU6MQR46a4NQ7Fre9N8WVmOYNKbZYf5Yq8Ty345SR2e9jbuqsSwS03n+aWwTW5JdC4erv8yyRR98O/4YNNKn1hDwyCkJAUUz99FCW4sL+A4zPxKq31QK3D1a8yY6UtiFODXNx/mWfOYFZ7ZipBCfsO1dowkCJwB7SifmSakGw9hWTzzHyac+J+VH6uyD//zWvz8hdRm6MpZAkAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=92763a0dc3aaf250b202be3ed40131e2"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="ChromaTech Customer Queries – Approval Flow">f355a844c36eba10b202be3ed40131a6</flow>
+        <generation_source/>
+        <order>10</order>
+        <parent_ui_id>52032b57-38f9-403f-a019-f4ccd15f2d41</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>Mimi.QA</sys_created_by>
+        <sys_created_on>2026-01-18 14:49:31</sys_created_on>
+        <sys_id>c06d6ac5c36af250b202be3ed4013188</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_updated_by>Mimi.QA</sys_updated_by>
+        <sys_updated_on>2026-01-18 14:49:31</sys_updated_on>
+        <ui_id>e95dba3b-48f6-487d-ae7d-8e578130438e</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VVTW/iMBD9K8hnQM5HgXBbgZBW6rbatuqlVJFjT8CS42Qdpy2L+O87SZwUtVWXSj1stZzweGb83rPf5G5PpCBzEoKgXuRNeOAFgU+pPwu9ZBIkni8CBuCRIdEsA8w0wHMjcP3AVFUH9vvZ1EsixsMRRJEYhZyyEYuAjWaTKUyTKY286Gzc1h0OWClkWSi2u3UNMMK3UgkDmszv7oekYAbPsmDIfP9i61SwiiWgMPWqQ/sSvd0V9VrkvMpA21h2wXNXuXQ7g+9L3MGiGo5HhwSeLGgBCCRlqoQhyZgWzOZmR+bWVBgwwMSlVrs+Yyu1bYlm7KmUv/HkkNZ5KSAz7kTol7ETqA2nS2bZNXbmtjK9XrnkULaaCEhZpeziONYmXBZW5rotsSxRXXWuqkxftIqQvsHRfVQlgoCi5lkjb2ml19v88aoDuZK6kcRRVDlnql8xa41MKlvD2RNQ0GicsaKQehMXJn+QTTFCycYbhYtxqvJHPLOUGz1mvMY9RlXZeIXxZRO+ZUbWJH5gGyw+DEm5KxeKleUzFdQw/lXVSFpijkLcqNBIEDcvoS7mRhb2Gx71AA74YejskJy998J49Pygjno+W+Ip9mZB5PthzLcmz1hM3R8LfBvzqrR5BgaBgpEo0StHLPrkwcIlD372yR8zywlUOrPcNE/kbWrOL69i58e1g4t2w7nl7NPcMvtKbnE0vrxd/mYS6r87ho9eUuOL8sggCAIRNiw3Jq+KdUVpIPbrzghrMl+TBUiF/Acrpgc36AUtuWS6XJPhum3UZLFAhD7nKUfDpb5HE5/6CQQgQuoFnkibdGSOE/7E/Dc+Uf883o/NhBNurpsJKwlKlG9cZTcQIEMBLMTt1b4YCm5zcOs2+8/op00Gb0Kb3xeaD//N1/T+D7aEuoxeCgAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=c06d6ac5c36af250b202be3ed4013188"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="ChromaTech Customer Queries – Approval Flow">f355a844c36eba10b202be3ed40131a6</flow>
+        <generation_source/>
+        <order>4</order>
+        <parent_ui_id>e213d8a8-11e5-4896-9d13-beb3ff44cb48</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>Mimi.QA</sys_created_by>
+        <sys_created_on>2026-01-15 02:21:24</sys_created_on>
+        <sys_id>cc65a844c36eba10b202be3ed40131d9</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_updated_by>Mimi.QA</sys_updated_by>
+        <sys_updated_on>2026-01-15 02:21:24</sys_updated_on>
+        <ui_id>048a7a45-c59d-42dc-ba4c-624bb22ad710</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VVXU/bMBT9K5Wf2yppStv0bWqFhMRgg4kXYNGNfdtacuLMdoCu6n/fTeKEChCDiRe0PPV++pwTn+Z6x6RgczZGEYRxOOFRGEWjIBjNxmE6idJwJCJADFmf5ZAhdRrk2giK70CVVWK3m03DNAY+HmAci8GYBzCAGGEwm0xxmk6DOIyPhs3cfk+TQtpCwfbKL6AM30glDOZsfn3bZwUYOsuhYfPdk9JbwSpIUVHrRYv2KXq3LapYaF5mmLtEtslTP7n0ld7Jkio0VMEJgz7DB4e5QAKyAmWxzzLIBThttmzuTEkJgyDOc7XtOjYydw3RDB6s/E0nj4Oqb4XEjHsRujDxAjXp1RIcXNJm7krT6aUlR9toInAFpXKLw1zTcF44qfNmxEGq2mmtyiw/axRh3YKD91FaAoFFxbNC3tBaXW70/UUL8ljmtSSeotIcVBeBc0ampavg7BgqrDXOoChkvk4Ko+9kPUxQsuFaUTBcKX1PZ1q5zofAK9xDUhWGx5Rf1ukrMLIi8ZXW0PC+z+zWLhRY+0iFNEx+lRWShpinkNQq1BIk9U2ohrmRhftCR92hB77vezukR6/dMB4/XqiDnY+WeEjCWRSPRuOEb4zOIAn8D4d8k/DSOp2hIaBoJEn0zBGLrrm38M29713z+8zyBiqtWX7UV+Rlat4vz3Knh7O9s6bg3XL0YW6ZfSa3eBqf3i5/M0kwevVv+OAm1b6wBwaR1paYWEd3/KYMgkic5L1vRq8NWvuT8BJjUE2liVA8d8m/LXmfe97AsXXPsUQl7AukW+tgRugdJo0IT+zji70rX+w+OB/moXAS1M8nctJ/8925/QMl4hySiAkAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=cc65a844c36eba10b202be3ed40131d9"/>
+    <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=f355a844c36eba10b202be3ed40131a6"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=f355a844c36eba10b202be3ed40131a6^sys_idNOT IN2541a6f0c36a7250b202be3ed40131ca,2a763a0dc3aaf250b202be3ed40131fc,c06d6ac5c36af250b202be3ed4013193,c465a844c36eba10b202be3ed40131cd,c86d6ac5c36af250b202be3ed4013191,ea763a0dc3aaf250b202be3ed40131fe"/>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">9541a6f0c36a7250b202be3ed401312a</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="ChromaTech Customer Queries – Approval Flow">f355a844c36eba10b202be3ed40131a6</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>5</order>
+        <outputs_assigned/>
+        <parent_ui_id>e213d8a8-11e5-4896-9d13-beb3ff44cb48</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>Mimi.QA</sys_created_by>
+        <sys_created_on>2026-01-17 19:18:11</sys_created_on>
+        <sys_id>2541a6f0c36a7250b202be3ed40131ca</sys_id>
+        <sys_mod_count>17</sys_mod_count>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_updated_by>Mimi.QA</sys_updated_by>
+        <sys_updated_on>2026-01-18 15:29:17</sys_updated_on>
+        <ui_id>e31db39d-ec6d-475d-92b2-499c88e86d7c</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VTY/aMBD9K8jnEOWDAOGGWK1Uadutumgv7Sqa2A5YNXFqO7AU8d87zgegLlV31fbWE/jNeOa9h584EFXbqrZmqebGiFVJZp+fPCJKh+H3Aylhw8mMUFUyYYUqswbwyBZk7QpzoQeLvsi1GXzUitXUDpb7yvUxYSoJ+8dXttO1kEzzjkcFGrdZrsns8FNJMJxWBFCEKQ1pHI3jKAii6SjMx3EeRiwGDjEOlJBzia2npYO7BvF+qcw6JjNirBblqjvfdVMeelBp5liFgUf4s+Ul48inAGm4RzZQMrBK70+I5sDuS3kG1qK0OI645mcjvuPCKElcY8FRIuVt8XTMOhtbuLgBC0gFfat110rXSlBuWnMYL6CWdnGJtQ33lZPaXrGQy/62kvWm/NA6Qk4D+l8NkdogCV45pY56p6N4WKvdp57lrSgbV7qiVBTk6QQWvctr6/gcCJd8g4OyDVQVOppVWm1Fcxm5bPyVxINfSLXDpe5d+kAdcR+NBf8W8ZsGfgQtnIr3OAYvtzRzMIJmzRvGcWgTJ0ePmL1ZSDDmLBLdzb7VjmIruROXtf64K1SLys5x85Z3Oo7ey0hcpOFwmE7CPAU6GvI0ZcMRDWAIKYfhdDzhk3wSpGGa+JpTfEB+1b79/jNzL+14/FIHQcxA6IxeBOVllP7prrflMIWkSMIguZ7D0fhaDq8k8I3hi34TPvfLvzJ7QRD8D98fh0+YrI1Mp61Z/hez9+SC1u48eU2FQWpLh73r/7VcYY+PS9BLaKf0VyfqjB1/APEYRTD/BgAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">c6763a0dc3aaf250b202be3ed4013108</block>
+        <comment/>
+        <connected_to>e213d8a8-11e5-4896-9d13-beb3ff44cb48</connected_to>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="ChromaTech Customer Queries – Approval Flow">f355a844c36eba10b202be3ed40131a6</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Else If">666e5545c3e232002841b63b12d3ae99</logic_definition>
+        <order>11</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>Mimi.QA</sys_created_by>
+        <sys_created_on>2026-01-18 15:29:17</sys_created_on>
+        <sys_id>2a763a0dc3aaf250b202be3ed40131fc</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_updated_by>Mimi.QA</sys_updated_by>
+        <sys_updated_on>2026-01-18 15:29:17</sys_updated_on>
+        <ui_id>606dea73-f0e1-4405-9790-26aa72d33d5b</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1Vy27bMBD8lYBnWdDDj9o3w0GAAmkDJEEubSCsyZXNlhJVkYrjCv73LvWwjcBpXdTH3szZ5e7MiAPXTFe2qKx51HNj5Cpnsy/PHpO5w+h3zaRgM5YGkIZTHvI4GsdREEQfhuFyHC/DSMSAEDGP5ZAhdXKdC2mlzpMG8NgLqMoV5kVRajpc3eM35BYF1YQ0hYLt029a+FoqUWLHq4CSplos2ax+UzqXp4IlKmpd9ESvbhvkfQV2Wzjc2FLmq+5820156EFdCscqDDyGrxZzQexnKSiDHssgF2B1ud0jJYK4y9UBWMvc0jjmml+N/EkLo9HINaZIEjm2xf0x6axr4fQaLBCVituq7Fr5WkuOpjVHYAqVsotjrG24K5zU9oqFpepva1Vl+efWEbYf0H8pQipDJLBwSh31Tkf6sNab+57ljcwbV7qi0hzU/gSWvFtW1vGpGSrMaFCSQVGQo4l7CbK5TFwyf6Xo4KdKb2ipe6c+cEfcJ2PBvyH8uoGfoJROxScaQ5dbmkswkifNm6ZxZBOyncfM1iwUGHMQSe4mPypHsZXciUtaf9wVXsrCzmnzC3Y6dt55EQlPPLCjdNQ1pKNYpBMYhFEqBsNJNB1Mx+PpAKN4OOLDIU5i9KFLSGIsWNztvlZBEFMG3kvUpcZeNIXhqRSetudvohf9IXruu5+ZvCAI/kfvn6MnTdIGptPWLL9g8p5dfNqde6+5NETt0WEf+/8wV9jS45L8GNro8rsTdcB2vwBf771CDQcAAA==</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">a35d2ac5c36af250b202be3ed40131af</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="ChromaTech Customer Queries – Approval Flow">f355a844c36eba10b202be3ed40131a6</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>9</order>
+        <outputs_assigned/>
+        <parent_ui_id>e213d8a8-11e5-4896-9d13-beb3ff44cb48</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>Mimi.QA</sys_created_by>
+        <sys_created_on>2026-01-18 14:49:31</sys_created_on>
+        <sys_id>c06d6ac5c36af250b202be3ed4013193</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_updated_by>Mimi.QA</sys_updated_by>
+        <sys_updated_on>2026-01-18 15:29:17</sys_updated_on>
+        <ui_id>52032b57-38f9-403f-a019-f4ccd15f2d41</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1Vy27bMBD8FYNnQdAjNhrfAgcGCqRN0Ri5tIGwIimbKEWqfNhxBf97l3o4RuIiDdJjTzaH5O7McAdqifau8c6u9JW1Yq3I/NtDRIQKGP5viYKakzmhWjHhhFZFB0RkC9KHjQWXUqj1ZAlq8sVo5qmbrPZNOMKEbSTs718/STdCMsOH7g0Y7OG4IfP22ZZgWKhKoEovaUrzbJZnSZJ9uEjLWV6mGcuBQ44FJZRchp4j7clNh0R/1OMCkzmxziDHYX0zVLkbQW1YYJUmEeGPjivGkU8F0vKI1KAYOG32R8RwYLdKPgEboRyWI+HwoxW/sGE2nYaDFUeJlPebx2UxONjD1TU4QCromzfDUbrRgnLbm8N4BV66xSnWH7htgtT+ioNSjre19LX63DtCjgXGB0PEWyTBm6A0UB90VHcbvfs6slwK1bkybEpNQR5X4NC70rvApyVc8hoLFTU0DTpaNEZvRXcZudTxWuIirqTeYdMwjTHQQDxGYyFeIn7dwfdgRFDxCcvg5Z5mCVbQoptcLIc2cXKIiN3bhQRrn0Siu8VPHyj2kgdxRe9PuEKNaNwVdt7yQcchehmEkwy07QLf2nFWpDH1Bl1xcdNP+PhbhHk6HL77JMkZ5SIkoahA2Zc5eWe1t2XpEqbVNE2m57N0MTuXpTMpemOAslcCFF7vL/OTJMn/AL07QMIW/dgP2rrm/zA/DyEsfc+j11RYpLYK2MfxexM29jhcgp5CO21+BFFP2OE335VuJbkGAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">af55a844c36eba10b202be3ed4013137</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="ChromaTech Customer Queries – Approval Flow">f355a844c36eba10b202be3ed40131a6</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>3</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>Mimi.QA</sys_created_by>
+        <sys_created_on>2026-01-15 02:21:24</sys_created_on>
+        <sys_id>c465a844c36eba10b202be3ed40131cd</sys_id>
+        <sys_mod_count>26</sys_mod_count>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_updated_by>Mimi.QA</sys_updated_by>
+        <sys_updated_on>2026-01-18 15:29:17</sys_updated_on>
+        <ui_id>e213d8a8-11e5-4896-9d13-beb3ff44cb48</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1V227aQBD9lWifDfIVCm+IKFKltJGSKC9tZA27Y1h18TreNYRa/HtnfQGUgtqoeewbe+Z2zniOqJmubFFZ86hnxshlzqbfnj0mc4fR75rlsEY2ZVznQlqp87QBPLYBVbnAPb5UaOzVrChKvUFBISFNoWD3dDmDr6QSJXbTCiipp8WSTes3ISmoQeZDFkx4wKNwFIW+H36Kg8UoWgShiAAhooYKFqgodd7TvLptEO8if7srHG5sKfNl977tujz0oC6FYxX4HsNXi7kg9tMMlEGPrSEXYHW5OyAlgrjL1RFYydxSO+aSX438SQPDJHGJGZJEjm3w8Ey7zbVwdg0WiErFbVV2qXylJUfTLkdgBpWy81OsTbgrnNS2xMJC9dVaVev8a7sRdmjQfyhCKkMksHBKHfVOR/aw0tv7nuWNzJutdEGlOajDCyztblFZx6dmqHBNjdI1FAVtNHUHIJti4rIeLhU9hpnSWxrqrm8I3BEf0mJheEP4dQM/QSmdii/UhopbmgswkqfNpVI7WhOyvcfMzswVGHMUSdtNXypHsZXciUvb/bgSXsrCzmjyBjsde+/3wz+5+bqGLIlENoZBEGZiEI/DyWAyGk0GGEZxwuMYxxEOoTl4UKmxYHG//175fiTgolE+qu373DWBJEsCPznvrnh0zl1nfPVOS4V/sJT7nn/pKN/3/1vqny0lTdoaodPWDP9ARz07+7QzD7vm0hC1R4d97v9xXGBHxyX5KbTV5Q8n6ojtfwEVH10LuwYAAA==</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">2b5d2ac5c36af250b202be3ed40131ab</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="ChromaTech Customer Queries – Approval Flow">f355a844c36eba10b202be3ed40131a6</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>7</order>
+        <outputs_assigned/>
+        <parent_ui_id>e213d8a8-11e5-4896-9d13-beb3ff44cb48</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>Mimi.QA</sys_created_by>
+        <sys_created_on>2026-01-18 14:49:31</sys_created_on>
+        <sys_id>c86d6ac5c36af250b202be3ed4013191</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_updated_by>Mimi.QA</sys_updated_by>
+        <sys_updated_on>2026-01-18 15:29:17</sys_updated_on>
+        <ui_id>eca0388a-5d1a-4fbe-bce6-e7ff25161834</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1Vy27bMBD8FYNnQdAjNhrfAgcBCqRN0Ri5tIGwIimbKEWqfNhxBf97l3rYRuI+0vbYk80huTsz3IFaor1rvLNLfWWtWCky//QYEaEChv9boqDmZE6oVkw4oVXRARHZgPRhY6G15GbywWjmqZssd03YZcI2EnYPPz1E10Iyw4eeDRis7Lgh8/bZlmBYo0qgSi9pSvNslmdJkr25SMtZXqYZy4FDjgUllFx27Qayk9sOiX6owgUmc2KdEWo1rG+HKvcjqA0LrNIkIvzJccU48qlAWh6RGhQDp83ugBgO7E7JI7AWymE5Eg4/WfENG2bTaThYcZRIeb95WBaDeT1cXYMDpIK+eTMcpWstKLe9OYxX4KVbnGL9gbsmSO2vOCjleFtLX6v3vSPkUGB8K0S8RRK8CUoD9UFHdb/W248jyxuhOleGTakpyMMKHHpXehf4tIRLXmOhooamQUeLxuiN6C4jlzpeSVzEldRbbBpmMAYaiMdoLMQ3iF938AMYEVS8wzJ4uadZghW06OYVy6FNnOwjYnd2IcHao0h0t/jqA8Ve8iCu6P0JV6gRjbvCzhs+6NhHL8f/ZPLbdoFv7Tgr0ph6g664uOknfPwtwjzt9599kuSMdiGwL9Px54Vel6BLmFbTNJmeT9DF7FyCzmTnlbHJfhGb8Ga/mZokSf7H5q9jI2zRD/ugrWv+D1PzGCLS9zx4TYVFasuAvR2/LWFjh8Ml6Cm01eZLEHXE9t8B/jnwxKUGAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">c2763a0dc3aaf250b202be3ed401310c</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="ChromaTech Customer Queries – Approval Flow">f355a844c36eba10b202be3ed40131a6</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="End">d176605ea76103004f27b0d2187901c7</logic_definition>
+        <order>13</order>
+        <outputs_assigned/>
+        <parent_ui_id>606dea73-f0e1-4405-9790-26aa72d33d5b</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>Mimi.QA</sys_created_by>
+        <sys_created_on>2026-01-18 15:29:17</sys_created_on>
+        <sys_id>ea763a0dc3aaf250b202be3ed40131fe</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_updated_by>Mimi.QA</sys_updated_by>
+        <sys_updated_on>2026-01-18 15:29:18</sys_updated_on>
+        <ui_id>9f2083a5-07f4-4318-9b55-7bd32659c3c6</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=f355a844c36eba10b202be3ed40131a6"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=f355a844c36eba10b202be3ed40131a6"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>table_name</element>
+        <help/>
+        <hint/>
+        <label>Table Name</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_f355a844c36eba10b202be3ed40131a6</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>Mimi.QA</sys_created_by>
+        <sys_created_on>2026-01-15 02:21:24</sys_created_on>
+        <sys_id>3b55a844c36eba10b202be3ed40131c2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="ChromaTech Ticket logging System" source="x_1839224_chroma_0">0ab6f4efc34e76d0b202be3ed4013104</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>Mimi.QA</sys_updated_by>
+        <sys_updated_on>2026-01-15 02:21:24</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>current</element>
+        <help/>
+        <hint/>
+        <label>Record</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_f355a844c36eba10b202be3ed40131a6</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>Mimi.QA</sys_created_by>
+        <sys_created_on>2026-01-15 02:21:24</sys_created_on>
+        <sys_id>b355a844c36eba10b202be3ed40131b8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="ChromaTech Ticket logging System" source="x_1839224_chroma_0">0ab6f4efc34e76d0b202be3ed4013104</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>Mimi.QA</sys_updated_by>
+        <sys_updated_on>2026-01-15 02:21:24</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_f355a844c36eba10b202be3ed40131a6"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_f355a844c36eba10b202be3ed40131a6"/>
+    <sys_hub_flow action="UPDATE">
+        <sys_id>6440b0c7c316f210b202be3ed401315a</sys_id>
+        <latest_snapshot>f355a844c36eba10b202be3ed40131a6</latest_snapshot>
+        <compiler_build>glide-zurich-07-01-2025__patch3-10-16-2025_10-24-2025_0919.zip</compiler_build>
+        <version_record/>
+    </sys_hub_flow>
+    <sys_flow_trigger_plan action="delete_multiple" query="plan_id=6440b0c7c316f210b202be3ed401315a^sys_idNOT IN0c65e844c36eba10b202be3ed4013110"/>
+    <sys_flow_trigger_plan action="INSERT_OR_UPDATE">
+        <binding_strategy>com.snc.process_flow.engine.binding.OncePerRecord</binding_strategy>
+        <plan>{"type":"PlanProxy","persistor":{"@class":".ChunkingPlanPersistor","table":"sys_flow_trigger_plan","id":"0c65e844c36eba10b202be3ed4013110","name":"plan","plan_signature":null}}</plan>
+        <plan_id>6440b0c7c316f210b202be3ed401315a</plan_id>
+        <snapshot>da863e0dc3aaf250b202be3ed401313f</snapshot>
+        <sys_created_by>Mimi.QA</sys_created_by>
+        <sys_created_on>2026-01-15 02:21:25</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>0c65e844c36eba10b202be3ed4013110</sys_id>
+        <sys_mod_count>12</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope/>
+        <sys_updated_by>Mimi.QA</sys_updated_by>
+        <sys_updated_on>2026-01-18 15:29:18</sys_updated_on>
+        <trigger display_value="">ba767a0dc3aaf250b202be3ed40131a2</trigger>
+    </sys_flow_trigger_plan>
+    <sys_flow_subflow_plan action="delete_multiple" query="plan_id=6440b0c7c316f210b202be3ed401315a"/>
+</record_update>

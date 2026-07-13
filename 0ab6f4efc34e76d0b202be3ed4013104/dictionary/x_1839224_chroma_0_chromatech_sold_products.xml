@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="f4c4852fc3ce76d0b202be3ed40131b1" label="ChromaTech Sold Products" max_length="40" name="x_1839224_chroma_0_chromatech_sold_products" type="collection">
+        <element choice="1" dependent="product_type" dependent_on_field="product_type" label="Product Subtype" max_length="40" name="product_subtype" type="choice" use_dependent_field="true">
+            <choice>
+                <element dependent_value="ceiling_fans" inactive_on_update="false" label="Dual Motor Ceiling Fan" sequence="100" value="Dual Motor Ceiling Fan"/>
+                <element dependent_value="air_conditioners" inactive_on_update="false" label="Mini Split Air Conditioner" sequence="300" value="Mini Split Air Conditioner"/>
+                <element dependent_value="coolers" inactive_on_update="false" label="Personal Coolers" sequence="100" value="Personal Coolers"/>
+                <element dependent_value="ceiling_fans" inactive_on_update="false" label="Industrial Ceiling Fans" sequence="200" value="Industrial Ceiling Fans"/>
+                <element dependent_value="coolers" inactive_on_update="false" label="Desert Coolers" sequence="300" value="Desert Coolers"/>
+                <element dependent_value="ceiling_fans" inactive_on_update="false" label="Commercial Ceiling Fans" sequence="300" value="Commercial Ceiling Fans"/>
+                <element dependent_value="coolers" inactive_on_update="false" label="Window Coolers" sequence="400" value="Window Coolers"/>
+                <element dependent_value="air_conditioners" inactive_on_update="false" label="Portable Air Conditioner" sequence="200" value="Portable Air Conditioner"/>
+                <element dependent_value="coolers" inactive_on_update="false" label="Tower Coolers" sequence="200" value="Tower Coolers"/>
+                <element dependent_value="air_conditioners" inactive_on_update="false" label="Window Air Conditioner" sequence="400" value="Window Air Conditioner"/>
+                <element dependent_value="air_conditioners" inactive_on_update="false" label="Central Air Conditioning" sequence="100" value="Central Air Conditioning"/>
+            </choice>
+        </element>
+        <element label="Cost" max_length="38" name="cost" type="price"/>
+        <element label="Serial Number" max_length="50" name="serial_number" type="string"/>
+        <element label="Warranty Extending date" max_length="40" name="warranty_extending_date" type="glide_date_time"/>
+        <element choice="1" label="Product Type" max_length="40" name="product_type" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Coolers" sequence="1" value="coolers"/>
+                <element inactive_on_update="false" label="Air Conditioners" sequence="0" value="air_conditioners"/>
+                <element inactive_on_update="false" label="Ceiling Fans" sequence="2" value="ceiling_fans"/>
+            </choice>
+        </element>
+        <element label="Is Extended Warranty" max_length="40" name="is_extended_warranty" type="boolean"/>
+        <element label="Warranty expiring at" max_length="40" name="warranty_expiring_at" type="glide_date_time"/>
+        <element choice="1" label="Warranty period (months)" max_length="40" name="warranty_period_months_choice" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="18" sequence="300" value="18"/>
+                <element inactive_on_update="false" label="24" sequence="400" value="24"/>
+                <element inactive_on_update="false" label="12" sequence="200" value="12"/>
+                <element inactive_on_update="false" label="06" sequence="100" value="06"/>
+            </choice>
+        </element>
+        <element display="true" label="Product Name" max_length="60" name="product_name" type="string"/>
+        <element label="Date Sold On" max_length="40" name="date_sold_on" type="glide_date_time"/>
+        <element label="Manufacturing Date" max_length="40" name="manufacturing_date" type="glide_date_time"/>
+        <element label="Sold To" max_length="32" name="sold_to" reference="sys_user" type="reference"/>
+        <index name="index">
+            <element name="sold_to"/>
+        </index>
+    </element>
+</database>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_atf_step">
+    <sys_atf_step action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <callable_outputs/>
+        <copied_from/>
+        <description>Run Server Side Validation Script</description>
+        <display_name>Run Server Side Script</display_name>
+        <inputs/>
+        <mugshots_cache_json/>
+        <notes/>
+        <order>3</order>
+        <step_config display_value="Run Server Side Script">41de4a935332120028bc29cac2dc349a</step_config>
+        <sys_class_name>sys_atf_step</sys_class_name>
+        <sys_created_by>Mimi.QA</sys_created_by>
+        <sys_created_on>2026-01-02 14:56:20</sys_created_on>
+        <sys_id>e205940cc39a7ad0b202be3ed4013155</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Run Server Side Script</sys_name>
+        <sys_package display_value="ChromaTech Ticket logging System" source="x_1839224_chroma_0">0ab6f4efc34e76d0b202be3ed4013104</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_update_name>sys_atf_step_e205940cc39a7ad0b202be3ed4013155</sys_update_name>
+        <sys_updated_by>Mimi.QA</sys_updated_by>
+        <sys_updated_on>2026-01-02 15:03:15</sys_updated_on>
+        <table/>
+        <test display_value="ATF-04: Verify Custom Fields Types">f16d8844c35a7ad0b202be3ed40131e2</test>
+        <timeout/>
+        <warning_message/>
+    </sys_atf_step>
+    <sys_variable_value action="delete_multiple" query="document_key=e205940cc39a7ad0b202be3ed4013155"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_atf_step</document>
+        <document_key>e205940cc39a7ad0b202be3ed4013155</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Mimi.QA</sys_created_by>
+        <sys_created_on>2026-01-02 14:56:20</sys_created_on>
+        <sys_id>3b759c0cc39a7ad0b202be3ed40131eb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Mimi.QA</sys_updated_by>
+        <sys_updated_on>2026-01-02 14:56:20</sys_updated_on>
+        <value>3.1</value>
+        <variable display_value="Jasmine version">42f2564b73031300440211d8faf6a777</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_atf_step</document>
+        <document_key>e205940cc39a7ad0b202be3ed4013155</document_key>
+        <order>200</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Mimi.QA</sys_created_by>
+        <sys_created_on>2026-01-02 14:56:20</sys_created_on>
+        <sys_id>bf759c0cc39a7ad0b202be3ed40131eb</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>Mimi.QA</sys_updated_by>
+        <sys_updated_on>2026-01-02 15:03:15</sys_updated_on>
+        <value>(function(outputs, steps, stepResult, assertEqual) {&#13;
+    var tableName = 'x_1839224_chroma_0_chromatech_customer_queries'; // Replace with your table&#13;
+    var fieldName = 'first_reported_on';       // Replace with your field&#13;
+&#13;
+    var gr = new GlideRecord('sys_dictionary');&#13;
+    // Check both your table and the parent 'task' table for inherited fields&#13;
+    var qc = gr.addQuery('name', tableName);&#13;
+    qc.addOrCondition('name', 'task'); &#13;
+    gr.addQuery('element', fieldName);&#13;
+    gr.query();&#13;
+&#13;
+    if (gr.next()) {&#13;
+        // The internal name for "Date/Time" is 'glide_date_time'&#13;
+        var actualType = gr.getValue('internal_type');&#13;
+        &#13;
+        if (actualType === 'glide_date_time') {&#13;
+            stepResult.setOutputMessage("Success: Field '" + fieldName + "' is a Date/Time type.");&#13;
+            return true;&#13;
+        } else {&#13;
+            // Provide clarity if it's a 'glide_date' (Date only) instead&#13;
+            stepResult.setOutputMessage("Failure: Expected 'glide_date_time', but found '" + actualType + "'.");&#13;
+            return false;&#13;
+        }&#13;
+    } else {&#13;
+        stepResult.setOutputMessage("Failure: Could not find dictionary entry for field: " + fieldName);&#13;
+        return false;&#13;
+    }&#13;
+})(outputs, steps, stepResult, assertEqual);</value>
+        <variable display_value="Test script">989d9e235324220002c6435723dc3484</variable>
+    </sys_variable_value>
+</record_update>

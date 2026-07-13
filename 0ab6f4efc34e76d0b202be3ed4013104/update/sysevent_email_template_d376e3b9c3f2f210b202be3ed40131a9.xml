@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sysevent_email_template">
+    <sysevent_email_template action="INSERT_OR_UPDATE">
+        <collection>x_1839224_chroma_0_chromatech_customer_queries</collection>
+        <email_layout display_value="ChromaTech Notification Layout">752298c7c3a23610b202be3ed401316f</email_layout>
+        <message/>
+        <message_html><![CDATA[<p>Hi ${requester.name},</p>
+<p>Following are the current status and update on your query ${number}.</p>
+<p>${mail_script:chromatech_query_table}</p>
+<p>Regards,<br>ChromaTech help desk team.</p>]]></message_html>
+        <message_list/>
+        <message_text/>
+        <name>ChromaTech Query Update Email</name>
+        <sms_alternate/>
+        <subject> This is regarding the update on your query ${number}</subject>
+        <sys_class_name>sysevent_email_template</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-02 13:13:01</sys_created_on>
+        <sys_id>d376e3b9c3f2f210b202be3ed40131a9</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>ChromaTech Query Update Email</sys_name>
+        <sys_package display_value="ChromaTech Ticket logging System" source="x_1839224_chroma_0">0ab6f4efc34e76d0b202be3ed4013104</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_update_name>sysevent_email_template_d376e3b9c3f2f210b202be3ed40131a9</sys_update_name>
+        <sys_updated_by>Mimi.QA</sys_updated_by>
+        <sys_updated_on>2026-02-08 13:03:00</sys_updated_on>
+        <sys_version>2</sys_version>
+    </sysevent_email_template>
+</record_update>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_package_dependency_m2m">
+    <sys_package_dependency_m2m action="INSERT_OR_UPDATE">
+        <dependency display_value="Global" source="global">global</dependency>
+        <min_version/>
+        <sys_created_by>Nellie.BA</sys_created_by>
+        <sys_created_on>2026-01-04 10:07:54</sys_created_on>
+        <sys_id>96a621ecc316bed0b202be3ed4013180</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_package display_value="ChromaTech Ticket logging System" source="x_1839224_chroma_0">0ab6f4efc34e76d0b202be3ed4013104</sys_package>
+        <sys_updated_by>Nellie.BA</sys_updated_by>
+        <sys_updated_on>2026-01-04 10:07:54</sys_updated_on>
+    </sys_package_dependency_m2m>
+</record_update>

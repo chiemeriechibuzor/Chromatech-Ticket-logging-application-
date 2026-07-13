@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field/>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>Autofill Assignment Group onload</name>
+        <order/>
+        <script><![CDATA[function onLoad() {
+    // Only populate if it's a new record and the group field is empty
+    if (g_form.isNewRecord() && !g_form.getValue('assignment_group')) {
+        // Set by display value
+        g_form.setValue('assignment_group', '4a393aabc302f6d0b202be3ed40131e5');
+    }
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>Nellie.BA</sys_created_by>
+        <sys_created_on>2026-01-09 14:25:15</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>df119816c392fa14b202be3ed4013147</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Autofill Assignment Group onload</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="ChromaTech Ticket logging System" source="x_1839224_chroma_0">0ab6f4efc34e76d0b202be3ed4013104</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="ChromaTech Ticket logging System">0ab6f4efc34e76d0b202be3ed4013104</sys_scope>
+        <sys_update_name>sys_script_client_df119816c392fa14b202be3ed4013147</sys_update_name>
+        <sys_updated_by>Nellie.BA</sys_updated_by>
+        <sys_updated_on>2026-01-09 14:32:15</sys_updated_on>
+        <table>x_1839224_chroma_0_chromatech_customer_queries</table>
+        <type>onLoad</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>
